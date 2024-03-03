@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .nav-link {
+    @apply text-gray-700 text-base py-1 mx-4;
+
+    &.active {
+      @apply text-primary border-b border-primary;
+    }
+  }
+}

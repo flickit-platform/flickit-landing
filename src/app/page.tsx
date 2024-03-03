@@ -291,7 +291,7 @@ export default function Home() {
       </section> */}
 
       <section className="mx-auto max-w-screen-2xl">
-        <div className="flex flex-col items-center justify-center relative top-16 bg-[url('/bg-polygon.svg')] object-cover w-full bg-no-repeat h-dvh">
+        <div className="flex flex-col items-center justify-center relative top-16 bg-[url('/bg-polygon.svg')] bg-cover bg-center w-full bg-no-repeat h-dvh">
           <div className="flex flex-col items-center justify-center w-1/2 my-48">
             <div className="text-[#c7cfcf] text-center font-['Sansation-Regular',_sans-serif] text-[25px] leading-tight font-normal relative w-[517px]">
               The ultimate tool for Assessing your software{" "}
@@ -335,10 +335,10 @@ export default function Home() {
       </section>
 
       <section className="mt-48">
-        <div className="bg-[url('/bg-shapes.svg')] object-cover w-full bg-no-repeat h-[700px] py-16 px-40 reletive">
+        <div className="bg-[url('/bg-shapes.svg')] object-cover w-full bg-no-repeat h-[700px] py-16 md:px-16 lg:px-32 reletive">
           <Image
             src={"/polygon-vector.svg"}
-            className="absolute z-99 left-4 mt-[-186px]"
+            className="absolute z-1 left-4 mt-[-186px]"
             width={187}
             height={428}
             alt={"line vector"}
@@ -346,7 +346,7 @@ export default function Home() {
           <div className="text-5xl font-ubuntu text-justify font-bold text-moon-silver flex justify-center text-[#edf4fc] mb-16">
             How does it works?
           </div>
-          <div className="flex flex-row justify-between items-start">
+          <div className="flex flex-row justify-between items-start md:gap-3 lg:gap-8 relative">
             <div className="flex flex-col justify-start items-center gap-6 p-4 border border-solid border-gray-200 rounded-lg shadow-inner bg-teal-50 w-[320px]">
               <Image
                 src={"/Shape-ilustration-1.png"}
@@ -406,49 +406,94 @@ export default function Home() {
         </div>
       </section>
       <section>
-        <div className=" flex flex-col items-center justify-center relative top-16 bg-[url('/midle-shape-bg.svg')] object-cover w-full bg-no-repeat h-[1987px] p-32 ">
-          <div className="backdrop-blur-md w-full h-full bg-white/50 rounded-[32px] flex justify-between flex-col">
-            <div className="flex flex-row-reverse justify-between items-center">
-              <Image
-                src={"/situation-1.svg"}
-                width={370}
-                height={370}
-                alt={"situation"}
-              />
-              <div>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-                error ducimus voluptate veniam quasi excepturi consectetur
-                repellendus eveniet consequatur ullam, inventore modi dolores
-                facere sint natus! Aliquid ea dolorum optio?
-              </div>
+        <div className=" flex flex-col items-center justify-center relative top-16 bg-[url('/midle-shape-bg.svg')] bg-cover  w-full bg-no-repeat  h-[1987px] md:py-32 md:px-16 lg:p-32 ">
+          <div className="backdrop-blur-md w-full h-full bg-white/70 rounded-[32px] flex  flex-col p-16 md:px-16 lg:px-32">
+            <div className="text-5xl font-bold leading-normal tracking-normal text-center text-[#1cc2c4] mb-16">
+              Flickit is specially helpful if...
             </div>
-            <div  className="flex flex-col justify-between items-center">
-              <Image
-                className="m-auto "
-                src={"/situation-2.svg"}
-                width={370}
-                height={370}
-                alt={"situation"}
-              />
-              <div>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-                error ducimus voluptate veniam quasi excepturi consectetur
-                repellendus eveniet consequatur ullam, inventore modi dolores
-                facere sint natus! Aliquid ea dolorum optio?
+            <div className=" flex justify-between flex-col h-full  gap-8 ">
+              <div className="flex flex-row-reverse justify-between items-center">
+                <Image
+                  src={"/situation-1.svg"}
+                  width={370}
+                  height={370}
+                  alt={"situation"}
+                  className="md:w-3/5"
+                />
+                <div className="mx-16 w-1/2">
+                  <div className="text-2xl font-bold leading-normal tracking-normal text-left text-[#0A2342] mb-6 flex">
+                    <Image
+                      src={"/Polygon-1.svg"}
+                      width={40}
+                      height={40}
+                      alt={"polygon"}
+                      className="mr-7 ml-[-64px]"
+                    />
+                    If you are about to buy a software
+                  </div>
+                  <div className="text-base font-normal leading-relaxed tracking-normal text-left text-[#0A2342] ">
+                    If you are about to buy new software and are unsure about
+                    its technical aspects, you can use a third party opinion. A
+                    proper assessment kit will provide insights into the
+                    software's technical details, enabling you to make an
+                    informed decision.
+                  </div>
+                </div>
               </div>
-            </div>
-            <div  className="flex flex-row justify-between items-center">
-              <Image
-                src={"/situation-3.svg"}
-                width={370}
-                height={370}
-                alt={"situation"}
-              />
-              <div>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-                error ducimus voluptate veniam quasi excepturi consectetur
-                repellendus eveniet consequatur ullam, inventore modi dolores
-                facere sint natus! Aliquid ea dolorum optio?
+              <div className="flex flex-col justify-between items-center">
+                <Image
+                  className="m-auto md:w-2/5"
+                  src={"/situation-2.svg"}
+                  width={370}
+                  height={370}
+                  alt={"situation"}
+                />
+                <div className="mx-16 w-1/2">
+                  <div className="text-2xl font-bold leading-normal tracking-normal text-center text-[#0A2342] mb-6 flex flex-col-reverse items-center">
+                    If you want evaluate your contractor’s work
+                    <Image
+                      src={"/Polygon-2.svg"}
+                      width={40}
+                      height={40}
+                      alt={"polygon"}
+                      className="mb-4"
+                    />
+                  </div>
+                  <div className="text-base font-normal leading-relaxed tracking-normal text-center text-[#0A2342] ">
+                    If you are about to buy new software and are unsure about
+                    its technical aspects, you can use a third party opinion. A
+                    proper assessment kit will provide insights into the
+                    software's technical details, enabling you to make an
+                    informed decision.
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-row justify-between items-center">
+                <Image
+                  src={"/situation-3.svg"}
+                  width={370}
+                  height={370}
+                  alt={"situation"}
+                  className="md:w-3/5"
+                />
+                <div className="mx-16 w-1/2">
+                  <div className="text-2xl font-bold leading-normal tracking-normal text-left text-[#0A2342] mb-6 flex justify-between">
+                    If you own a software
+                    <Image
+                      src={"/Polygon-3.svg"}
+                      width={40}
+                      height={40}
+                      alt={"polygon"}
+                    />
+                  </div>
+                  <div className="text-base font-normal leading-relaxed tracking-normal text-left text-[#0A2342] ">
+                    If you own software and want to assess your status in
+                    different aspects, there are self-assessment tools available
+                    that can help you identify your strengths and weaknesses.
+                    This will allow you to develop a strategy to optimize your
+                    work and cover your weaknesses.
+                  </div>
+                </div>
               </div>
             </div>
           </div>

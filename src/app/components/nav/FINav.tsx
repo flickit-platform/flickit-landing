@@ -30,7 +30,7 @@ export default function FINav() {
   const activeSegment = useSelectedLayoutSegment();
 
   return (
-    <nav className="flex items-center justify-between px-24 h-14 relative z-50 max-w-screen-2xl mx-auto">
+    <nav className="flex items-center justify-between px-24 h-14 relative z-50 mx-auto">
       <div>
         <Image src="/logo.svg" alt="Flickit" width={110} height={42} />
       </div>

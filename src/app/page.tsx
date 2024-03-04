@@ -84,22 +84,48 @@ export default function Home() {
   ];
 
   const QAs = [
-    { question: "How does it work?", answer: "It works like charm" },
     {
-      question: "How can i make new assessment in this platform?",
+      question: "What is Flickit platform?",
       answer:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus cum quidem amet consectetur adipisicing elit. Doloribus cum quidem eum harum necessitatibus, molestias deleniti, Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus cum quidem amet consectetur adipisicing elit. Doloribus cum quidem eum harum necessitatibus, molestias deleniti, Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus cum quidem amet consectetur adipisicing elit. Doloribus cum quidem eum harum necessitatibus, molestias deleniti,",
+        "The Flickit platform is a powerful tool for evaluating and assessing software products. It allows users to assess the maturity level of their software across different quality attributes and dimensions. By analyzing the scores of software in different attributes and subjects, it helps users make informed decisions and reduce the risks and costs associated with software defects and failures.",
     },
-    { question: "How does it work?", answer: "It works like charm" },
-    { question: "How does it work?", answer: "It works like charm" },
-    { question: "How does it work?", answer: "It works like charm" },
-    { question: "How does it work?", answer: "It works like charm" },
-    { question: "How does it work?", answer: "It works like charm" },
-    { question: "How does it work?", answer: "It works like charm" },
+    {
+      question: "What are the benefits of using Flickit platform?",
+      answer:
+        "Flickit platform offers several benefits, including:Improved software quality and performance Better decision-making based on objective data and metrics Increased efficiency and productivity in the software development process Reduction of risk and cost associated with software defects and failures",
+    },
+    {
+      question: "How does Flickit platform work?",
+      answer:
+        "Flickit platform uses a proprietary evaluation methodology and a comprehensive set of evaluation criteria and tools to assess the maturity level of software products across various quality attributes and dimensions. Users can customize the evaluation process to meet their specific needs, and the platform provides detailed reports and analytics to help users make data-driven decisions.",
+    },
+    {
+      question: "Who can benefit from using Flickit platform?",
+      answer:
+        "The Flickit platform is perfect for teams involved in software development, software vendors, IT departments, and anyone responsible for software management. Whether you want to enhance the quality of your software products, minimize the risks and costs associated with software defects, or make data-driven decisions based on objective metrics, the Flickit platform can be a valuable aid.",
+    },
+    {
+      question: "How can I get started with Flickit platform?",
+      answer:
+        "Signing up for free is all it takes to get started with the Flickit platform. Our team of experts is available to guide you and answer any questions throughout the assessment process.",
+    },
+    {
+      question:
+        "What kind of reports and analytics does Flickit platform provide?",
+      answer:
+        "The Flickit platform offers various reports and analytics that can assist users in making data-driven decisions about their software products. These reports include: 1. Maturity level reports: The Flickit platform generates reports that display the maturity level of the software product across different quality attributes and dimensions, helping users to identify areas of strength and weakness in the product and prioritize improvement efforts. 2. Trend analysis: The Flickit platform provides trend analysis reports that indicate how the maturity level of the software product has changed over time. This can help users track progress and measure the impact of improvement initiatives. 3. Benchmarking reports: The Flickit platform provides benchmarking reports that compare the maturity level of the software product to industry standards or best practices. This can help users understand how their product stacks up against competitors or industry norms. 4. Risk analysis: The Flickit platform generates risk analysis reports that identify potential risks or issues in the software product and provide recommendations for mitigating those risks. 5. Actionable insights: The Flickit platform provides actionable insights based on the evaluation results, such as specific recommendations for improving the product's maturity level or addressing identified risks. Overall, the Flickit platform's reports and analytics offer users valuable insights into the maturity level of their software products, enabling them to make more informed decisions and take targeted actions to improve software quality and performance.",
+    },
+    {
+      question:
+        "Can you explain how Flickit platform generates maturity level reports?",
+      answer:
+        "The Flickit platform uses a unique evaluation methodology along with a comprehensive set of evaluation criteria and tools to assess the maturity level of software products. This evaluation process involves collecting data on the software product's performance and capabilities, which is then compared against industry standards or best practices. To generate a maturity level report, the Flickit platform first collects data on the software product's performance across various quality attributes and dimensions. This data is collected using a range of evaluation tools, such as surveys, interviews, and automated tests. The collected data is then analyzed and scored based on a set of predefined evaluation criteria. These criteria are designed to measure the software product's maturity level across various quality attributes and dimensions, such as functionality, reliability, performance, and maintainability. After the data has been scored, the Flickit platform generates a maturity level report that shows the software product's maturity level across each quality attribute and dimension. The report typically includes a visual representation of the maturity level, such as a chart or graph, along with a detailed description of the evaluation results. By using this maturity level report, users can identify areas of strengths and weaknesses in their software products and prioritize improvement efforts accordingly. This report can also be used as a benchmarking tool to compare the software product's maturity level against industry standards or best practices. Overall, the Flickit platform's maturity level reports provide valuable insights into the quality and performance of software products, thus empowering users to make data-driven decisions and take targeted actions to improve their software maturity levels.",
+    },
   ];
 
   const [tab, setActiveTab] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
+  const [selectedFAQ, setSelectedFAQ] = useState(0);
+  const [isHovered, setIsHovered] = useState(0);
 
   return (
     <main>
@@ -292,7 +318,7 @@ export default function Home() {
       </section> */}
 
       <section className="mx-auto max-w-screen-2xl">
-        <div className="flex flex-col items-center justify-center relative top-16 bg-[url('/bg-polygon.svg')] bg-cover bg-center w-full bg-no-repeat h-dvh">
+        <div className="flex flex-col items-center justify-center relative top-16 bg-[url('/bg-polygon.svg')]  w-full bg-no-repeat pb-[10%]">
           <div className="flex flex-col items-center justify-center w-1/2 my-48">
             <div className="text-[#c7cfcf] text-center font-['Sansation-Regular',_sans-serif] text-[25px] leading-tight font-normal relative w-[517px]">
               The ultimate tool for Assessing your software{" "}
@@ -335,8 +361,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mt-48">
-        <div className="bg-[url('/bg-shapes.svg')] object-cover w-full bg-no-repeat h-[700px] py-16 md:px-16 lg:px-32 reletive">
+      <section className="mt-48 mx-auto bg-[#1cc2c4]">
+        <div className="bg-[url('/bg-shapes.svg')] object-cover w-full bg-no-repeat h-[700px] py-16 md:px-16 lg:px-32 2xl:px-64 reletive">
           <Image
             src={"/polygon-vector.svg"}
             className="absolute z-1 left-4 mt-[-186px]"
@@ -406,8 +432,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section>
-        <div className=" flex flex-col items-center justify-center relative top-16 bg-[url('/midle-shape-bg.svg')] bg-cover  w-full bg-no-repeat  h-[1987px] md:py-32 md:px-16 lg:p-32 ">
+      <section className="mx-auto">
+        <div className=" flex flex-col items-center justify-center relative top-16 bg-[url('/midle-shape-bg.svg')] w-full bg-no-repeat   md:py-32 md:px-16 lg:p-32 ">
           <div className="backdrop-blur-md w-full h-full bg-white/70 rounded-[32px] flex  flex-col p-16 md:px-16 lg:px-32">
             <div className="text-5xl font-bold leading-normal tracking-normal text-center text-[#1cc2c4] mb-16">
               Flickit is specially helpful if...
@@ -500,18 +526,14 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="mt-52">
+      <section className="mt-52 mx-auto">
         <div className="w-full flex justify-center items-center mb-16">
           <button className="w-2/3 bg-[#1cc2c4] font-medium text-6xl text-[#edf4fc] text-center rounded-full py-4">
             Try it for free
           </button>
         </div>
-        <div className="flex w-full justify-between items-center gap-8 p-16">
-          <div
-            className="relative"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
+        <div className="flex w-full justify-between items-center p-16">
+          <div className="relative md:scale-50 lg:scale-100">
             <svg
               width="400"
               height="458"
@@ -614,11 +636,7 @@ export default function Home() {
                 </linearGradient>
               </defs>
             </svg>
-            <div
-              className="absolute bottom-[16%] w-full flex flex-col justify-between items-center p-8 gap-4"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            >
+            <div className="absolute bottom-[16%] w-full flex flex-col justify-between items-center p-8 gap-4">
               <Image
                 src={"/handshake.svg"}
                 width={140}
@@ -635,11 +653,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div
-            className="relative"
-            // onMouseEnter={() => setIsHovered(true)}
-            // onMouseLeave={() => setIsHovered(false)}
-          >
+          <div className="relative md:scale-50 lg:scale-100">
             <svg
               width="400"
               height="458"
@@ -742,11 +756,7 @@ export default function Home() {
                 </linearGradient>
               </defs>
             </svg>
-            <div
-              className="absolute bottom-[16%] w-full flex flex-col justify-between items-center p-8 gap-4"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            >
+            <div className="absolute bottom-[16%] w-full flex flex-col justify-between items-center p-8 gap-4">
               <Image
                 src={"/dashboard.svg"}
                 width={140}
@@ -763,11 +773,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div
-            className="relative"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
+          <div className="relative md:scale-50 lg:scale-100">
             <svg
               width="400"
               height="458"
@@ -870,11 +876,7 @@ export default function Home() {
                 </linearGradient>
               </defs>
             </svg>
-            <div
-              className="absolute bottom-[16%] w-full flex flex-col justify-between items-center p-8 gap-4"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            >
+            <div className="absolute bottom-[16%] w-full flex flex-col justify-between items-center p-8 gap-4">
               <Image
                 src={"/chart-ilustration.svg"}
                 width={120}
@@ -893,6 +895,60 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="mx-auto w-full">
+        <div className="flex justify-between px-16 py-8  w-full gap-16 bg-[url('/faq-bg.svg')] bg-no-repeat bg-cover">
+          <div className="flex flex-col justify-between bg-white rounded-3xl py-8 px-16 w-1/2">
+            <div className="mb-8 text-4xl font-bold leading-normal tracking-normal text-center text-[#1cc2c4]">
+              Ferquently asked questions
+            </div>
+            <div className="flex flex-col gap-2">
+              {QAs.map((qa, index) => {
+                return (
+                  <div
+                    className="flex cursor-pointer"
+                    onClick={() => setSelectedFAQ(index)}
+                  >
+                    <Image
+                      src={"/arrow-icon.svg"}
+                      width={28}
+                      height={14}
+                      alt={"arrow"}
+                      className={`mr-2 ml-[-36px]  ${
+                        selectedFAQ === index ? "" : "hidden"
+                      }`}
+                    />
+                    <div
+                      className={`font-medium text-base ${
+                        selectedFAQ === index
+                          ? "text-[#1cc2c4]"
+                          : "text-[#6c7b8e]"
+                      } hover:text-[#1cc2c4]`}
+                    >
+                      {qa.question}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <div className="w-1/2 flex ">
+            <div className="flex gap-6 p-8 justify-center">
+              <div className=" border-2 border-white rounded-full bg-white  text-transparent">
+                .
+              </div>
+              <div className="flex flex-col justify-center">
+                <div className="text-2xl text-bold text-white text-left">
+                  {QAs[selectedFAQ]?.question}
+                </div>
+                <div className="text-sm font-light text-white ">
+                  {QAs[selectedFAQ]?.answer}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <footer className="mt-36 mx-4">
         <div className="mx-auto w-full max-w-screen-2xl p-4">
           <div className="flex w-full items-center justify-center flex-col">
@@ -917,39 +973,3 @@ export default function Home() {
     </main>
   );
 }
-
-const Expandable = ({
-  question,
-  answer,
-}: {
-  question: string;
-  answer: string;
-}) => {
-  const [isExpanded, setIsExpand] = useState(false);
-  const childRef = useRef<HTMLParagraphElement | null>(null);
-  return (
-    <div
-      className="bg-white text-black rounded-xl transition-all p-6 w-[calc(50%-34px)] duration-300 shadow-md hover:shadow-lg border border-gray-100 cursor-pointer mb-6"
-      onClick={() => setIsExpand(!isExpanded)}
-    >
-      <div className="flex">
-        <Image
-          src={isExpanded ? "/minus.svg" : "/plus.svg"}
-          width={24}
-          height={24}
-          alt={"expand"}
-        />
-        <h6 className="text-lg font-bold ml-6">{question}</h6>
-      </div>
-      <div
-        className={`overflow-hidden duration-300 transition-all text-lg ml-12`}
-        style={{
-          height: isExpanded ? `${childRef.current?.clientHeight}px` : "0px",
-          marginTop: isExpanded ? `18px` : "0px",
-        }}
-      >
-        <p ref={childRef}>{answer}</p>
-      </div>
-    </div>
-  );
-};

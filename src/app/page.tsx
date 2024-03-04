@@ -99,6 +99,7 @@ export default function Home() {
   ];
 
   const [tab, setActiveTab] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <main>
@@ -499,7 +500,399 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      <section className="mt-52">
+        <div className="w-full flex justify-center items-center mb-16">
+          <button className="w-2/3 bg-[#1cc2c4] font-medium text-6xl text-[#edf4fc] text-center rounded-full py-4">
+            Try it for free
+          </button>
+        </div>
+        <div className="flex w-full justify-between items-center gap-8 p-16">
+          <div
+            className="relative"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <svg
+              width="400"
+              height="458"
+              viewBox="0 0 400 458"
+              fill={isHovered ? "#A4E7E7" : "none"}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g filter="url(#filter0_bdi_933_1775)">
+                <path
+                  d="M195.924 5.07293C198.402 3.64236 201.455 3.64236 203.933 5.07293L391.853 113.569C394.331 114.999 395.857 117.643 395.857 120.504V337.496C395.857 340.357 394.331 343.001 391.853 344.431L203.933 452.927C201.455 454.358 198.402 454.358 195.924 452.927L8.00423 344.431C5.5264 343.001 4 340.357 4 337.496V120.504C4 117.643 5.5264 114.999 8.00423 113.569L195.924 5.07293Z"
+                  fill="url(#paint0_linear_933_1775)"
+                  fill-opacity="0.2"
+                  shape-rendering="crispEdges"
+                />
+                <path
+                  d="M196.924 6.80498C198.783 5.73168 201.074 5.73167 202.933 6.80498L390.853 115.301C392.712 116.374 393.857 118.358 393.857 120.504V337.496C393.857 339.642 392.712 341.626 390.853 342.699L202.933 451.195C201.074 452.268 198.783 452.268 196.924 451.195L9.00423 342.699C7.1452 341.626 6 339.642 6 337.496V120.504C6 118.358 7.14521 116.374 9.00423 115.301L196.924 6.80498Z"
+                  stroke="#1CC2C4"
+                  stroke-width="4"
+                  shape-rendering="crispEdges"
+                />
+              </g>
+              <defs>
+                <filter
+                  id="filter0_bdi_933_1775"
+                  x="-46"
+                  y="-46"
+                  width="491.857"
+                  height="550"
+                  filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB"
+                >
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feGaussianBlur in="BackgroundImageFix" stdDeviation="25" />
+                  <feComposite
+                    in2="SourceAlpha"
+                    operator="in"
+                    result="effect1_backgroundBlur_933_1775"
+                  />
+                  <feColorMatrix
+                    in="SourceAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    result="hardAlpha"
+                  />
+                  <feOffset />
+                  <feGaussianBlur stdDeviation="2" />
+                  <feComposite in2="hardAlpha" operator="out" />
+                  <feColorMatrix
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in2="effect1_backgroundBlur_933_1775"
+                    result="effect2_dropShadow_933_1775"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="effect2_dropShadow_933_1775"
+                    result="shape"
+                  />
+                  <feColorMatrix
+                    in="SourceAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    result="hardAlpha"
+                  />
+                  <feOffset dy="4" />
+                  <feGaussianBlur stdDeviation="11.1" />
+                  <feComposite
+                    in2="hardAlpha"
+                    operator="arithmetic"
+                    k2="-1"
+                    k3="1"
+                  />
+                  <feColorMatrix
+                    type="matrix"
+                    values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in2="shape"
+                    result="effect3_innerShadow_933_1775"
+                  />
+                </filter>
+                <linearGradient
+                  id="paint0_linear_933_1775"
+                  x1="4"
+                  y1="109.787"
+                  x2="395.857"
+                  y2="109.787"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#CEE3E4" />
+                  <stop offset="0.0539996" stop-color="#DDEFF4" />
+                  <stop offset="0.475" stop-color="#EDF4FC" />
+                  <stop offset="0.909" stop-color="#E2F8F9" />
+                  <stop offset="1" stop-color="#CEE2E4" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <div
+              className="absolute bottom-[16%] w-full flex flex-col justify-between items-center p-8 gap-4"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
+              <Image
+                src={"/handshake.svg"}
+                width={140}
+                height={100}
+                alt={"handshake"}
+                className="mb-6"
+              />
+              <div className="font-medium text-2xl text-[#0A2342] text-center">
+                Trusted by indusrty leaders
+              </div>
+              <div className="font-light text-base text-[#0A2342] text-center">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua
+              </div>
+            </div>
+          </div>
+          <div
+            className="relative"
+            // onMouseEnter={() => setIsHovered(true)}
+            // onMouseLeave={() => setIsHovered(false)}
+          >
+            <svg
+              width="400"
+              height="458"
+              viewBox="0 0 400 458"
+              fill={isHovered ? "#A4E7E7" : "none"}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g filter="url(#filter0_bdi_933_1775)">
+                <path
+                  d="M195.924 5.07293C198.402 3.64236 201.455 3.64236 203.933 5.07293L391.853 113.569C394.331 114.999 395.857 117.643 395.857 120.504V337.496C395.857 340.357 394.331 343.001 391.853 344.431L203.933 452.927C201.455 454.358 198.402 454.358 195.924 452.927L8.00423 344.431C5.5264 343.001 4 340.357 4 337.496V120.504C4 117.643 5.5264 114.999 8.00423 113.569L195.924 5.07293Z"
+                  fill="url(#paint0_linear_933_1775)"
+                  fill-opacity="0.2"
+                  shape-rendering="crispEdges"
+                />
+                <path
+                  d="M196.924 6.80498C198.783 5.73168 201.074 5.73167 202.933 6.80498L390.853 115.301C392.712 116.374 393.857 118.358 393.857 120.504V337.496C393.857 339.642 392.712 341.626 390.853 342.699L202.933 451.195C201.074 452.268 198.783 452.268 196.924 451.195L9.00423 342.699C7.1452 341.626 6 339.642 6 337.496V120.504C6 118.358 7.14521 116.374 9.00423 115.301L196.924 6.80498Z"
+                  stroke="#1CC2C4"
+                  stroke-width="4"
+                  shape-rendering="crispEdges"
+                />
+              </g>
+              <defs>
+                <filter
+                  id="filter0_bdi_933_1775"
+                  x="-46"
+                  y="-46"
+                  width="491.857"
+                  height="550"
+                  filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB"
+                >
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feGaussianBlur in="BackgroundImageFix" stdDeviation="25" />
+                  <feComposite
+                    in2="SourceAlpha"
+                    operator="in"
+                    result="effect1_backgroundBlur_933_1775"
+                  />
+                  <feColorMatrix
+                    in="SourceAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    result="hardAlpha"
+                  />
+                  <feOffset />
+                  <feGaussianBlur stdDeviation="2" />
+                  <feComposite in2="hardAlpha" operator="out" />
+                  <feColorMatrix
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in2="effect1_backgroundBlur_933_1775"
+                    result="effect2_dropShadow_933_1775"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="effect2_dropShadow_933_1775"
+                    result="shape"
+                  />
+                  <feColorMatrix
+                    in="SourceAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    result="hardAlpha"
+                  />
+                  <feOffset dy="4" />
+                  <feGaussianBlur stdDeviation="11.1" />
+                  <feComposite
+                    in2="hardAlpha"
+                    operator="arithmetic"
+                    k2="-1"
+                    k3="1"
+                  />
+                  <feColorMatrix
+                    type="matrix"
+                    values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in2="shape"
+                    result="effect3_innerShadow_933_1775"
+                  />
+                </filter>
+                <linearGradient
+                  id="paint0_linear_933_1775"
+                  x1="4"
+                  y1="109.787"
+                  x2="395.857"
+                  y2="109.787"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#CEE3E4" />
+                  <stop offset="0.0539996" stop-color="#DDEFF4" />
+                  <stop offset="0.475" stop-color="#EDF4FC" />
+                  <stop offset="0.909" stop-color="#E2F8F9" />
+                  <stop offset="1" stop-color="#CEE2E4" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <div
+              className="absolute bottom-[16%] w-full flex flex-col justify-between items-center p-8 gap-4"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
+              <Image
+                src={"/dashboard.svg"}
+                width={140}
+                height={100}
+                alt={"dashboard"}
+                className="mb-6"
+              />
+              <div className="font-medium text-2xl text-[#0A2342] text-center">
+                Track your progress
+              </div>
+              <div className="font-light text-base text-[#0A2342] text-center">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua
+              </div>
+            </div>
+          </div>
+          <div
+            className="relative"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <svg
+              width="400"
+              height="458"
+              viewBox="0 0 400 458"
+              fill={isHovered ? "#A4E7E7" : "none"}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g filter="url(#filter0_bdi_933_1775)">
+                <path
+                  d="M195.924 5.07293C198.402 3.64236 201.455 3.64236 203.933 5.07293L391.853 113.569C394.331 114.999 395.857 117.643 395.857 120.504V337.496C395.857 340.357 394.331 343.001 391.853 344.431L203.933 452.927C201.455 454.358 198.402 454.358 195.924 452.927L8.00423 344.431C5.5264 343.001 4 340.357 4 337.496V120.504C4 117.643 5.5264 114.999 8.00423 113.569L195.924 5.07293Z"
+                  fill="url(#paint0_linear_933_1775)"
+                  fill-opacity="0.2"
+                  shape-rendering="crispEdges"
+                />
+                <path
+                  d="M196.924 6.80498C198.783 5.73168 201.074 5.73167 202.933 6.80498L390.853 115.301C392.712 116.374 393.857 118.358 393.857 120.504V337.496C393.857 339.642 392.712 341.626 390.853 342.699L202.933 451.195C201.074 452.268 198.783 452.268 196.924 451.195L9.00423 342.699C7.1452 341.626 6 339.642 6 337.496V120.504C6 118.358 7.14521 116.374 9.00423 115.301L196.924 6.80498Z"
+                  stroke="#1CC2C4"
+                  stroke-width="4"
+                  shape-rendering="crispEdges"
+                />
+              </g>
+              <defs>
+                <filter
+                  id="filter0_bdi_933_1775"
+                  x="-46"
+                  y="-46"
+                  width="491.857"
+                  height="550"
+                  filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB"
+                >
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feGaussianBlur in="BackgroundImageFix" stdDeviation="25" />
+                  <feComposite
+                    in2="SourceAlpha"
+                    operator="in"
+                    result="effect1_backgroundBlur_933_1775"
+                  />
+                  <feColorMatrix
+                    in="SourceAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    result="hardAlpha"
+                  />
+                  <feOffset />
+                  <feGaussianBlur stdDeviation="2" />
+                  <feComposite in2="hardAlpha" operator="out" />
+                  <feColorMatrix
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in2="effect1_backgroundBlur_933_1775"
+                    result="effect2_dropShadow_933_1775"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="effect2_dropShadow_933_1775"
+                    result="shape"
+                  />
+                  <feColorMatrix
+                    in="SourceAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    result="hardAlpha"
+                  />
+                  <feOffset dy="4" />
+                  <feGaussianBlur stdDeviation="11.1" />
+                  <feComposite
+                    in2="hardAlpha"
+                    operator="arithmetic"
+                    k2="-1"
+                    k3="1"
+                  />
+                  <feColorMatrix
+                    type="matrix"
+                    values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in2="shape"
+                    result="effect3_innerShadow_933_1775"
+                  />
+                </filter>
+                <linearGradient
+                  id="paint0_linear_933_1775"
+                  x1="4"
+                  y1="109.787"
+                  x2="395.857"
+                  y2="109.787"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#CEE3E4" />
+                  <stop offset="0.0539996" stop-color="#DDEFF4" />
+                  <stop offset="0.475" stop-color="#EDF4FC" />
+                  <stop offset="0.909" stop-color="#E2F8F9" />
+                  <stop offset="1" stop-color="#CEE2E4" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <div
+              className="absolute bottom-[16%] w-full flex flex-col justify-between items-center p-8 gap-4"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
+              <Image
+                src={"/chart-ilustration.svg"}
+                width={120}
+                height={120}
+                alt={"chart-ilustration"}
+                className="mb-6"
+              />
+              <div className="font-medium text-2xl text-[#0A2342] text-center">
+                Trusted by indusrty leaders
+              </div>
+              <div className="font-light text-base text-[#0A2342] text-center">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <footer className="mt-36 mx-4">
         <div className="mx-auto w-full max-w-screen-2xl p-4">
           <div className="flex w-full items-center justify-center flex-col">

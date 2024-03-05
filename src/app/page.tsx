@@ -4,86 +4,7 @@ import { useRef, useState } from "react";
 import Typewriter from "./components/TyprWriter";
 
 export default function Home() {
-  const assessmentKits: any[] = [
-    {
-      title: "Qualify an enterprise system",
-      href: "https://flickit.org/profiles",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus cum quidem eum harum necessitatibus, molestias deleniti,Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus cum quidem eum harum necessitatibus, molestias deleniti, Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus cum quidem eum harum necessitatibus, molestias deleniti,vero ipsa ab excepturi",
-      extras: { questionnaires: 42, attributes: 23 },
-    },
-    {
-      title: "Evaluate Security of an Application",
-      href: "https://flickit.org/profiles",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus cum quidem eum harum necessitatibus, molestias deleniti,Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus cum quidem eum harum necessitatibus, molestias deleniti, Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus cum quidem eum harum necessitatibus, molestias deleniti,vero ipsa ab excepturi",
-      extras: { questionnaires: 42, attributes: 23 },
-    },
-    {
-      title: "Technical Due Diligence of a Startup",
-      href: "https://flickit.org/profiles",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus cum quidem eum harum necessitatibus, molestias deleniti,Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus cum quidem eum harum necessitatibus, molestias deleniti, Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus cum quidem eum harum necessitatibus, molestias deleniti,vero ipsa ab excepturi",
-      extras: { questionnaires: 42, attributes: 23 },
-    },
-  ];
-
-  const features = [
-    {
-      img: "/comprehensive-reports.svg",
-      title: "Conduct 360° system evaluation with comprehensive reports",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus cum quidem eum harum necessitatibus, molestias deleniti,",
-    },
-    {
-      img: "/self-assessment.svg",
-      title: "Carry out self-assessment",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolo consectetur adipisicing elit. Doloribus cum quidem eum harum necessitatibus, molestias deleniti,",
-    },
-    {
-      img: "different-kits.svg",
-      title: "Use specialized Assessment Kits for different types of issues",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus cum, molestias deleniti,Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus cum quidem eum harum necessitatibus, molestias deleniti,",
-    },
-    {
-      img: "find-assessor.svg",
-      title: "Find a professional assesso",
-      desc: "consectetur adipisicing elit. Doloribus cum quidem eum harum necessitatibus, molestias deleniti,Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus cum quidem eum harum necessitatibus, molestias deleniti,",
-    },
-    {
-      img: "create-assessment.svg",
-      title: "Create your own Assessment Kit",
-      desc: "Lorem ipsum dolor sit ametDoloribus cum quidem eum harum necessitatibus, molestias deleniti,",
-    },
-    {
-      img: "compare.svg",
-      title: "Compare the assessment results of different alternatives",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus cum quidem amet consectetur adipisicing elit. Doloribus cum quidem eum harum necessitatibus, molestias deleniti,",
-    },
-  ];
-
-  const peopleQuotes = [
-    {
-      name: "Omid Bidkham",
-      img: "/person-1.webp",
-      relation: {
-        relation: "expert",
-        title: "Flickit Group",
-        href: "https://flickit.org/expert-groups",
-      },
-      quote:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus cum quidem amet consectetur adipisicing elit. Doloribus cum quidem eum harum necessitatibus, molestias deleniti, Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus cum quidem amet consectetur adipisicing elit. Doloribus cum quidem eum harum necessitatibus, molestias deleniti, Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus cum quidem amet consectetur adipisicing elit. Doloribus cum quidem eum harum necessitatibus, molestias deleniti,",
-    },
-    {
-      name: "Omid Bidkham",
-      img: "/person-2.webp",
-      relation: {
-        relation: "expert",
-        title: "Flickit Group",
-        href: "https://flickit.org/expert-groups",
-      },
-      quote:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus cum quidem amet consectetur adipisicing elit. Doloribus cum quidem eum harum necessitatibus, molestias deleniti, Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus cum quidem amet consectetur adipisicing elit. Doloribus cum quidem eum harum necessitatibus, molestias deleniti, Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus cum quidem amet consectetur adipisicing elit. Doloribus cum quidem eum harum necessitatibus, molestias deleniti,",
-    },
-  ];
-
-  const QAs = [
+  const QAs: any[] = [
     {
       question: "What is Flickit platform?",
       answer:
@@ -317,31 +238,18 @@ export default function Home() {
         </div>
       </section> */}
 
-      <section className="mx-auto max-w-screen-2xl">
-        <div className="flex flex-col items-center justify-center relative top-16 bg-[url('/bg-polygon.svg')]  w-full bg-no-repeat pb-[10%]">
-          <div className="flex flex-col items-center justify-center w-1/2 my-48">
-            <div className="text-[#c7cfcf] text-center font-['Sansation-Regular',_sans-serif] text-[25px] leading-tight font-normal relative w-[517px]">
-              The ultimate tool for Assessing your software{" "}
+      <section className="mx-auto">
+        <div className="flex flex-col items-center justify-center relative top-16 sm:bg-[url('/bg-polygon.svg')]  w-full bg-no-repeat pb-[10%]">
+          <div className="flex flex-col items-center justify-center max-sm:w-full max-sm:px-4 max-sm:gap-8 w-1/2 max-sm:my-2 my-48">
+            <div className="text-[#c7cfcf] text-center max-sm:text-xl text-[25px] leading-tight font-normal relative w-full max-sm:px-8">
+              The ultimate tool for Assessing your software
             </div>
-            <div
-              className="text-center font-['Sansation-Bold',_sans-serif] text-7xl leading-tight font-bold relative self-stretch"
-              style={{
-                color:
-                  "radial-gradient(closest-side, rgba(28, 194, 196, 1.00) 0%,rgba(16, 97, 98, 1.00) 100%)",
-              }}
-            >
+            <div className="text-center max-sm:text-4xl md:text-7xl leading-tight font-bold relative self-stretch">
               Eliminate quality blind spots by relying on experts&#039;
               algorithms.
             </div>
             <div className="flex flex-col gap-6 items-center justify-center self-stretch shrink-0 relative">
-              <div
-                className="text-center font-['Ubuntu-Regular',_sans-serif] text-xl leading-[135%] font-normal relative self-stretch"
-                style={{
-                  color:
-                    "var(--midnight-black-gradiant, radial-gradient(closest-side, rgba(10, 35, 66, 1.00) 0%,rgba(2, 12, 25, 1.00) 100%))",
-                  opacity: "0.800000011920929",
-                }}
-              >
+              <div className="text-center max-sm:text-sm text-xl  font-normal relative self-stretch">
                 Flickit is a software assessment platform that enables software
                 owners and developers to evaluate their software in different
                 subjects and factors of their choice. Users can create their own
@@ -350,10 +258,10 @@ export default function Home() {
               </div>
             </div>
             <div className="mt-4">
-              <button className="rounded-full border border-solid border-[#1cc2c4] bg-[#1cc2c4bf]  px-6 py-2.5 text-[#edf4fc]">
+              <button className="max-sm:text-sm rounded-full border border-solid border-[#1cc2c4] bg-[#1cc2c4bf]  px-6 py-2.5 text-[#edf4fc]">
                 Getting started
               </button>
-              <button className="rounded-full  px-6 py-2.5 text-[#1cc2c4]">
+              <button className="max-sm:text-sm rounded-full  px-6 py-2.5 text-[#1cc2c4]">
                 Read more...
               </button>
             </div>
@@ -361,8 +269,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mt-48 mx-auto bg-[#1cc2c4]">
-        <div className="bg-[url('/bg-shapes.svg')] object-cover w-full bg-no-repeat h-[700px] py-16 md:px-16 lg:px-32 2xl:px-64 reletive">
+      <section className="max-sm:mt-16 mt-48 mx-auto max-sm:bg-[#EDFCFC] bg-[#1cc2c4]">
+        <div className="max-sm:hidden bg-[url('/bg-shapes.svg')] object-cover w-full bg-no-repeat h-[700px] py-16 md:px-16 lg:px-32 2xl:px-64 reletive">
           <Image
             src={"/polygon-vector.svg"}
             className="absolute z-1 left-4 mt-[-186px]"
@@ -410,6 +318,7 @@ export default function Home() {
                 questions and provide relevant information.
               </div>
             </div>
+
             <div className=" flex flex-col justify-start items-center gap-6 p-4 border border-solid border-gray-200 rounded-lg shadow-inner bg-teal-50 w-[320px]">
               <Image
                 src={"/Shape-ilustration-3.png"}
@@ -431,11 +340,55 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        <div className="sm:hidden bg-[url('/bg-mobile.svg')] w-full bg-no-repeat bg-cover  h-[140vh] py-16">
+          <div className="text-4xl text-center w-full font-bold  text-[#edf4fc] ">
+            How does it works?
+          </div>
+          <div className="flex flex-col justify-between p-16">
+            <div className="bg-[url('/polygon-mobile.svg')] bg-no-repeat bg-cover h-[210px] w-[180px] flex flex-col justify-center items-center gap-4 px-2 text-center">
+              <div className="font-medium text-[10px] text-[#9DA7B3]">
+                step 1.
+              </div>
+              <div className="text-sm font-medium text-[#1cc2c4] ">
+                Address the right toolkit
+              </div>
+              <div className="text-xs font-light text-[#EDF4FC]">
+                This indicates the initial step of selecting the appropriate
+                toolkit tailored to the user's needs.
+              </div>
+            </div>
+            <div className="ml-auto bg-[url('/polygon-mobile.svg')] bg-no-repeat bg-cover h-[210px] w-[180px] flex flex-col justify-center items-center gap-4 px-2 text-center">
+              <div className="font-medium text-[10px] text-[#9DA7B3]">
+                step 1.
+              </div>
+              <div className="text-sm font-medium text-[#1cc2c4] ">
+                Address the right toolkit
+              </div>
+              <div className="text-xs font-light text-[#EDF4FC]">
+                This indicates the initial step of selecting the appropriate
+                toolkit tailored to the user's needs.
+              </div>
+            </div>
+            <div className="bg-[url('/polygon-mobile.svg')] bg-no-repeat bg-cover h-[210px] w-[180px] flex flex-col justify-center items-center gap-4 px-2 text-center">
+              <div className="font-medium text-[10px] text-[#9DA7B3]">
+                step 1.
+              </div>
+              <div className="text-sm font-medium text-[#1cc2c4] ">
+                Address the right toolkit
+              </div>
+              <div className="text-xs font-light text-[#EDF4FC]">
+                This indicates the initial step of selecting the appropriate
+                toolkit tailored to the user's needs.
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
-      <section className="mx-auto">
-        <div className=" flex flex-col items-center justify-center relative top-16 bg-[url('/midle-shape-bg.svg')] w-full bg-no-repeat   md:py-32 md:px-16 lg:p-32 ">
-          <div className="backdrop-blur-md w-full h-full bg-white/70 rounded-[32px] flex  flex-col p-16 md:px-16 lg:px-32">
-            <div className="text-5xl font-bold leading-normal tracking-normal text-center text-[#1cc2c4] mb-16">
+      <section className="mx-auto mb-8">
+        <div className=" flex flex-col items-center justify-center relative top-16 bg-[url('/midle-shape-bg.svg')] w-full bg-no-repeat max-sm:py-4 max-sm:px-4  md:py-32 md:px-16 lg:p-32 ">
+          <div className="backdrop-blur-md w-full h-full bg-white/70 rounded-[32px] flex  flex-col p-16  max-sm:py-4 max-sm:px-4 md:px-16 lg:px-32">
+            <div className="text-5xl font-bold leading-normal tracking-normal text-center max-sm:hidden text-[#1cc2c4] mb-16">
               Flickit is specially helpful if...
             </div>
             <div className=" flex justify-between flex-col h-full  gap-8 ">
@@ -445,20 +398,20 @@ export default function Home() {
                   width={370}
                   height={370}
                   alt={"situation"}
-                  className="md:w-3/5"
+                  className="md:w-3/5  max-sm:w-[160px]"
                 />
-                <div className="mx-16 w-1/2">
-                  <div className="text-2xl font-bold leading-normal tracking-normal text-left text-[#0A2342] mb-6 flex">
+                <div className="mx-16 w-1/2 max-sm:w-full max-sm:mx-4">
+                  <div className="max-sm:text-sm text-2xl font-bold leading-normal tracking-normal text-left text-[#0A2342] mb-6 flex">
                     <Image
                       src={"/Polygon-1.svg"}
                       width={40}
                       height={40}
                       alt={"polygon"}
-                      className="mr-7 ml-[-64px]"
+                      className="mr-7 ml-[-64px] max-sm:w-[18px] max-sm:mr-2 max-sm:ml-[-24px]"
                     />
                     If you are about to buy a software
                   </div>
-                  <div className="text-base font-normal leading-relaxed tracking-normal text-left text-[#0A2342] ">
+                  <div className="max-sm:mt-4 max-sm:text-xs max-sm:font-light text-base font-normal leading-relaxed tracking-normal text-left text-[#0A2342]">
                     If you are about to buy new software and are unsure about
                     its technical aspects, you can use a third party opinion. A
                     proper assessment kit will provide insights into the
@@ -467,26 +420,26 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col justify-between items-center">
+              <div className="flex flex-col justify-between items-center max-sm:gap-4">
                 <Image
-                  className="m-auto md:w-2/5"
+                  className="m-auto md:w-2/5 max-sm:w-[160px]"
                   src={"/situation-2.svg"}
                   width={370}
                   height={370}
                   alt={"situation"}
                 />
-                <div className="mx-16 w-1/2">
-                  <div className="text-2xl font-bold leading-normal tracking-normal text-center text-[#0A2342] mb-6 flex flex-col-reverse items-center">
+                <div className="mx-16 w-1/2 max-sm:w-full max-sm:mx-4 max-sm:mt-4">
+                  <div className="max-sm:w-2/3 max-sm:text-sm max-sm:m-auto text-2xl font-bold leading-normal tracking-normal text-center text-[#0A2342] mb-6 flex max-sm:flex-row-reverse flex-col-reverse items-center">
                     If you want evaluate your contractor’s work
                     <Image
                       src={"/Polygon-2.svg"}
                       width={40}
                       height={40}
                       alt={"polygon"}
-                      className="mb-4"
+                      className="mb-4 max-sm:w-[18px] max-sm:mr-2 max-sm:mb-0 "
                     />
                   </div>
-                  <div className="text-base font-normal leading-relaxed tracking-normal text-center text-[#0A2342] ">
+                  <div className="max-sm:mt-4 max-sm:text-xs max-sm:font-light text-base font-normal leading-relaxed tracking-normal text-center text-[#0A2342] ">
                     If you are about to buy new software and are unsure about
                     its technical aspects, you can use a third party opinion. A
                     proper assessment kit will provide insights into the
@@ -501,19 +454,20 @@ export default function Home() {
                   width={370}
                   height={370}
                   alt={"situation"}
-                  className="md:w-3/5"
+                  className="md:w-3/5  max-sm:w-[160px]"
                 />
-                <div className="mx-16 w-1/2">
-                  <div className="text-2xl font-bold leading-normal tracking-normal text-left text-[#0A2342] mb-6 flex justify-between">
+                <div className="mx-16 w-1/2 max-sm:w-full max-sm:mx-4">
+                  <div className="max-sm:flex-row-reverse max-sm:text-sm text-2xl font-bold leading-normal tracking-normal text-left text-[#0A2342] mb-6 flex justify-between">
                     If you own a software
                     <Image
                       src={"/Polygon-3.svg"}
                       width={40}
                       height={40}
                       alt={"polygon"}
+                      className=" max-sm:w-[18px] max-sm:mr-2"
                     />
                   </div>
-                  <div className="text-base font-normal leading-relaxed tracking-normal text-left text-[#0A2342] ">
+                  <div className="max-sm:mt-4 max-sm:text-xs max-sm:font-light text-base font-normal leading-relaxed tracking-normal text-left text-[#0A2342] ">
                     If you own software and want to assess your status in
                     different aspects, there are self-assessment tools available
                     that can help you identify your strengths and weaknesses.
@@ -526,7 +480,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="mt-52 mx-auto">
+      {/* <section className="mt-52 mx-auto">
         <div className="w-full flex justify-center items-center mb-16">
           <button className="w-2/3 bg-[#1cc2c4] font-medium text-6xl text-[#edf4fc] text-center rounded-full py-4">
             Try it for free
@@ -894,9 +848,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <section className="mx-auto w-full">
-        <div className="flex justify-between px-16 py-8  w-full gap-16 bg-[url('/faq-bg.svg')] bg-no-repeat bg-cover">
+        <div className="max-sm:hidden flex justify-between px-16 py-8  w-full gap-16 bg-[url('/faq-bg.svg')] bg-no-repeat bg-cover">
           <div className="flex flex-col justify-between bg-white rounded-3xl py-8 px-16 w-1/2">
             <div className="mb-8 text-4xl font-bold leading-normal tracking-normal text-center text-[#1cc2c4]">
               Ferquently asked questions
@@ -947,21 +901,71 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div className="sm:hidden mt-16 flex justify-between  px-8 py-8 w-full gap-16 bg-[url('/faq-bg.svg')] bg-no-repeat bg-cover">
+          <div className="flex flex-col justify-between bg-white rounded-3xl py-4 px-8 w-full">
+            <div className="flex flex-col gap-2">
+              {QAs.map((qa, index) => {
+                return (
+                  <div
+                    className={`flex cursor-pointer flex-col  pb-4 ${
+                      index + 1 !== QAs.length ? "border-b-2" : ""
+                    }`}
+                    onClick={() => setSelectedFAQ(index)}
+                  >
+                    <div className="flex">
+                      <Image
+                        src={"/arrow-icon.svg"}
+                        width={28}
+                        height={14}
+                        alt={"arrow"}
+                        className={`w-[20px] mr-1 ml-[-24px]  ${
+                          selectedFAQ === index ? "" : "hidden"
+                        }`}
+                      />
+                      <div
+                        className={`font-medium text-xs ${
+                          selectedFAQ === index
+                            ? "text-[#1cc2c4]"
+                            : "text-[#6c7b8e]"
+                        } hover:text-[#1cc2c4]`}
+                      >
+                        {qa.question}
+                      </div>
+                    </div>
+                    <div
+                      className={`text-[10px] font-light text-[#0A2342] mt-4 ${
+                        selectedFAQ === index ? "" : "hidden"
+                      }`}
+                    >
+                      {QAs[selectedFAQ]?.answer}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
       </section>
 
-      <footer className="mt-36 mx-4">
-        <div className="mx-auto w-full max-w-screen-2xl p-4">
+      <footer className="max-sm:mt-8 mt-36 mx-4">
+        <div className="mx-auto w-full p-4">
           <div className="flex w-full items-center justify-center flex-col">
             <Image
               src={"/line-vector.svg"}
-              className="mb-2"
+              className="mb-2 max-sm:w-[340px]"
               width={612}
               height={4}
               alt={"line vector"}
             />
-            <Image src={"/logo.svg"} width={200} height={46} alt={"logo"} />
             <Image
-              className="mt-2"
+              src={"/logo.svg"}
+              className=" max-sm:w-[135px]"
+              width={200}
+              height={46}
+              alt={"logo"}
+            />
+            <Image
+              className="mt-2 max-sm:w-[150px]"
               src={"/powered-img.svg"}
               width={221}
               height={26}

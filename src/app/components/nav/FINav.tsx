@@ -30,7 +30,7 @@ export default function FINav() {
   const activeSegment = useSelectedLayoutSegment();
 
   return (
-    <nav className="flex items-center justify-between px-24 h-14 relative z-50 mx-auto">
+    <nav className="flex items-center justify-between max-sm:px-4 px-24 h-14 relative z-50 mx-auto">
       <div>
         <Image src="/logo.svg" alt="Flickit" width={110} height={42} />
       </div>
@@ -42,7 +42,7 @@ export default function FINav() {
                 )}
             </div> */}
       <div>
-        <button className="bg-primary text-white py-[6px] px-8 text-base font-semibold tracking-wider rounded-md">
+        <button className="max-sm:hidden bg-primary text-white py-[6px] px-8 text-base font-semibold tracking-wider rounded-md">
           Get started here!
         </button>
       </div>

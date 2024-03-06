@@ -257,7 +257,7 @@ export default function Home() {
                 needs.
               </div>
             </div>
-            <div className="mt-4 flex gap-4 max-sm:gap-2">
+            <div className="mt-4 flex gap- max-sm:gap-2">
               <button className="max-sm:text-sm rounded-full border border-solid border-[#1cc2c4] bg-[#1CC2C4] hover:bg-[#1cc2c4bf]  px-6 py-2.5 text-[#edf4fc]">
                 Getting started
               </button>

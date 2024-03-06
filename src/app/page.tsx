@@ -249,7 +249,7 @@ export default function Home() {
             <div className="text-[#c7cfcf] text-center max-sm:text-xl text-[25px] font-normal relative w-full max-sm:px-8">
               The ultimate tool for Assessing your software
             </div>
-            <div className="text-center max-sm:text-4xl md:text-7xl leading-5 font-bold relative self-stretch">
+            <div className="text-center max-sm:text-4xl md:text-7xl leading-5 font-bold relative self-stretch txt-gradient ">
               Eliminate quality blind spots by relying on experts&#039;
               algorithms.
             </div>

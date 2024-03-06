@@ -32,3 +32,8 @@
     rgba(28, 194, 196, 1) 100%
   );
 }
+.txt-gradient {
+  background: -webkit-linear-gradient(#1cc2c4, #106162);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

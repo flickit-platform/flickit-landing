@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useRef, useState } from "react";
 import Typewriter from "./components/TyprWriter";
+import ImageCarousel from "./components/ImageCarousel";
 
 export default function Home() {
   const QAs: any[] = [
@@ -43,7 +44,11 @@ export default function Home() {
         "The Flickit platform uses a unique evaluation methodology along with a comprehensive set of evaluation criteria and tools to assess the maturity level of software products. This evaluation process involves collecting data on the software product's performance and capabilities, which is then compared against industry standards or best practices. To generate a maturity level report, the Flickit platform first collects data on the software product's performance across various quality attributes and dimensions. This data is collected using a range of evaluation tools, such as surveys, interviews, and automated tests. The collected data is then analyzed and scored based on a set of predefined evaluation criteria. These criteria are designed to measure the software product's maturity level across various quality attributes and dimensions, such as functionality, reliability, performance, and maintainability. After the data has been scored, the Flickit platform generates a maturity level report that shows the software product's maturity level across each quality attribute and dimension. The report typically includes a visual representation of the maturity level, such as a chart or graph, along with a detailed description of the evaluation results. By using this maturity level report, users can identify areas of strengths and weaknesses in their software products and prioritize improvement efforts accordingly. This report can also be used as a benchmarking tool to compare the software product's maturity level against industry standards or best practices. Overall, the Flickit platform's maturity level reports provide valuable insights into the quality and performance of software products, thus empowering users to make data-driven decisions and take targeted actions to improve their software maturity levels.",
     },
   ];
-
+  const images = [
+    '/carousel-img-1.png',
+    '/carousel-img-2.png',
+    '/carousel-img-3.png',
+  ];
   const [tab, setActiveTab] = useState(0);
   const [selectedFAQ, setSelectedFAQ] = useState(0);
   const [isHovered, setIsHovered] = useState(0);
@@ -239,12 +244,12 @@ export default function Home() {
       </section> */}
 
       <section className="mx-auto">
-        <div className="flex flex-col items-center justify-center relative top-16 sm:bg-[url('/bg-polygon.svg')]  w-full bg-no-repeat pb-[10%]">
+        <div className=" bg-clip-padding bg-cover flex flex-col items-center justify-center relative top-16 sm:bg-[url('/bg-polygon.svg')]  w-full bg-no-repeat pb-[10%]">
           <div className="flex flex-col items-center justify-center max-sm:w-full max-sm:px-4 max-sm:gap-8 w-1/2 max-sm:my-2 my-48 gap-16">
-            <div className="text-[#c7cfcf] text-center max-sm:text-xl text-[25px] leading-tight font-normal relative w-full max-sm:px-8">
+            <div className="text-[#c7cfcf] text-center max-sm:text-xl text-[25px] font-normal relative w-full max-sm:px-8">
               The ultimate tool for Assessing your software
             </div>
-            <div className="text-center max-sm:text-4xl md:text-7xl leading-tight font-bold relative self-stretch">
+            <div className="text-center max-sm:text-4xl md:text-7xl leading-5 font-bold relative self-stretch">
               Eliminate quality blind spots by relying on experts&#039;
               algorithms.
             </div>
@@ -270,7 +275,7 @@ export default function Home() {
       </section>
 
       <section className="max-sm:mt-16 mt-48 mx-auto max-sm:bg-[#EDFCFC] bg-[#1cc2c4]">
-        <div className="max-sm:hidden bg-[url('/bg-shapes.svg')] object-cover w-full bg-no-repeat h-[700px] py-16 md:px-16 lg:px-32 2xl:px-64 reletive">
+        <div className="max-sm:hidden bg-[url('/bg-shapes.svg')] bg-clip-padding bg-cover r w-full bg-no-repeat h-[700px] py-16 md:px-16 lg:px-32 2xl:px-64 reletive">
           <Image
             src={"/polygon-vector.svg"}
             className="absolute z-1 left-4 mt-[-186px]"
@@ -536,6 +541,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+
         <div className="sm:hidden flex flex-col mt-32">
           <div className="flex justify-around items-center w-full">
             <div className="text-base font-bold text-[#EDFCFC] bg-[url('/polygon-o-mobile.svg')] bg-no-repeat bg-cover h-[172px] w-[150px] flex flex-col justify-center items-center gap-4 px-2 text-center">
@@ -563,6 +569,9 @@ export default function Home() {
             />
           </div>
         </div>
+      </section>
+      <section>
+        <ImageCarousel images={images} />
       </section>
       <section className="mx-auto w-full">
         <div className="max-sm:hidden flex justify-between px-16 py-8  w-full gap-16 bg-[url('/faq-bg.svg')] bg-no-repeat bg-cover">

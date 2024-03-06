@@ -11,4 +11,24 @@
     }
   }
 }
+.bt-gradient {
+  transition: 0.5s;
+  background-size: 200% auto;
+}
 
+.bt-gradient:hover {
+  background-position: right center;
+}
+/* .bt-gradient:active {
+  background: lightblue;
+  color: black;
+} */
+.btn-2 {
+  background-image: linear-gradient(
+    45deg,
+    rgba(28, 139, 196, 1) 0%,
+    rgba(4, 220, 222, 1) 33%,
+    rgba(28, 194, 196, 1) 66%,
+    rgba(28, 194, 196, 1) 100%
+  );
+}

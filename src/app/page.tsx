@@ -240,7 +240,7 @@ export default function Home() {
 
       <section className="mx-auto">
         <div className="flex flex-col items-center justify-center relative top-16 sm:bg-[url('/bg-polygon.svg')]  w-full bg-no-repeat pb-[10%]">
-          <div className="flex flex-col items-center justify-center max-sm:w-full max-sm:px-4 max-sm:gap-8 w-1/2 max-sm:my-2 my-48">
+          <div className="flex flex-col items-center justify-center max-sm:w-full max-sm:px-4 max-sm:gap-8 w-1/2 max-sm:my-2 my-48 gap-16">
             <div className="text-[#c7cfcf] text-center max-sm:text-xl text-[25px] leading-tight font-normal relative w-full max-sm:px-8">
               The ultimate tool for Assessing your software
             </div>
@@ -257,11 +257,11 @@ export default function Home() {
                 needs.
               </div>
             </div>
-            <div className="mt-4">
-              <button className="max-sm:text-sm rounded-full border border-solid border-[#1cc2c4] bg-[#1cc2c4bf]  px-6 py-2.5 text-[#edf4fc]">
+            <div className="mt-4 flex gap-4 max-sm:gap-2">
+              <button className="max-sm:text-sm rounded-full border border-solid border-[#1cc2c4] bg-[#1CC2C4] hover:bg-[#1cc2c4bf]  px-6 py-2.5 text-[#edf4fc]">
                 Getting started
               </button>
-              <button className="max-sm:text-sm rounded-full  px-6 py-2.5 text-[#1cc2c4]">
+              <button className="max-sm:text-sm rounded-full  px-6 py-2.5 text-[#1cc2c4] hover:border hover:border-[#1cc2c4]">
                 Read more...
               </button>
             </div>
@@ -386,7 +386,7 @@ export default function Home() {
         </div>
       </section>
       <section className="mx-auto mb-8">
-        <div className=" flex flex-col items-center justify-center relative top-16 bg-[url('/midle-shape-bg.svg')] w-full bg-no-repeat max-sm:py-4 max-sm:px-4  md:py-32 md:px-16 lg:p-32 ">
+        <div className=" flex flex-col items-center justify-center relative top-16 bg-[url('/midle-shape-bg.svg')] w-full bg-no-repeat max-sm:py-8 max-sm:px-4  md:py-32 md:px-16 lg:p-32 ">
           <div className="backdrop-blur-md w-full h-full bg-white/70 rounded-[32px] flex  flex-col p-16  max-sm:py-4 max-sm:px-4 md:px-16 lg:px-32">
             <div className="text-5xl font-bold leading-normal tracking-normal text-center max-sm:hidden text-[#1cc2c4] mb-16">
               Flickit is specially helpful if...
@@ -398,7 +398,7 @@ export default function Home() {
                   width={370}
                   height={370}
                   alt={"situation"}
-                  className="md:w-3/5  max-sm:w-[160px]"
+                  className="md:w-3/5  max-sm:w-[160px] max-sm:mb-auto"
                 />
                 <div className="mx-16 w-1/2 max-sm:w-full max-sm:mx-4">
                   <div className="max-sm:text-sm text-2xl font-bold leading-normal tracking-normal text-left text-[#0A2342] mb-6 flex">
@@ -454,7 +454,7 @@ export default function Home() {
                   width={370}
                   height={370}
                   alt={"situation"}
-                  className="md:w-3/5  max-sm:w-[160px]"
+                  className="md:w-3/5  max-sm:w-[160px] max-sm:mb-auto"
                 />
                 <div className="mx-16 w-1/2 max-sm:w-full max-sm:mx-4">
                   <div className="max-sm:flex-row-reverse max-sm:text-sm text-2xl font-bold leading-normal tracking-normal text-left text-[#0A2342] mb-6 flex justify-between">
@@ -480,375 +480,90 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* <section className="mt-52 mx-auto">
+      <section className="max-sm:mt-32 mt-52 mb-16 mx-auto">
         <div className="w-full flex justify-center items-center mb-16">
-          <button className="w-2/3 bg-[#1cc2c4] font-medium text-6xl text-[#edf4fc] text-center rounded-full py-4">
+          <button className="max-sm:text-xl max-sm:w-full max-sm:mx-8 max-sm:py-2 w-2/3 bt-gradient btn-2 font-medium text-6xl text-[#edf4fc] text-center rounded-full py-4">
             Try it for free
           </button>
         </div>
-        <div className="flex w-full justify-between items-center p-16">
-          <div className="relative md:scale-50 lg:scale-100">
-            <svg
-              width="400"
-              height="458"
-              viewBox="0 0 400 458"
-              fill={isHovered ? "#A4E7E7" : "none"}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g filter="url(#filter0_bdi_933_1775)">
-                <path
-                  d="M195.924 5.07293C198.402 3.64236 201.455 3.64236 203.933 5.07293L391.853 113.569C394.331 114.999 395.857 117.643 395.857 120.504V337.496C395.857 340.357 394.331 343.001 391.853 344.431L203.933 452.927C201.455 454.358 198.402 454.358 195.924 452.927L8.00423 344.431C5.5264 343.001 4 340.357 4 337.496V120.504C4 117.643 5.5264 114.999 8.00423 113.569L195.924 5.07293Z"
-                  fill="url(#paint0_linear_933_1775)"
-                  fill-opacity="0.2"
-                  shape-rendering="crispEdges"
-                />
-                <path
-                  d="M196.924 6.80498C198.783 5.73168 201.074 5.73167 202.933 6.80498L390.853 115.301C392.712 116.374 393.857 118.358 393.857 120.504V337.496C393.857 339.642 392.712 341.626 390.853 342.699L202.933 451.195C201.074 452.268 198.783 452.268 196.924 451.195L9.00423 342.699C7.1452 341.626 6 339.642 6 337.496V120.504C6 118.358 7.14521 116.374 9.00423 115.301L196.924 6.80498Z"
-                  stroke="#1CC2C4"
-                  stroke-width="4"
-                  shape-rendering="crispEdges"
-                />
-              </g>
-              <defs>
-                <filter
-                  id="filter0_bdi_933_1775"
-                  x="-46"
-                  y="-46"
-                  width="491.857"
-                  height="550"
-                  filterUnits="userSpaceOnUse"
-                  color-interpolation-filters="sRGB"
-                >
-                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                  <feGaussianBlur in="BackgroundImageFix" stdDeviation="25" />
-                  <feComposite
-                    in2="SourceAlpha"
-                    operator="in"
-                    result="effect1_backgroundBlur_933_1775"
-                  />
-                  <feColorMatrix
-                    in="SourceAlpha"
-                    type="matrix"
-                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                    result="hardAlpha"
-                  />
-                  <feOffset />
-                  <feGaussianBlur stdDeviation="2" />
-                  <feComposite in2="hardAlpha" operator="out" />
-                  <feColorMatrix
-                    type="matrix"
-                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in2="effect1_backgroundBlur_933_1775"
-                    result="effect2_dropShadow_933_1775"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in="SourceGraphic"
-                    in2="effect2_dropShadow_933_1775"
-                    result="shape"
-                  />
-                  <feColorMatrix
-                    in="SourceAlpha"
-                    type="matrix"
-                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                    result="hardAlpha"
-                  />
-                  <feOffset dy="4" />
-                  <feGaussianBlur stdDeviation="11.1" />
-                  <feComposite
-                    in2="hardAlpha"
-                    operator="arithmetic"
-                    k2="-1"
-                    k3="1"
-                  />
-                  <feColorMatrix
-                    type="matrix"
-                    values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in2="shape"
-                    result="effect3_innerShadow_933_1775"
-                  />
-                </filter>
-                <linearGradient
-                  id="paint0_linear_933_1775"
-                  x1="4"
-                  y1="109.787"
-                  x2="395.857"
-                  y2="109.787"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stop-color="#CEE3E4" />
-                  <stop offset="0.0539996" stop-color="#DDEFF4" />
-                  <stop offset="0.475" stop-color="#EDF4FC" />
-                  <stop offset="0.909" stop-color="#E2F8F9" />
-                  <stop offset="1" stop-color="#CEE2E4" />
-                </linearGradient>
-              </defs>
-            </svg>
-            <div className="absolute bottom-[16%] w-full flex flex-col justify-between items-center p-8 gap-4">
-              <Image
-                src={"/handshake.svg"}
-                width={140}
-                height={100}
-                alt={"handshake"}
-                className="mb-6"
-              />
-              <div className="font-medium text-2xl text-[#0A2342] text-center">
-                Trusted by indusrty leaders
-              </div>
-              <div className="font-light text-base text-[#0A2342] text-center">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua
-              </div>
+        <div className="max-sm:hidden flex items-center w-full justify-between px-16">
+          <div className=" hover:bg-[url('/Polygon-bg-hover.svg')] bg-[url('/Polygon-bg.svg')] bg-no-repeat bg-cover h-[450px] w-[390px] flex flex-col justify-center items-center pb-10 gap-2 px-8 ">
+            <Image
+              src={"/handshake.svg"}
+              width={140}
+              height={100}
+              alt={"handshake"}
+              className="mb-6"
+            />
+            <div className="font-medium text-2xl text-[#0A2342] text-center">
+              Trusted by indusrty leaders
+            </div>
+            <div className="font-light text-base text-[#0A2342] text-center">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua
             </div>
           </div>
-          <div className="relative md:scale-50 lg:scale-100">
-            <svg
-              width="400"
-              height="458"
-              viewBox="0 0 400 458"
-              fill={isHovered ? "#A4E7E7" : "none"}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g filter="url(#filter0_bdi_933_1775)">
-                <path
-                  d="M195.924 5.07293C198.402 3.64236 201.455 3.64236 203.933 5.07293L391.853 113.569C394.331 114.999 395.857 117.643 395.857 120.504V337.496C395.857 340.357 394.331 343.001 391.853 344.431L203.933 452.927C201.455 454.358 198.402 454.358 195.924 452.927L8.00423 344.431C5.5264 343.001 4 340.357 4 337.496V120.504C4 117.643 5.5264 114.999 8.00423 113.569L195.924 5.07293Z"
-                  fill="url(#paint0_linear_933_1775)"
-                  fill-opacity="0.2"
-                  shape-rendering="crispEdges"
-                />
-                <path
-                  d="M196.924 6.80498C198.783 5.73168 201.074 5.73167 202.933 6.80498L390.853 115.301C392.712 116.374 393.857 118.358 393.857 120.504V337.496C393.857 339.642 392.712 341.626 390.853 342.699L202.933 451.195C201.074 452.268 198.783 452.268 196.924 451.195L9.00423 342.699C7.1452 341.626 6 339.642 6 337.496V120.504C6 118.358 7.14521 116.374 9.00423 115.301L196.924 6.80498Z"
-                  stroke="#1CC2C4"
-                  stroke-width="4"
-                  shape-rendering="crispEdges"
-                />
-              </g>
-              <defs>
-                <filter
-                  id="filter0_bdi_933_1775"
-                  x="-46"
-                  y="-46"
-                  width="491.857"
-                  height="550"
-                  filterUnits="userSpaceOnUse"
-                  color-interpolation-filters="sRGB"
-                >
-                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                  <feGaussianBlur in="BackgroundImageFix" stdDeviation="25" />
-                  <feComposite
-                    in2="SourceAlpha"
-                    operator="in"
-                    result="effect1_backgroundBlur_933_1775"
-                  />
-                  <feColorMatrix
-                    in="SourceAlpha"
-                    type="matrix"
-                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                    result="hardAlpha"
-                  />
-                  <feOffset />
-                  <feGaussianBlur stdDeviation="2" />
-                  <feComposite in2="hardAlpha" operator="out" />
-                  <feColorMatrix
-                    type="matrix"
-                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in2="effect1_backgroundBlur_933_1775"
-                    result="effect2_dropShadow_933_1775"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in="SourceGraphic"
-                    in2="effect2_dropShadow_933_1775"
-                    result="shape"
-                  />
-                  <feColorMatrix
-                    in="SourceAlpha"
-                    type="matrix"
-                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                    result="hardAlpha"
-                  />
-                  <feOffset dy="4" />
-                  <feGaussianBlur stdDeviation="11.1" />
-                  <feComposite
-                    in2="hardAlpha"
-                    operator="arithmetic"
-                    k2="-1"
-                    k3="1"
-                  />
-                  <feColorMatrix
-                    type="matrix"
-                    values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in2="shape"
-                    result="effect3_innerShadow_933_1775"
-                  />
-                </filter>
-                <linearGradient
-                  id="paint0_linear_933_1775"
-                  x1="4"
-                  y1="109.787"
-                  x2="395.857"
-                  y2="109.787"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stop-color="#CEE3E4" />
-                  <stop offset="0.0539996" stop-color="#DDEFF4" />
-                  <stop offset="0.475" stop-color="#EDF4FC" />
-                  <stop offset="0.909" stop-color="#E2F8F9" />
-                  <stop offset="1" stop-color="#CEE2E4" />
-                </linearGradient>
-              </defs>
-            </svg>
-            <div className="absolute bottom-[16%] w-full flex flex-col justify-between items-center p-8 gap-4">
-              <Image
-                src={"/dashboard.svg"}
-                width={140}
-                height={100}
-                alt={"dashboard"}
-                className="mb-6"
-              />
-              <div className="font-medium text-2xl text-[#0A2342] text-center">
-                Track your progress
-              </div>
-              <div className="font-light text-base text-[#0A2342] text-center">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua
-              </div>
+          <div className=" hover:bg-[url('/Polygon-bg-hover.svg')] bg-[url('/Polygon-bg.svg')] bg-no-repeat bg-cover h-[450px] w-[390px] flex flex-col justify-center items-center pb-10 gap-2 px-8 ">
+            <Image
+              src={"/dashboard.svg"}
+              width={140}
+              height={100}
+              alt={"dashboard"}
+              className="mb-6"
+            />
+            <div className="font-medium text-2xl text-[#0A2342] text-center">
+              Track your progress
+            </div>
+            <div className="font-light text-base text-[#0A2342] text-center">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua
             </div>
           </div>
-          <div className="relative md:scale-50 lg:scale-100">
-            <svg
-              width="400"
-              height="458"
-              viewBox="0 0 400 458"
-              fill={isHovered ? "#A4E7E7" : "none"}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g filter="url(#filter0_bdi_933_1775)">
-                <path
-                  d="M195.924 5.07293C198.402 3.64236 201.455 3.64236 203.933 5.07293L391.853 113.569C394.331 114.999 395.857 117.643 395.857 120.504V337.496C395.857 340.357 394.331 343.001 391.853 344.431L203.933 452.927C201.455 454.358 198.402 454.358 195.924 452.927L8.00423 344.431C5.5264 343.001 4 340.357 4 337.496V120.504C4 117.643 5.5264 114.999 8.00423 113.569L195.924 5.07293Z"
-                  fill="url(#paint0_linear_933_1775)"
-                  fill-opacity="0.2"
-                  shape-rendering="crispEdges"
-                />
-                <path
-                  d="M196.924 6.80498C198.783 5.73168 201.074 5.73167 202.933 6.80498L390.853 115.301C392.712 116.374 393.857 118.358 393.857 120.504V337.496C393.857 339.642 392.712 341.626 390.853 342.699L202.933 451.195C201.074 452.268 198.783 452.268 196.924 451.195L9.00423 342.699C7.1452 341.626 6 339.642 6 337.496V120.504C6 118.358 7.14521 116.374 9.00423 115.301L196.924 6.80498Z"
-                  stroke="#1CC2C4"
-                  stroke-width="4"
-                  shape-rendering="crispEdges"
-                />
-              </g>
-              <defs>
-                <filter
-                  id="filter0_bdi_933_1775"
-                  x="-46"
-                  y="-46"
-                  width="491.857"
-                  height="550"
-                  filterUnits="userSpaceOnUse"
-                  color-interpolation-filters="sRGB"
-                >
-                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                  <feGaussianBlur in="BackgroundImageFix" stdDeviation="25" />
-                  <feComposite
-                    in2="SourceAlpha"
-                    operator="in"
-                    result="effect1_backgroundBlur_933_1775"
-                  />
-                  <feColorMatrix
-                    in="SourceAlpha"
-                    type="matrix"
-                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                    result="hardAlpha"
-                  />
-                  <feOffset />
-                  <feGaussianBlur stdDeviation="2" />
-                  <feComposite in2="hardAlpha" operator="out" />
-                  <feColorMatrix
-                    type="matrix"
-                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in2="effect1_backgroundBlur_933_1775"
-                    result="effect2_dropShadow_933_1775"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in="SourceGraphic"
-                    in2="effect2_dropShadow_933_1775"
-                    result="shape"
-                  />
-                  <feColorMatrix
-                    in="SourceAlpha"
-                    type="matrix"
-                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                    result="hardAlpha"
-                  />
-                  <feOffset dy="4" />
-                  <feGaussianBlur stdDeviation="11.1" />
-                  <feComposite
-                    in2="hardAlpha"
-                    operator="arithmetic"
-                    k2="-1"
-                    k3="1"
-                  />
-                  <feColorMatrix
-                    type="matrix"
-                    values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in2="shape"
-                    result="effect3_innerShadow_933_1775"
-                  />
-                </filter>
-                <linearGradient
-                  id="paint0_linear_933_1775"
-                  x1="4"
-                  y1="109.787"
-                  x2="395.857"
-                  y2="109.787"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stop-color="#CEE3E4" />
-                  <stop offset="0.0539996" stop-color="#DDEFF4" />
-                  <stop offset="0.475" stop-color="#EDF4FC" />
-                  <stop offset="0.909" stop-color="#E2F8F9" />
-                  <stop offset="1" stop-color="#CEE2E4" />
-                </linearGradient>
-              </defs>
-            </svg>
-            <div className="absolute bottom-[16%] w-full flex flex-col justify-between items-center p-8 gap-4">
-              <Image
-                src={"/chart-ilustration.svg"}
-                width={120}
-                height={120}
-                alt={"chart-ilustration"}
-                className="mb-6"
-              />
-              <div className="font-medium text-2xl text-[#0A2342] text-center">
-                Trusted by indusrty leaders
-              </div>
-              <div className="font-light text-base text-[#0A2342] text-center">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua
-              </div>
+          <div className=" hover:bg-[url('/Polygon-bg-hover.svg')] bg-[url('/Polygon-bg.svg')] bg-no-repeat bg-cover h-[450px] w-[390px] flex flex-col justify-center items-center pb-10 gap-2 px-8 ">
+            <Image
+              src={"/chart-ilustration.svg"}
+              width={120}
+              height={120}
+              alt={"chart-ilustration"}
+              className="mb-6"
+            />
+            <div className="font-medium text-2xl text-[#0A2342] text-center">
+              Trusted by indusrty leaders
+            </div>
+            <div className="font-light text-base text-[#0A2342] text-center">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua
             </div>
           </div>
         </div>
-      </section> */}
+        <div className="sm:hidden flex flex-col mt-32">
+          <div className="flex justify-around items-center w-full">
+            <div className="text-base font-bold text-[#EDFCFC] bg-[url('/polygon-o-mobile.svg')] bg-no-repeat bg-cover h-[172px] w-[150px] flex flex-col justify-center items-center gap-4 px-2 text-center">
+              Track your progress
+            </div>
+            <div className="text-base font-bold text-[#EDFCFC] bg-[url('/polygon-g-mobile.svg')] bg-no-repeat bg-cover h-[172px] w-[150px] flex flex-col justify-center items-center gap-4 px-2 text-center">
+              Smart Advice system
+            </div>
+          </div>
+          <div className="flex justify-between items-center w-full">
+            <Image
+              src={"/polygon-n-mobile-l.svg"}
+              width={75}
+              height={172}
+              alt={"left"}
+            />
+            <div className="text-base font-bold text-[#EDFCFC] bg-[url('/polygon-r-mobile.svg')] bg-no-repeat bg-cover h-[172px] w-[150px] flex flex-col justify-center items-center gap-4 px-2 text-center">
+              Trusted by industry leaders
+            </div>
+            <Image
+              src={"/polygon-n-mobile-r.svg"}
+              width={75}
+              height={172}
+              alt={"right"}
+            />
+          </div>
+        </div>
+      </section>
       <section className="mx-auto w-full">
         <div className="max-sm:hidden flex justify-between px-16 py-8  w-full gap-16 bg-[url('/faq-bg.svg')] bg-no-repeat bg-cover">
           <div className="flex flex-col justify-between bg-white rounded-3xl py-8 px-16 w-1/2">
@@ -933,7 +648,7 @@ export default function Home() {
                       </div>
                     </div>
                     <div
-                      className={`text-[10px] font-light text-[#0A2342] mt-4 ${
+                      className={`text-[10px] font-light text-[#0A2342] mt-4  ${
                         selectedFAQ === index ? "" : "hidden"
                       }`}
                     >
@@ -947,7 +662,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="max-sm:mt-8 mt-36 mx-4">
+      <footer className="max-sm:mt-8 mt-8 mx-4">
         <div className="mx-auto w-full p-4">
           <div className="flex w-full items-center justify-center flex-col">
             <Image

@@ -14,6 +14,10 @@ module.exports = {
         secondary: '#80BB9C'
 
       },
+      fontFamily: {
+
+        ubunto: ["var(--font-ubuntu)"],
+      },
       keyframes: {
         ['t-right']: {
           '0%': { transform: 'translateX(100%)' },

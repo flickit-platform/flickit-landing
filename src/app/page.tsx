@@ -45,9 +45,9 @@ export default function Home() {
     },
   ];
   const images = [
-    '/carousel-img-1.png',
-    '/carousel-img-2.png',
-    '/carousel-img-3.png',
+    "/carousel-img-1.png",
+    "/carousel-img-2.png",
+    "/carousel-img-3.png",
   ];
   const [tab, setActiveTab] = useState(0);
   const [selectedFAQ, setSelectedFAQ] = useState(0);
@@ -244,8 +244,8 @@ export default function Home() {
       </section> */}
 
       <section className="mx-auto">
-        <div className=" bg-clip-padding bg-cover flex flex-col items-center justify-center relative top-16 sm:bg-[url('/bg-polygon.svg')]  w-full bg-no-repeat pb-[10%]">
-          <div className="flex flex-col items-center justify-center max-sm:w-full max-sm:px-4 max-sm:gap-8 w-1/2 max-sm:my-2 my-48 gap-16">
+        <div className=" bg-clip-padding bg-cover flex flex-col items-center justify-center relative top-16 sm:bg-[url('/bg-polygon.svg')]  w-full bg-no-repeat">
+          <div className="flex flex-col items-center justify-center max-sm:w-full max-sm:px-4 max-sm:gap-8 w-1/2 max-sm:my-2 mt-40 mb-16 gap-16">
             <div className="text-[#c7cfcf] text-center max-sm:text-xl text-[25px] font-normal relative w-full max-sm:px-8">
               The ultimate tool for Assessing your software
             </div>
@@ -274,7 +274,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="max-sm:mt-16 mt-48 mx-auto max-sm:bg-[#EDFCFC] bg-[#1cc2c4]">
+      <section className="max-sm:mt-16 mt-40 mx-auto max-sm:bg-[#EDFCFC] bg-[#1cc2c4]">
         <div className="max-sm:hidden bg-[url('/bg-shapes.svg')] bg-clip-padding bg-cover r w-full bg-no-repeat h-[700px] py-16 md:px-16 lg:px-32 2xl:px-64 reletive">
           <Image
             src={"/polygon-vector.svg"}
@@ -391,8 +391,8 @@ export default function Home() {
         </div>
       </section>
       <section className="mx-auto mb-8">
-        <div className=" flex flex-col items-center justify-center relative top-16 bg-[url('/midle-shape-bg.svg')] w-full bg-no-repeat max-sm:py-8 max-sm:px-4  md:py-32 md:px-16 lg:p-32 ">
-          <div className="backdrop-blur-md w-full h-full bg-white/70 rounded-[32px] flex  flex-col p-16  max-sm:py-4 max-sm:px-4 md:px-16 lg:px-32">
+        <div className=" flex flex-col items-center justify-center relative top-16 bg-[url('/midle-shape-bg.svg')] w-full bg-no-repeat max-sm:py-8 max-sm:px-4  md:py-16 md:px-8 xl:p-32 ">
+          <div className="backdrop-blur-md w-full h-full bg-white/70 rounded-[32px] flex  flex-col p-16  max-sm:py-4 max-sm:px-4 md:px-8 xl:px-32">
             <div className="text-5xl font-bold leading-normal tracking-normal text-center max-sm:hidden text-[#1cc2c4] mb-16">
               Flickit is specially helpful if...
             </div>
@@ -403,7 +403,7 @@ export default function Home() {
                   width={370}
                   height={370}
                   alt={"situation"}
-                  className="md:w-3/5  max-sm:w-[160px] max-sm:mb-auto"
+                  className="sm:w-2/5 xl:w-3/5  max-sm:w-[160px] max-sm:mb-auto"
                 />
                 <div className="mx-16 w-1/2 max-sm:w-full max-sm:mx-4">
                   <div className="max-sm:text-sm text-2xl font-bold leading-normal tracking-normal text-left text-[#0A2342] mb-6 flex">
@@ -427,7 +427,7 @@ export default function Home() {
               </div>
               <div className="flex flex-col justify-between items-center max-sm:gap-4">
                 <Image
-                  className="m-auto md:w-2/5 max-sm:w-[160px]"
+                  className="m-auto sm:w-1/3 xl:w-3/5   max-sm:w-[160px]"
                   src={"/situation-2.svg"}
                   width={370}
                   height={370}
@@ -459,7 +459,7 @@ export default function Home() {
                   width={370}
                   height={370}
                   alt={"situation"}
-                  className="md:w-3/5  max-sm:w-[160px] max-sm:mb-auto"
+                  className="sm:w-2/5 xl:w-3/5   max-sm:w-[160px] max-sm:mb-auto"
                 />
                 <div className="mx-16 w-1/2 max-sm:w-full max-sm:mx-4">
                   <div className="max-sm:flex-row-reverse max-sm:text-sm text-2xl font-bold leading-normal tracking-normal text-left text-[#0A2342] mb-6 flex justify-between">
@@ -487,55 +487,55 @@ export default function Home() {
       </section>
       <section className="max-sm:mt-32 mt-52 mb-16 mx-auto">
         <div className="w-full flex justify-center items-center mb-16">
-          <button className="max-sm:text-xl max-sm:w-full max-sm:mx-8 max-sm:py-2 w-2/3 bt-gradient btn-2 font-medium text-6xl text-[#edf4fc] text-center rounded-full py-4">
+          <button className="hover:scale-105 hover:shadow-2xl max-sm:text-xl max-sm:w-full max-sm:mx-8 max-sm:py-2 w-2/3 bt-gradient btn-2 font-medium md:text-3xl lg:text-6xl text-[#edf4fc] text-center rounded-full py-4">
             Try it for free
           </button>
         </div>
-        <div className="max-sm:hidden flex items-center w-full justify-between px-16">
-          <div className=" hover:bg-[url('/Polygon-bg-hover.svg')] bg-[url('/Polygon-bg.svg')] bg-no-repeat bg-cover h-[450px] w-[390px] flex flex-col justify-center items-center pb-10 gap-2 px-8 ">
+        <div className="max-sm:hidden flex items-center w-full justify-between sm:px-8 lg:px-16 lg:gap-4 xl:gap-8">
+          <div className=" hover:bg-[url('/Polygon-bg-hover.svg')] bg-[url('/Polygon-bg.svg')] bg-no-repeat bg-contain h-[35vw] w-[33vw]  flex flex-col justify-center items-center sm:pt-8 pb-10 gap-2 sm:px-4 xl:px-8 ">
             <Image
               src={"/handshake.svg"}
               width={140}
               height={100}
               alt={"handshake"}
-              className="mb-6"
+              className="sm:mb-0 xl:mb-6  w-2/5"
             />
-            <div className="font-medium text-2xl text-[#0A2342] text-center">
+            <div className="font-medium sm:text-base xl:text-2xl text-[#0A2342] text-center">
               Trusted by indusrty leaders
             </div>
-            <div className="font-light text-base text-[#0A2342] text-center">
+            <div className="font-light sm:text-xs xl:text-base text-[#0A2342] text-center">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua
             </div>
           </div>
-          <div className=" hover:bg-[url('/Polygon-bg-hover.svg')] bg-[url('/Polygon-bg.svg')] bg-no-repeat bg-cover h-[450px] w-[390px] flex flex-col justify-center items-center pb-10 gap-2 px-8 ">
+          <div className=" hover:bg-[url('/Polygon-bg-hover.svg')] bg-[url('/Polygon-bg.svg')] bg-no-repeat bg-contain h-[35vw] w-[33vw]  flex flex-col justify-center items-center sm:pt-8 pb-10 gap-2 sm:px-4 xl:px-8 ">
             <Image
               src={"/dashboard.svg"}
               width={140}
               height={100}
               alt={"dashboard"}
-              className="mb-6"
+              className="sm:mb-0 lg:mb-6  w-2/5"
             />
-            <div className="font-medium text-2xl text-[#0A2342] text-center">
+            <div className="font-medium sm:text-base xl:text-2xl text-[#0A2342] text-center">
               Track your progress
             </div>
-            <div className="font-light text-base text-[#0A2342] text-center">
+            <div className="font-light sm:text-xs xl:text-base text-[#0A2342] text-center">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua
             </div>
           </div>
-          <div className=" hover:bg-[url('/Polygon-bg-hover.svg')] bg-[url('/Polygon-bg.svg')] bg-no-repeat bg-cover h-[450px] w-[390px] flex flex-col justify-center items-center pb-10 gap-2 px-8 ">
+          <div className=" hover:bg-[url('/Polygon-bg-hover.svg')] bg-[url('/Polygon-bg.svg')] bg-no-repeat bg-contain h-[35vw] w-[33vw] flex flex-col justify-center items-center sm:pt-8 pb-10 gap-2 sm:px-4 xl:px-8 ">
             <Image
               src={"/chart-ilustration.svg"}
               width={120}
               height={120}
               alt={"chart-ilustration"}
-              className="mb-6"
+              className="sm:mb-0 xl:mb-6  w-2/5"
             />
-            <div className="font-medium text-2xl text-[#0A2342] text-center">
+            <div className="font-medium sm:text-base xl:text-2xl text-[#0A2342] text-center">
               Trusted by indusrty leaders
             </div>
-            <div className="font-light text-base text-[#0A2342] text-center">
+            <div className="font-light sm:text-xs xl:text-base text-[#0A2342] text-center">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua
             </div>
@@ -574,7 +574,7 @@ export default function Home() {
         <ImageCarousel images={images} />
       </section>
       <section className="mx-auto w-full">
-        <div className="max-sm:hidden flex justify-between px-16 py-8  w-full gap-16 bg-[url('/faq-bg.svg')] bg-no-repeat bg-cover">
+        <div className="max-sm:hidden flex justify-between sm:px-8 lg:px-16 py-8  w-full sm:gap-0 lg:gap-16 bg-[url('/faq-bg.svg')] bg-no-repeat bg-cover">
           <div className="flex flex-col justify-between bg-white rounded-3xl py-8 px-16 w-1/2">
             <div className="mb-8 text-4xl font-bold leading-normal tracking-normal text-center text-[#1cc2c4]">
               Ferquently asked questions

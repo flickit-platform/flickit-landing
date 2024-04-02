@@ -54,7 +54,40 @@ export default function Home() {
   return (
     <main>
       <section className="mx-auto">
-        <div className=" bg-clip-padding bg-cover flex flex-col items-center justify-center relative top-16 sm:bg-[url('/bg-polygon.svg')]  w-full bg-no-repeat">
+        <div className=" flex flex-col items-center justify-center relative top-16   w-full ">
+          <img
+            src={"/pol-1.svg"}
+            className="absolute z-[-1] left-0 top-[15%] max-sm:hidden sm:block "
+          />
+          <img
+            src={"/pol-2.svg"}
+            className="absolute z-[-1] left-[30%] top-0 max-sm:hidden sm:block "
+          />
+          <img
+            src={"/pol-3.svg"}
+            className="absolute z-[-1] left-[50%] top-[10%] max-sm:hidden sm:block "
+          />
+          <img
+            src={"/pol-4.svg"}
+            className="absolute z-[-1] left-[75%] top-0 max-sm:hidden sm:block "
+          />
+          <img
+            src={"/pol-5.svg"}
+            className="absolute z-[-1] left-[80%] top-[35%] max-sm:hidden sm:hidden xl:block"
+          />
+          <img
+            src={"/pol-6.svg"}
+            className="absolute z-[-1] left-[90%]  top-[80%] max-sm:hidden sm:block "
+          />
+          <img
+            src={"/pol-7.svg"}
+            className="absolute z-[-1] left-[75%] top-[90%] max-sm:hidden sm:block "
+          />
+          <img
+            src={"/pol-8.svg"}
+            className="absolute z-[-1] left-[5%] top-[60%] max-sm:hidden sm:block "
+          />
+
           <div className="flex flex-col items-center justify-center max-sm:w-full max-sm:px-4 max-sm:gap-8 sm:px-16 md:px-24 lg:px-32 xl:px-80  max-sm:my-2 mt-40 mb-16 gap-16">
             <div className="text-[#c7cfcf] text-center max-sm:text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal relative w-full max-sm:px-8">
               The Ultimate Tool for Assessing Your Software

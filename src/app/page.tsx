@@ -97,11 +97,10 @@ export default function Home() {
             </div>
             <div className="flex flex-col gap-6 items-center justify-center self-stretch shrink-0 relative">
               <div className="text-center max-sm:text-sm text-xl  font-normal relative self-stretch">
-                Flickit is a software assessment platform that enables software
-                owners and developers to evaluate their software in different
-                subjects and factors of their choice. Users can create their own
-                software evaluation kit and customize it to their specific
-                needs.
+                Flickit is a software assessment platform. It allows software
+                owners and developers to assess their software across various
+                subjects and attributes. Users can customize their assessment
+                kits to meet their specific needs.
               </div>
             </div>
             <div className="mt-4 flex gap- max-sm:gap-2 gap-4">
@@ -135,7 +134,6 @@ export default function Home() {
                 width={288}
                 height={200}
                 alt={"ilustration"}
-
               />
               {/* <div className="text-shadow-sm font-Ubuntu text-sm font-medium leading-relaxed text-center text-gray-500">
                 Step 1.
@@ -154,7 +152,6 @@ export default function Home() {
                 width={288}
                 height={200}
                 alt={"ilustration"}
-
               />
               {/* <div className="text-shadow-sm font-Ubuntu text-sm font-medium leading-relaxed text-center text-gray-500">
                 Step 2.
@@ -174,7 +171,6 @@ export default function Home() {
                 width={288}
                 height={200}
                 alt={"ilustration"}
-
               />
               {/* <div className="text-shadow-sm font-Ubuntu text-sm font-medium leading-relaxed text-center text-gray-500">
                 Step 3.
@@ -280,7 +276,7 @@ export default function Home() {
                 />
                 <div className="mx-16 w-1/2 max-sm:w-full max-sm:mx-4 max-sm:mt-4">
                   <div className="max-sm:w-2/3 max-sm:text-sm max-sm:m-auto text-2xl font-bold leading-normal tracking-normal text-center text-[#0A2342] mb-6 flex max-sm:flex-row-reverse flex-col-reverse items-center">
-                    If you want evaluate your contractor’s work
+                    If you want to assess you contractor's work
                     <Image
                       src={"/Polygon-2.svg"}
                       width={40}
@@ -290,11 +286,11 @@ export default function Home() {
                     />
                   </div>
                   <div className="max-sm:mt-4 max-sm:text-xs max-sm:font-light text-base font-normal leading-relaxed tracking-normal text-center text-[#0A2342] ">
-                    If you are about to buy new software and are unsure about
-                    its technical aspects, you can use a third party opinion. A
-                    proper assessment kit will provide insights into the
-                    software's technical details, enabling you to make an
-                    informed decision.
+                    If you are developing a software and you wish to
+                    professionally assess the quality of their work in technical
+                    terms, you can seek assistance from expert evaluators in
+                    this field to inform you about the status of various
+                    technical aspects of the software.
                   </div>
                 </div>
               </div>
@@ -418,7 +414,7 @@ export default function Home() {
       <section>
         <ImageCarousel images={images} />
       </section>
-      <section className="mx-auto w-full">
+      {/* <section className="mx-auto w-full">
         <div className="max-sm:hidden flex justify-between sm:px-8 lg:px-16 py-8  w-full sm:gap-0 lg:gap-16 bg-[url('/faq-bg.svg')] bg-no-repeat bg-cover">
           <div className="flex flex-col justify-between bg-white rounded-3xl py-8 px-16 w-1/2">
             <div className="mb-8 text-4xl font-bold leading-normal tracking-normal text-center text-[#1cc2c4]">
@@ -514,7 +510,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <footer className="max-sm:mt-8 mt-8 mx-4">
         <div className="mx-auto w-full p-4">

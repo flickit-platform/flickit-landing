@@ -20,11 +20,11 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
 
   return (
     <div className="max-sm:px-4 max-sm:py-4 w-full flex px-32  py-32 bg-no-repeat bg-[url('/carousel-bg.svg')] bg-clip-padding bg-cover">
-      <div className="flex flex-col justify-center items-center w-full transition-opacity duration-500">
+      <div className="flex flex-col justify-center items-center w-full transition-opacity duration-1000">
         <img
           src={images[currentSlide]}
           alt={`Slide ${currentSlide + 1}`}
-          className="transition-opacity duration-500"
+          className="transition-opacity duration-1000"
         />
 
         <div className="flex w-full justify-center items-center max-sm:gap-1 gap-4 max-sm:mt-4 mt-16">
@@ -39,7 +39,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
                 }
                 onClick={() => setCurrentSlide(index)}
                 alt={`Slide ${index + 1}`}
-                className={`max-sm:w-[12px] max-sm:h-[12px] cursor-pointer transition-opacity duration-500 `}
+                className={`max-sm:w-[12px] max-sm:h-[12px] cursor-pointer transition-opacity duration-1000 `}
               />
             );
           })}

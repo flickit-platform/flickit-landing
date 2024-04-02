@@ -47,7 +47,6 @@ export default function Home() {
   const images = [
     "/carousel-img-1.png",
     "/carousel-img-2.png",
-    "/carousel-img-3.png",
   ];
   const [selectedFAQ, setSelectedFAQ] = useState(0);
 

@@ -89,11 +89,11 @@ export default function Home() {
           />
 
           <div className="flex flex-col items-center justify-center max-sm:w-full max-sm:px-4 max-sm:gap-8 sm:px-16 md:px-24 lg:px-32 xl:px-80  max-sm:my-2 mt-40 mb-16 gap-16">
-            <div className="text-[#c7cfcf] text-center max-sm:text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal relative w-full max-sm:px-8">
+            <div className="text-[#6C7B8E] text-center max-sm:text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-normal relative w-full max-sm:px-8">
               The Ultimate Tool for Assessing Your Software
             </div>
-            <div className="text-center max-sm:text-4xl sm:text-5xl md:text-5xl lg:text-7xl leading-5 font-bold relative self-stretch txt-gradient ">
-              Say goodbye to software quality blind spots with expert algorithms
+            <div className="text-center max-sm:text-3xl sm:text-4xl md:text-4xl lg:text-6xl leading-5 font-bold relative self-stretch txt-gradient ">
+              Say Goodbye to Software Quality Blind Spots with Expert Algorithms
             </div>
             <div className="flex flex-col gap-6 items-center justify-center self-stretch shrink-0 relative">
               <div className="text-center max-sm:text-sm text-xl  font-normal relative self-stretch">
@@ -117,7 +117,7 @@ export default function Home() {
       </section>
 
       <section className="max-sm:mt-16 mt-40 mx-auto max-sm:bg-[#EDFCFC] bg-[#1cc2c4]">
-        <div className="max-sm:hidden bg-[url('/bg-shapes.svg')] bg-clip-padding bg-cover r w-full bg-no-repeat h-[700px] py-16 md:px-16 lg:px-32 2xl:px-64 reletive">
+        <div className="max-sm:hidden bg-[url('/bg-shapes.svg')] bg-clip-padding bg-cover r w-full bg-no-repeat h-[700px] py-16  md:px-8 lg:px-16 xl:px-32 2xl:px-64 reletive">
           <Image
             src={"/polygon-vector.svg"}
             className="absolute z-1 left-4 mt-[-186px]"
@@ -129,36 +129,38 @@ export default function Home() {
             How does it work?
           </div>
           <div className="flex flex-row justify-between items-start md:gap-3 lg:gap-8 relative">
-            <div className="flex flex-col justify-start items-center gap-6 p-4 border border-solid border-gray-200 rounded-lg shadow-inner bg-teal-50 w-[320px]">
+            <div className="flex flex-col justify-between  items-center p-8 border border-solid border-gray-200 rounded-lg shadow-inner bg-teal-50  h-[450px] w-1/3">
               <Image
                 src={"/Shape-ilustration-1.png"}
                 width={288}
                 height={200}
                 alt={"ilustration"}
+
               />
-              <div className="text-shadow-sm font-Ubuntu text-sm font-medium leading-relaxed text-center text-gray-500">
+              {/* <div className="text-shadow-sm font-Ubuntu text-sm font-medium leading-relaxed text-center text-gray-500">
                 Step 1.
-              </div>
-              <div className="text-shadow font-Ubuntu text-xl font-medium leading-relaxed text-center text-[#0A2342]">
-                Address the right assessment kit
+              </div> */}
+              <div className=" text-xl font-medium text-center text-[#0A2342] txt-shadow ">
+                1. Address the right assessment kit
               </div>
               <div className="text-sm font-light leading-relaxed tracking-normal text-justify text-[#0A2342]">
                 Pick the assessment kit that aligns perfectly with your concerns
                 and covers your decision factors.
               </div>
             </div>
-            <div className="flex flex-col justify-start items-center gap-6 p-4 border border-solid border-gray-200 rounded-lg shadow-inner bg-teal-50 w-[320px]">
+            <div className="flex flex-col justify-between  items-center p-8 border border-solid border-gray-200 rounded-lg shadow-inner bg-teal-50 h-[450px] w-1/3">
               <Image
                 src={"/Shape-ilustration-2.png"}
                 width={288}
                 height={200}
                 alt={"ilustration"}
+
               />
-              <div className="text-shadow-sm font-Ubuntu text-sm font-medium leading-relaxed text-center text-gray-500">
+              {/* <div className="text-shadow-sm font-Ubuntu text-sm font-medium leading-relaxed text-center text-gray-500">
                 Step 2.
-              </div>
-              <div className="text-shadow font-Ubuntu text-xl font-medium leading-relaxed text-center text-[#0A2342]">
-                Answer the questions
+              </div> */}
+              <div className="text-shadow font-Ubuntu text-xl font-medium leading-relaxed text-center text-[#0A2342] txt-shadow ">
+                2. Answer the questions
               </div>
               <div className="text-sm font-light leading-relaxed tracking-normal text-justify text-[#0A2342]">
                 Answer the questions in the chosen assessment kit and provide
@@ -166,18 +168,19 @@ export default function Home() {
               </div>
             </div>
 
-            <div className=" flex flex-col justify-start items-center gap-6 p-4 border border-solid border-gray-200 rounded-lg shadow-inner bg-teal-50 w-[320px]">
+            <div className=" flex flex-col justify-between  items-center sm:p-2 md:p-4 lg:p-4 xl:p-8 border border-solid border-gray-200 rounded-lg shadow-inner bg-teal-50 h-[450px] w-1/3">
               <Image
                 src={"/Shape-ilustration-3.png"}
                 width={288}
                 height={200}
                 alt={"ilustration"}
+
               />
-              <div className="text-shadow-sm font-Ubuntu text-sm font-medium leading-relaxed text-center text-gray-500">
+              {/* <div className="text-shadow-sm font-Ubuntu text-sm font-medium leading-relaxed text-center text-gray-500">
                 Step 3.
-              </div>
-              <div className="text-shadow font-Ubuntu text-xl font-medium leading-relaxed text-center text-[#0A2342]">
-                Explore the assessment insights
+              </div> */}
+              <div className="text-shadow font-Ubuntu text-xl font-medium leading-relaxed text-center text-[#0A2342] txt-shadow mt-6 ">
+                3. Explore the assessment insights
               </div>
               <div className="text-sm font-light leading-relaxed tracking-normal text-justify text-[#0A2342]">
                 Explore the insights and recommendations generated by the

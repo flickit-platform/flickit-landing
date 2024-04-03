@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 import Typewriter from "./components/TyprWriter";
 import ImageCarousel from "./components/ImageCarousel";
-
+import Link from "next/link";
 export default function Home() {
   const QAs: any[] = [
     {
@@ -44,10 +44,7 @@ export default function Home() {
         "The Flickit platform uses a unique evaluation methodology along with a comprehensive set of evaluation criteria and tools to assess the maturity level of software products. This evaluation process involves collecting data on the software product's performance and capabilities, which is then compared against industry standards or best practices. To generate a maturity level report, the Flickit platform first collects data on the software product's performance across various quality attributes and dimensions. This data is collected using a range of evaluation tools, such as surveys, interviews, and automated tests. The collected data is then analyzed and scored based on a set of predefined evaluation criteria. These criteria are designed to measure the software product's maturity level across various quality attributes and dimensions, such as functionality, reliability, performance, and maintainability. After the data has been scored, the Flickit platform generates a maturity level report that shows the software product's maturity level across each quality attribute and dimension. The report typically includes a visual representation of the maturity level, such as a chart or graph, along with a detailed description of the evaluation results. By using this maturity level report, users can identify areas of strengths and weaknesses in their software products and prioritize improvement efforts accordingly. This report can also be used as a benchmarking tool to compare the software product's maturity level against industry standards or best practices. Overall, the Flickit platform's maturity level reports provide valuable insights into the quality and performance of software products, thus empowering users to make data-driven decisions and take targeted actions to improve their software maturity levels.",
     },
   ];
-  const images = [
-    "/carousel-img-1.png",
-    "/carousel-img-2.png",
-  ];
+  const images = [ "/carousel-img-2.png"];
   const [selectedFAQ, setSelectedFAQ] = useState(0);
 
   return (
@@ -103,12 +100,14 @@ export default function Home() {
               </div>
             </div>
             <div className="mt-4 flex gap- max-sm:gap-2 gap-4">
-              <button className="max-sm:text-sm rounded-full border border-solid border-[#1cc2c4] bg-[#1CC2C4] hover:bg-[#1cc2c4bf]  px-6 py-2.5 text-[#edf4fc]">
-                Getting started
-              </button>
-              <button className="max-sm:text-sm rounded-full  px-6 py-2.5 text-[#1cc2c4] hover:border hover:border-[#1cc2c4]">
+              <Link href="https://flickit.org/" rel="noopener noreferrer">
+                <button className="max-sm:text-sm rounded-full border border-solid border-[#1cc2c4] bg-[#1CC2C4] hover:bg-[#1cc2c4bf]  px-16 py-2.5 text-[#edf4fc]">
+                  Getting started
+                </button>
+              </Link>
+              {/* <button className="max-sm:text-sm rounded-full  px-6 py-2.5 text-[#1cc2c4] hover:border hover:border-[#1cc2c4]">
                 Read more...
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
@@ -129,15 +128,16 @@ export default function Home() {
           <div className="flex flex-row justify-between items-start md:gap-3 lg:gap-8 relative">
             <div className="flex flex-col justify-between  items-center p-8 border border-solid border-gray-200 rounded-lg shadow-inner bg-teal-50  h-[450px] w-1/3">
               <Image
-                src={"/Shape-ilustration-1.png"}
+                src={"/sh-ill-1.png"}
                 width={288}
                 height={200}
                 alt={"ilustration"}
+                className="h-[240px]"
               />
               {/* <div className="text-shadow-sm font-Ubuntu text-sm font-medium leading-relaxed text-center text-gray-500">
                 Step 1.
               </div> */}
-              <div className=" text-xl font-medium text-center text-[#0A2342] txt-shadow ">
+              <div className=" text-xl font-medium text-center text-[#0A2342]">
                 1. Address the right assessment kit
               </div>
               <div className="text-sm font-light leading-relaxed tracking-normal text-justify text-[#0A2342]">
@@ -147,15 +147,16 @@ export default function Home() {
             </div>
             <div className="flex flex-col justify-between  items-center p-8 border border-solid border-gray-200 rounded-lg shadow-inner bg-teal-50 h-[450px] w-1/3">
               <Image
-                src={"/Shape-ilustration-2.png"}
+                src={"/sh-ill-2.png"}
                 width={288}
                 height={200}
                 alt={"ilustration"}
+                className="h-[240px]"
               />
               {/* <div className="text-shadow-sm font-Ubuntu text-sm font-medium leading-relaxed text-center text-gray-500">
                 Step 2.
               </div> */}
-              <div className="text-shadow font-Ubuntu text-xl font-medium leading-relaxed text-center text-[#0A2342] txt-shadow ">
+              <div className="text-shadow font-Ubuntu text-xl font-medium leading-relaxed text-center text-[#0A2342] ">
                 2. Answer the questions
               </div>
               <div className="text-sm font-light leading-relaxed tracking-normal text-justify text-[#0A2342]">
@@ -166,15 +167,16 @@ export default function Home() {
 
             <div className=" flex flex-col justify-between  items-center sm:p-2 md:p-4 lg:p-4 xl:p-8 border border-solid border-gray-200 rounded-lg shadow-inner bg-teal-50 h-[450px] w-1/3">
               <Image
-                src={"/Shape-ilustration-3.png"}
+                src={"/sh-ill-3.png"}
                 width={288}
                 height={200}
                 alt={"ilustration"}
+                className="h-[240px]"
               />
               {/* <div className="text-shadow-sm font-Ubuntu text-sm font-medium leading-relaxed text-center text-gray-500">
                 Step 3.
               </div> */}
-              <div className="text-shadow font-Ubuntu text-xl font-medium leading-relaxed text-center text-[#0A2342] txt-shadow mt-6 ">
+              <div className="text-shadow font-Ubuntu text-xl font-medium leading-relaxed text-center text-[#0A2342] mt-6 ">
                 3. Explore the assessment insights
               </div>
               <div className="text-sm font-light leading-relaxed tracking-normal text-justify text-[#0A2342]">
@@ -187,7 +189,7 @@ export default function Home() {
 
         <div className="sm:hidden bg-[url('/bg-mobile.svg')] w-full bg-no-repeat bg-cover  h-[140vh] py-16">
           <div className="text-4xl text-center w-full font-bold  text-[#edf4fc] ">
-            How does it works?
+            How does it work?
           </div>
           <div className="flex flex-col justify-between p-16">
             <div className="bg-[url('/polygon-mobile.svg')] bg-no-repeat bg-cover h-[210px] w-[180px] flex flex-col justify-center items-center gap-4 px-2 text-center">
@@ -242,10 +244,10 @@ export default function Home() {
                   width={370}
                   height={370}
                   alt={"situation"}
-                  className="sm:w-2/5 xl:w-3/5  max-sm:w-[160px] max-sm:mb-auto"
+                  className="sm:w-[200px] md:w-[25vw] xl:w-[20vw]  max-sm:w-[160px] max-sm:mb-auto"
                 />
                 <div className="mx-16 w-1/2 max-sm:w-full max-sm:mx-4">
-                  <div className="max-sm:text-sm text-2xl font-bold leading-normal tracking-normal text-left text-[#0A2342] mb-6 flex">
+                  <div className="max-sm:text-sm text-2xl 2xl:text-4xl font-bold leading-normal tracking-normal text-left text-[#0A2342] mb-6 flex">
                     <Image
                       src={"/Polygon-1.svg"}
                       width={40}
@@ -255,7 +257,7 @@ export default function Home() {
                     />
                     If you are about to buy a software
                   </div>
-                  <div className="max-sm:mt-4 max-sm:text-xs max-sm:font-light text-base font-normal leading-relaxed tracking-normal text-left text-[#0A2342]">
+                  <div className="max-sm:mt-4 max-sm:text-xs max-sm:font-light text-base 2xl:text-2xl font-normal leading-relaxed tracking-normal text-left text-[#0A2342]">
                     If you're considering purchasing new software and are
                     uncertain about its technical specifications, seeking a
                     third-party opinion can be beneficial. A comprehensive
@@ -265,16 +267,16 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col justify-between items-center max-sm:gap-4">
+              <div className="flex justify-center items-center max-sm:gap-4">
                 <Image
-                  className="m-auto sm:w-1/3 xl:w-3/5   max-sm:w-[160px]"
+                  className="sm:w-[200px] md:w-[25vw] xl:w-[20vw]  max-sm:w-[160px] max-sm:mb-auto"
                   src={"/situation-2.svg"}
-                  width={370}
-                  height={370}
+                  width={300}
+                  height={300}
                   alt={"situation"}
                 />
                 <div className="mx-16 w-1/2 max-sm:w-full max-sm:mx-4 max-sm:mt-4">
-                  <div className="max-sm:w-2/3 max-sm:text-sm max-sm:m-auto text-2xl font-bold leading-normal tracking-normal text-center text-[#0A2342] mb-6 flex max-sm:flex-row-reverse flex-col-reverse items-center">
+                  <div className="max-sm:w-2/3 max-sm:text-sm max-sm:m-auto text-2xl 2xl:text-4xl font-bold leading-normal tracking-normal text-center text-[#0A2342] mb-6 flex max-sm:flex-row-reverse flex-col-reverse items-center">
                     If you want to assess you contractor's work
                     <Image
                       src={"/Polygon-2.svg"}
@@ -284,7 +286,7 @@ export default function Home() {
                       className="mb-4 max-sm:w-[18px] max-sm:mr-2 max-sm:mb-0 "
                     />
                   </div>
-                  <div className="max-sm:mt-4 max-sm:text-xs max-sm:font-light text-base font-normal leading-relaxed tracking-normal text-center text-[#0A2342] ">
+                  <div className="max-sm:mt-4 max-sm:text-xs max-sm:font-light text-base 2xl:text-2xl font-normal leading-relaxed tracking-normal text-center text-[#0A2342] ">
                     If you are developing a software and you wish to
                     professionally assess the quality of their work in technical
                     terms, you can seek assistance from expert evaluators in
@@ -299,10 +301,10 @@ export default function Home() {
                   width={370}
                   height={370}
                   alt={"situation"}
-                  className="sm:w-2/5 xl:w-3/5   max-sm:w-[160px] max-sm:mb-auto"
+                  className="sm:w-[200px] md:w-[25vw] xl:w-[20vw]  max-sm:w-[160px] max-sm:mb-auto"
                 />
                 <div className="mx-16 w-1/2 max-sm:w-full max-sm:mx-4">
-                  <div className="max-sm:flex-row-reverse max-sm:text-sm text-2xl font-bold leading-normal tracking-normal text-left text-[#0A2342] mb-6 flex justify-between">
+                  <div className="max-sm:flex-row-reverse max-sm:text-sm text-2xl 2xl:text-4xl font-bold leading-normal tracking-normal text-left text-[#0A2342] mb-6 flex justify-between">
                     If you are developing a software
                     <Image
                       src={"/Polygon-3.svg"}
@@ -312,7 +314,7 @@ export default function Home() {
                       className=" max-sm:w-[18px] max-sm:mr-2"
                     />
                   </div>
-                  <div className="max-sm:mt-4 max-sm:text-xs max-sm:font-light text-base font-normal leading-relaxed tracking-normal text-left text-[#0A2342] ">
+                  <div className="max-sm:mt-4 max-sm:text-xs max-sm:font-light text-base 2xl:text-2xl font-normal leading-relaxed tracking-normal text-left text-[#0A2342] ">
                     If you are developing a software and you wish to
                     professionally assess the quality of your work in technical
                     terms, you can seek assistance from expert evaluators in
@@ -327,9 +329,15 @@ export default function Home() {
       </section>
       <section className="max-sm:mt-32 sm:mt-32 lg:mt-52 mb-16 mx-auto">
         <div className="w-full flex justify-center items-center mb-16">
-          <button className="hover:scale-105 hover:shadow-2xl max-sm:text-xl max-sm:w-full max-sm:mx-8 max-sm:py-2 w-2/3 bt-gradient btn-2 font-medium md:text-3xl lg:text-6xl text-[#edf4fc] text-center rounded-full py-4">
-            Try it for free
-          </button>
+          <Link
+            href="https://flickit.org/"
+            rel="noopener noreferrer"
+            className="w-2/3 max-sm:w-full max-sm:px-4"
+          >
+            <button className="hover:scale-105 hover:shadow-2xl max-sm:text-xl   max-sm:py-2 w-full bt-gradient btn-2 font-medium md:text-3xl lg:text-6xl text-[#edf4fc] text-center rounded-full py-4">
+              Try it for free
+            </button>
+          </Link>
         </div>
         <div className="max-sm:hidden flex items-center w-full justify-between sm:px-8 lg:px-16 lg:gap-4 xl:gap-8">
           <div className=" hover:bg-[url('/Polygon-bg-hover.svg')] bg-[url('/Polygon-bg.svg')] bg-no-repeat bg-contain h-[35vw] w-[33vw]  flex flex-col justify-center items-center sm:pt-8 pb-10 gap-2 sm:px-4 xl:px-8 ">

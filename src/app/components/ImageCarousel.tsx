@@ -13,7 +13,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
       setCurrentSlide((prevSlide) =>
         prevSlide === images.length - 1 ? 0 : prevSlide + 1
       );
-    }, 3000); // Change slides every 3 seconds
+    }, 8000); // Change slides every 3 seconds
 
     return () => clearInterval(interval);
   }, [images.length]);

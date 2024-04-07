@@ -44,7 +44,22 @@ export default function Home() {
         "The Flickit platform uses a unique evaluation methodology along with a comprehensive set of evaluation criteria and tools to assess the maturity level of software products. This evaluation process involves collecting data on the software product's performance and capabilities, which is then compared against industry standards or best practices. To generate a maturity level report, the Flickit platform first collects data on the software product's performance across various quality attributes and dimensions. This data is collected using a range of evaluation tools, such as surveys, interviews, and automated tests. The collected data is then analyzed and scored based on a set of predefined evaluation criteria. These criteria are designed to measure the software product's maturity level across various quality attributes and dimensions, such as functionality, reliability, performance, and maintainability. After the data has been scored, the Flickit platform generates a maturity level report that shows the software product's maturity level across each quality attribute and dimension. The report typically includes a visual representation of the maturity level, such as a chart or graph, along with a detailed description of the evaluation results. By using this maturity level report, users can identify areas of strengths and weaknesses in their software products and prioritize improvement efforts accordingly. This report can also be used as a benchmarking tool to compare the software product's maturity level against industry standards or best practices. Overall, the Flickit platform's maturity level reports provide valuable insights into the quality and performance of software products, thus empowering users to make data-driven decisions and take targeted actions to improve their software maturity levels.",
     },
   ];
-  const images = ["/carousel-img-2.png"];
+  const images = [
+    {
+      img: "/carousel-img-2.png",
+      name: "Sadegh Aliakbary",
+      title: "Software Engineering Instructor and Consultant",
+      description:
+        "Flickit is an intelligent assistant for technical decision support. I love it because it practically helped me in evaluating different enterprise software systems, its insights made sense to a wide variety of decision makers, and it is open source!",
+    },
+    {
+      img: "/carousel-img-1.png",
+      name: "Seyed Jamaldin Pishvaei",
+      title: "Software Quality Assessor",
+      description:
+        "Flickit promotes efficient mental and practical disciplines in assessment projects. While speeding up the assessment process, it provides greater satisfaction among our consultees with less effort.",
+    },
+  ];
   const [selectedFAQ, setSelectedFAQ] = useState(0);
 
   return (

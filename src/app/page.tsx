@@ -206,16 +206,10 @@ export default function Home() {
           <div className="text-4xl text-center w-full font-bold  text-[#edf4fc] ">
             How does it work?
           </div>
-          <div className="flex flex-col justify-between p-16">
-            <div className=" bg-no-repeat bg-cover h-[210px] w-[180px] flex flex-col justify-center items-center gap-4 px-2 text-center ">
-              <Image
-                src={"/polygon-mobile.svg"}
-                width={210}
-                height={240}
-                alt={"ilustration"}
-                className=" absolute backdrop-blur-sm z-2"
-              />
-              <div className="text-sm font-medium text-[#1cc2c4] relative z-3">
+          <div className="flex flex-col justify-between p-8">
+            <div className="bg-[url('/polygon-mobile.svg')] bg-no-repeat bg-cover h-[210px] w-[180px] flex flex-col justify-center items-center gap-4 px-2 text-center ">
+  
+              <div className="text-sm font-medium text-[#1cc2c4] relative z-3 ">
                 1. Address the right assessment kit
               </div>
               <div className="text-xs font-light text-[#EDF4FC] relative z-3">
@@ -245,8 +239,8 @@ export default function Home() {
         </div>
       </section>
       <section className="mx-auto mb-8 ">
-        <div className="max-sm:hidden flex flex-col items-center justify-center relative top-16 bg-[url('/midle-shape-bg.svg')] w-full bg-no-repeat max-sm:py-8 max-sm:px-4  md:py-16 md:px-8 xl:p-32 ">
-          <div className="backdrop-blur-md w-full h-full bg-white/70 rounded-[32px] flex  flex-col p-16  max-sm:py-4 max-sm:px-4 md:px-8 xl:px-32">
+        <div className="max-sm:hidden flex flex-col items-center justify-center relative top-16 w-full bg-no-repeat max-sm:py-8 max-sm:px-4  md:py-16 md:px-8 xl:p-32 ">
+          <div className="backdrop-blur-md w-full h-full bg-white/70 rounded-[32px] flex  flex-col p-16  max-sm:py-4 max-sm:px-4 md:px-8 xl:px-32 shadow-xl">
             <div className="text-5xl font-bold leading-normal tracking-normal text-center max-sm:hidden text-[#1cc2c4] mb-16">
               Flickit is specially helpful if...
             </div>

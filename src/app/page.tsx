@@ -54,7 +54,7 @@ export default function Home() {
     },
     {
       img: "/carousel-img-1.png",
-      name: "Seyed Jamaldin Pishvaei",
+      name: "Seyyed Jamaleddin Pishvaei",
       title: "Software Quality Assessor",
       description:
         "Flickit promotes efficient mental and practical disciplines in assessment projects. While speeding up the assessment process, it provides greater satisfaction among our consultees with less effort.",

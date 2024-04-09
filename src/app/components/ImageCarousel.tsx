@@ -18,7 +18,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
     return () => clearInterval(interval);
   }, [images.length]);
 
-  return (
+  return ( 
     <div className="max-sm:px-4 max-sm:py-4 w-full flex sm:p-8 md:p-16 lg:p-32 xl:p-48 2xl:p-64 bg-no-repeat bg-[url('/carousel-bg.svg')] bg-clip-padding bg-cover">
       <div className="flex flex-col justify-center items-center w-full transition-opacity duration-1000">
         <div className="flex w-full 2xl:w-3/4 justify-between max-sm:items-center items-start max-sm:gap-4 sm:gap-4  md:gap-4 lg:gap-6 2xl:gap-24 xl:gap-16 max-sm:min-h-[250px] sm:min-h-[250px] md:min-h-[300px] lg:min-h-[350px] xl:min-h-[450px] 2xl:min-h-[500px]">

@@ -27,16 +27,18 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
             alt={`Slide ${currentSlide + 1}`}
             className="transition-opacity duration-1000 max-sm:w-[140px] sm:w-[160px] md:w-[200px] lg:w-[300px] xl:w-[400px] 2xl:w-[500px]"
           />
-          <div className="flex flex-col gap-4  lg:mt-12 xl:mt-24">
-            <div className="max-sm:text-lg sm:text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl  font-bold text-[#1cc2c4]">
-              {images[currentSlide].name}
-            </div>
-            <div className="max-sm:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold text-[#1cc2c4]">
-              {images[currentSlide].title}
-            </div>
-            <div className=" max-sm:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl  2xl:text-2xl font-medium text-[#0A2342] italic">
+          <div className="flex flex-col gap-2  lg:mt-12 xl:mt-24">
+            <div className=" max-sm:text-sm sm:text-lg md:text-lg lg:text-2xl xl:text-4xl  2xl:text-6xl font-medium text-[#0A2342] italic">
               {images[currentSlide].description}
             </div>
+            {/* <div className="flex gap-2 items-center"> */}
+              <div className="max-sm:text-xs sm:text-sm md:text-sm lg:text-lg xl:text-xl 2xl:text-2xl  font-bold text-[#1cc2c4]">
+                {images[currentSlide].name}
+              </div>
+              <div className="max-sm:text-xs sm:text-xs md:text-xs lg:text-base xl:text-base 2xl:text-xl font-bold text-[#9DA7B3]">
+                {images[currentSlide].title}
+              </div>
+            {/* </div> */}
           </div>
         </div>
         <div className="flex w-full justify-center items-center max-sm:gap-1 gap-4 max-sm:mt-4 mt-16">

@@ -1,12 +1,14 @@
 #!/bin/sh
-for i in $(env | grep FLICKIT_)
+
+# Define the environment variable prefix
+ENV_PREFIX="FLICKIT_LANDING"
+
+# Loop through environment variables
+for i in $(env | grep "^$ENV_PREFIX")
 do
     key=$(echo $i | cut -d '=' -f 1)
     value=$(echo $i | cut -d '=' -f 2-)
-    echo $key=$value
-    # sed All files
-    # find /usr/share/nginx/html -type f -exec sed -i "s|${key}|${value}|g" '{}' +
-
-    # sed JS and CSS only
-    find /usr/share/nginx/html -type f \( -name '*.js' -o -name '*.css' \) -exec sed -i "s|${key}|${value}|g" '{}' +
+    
+    # Replace occurrences of the environment variable in files
+    find .next -type f \( -name '*.js' -o -name '*.css' \) -exec sed -i "s|${key}|${value}|g" '{}' +
 done

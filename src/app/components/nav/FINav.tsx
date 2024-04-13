@@ -30,16 +30,16 @@ export default function FINav() {
   const activeSegment = useSelectedLayoutSegment();
 
   return (
-    <nav className="flex items-center justify-between max-sm:px-4 px-24 h-14 relative z-50 mx-auto bg-[#EDF4FC] shadow-md py-8 2xl:py-16">
+    <nav className="flex items-center justify-between max-sm:px-4 px-24 h-14 relative z-50 mx-auto bg-[#EDF4FC] shadow-md py-8 2xl:py-12">
       <div className="flex gap-2 2xl:gap-8">
         <Image
           src="/logo.svg"
           alt="Flickit"
           width={110}
           height={42}
-          className="sm:w-[110px] md:w-[110px] lg:w-[110px] 2xl:w-[238px]"
+          className="sm:w-[110px] md:w-[110px] lg:w-[110px] 2xl:w-[260px]"
         />
-        <div className="py-1 px-3 border text-sm 2xl:text-2xl font-bold text-[#D81E5B] border-[#D81E5B] rounded-[100px] bg-[#FDF1F5] flex justify-center items-center">
+        <div className="py-1 px-3 border text-sm 2xl:text-xl font-bold text-[#D81E5B] border-[#D81E5B] rounded-[100px] bg-[#FDF1F5] flex justify-center items-center">
           Beta Preview
         </div>
       </div>
@@ -51,8 +51,8 @@ export default function FINav() {
                 )}
             </div> */}
       <div>
-        <Link href="https://flickit.org/" rel="noopener noreferrer">
-          <button className="max-sm:hidden bg-primary text-white py-2.5  2xl:py-6 px-6  2xl:px-12 text-base 2xl:text-4xl font-semibold tracking-wider rounded-md">
+        <Link href={process.env.NEXT_PUBLIC_REDIRECT_URL || "/"} rel="noopener noreferrer">
+          <button className="max-sm:hidden bg-primary text-white py-2.5  2xl:py-4 px-4  2xl:px-8 text-base 2xl:text-2xl font-semibold tracking-wider rounded-md">
             Get started here!
           </button>
         </Link>

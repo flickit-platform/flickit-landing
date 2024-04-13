@@ -115,7 +115,10 @@ export default function Home() {
               </div>
             </div>
             <div className="mt-4 flex gap- max-sm:gap-2 gap-4">
-              <Link href="https://flickit.org/" rel="noopener noreferrer">
+              <Link
+                href={process.env.NEXT_PUBLIC_REDIRECT_URL|| "/"}
+                rel="noopener noreferrer"
+              >
                 <button className="max-sm:text-sm rounded-full border border-solid border-[#1cc2c4] bg-[#1CC2C4] hover:bg-[#1cc2c4bf]  px-16 py-2.5 text-[#edf4fc]">
                   Getting started
                 </button>
@@ -143,7 +146,7 @@ export default function Home() {
           <div className="flex flex-row justify-between items-start md:gap-3 lg:gap-8 relative">
             <div className="flex flex-col justify-between  items-center p-8 border border-solid border-gray-200 rounded-lg shadow-inner bg-teal-50  h-[450px] w-1/3">
               <Image
-                src={"/sh-ill-1.png"}
+                src={"/sh-ill-1.svg"}
                 width={288}
                 height={200}
                 alt={"ilustration"}
@@ -162,7 +165,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col justify-between  items-center p-8 border border-solid border-gray-200 rounded-lg shadow-inner bg-teal-50 h-[450px] w-1/3">
               <Image
-                src={"/sh-ill-2.png"}
+                src={"/sh-ill-2.svg"}
                 width={288}
                 height={200}
                 alt={"ilustration"}
@@ -182,7 +185,7 @@ export default function Home() {
 
             <div className=" flex flex-col justify-between  items-center sm:p-2 md:p-4 lg:p-4 xl:p-8 border border-solid border-gray-200 rounded-lg shadow-inner bg-teal-50 h-[450px] w-1/3">
               <Image
-                src={"/sh-ill-3.png"}
+                src={"/sh-ill-3.svg"}
                 width={288}
                 height={200}
                 alt={"ilustration"}
@@ -208,7 +211,6 @@ export default function Home() {
           </div>
           <div className="flex flex-col justify-between p-8">
             <div className="bg-[url('/polygon-mobile.svg')] bg-no-repeat bg-cover h-[210px] w-[180px] flex flex-col justify-center items-center gap-4 px-2 text-center ">
-  
               <div className="text-sm font-medium text-[#1cc2c4] relative z-3 ">
                 1. Address the right assessment kit
               </div>
@@ -434,7 +436,7 @@ export default function Home() {
       <section className="max-sm:mt-32 sm:mt-32 lg:mt-52 mb-16 mx-auto">
         <div className="w-full flex justify-center items-center mb-16">
           <Link
-            href="https://flickit.org/"
+            href={process.env.NEXT_PUBLIC_REDIRECT_URL || "/"}
             rel="noopener noreferrer"
             className="w-2/3 max-sm:w-full max-sm:px-4"
           >

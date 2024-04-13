@@ -7,7 +7,6 @@ interface ImageCarouselProps {
 
 const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
-  console.log(images);
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) =>

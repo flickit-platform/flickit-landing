@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useSelectedLayoutSegment } from "next/navigation";
 import FINavLink from "./FINavLink";
 import Link from "next/link";
+import { REDIRECT_URL } from "../constants";
 export default function FINav() {
   const navItems = [
     {
@@ -37,7 +38,7 @@ export default function FINav() {
           alt="Flickit"
           width={110}
           height={42}
-          className="sm:w-[110px] md:w-[110px] lg:w-[110px] 2xl:w-[260px]"
+          className="sm:w-[110px] md:w-[110px] lg:w-[110px] 2xl:w-[174px]"
         />
         <div className="py-1 px-3 border text-sm 2xl:text-xl font-bold text-[#D81E5B] border-[#D81E5B] rounded-[100px] bg-[#FDF1F5] flex justify-center items-center">
           Beta Preview
@@ -51,7 +52,10 @@ export default function FINav() {
                 )}
             </div> */}
       <div>
-        <Link href={process.env.NEXT_PUBLIC_REDIRECT_URL || "/"} rel="noopener noreferrer">
+        <Link
+          href={REDIRECT_URL}
+          rel="noopener noreferrer"
+        >
           <button className="max-sm:hidden bg-primary text-white py-2.5  2xl:py-4 px-4  2xl:px-8 text-base 2xl:text-2xl font-semibold tracking-wider rounded-md">
             Get started here!
           </button>

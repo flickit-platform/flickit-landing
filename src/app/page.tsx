@@ -3,8 +3,10 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 import Typewriter from "./components/TyprWriter";
 import ImageCarousel from "./components/ImageCarousel";
+import {REDIRECT_URL} from './components/constants'
 import Link from "next/link";
 export default function Home() {
+
   const QAs: any[] = [
     {
       question: "What is Flickit platform?",
@@ -116,7 +118,7 @@ export default function Home() {
             </div>
             <div className="mt-4 flex gap- max-sm:gap-2 gap-4">
               <Link
-                href={process.env.NEXT_PUBLIC_REDIRECT_URL|| "/"}
+                href={REDIRECT_URL}
                 rel="noopener noreferrer"
               >
                 <button className="max-sm:text-sm rounded-full border border-solid border-[#1cc2c4] bg-[#1CC2C4] hover:bg-[#1cc2c4bf]  px-16 py-2.5 text-[#edf4fc]">
@@ -286,7 +288,7 @@ export default function Home() {
                 />
                 <div className="mx-16 w-1/2 max-sm:w-full max-sm:mx-4 max-sm:mt-4">
                   <div className="max-sm:w-2/3 max-sm:text-sm max-sm:m-auto text-2xl 2xl:text-4xl font-bold leading-normal tracking-normal text-center text-[#0A2342] mb-6 flex max-sm:flex-row-reverse flex-col-reverse items-center">
-                    If you want to assess you contractor's work
+                    If you want to assess your contractor's work
                     <Image
                       src={"/Polygon-2.svg"}
                       width={40}
@@ -372,7 +374,7 @@ export default function Home() {
               <div className="flex flex-col justify-between items-center">
                 <div className="flex w-full justify-between flex-col-reverse items-center  gap-4">
                   <div className="max-sm:w-2/3 max-sm:text-sm max-sm:m-auto text-2xl 2xl:text-4xl font-bold leading-normal tracking-normal text-center text-[#0A2342] mb-6 flex max-sm:flex-row-reverse flex-col-reverse items-start">
-                    If you want to assess you contractor's work
+                    If you want to assess your contractor's work
                     <Image
                       src={"/Polygon-2.svg"}
                       width={40}
@@ -436,7 +438,7 @@ export default function Home() {
       <section className="max-sm:mt-32 sm:mt-32 lg:mt-52 mb-16 mx-auto">
         <div className="w-full flex justify-center items-center mb-16">
           <Link
-            href={process.env.NEXT_PUBLIC_REDIRECT_URL || "/"}
+            href={REDIRECT_URL}
             rel="noopener noreferrer"
             className="w-2/3 max-sm:w-full max-sm:px-4"
           >
@@ -446,8 +448,8 @@ export default function Home() {
           </Link>
         </div>
         <div className="max-sm:hidden flex items-center w-full justify-between sm:px-8 lg:px-16 lg:gap-4 xl:gap-8">
-          <div className=" hover:bg-[url('/Polygon-bg-hover.svg')] bg-[url('/Polygon-bg.svg')] bg-no-repeat bg-contain h-[35vw] w-[33vw] flex flex-col justify-center items-center sm:pt-8 pb-10 2xl:gap-16 gap-8 sm:px-4 xl:px-8 ">
-            <div className="font-bold sm:text-base xl:text-3xl 2xl:text-5xl text-[#0A2342] text-center">
+          <div className=" hover:bg-[url('/Polygon-bg-hover.svg')] bg-[url('/Polygon-bg.svg')] bg-no-repeat bg-contain h-[35vw] w-[33vw] flex flex-col justify-start items-center sm:pt-8   2xl:gap-16 sm:gap-2 md:gap-4 lg:gap-8 sm:px-4 md:px-4 xl:px-8 ">
+            <div className="font-bold sm:text-base xl:text-3xl 2xl:text-5xl text-[#0A2342] text-center md:mt-[20%] lg:mt-[30%] 2xl:mt-[40%]">
               Expert-Designed Assessment Kits
             </div>
             <div className="font-light sm:text-xs xl:text-lg 2xl:text-3xl text-[#0A2342] text-center">
@@ -456,17 +458,17 @@ export default function Home() {
               interests.
             </div>
           </div>
-          <div className=" hover:bg-[url('/Polygon-bg-hover.svg')] bg-[url('/Polygon-bg.svg')] bg-no-repeat bg-contain h-[35vw] w-[33vw] flex flex-col justify-center items-center sm:pt-8 pb-10 2xl:gap-16 gap-8 sm:px-4 xl:px-8 ">
-            <div className="font-bold sm:text-base xl:text-3xl 2xl:text-5xl text-[#0A2342] text-center">
+          <div className=" hover:bg-[url('/Polygon-bg-hover.svg')] bg-[url('/Polygon-bg.svg')] bg-no-repeat bg-contain h-[35vw] w-[33vw] flex flex-col justify-start items-center sm:pt-8  2xl:gap-16  sm:gap-2 md:gap-4 lg:gap-8 sm:px-4 md:px-4 xl:px-8 ">
+            <div className="font-bold sm:text-base xl:text-3xl 2xl:text-5xl text-[#0A2342] text-center md:mt-[20%] lg:mt-[30%] 2xl:mt-[40%]]">
               Custom Kit Creation
             </div>
-            <div className="font-light sm:text-xs xl:text-lg 2xl:text-3xl text-[#0A2342] text-center">
+            <div className="font-light sm:text-xs xl:text-lg 2xl:text-3xl text-[#0A2342] text-center ">
               Based on your expertise, create a tailored kit that fully meets
               your needs.
             </div>
           </div>
-          <div className=" hover:bg-[url('/Polygon-bg-hover.svg')] bg-[url('/Polygon-bg.svg')] bg-no-repeat bg-contain h-[35vw] w-[33vw] flex flex-col justify-center items-center sm:pt-8 pb-10 2xl:gap-16 gap-8 sm:px-4 xl:px-8 ">
-            <div className="font-bold sm:text-base xl:text-3xl 2xl:text-5xl text-[#0A2342] text-center">
+          <div className=" hover:bg-[url('/Polygon-bg-hover.svg')] bg-[url('/Polygon-bg.svg')] bg-no-repeat bg-contain h-[35vw] w-[33vw] flex flex-col justify-start items-center sm:pt-8   2xl:gap-16  sm:gap-2 md:gap-4 lg:gap-8  sm:px-4 md:px-4 xl:px-8 ">
+            <div className="font-bold sm:text-base xl:text-3xl 2xl:text-5xl text-[#0A2342] text-center md:mt-[20%] lg:mt-[30%] 2xl:mt-[40%]">
               Comprehensive Reporting Insights
             </div>
             <div className="font-light sm:text-xs xl:text-lg 2xl:text-3xl text-[#0A2342] text-center">

@@ -1,9 +1,3 @@
-export const REDIRECT_URL = window?.location?.hostname.includes(
-  "https://flickit.org"
-)
-  ? "https://app.flickit.org"
-  : "https://app.test.flickit.org";
-
 export const getRedirectUrl = (): string => {
   // Check if window is defined (to avoid error during server-side rendering)
   if (typeof window !== "undefined") {

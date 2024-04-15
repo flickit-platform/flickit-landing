@@ -432,7 +432,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="max-sm:mt-32 sm:mt-32 lg:mt-52 mb-16 mx-auto">
+      <section className="max-sm:mt-32 sm:mt-32 lg:mt-52 mb-4 mx-auto">
         <div className="w-full flex justify-center items-center mb-16">
           <Link
             href={REDIRECT_URL}

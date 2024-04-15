@@ -3,8 +3,9 @@ import Image from "next/image";
 import { useSelectedLayoutSegment } from "next/navigation";
 import FINavLink from "./FINavLink";
 import Link from "next/link";
-import { REDIRECT_URL } from "../constants";
+import { getRedirectUrl } from "../constants";
 export default function FINav() {
+  const REDIRECT_URL = getRedirectUrl();
   const navItems = [
     {
       title: "Home",

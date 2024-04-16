@@ -4,13 +4,13 @@ export const getRedirectUrl = (): string => {
     const baseUrl = window.location.hostname;
 
     // Check if the base URL contains "test."
-    if (baseUrl.includes("https://flickit.org")) {
-      return "https://app.flickit.org";
-    } else {
+    if (baseUrl.includes("test.")||baseUrl.includes("localhost")) {
       return "https://app.test.flickit.org";
+    } else {
+      return "https://app.flickit.org";
     }
   } else {
     // Fallback value for server-side rendering
-    return "https://app.test.flickit.org";
+    return "https://app.flickit.org";
   }
 };

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Typewriter from "./components/TyprWriter";
 import ImageCarousel from "./components/ImageCarousel";
 import { getRedirectUrl } from "./components/constants";
@@ -117,7 +117,7 @@ export default function Home() {
               </div>
             </div>
             <div className="mt-4 flex gap- max-sm:gap-2 gap-4">
-              <Link href={REDIRECT_URL} rel="noopener noreferrer">
+              <Link href={REDIRECT_URL} >
                 <button className="max-sm:text-sm rounded-full border border-solid border-[#1cc2c4] bg-[#1CC2C4] hover:bg-[#1cc2c4bf]  px-16 py-2.5 text-[#edf4fc]">
                   Getting started
                 </button>

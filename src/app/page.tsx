@@ -67,7 +67,7 @@ export default function Home() {
   return (
     <main>
       <section className="mx-auto">
-        <div className=" flex flex-col items-center justify-center relative top-16   w-full ">
+        <div className=" flex flex-col items-center justify-center relative top-16 lg:top-4 xl:top-4 2xl:top-16 w-full lg:h-[85vh] 2xl:h-full">
           <img
             src={"/pol-1.svg"}
             className="absolute z-[-1] left-0 top-[15%] max-sm:hidden sm:block "
@@ -102,7 +102,7 @@ export default function Home() {
           />
 
           <div className="flex flex-col items-center justify-center max-sm:w-full max-sm:px-4 max-sm:gap-8 sm:px-16 md:px-24 lg:px-32 xl:px-80  max-sm:my-2 mt-40 mb-16 gap-16">
-            <div className="text-[#6C7B8E] text-center max-sm:text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-normal relative w-full max-sm:px-8">
+            <div className="text-[#6C7B8E] mt-4 text-center max-sm:text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-normal relative w-full max-sm:px-8">
               The Ultimate Tool for Assessing Your Software
             </div>
             <div className="text-center max-sm:text-3xl sm:text-4xl md:text-4xl lg:text-6xl leading-5 font-bold relative self-stretch txt-gradient ">
@@ -117,7 +117,7 @@ export default function Home() {
               </div>
             </div>
             <div className="mt-4 flex gap- max-sm:gap-2 gap-4">
-              <Link href={REDIRECT_URL} >
+              <Link href={REDIRECT_URL}>
                 <button className="max-sm:text-sm rounded-full border border-solid border-[#1cc2c4] bg-[#1CC2C4] hover:bg-[#1cc2c4bf]  px-16 py-2.5 text-[#edf4fc]">
                   Getting started
                 </button>
@@ -604,9 +604,9 @@ export default function Home() {
         </div>
       </section> */}
 
-      <footer className="max-sm:mt-8 mt-8 mx-4">
-        <div className="mx-auto w-full p-4">
-          <div className="flex w-full items-center justify-center flex-col">
+      <footer className="max-sm:mt-8 mt-8">
+        <div className=" w-full rounded-t-[32px] bg-[#1cc2c4] flex justify-between px-8 pt-8">
+          {/* <div className="flex w-full items-center justify-center flex-col">
             <Image
               src={"/line-vector.svg"}
               className="mb-2 max-sm:w-[340px]"
@@ -628,6 +628,58 @@ export default function Home() {
               height={26}
               alt={"powered"}
             />
+          </div> */}
+          <div className="flex flex-col justify-between items-center w-1/4 mb-8 gap-8">
+            <span className=" text-xl text-[#EDF4FC] font-bold">
+              Get in touch
+            </span>
+            <div className="flex justify-between items-center gap-4">
+              <div className="bg-[#EDF4FC] rounded-2xl p-2 min-w-[60px] min-h-[60px] flex items-center justify-center">
+                <Image
+                  src={"/github-icn.svg"}
+                  width={36}
+                  height={36}
+                  alt={"github icon"}
+                />
+              </div>
+
+              <div className="bg-[#EDF4FC]  rounded-2xl p-2 min-w-[60px] min-h-[60px] flex items-center justify-center  text-white an cursor-pointer">
+          
+                <div className="text-[#1cc2c4] hidden">Info@flickit.org</div>
+                <div>
+                  <Image
+                    src={"/mail-icn.svg"}
+                    width={36}
+                    height={36}
+                    alt={"mail icon"}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className=" w-1/2 flex justify-center items-end ">
+            <Image
+              src={"/flickit-logo-footer.svg"}
+              width={180}
+              height={72}
+              alt={"logo"}
+              className=" w-auto absolute z-[2] mb-4"
+            />
+            <Image
+              src={"/footer-bg.svg"}
+              width={935}
+              height={125}
+              alt={"logo"}
+              className=" absolute sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[60%] 2xl:w-[40%]" 
+            />
+          </div>
+          <div className="flex flex-col justify-between items-center  w-1/4 mb-8">
+            <span className=" text-md text-[#EDF4FC] font-bold">
+              Joining in less than a minute!
+            </span>
+            <div className="text-lg text-[#1cc2c4] bg-[#EDF4FC] rounded-2xl px-16 py-1">
+              Try it now!
+            </div>
           </div>
         </div>
       </footer>

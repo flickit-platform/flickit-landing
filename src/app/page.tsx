@@ -635,13 +635,14 @@ export default function Home() {
             </span>
             <div className="flex justify-between items-center max-sm:gap-2 sm:gap-4 relative z-10">
               <a href="https://github.com/Flickit-Platform-Dev">
-                <div className="max-sm:p-1 max-sm:min-w-[36px] max-sm:min-h-[36px] max-sm:rounded-full sm:rounded-full bg-[#EDF4FC] lg:rounded-2xl p-2 min-w-[60px] min-h-[60px] flex items-center justify-center">
+                <div className=" max-sm:p-1 max-sm:min-w-[36px] max-sm:min-h-[36px] max-sm:rounded-full sm:rounded-full bg-[#EDF4FC]  lg:rounded-2xl p-2 min-w-[60px] min-h-[60px] flex items-center justify-center  text-white cursor-pointer w-[36px] h-[36px] lg:transition-width lg:duration-500 lg:hover:w-[200px] group">
+                <div className="text-[#1cc2c4] hidden lg:group-hover:flex whitespace-nowrap">Flickit-Platform-Dev</div>
                   <Image
                     src={"/github-icn.svg"}
                     width={36}
                     height={36}
                     alt={"github icon"}
-                    className="max-sm:w-[20px] max-sm:h-[20px]"
+                    className="max-sm:w-[20px] max-sm:h-[20px] block lg:group-hover:hidden"
                   />
                 </div>
               </a>

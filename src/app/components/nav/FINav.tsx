@@ -1,11 +1,16 @@
 "use client";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { useSelectedLayoutSegment } from "next/navigation";
 import FINavLink from "./FINavLink";
 import Link from "next/link";
 import { getRedirectUrl } from "../constants";
 export default function FINav() {
-  const REDIRECT_URL = getRedirectUrl();
+  const [redirectUrl, setRedirectUrl] = useState("");
+
+  useEffect(() => {
+    setRedirectUrl(getRedirectUrl());
+  }, []);
   const navItems = [
     {
       title: "Home",
@@ -53,10 +58,7 @@ export default function FINav() {
                 )}
             </div> */}
       <div>
-        <Link
-          href={REDIRECT_URL}
-          rel="noopener noreferrer"
-        >
+        <Link href={redirectUrl} rel="noopener noreferrer">
           <button className="max-sm:hidden bg-primary text-white py-2.5  2xl:py-4 px-4  2xl:px-8 text-base 2xl:text-2xl font-semibold tracking-wider rounded-md">
             Get started here!
           </button>

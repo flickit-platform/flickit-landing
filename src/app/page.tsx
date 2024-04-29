@@ -6,7 +6,11 @@ import ImageCarousel from "./components/ImageCarousel";
 import { getRedirectUrl } from "./components/constants";
 import Link from "next/link";
 export default function Home() {
-  const REDIRECT_URL = getRedirectUrl();
+  const [redirectUrl, setRedirectUrl] = useState('');
+
+  useEffect(() => {
+    setRedirectUrl(getRedirectUrl());
+  }, []);
   const QAs: any[] = [
     {
       question: "What is Flickit platform?",
@@ -117,7 +121,7 @@ export default function Home() {
               </div>
             </div>
             <div className="mt-4 flex gap- max-sm:gap-2 gap-4">
-              <a href={REDIRECT_URL}>
+              <a href={redirectUrl}>
                 <button className="max-sm:text-sm rounded-full border border-solid border-[#1cc2c4] bg-[#1CC2C4] hover:bg-[#1cc2c4bf]  px-16 py-2.5 text-[#edf4fc]">
                   Getting started
                 </button>
@@ -435,7 +439,7 @@ export default function Home() {
       <section className="max-sm:mt-32 sm:mt-32 lg:mt-52 mb-4 mx-auto">
         <div className="w-full flex justify-center items-center mb-16">
           <a
-            href={REDIRECT_URL}
+            href={redirectUrl}
             rel="noopener noreferrer"
             className="w-2/3 max-sm:w-full max-sm:px-4"
           >
@@ -634,7 +638,7 @@ export default function Home() {
               Get in touch
             </span>
             <div className="flex justify-between items-center max-sm:gap-2 sm:gap-4 relative z-10">
-              <a href="https://github.com/Flickit-Platform-Dev">
+              <a href="https://github.com/Flickit-Platform-Dev"  rel="noopener noreferrer" >
                 <div className=" max-sm:p-1 max-sm:min-w-[36px] max-sm:min-h-[36px] max-sm:rounded-full sm:rounded-full bg-[#EDF4FC]  lg:rounded-2xl p-2 min-w-[60px] min-h-[60px] flex items-center justify-center  text-white cursor-pointer w-[36px] h-[36px] lg:transition-width lg:duration-500 lg:hover:w-[200px] group">
                 <div className="text-[#1cc2c4] hidden lg:group-hover:flex whitespace-nowrap">Flickit-Platform-Dev</div>
                   <Image
@@ -646,7 +650,7 @@ export default function Home() {
                   />
                 </div>
               </a>
-              <a href="mailto:info@flickit.org" >
+              <a href="mailto:info@flickit.org" rel="noopener noreferrer"  >
                 <div className=" max-sm:p-1 max-sm:min-w-[36px] max-sm:min-h-[36px] max-sm:rounded-full sm:rounded-full bg-[#EDF4FC]  lg:rounded-2xl p-2 min-w-[60px] min-h-[60px] flex items-center justify-center  text-white cursor-pointer w-[36px] h-[36px] lg:transition-width lg:duration-500 lg:hover:w-[200px] group">
                   <div className="text-[#1cc2c4] hidden lg:group-hover:block">Info@flickit.org</div>
                   <div>
@@ -689,7 +693,7 @@ export default function Home() {
             <span className=" text-md text-[#EDF4FC] font-bold max-sm:hidden sm:hidden lg:block">
               Joining in less than a minute!
             </span>
-            <a href={REDIRECT_URL} className=" relative z-10">
+            <a href={redirectUrl}             rel="noopener noreferrer" className=" relative z-10">
               <div className="max-sm:text-xs max-sm:px-2 sm:px-8 max-sm:shadow-lg text-lg text-[#1cc2c4] bg-[#EDF4FC] rounded-2xl lg:px-16 py-1 hover:shadow-lg">
                 Try it now!
               </div>

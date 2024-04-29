@@ -605,7 +605,7 @@ export default function Home() {
       </section> */}
 
       <footer className="max-sm:mt-8 mt-8">
-        <div className=" w-full rounded-t-[32px] bg-[#1cc2c4] flex justify-between px-8 pt-8">
+        <div className=" w-full rounded-t-[32px] bg-[#1cc2c4] flex justify-between px-8 pt-8 max-sm:bg-[url('/footer-bg-lines.svg')] bg-no-repeat bg-cover">
           {/* <div className="flex w-full items-center justify-center flex-col">
             <Image
               src={"/line-vector.svg"}
@@ -630,31 +630,35 @@ export default function Home() {
             />
           </div> */}
           <div className="flex flex-col justify-between items-center w-1/4 mb-8 gap-8">
-            <span className=" text-xl text-[#EDF4FC] font-bold">
+            <span className="max-sm:hidden sm:hidden lg:block text-xl text-[#EDF4FC] font-bold">
               Get in touch
             </span>
-            <div className="flex justify-between items-center gap-4">
-              <div className="bg-[#EDF4FC] rounded-2xl p-2 min-w-[60px] min-h-[60px] flex items-center justify-center">
-                <Image
-                  src={"/github-icn.svg"}
-                  width={36}
-                  height={36}
-                  alt={"github icon"}
-                />
-              </div>
-
-              <div className="bg-[#EDF4FC]  rounded-2xl p-2 min-w-[60px] min-h-[60px] flex items-center justify-center  text-white an cursor-pointer">
-          
-                <div className="text-[#1cc2c4] hidden">Info@flickit.org</div>
-                <div>
+            <div className="flex justify-between items-center max-sm:gap-2 sm:gap-4">
+              <Link href="https://github.com/Flickit-Platform-Dev">
+                <div className="max-sm:p-1 max-sm:min-w-[32px] max-sm:min-h-[32px] max-sm:rounded-full sm:rounded-full bg-[#EDF4FC] lg:rounded-2xl p-2 min-w-[60px] min-h-[60px] flex items-center justify-center">
                   <Image
-                    src={"/mail-icn.svg"}
+                    src={"/github-icn.svg"}
                     width={36}
                     height={36}
-                    alt={"mail icon"}
+                    alt={"github icon"}
+                    className="max-sm:w-[20px] max-sm:h-[20px]"
                   />
                 </div>
-              </div>
+              </Link>
+              <Link href="mailto:info@flickit.org">
+                <div className="max-sm:p-1 max-sm:min-w-[32px] max-sm:min-h-[32px] max-sm:rounded-full sm:rounded-full bg-[#EDF4FC]  lg:rounded-2xl p-2 min-w-[60px] min-h-[60px] flex items-center justify-center  text-white sm:an cursor-pointer">
+                  <div className="text-[#1cc2c4] hidden">Info@flickit.org</div>
+                  <div>
+                    <Image
+                      src={"/mail-icn.svg"}
+                      width={36}
+                      height={36}
+                      alt={"mail icon"}
+                      className="max-sm:w-[17px] max-sm:h-[14px]"
+                    />
+                  </div>
+                </div>
+              </Link>
             </div>
           </div>
           <div className=" w-1/2 flex justify-center items-end ">
@@ -663,23 +667,32 @@ export default function Home() {
               width={180}
               height={72}
               alt={"logo"}
-              className=" w-auto absolute z-[2] mb-4"
+              className=" max-sm:w-[90px] sm:w-[120px]  lg:w-auto absolute z-[2] max-sm:mb-1  sm:mb-4"
+            />
+            <Image
+              src={"/footer-bg-mobile.svg"}
+              width={305}
+              height={49}
+              alt={"logo"}
+              className="sm:hidden absolute "
             />
             <Image
               src={"/footer-bg.svg"}
               width={935}
               height={125}
               alt={"logo"}
-              className=" absolute sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[60%] 2xl:w-[40%]" 
+              className="max-sm:hidden absolute sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[60%] 2xl:w-[40%]"
             />
           </div>
-          <div className="flex flex-col justify-between items-center  w-1/4 mb-8">
-            <span className=" text-md text-[#EDF4FC] font-bold">
+          <div className="flex flex-col justify-between items-center  w-1/4 md:mb-8 sm:mb-1">
+            <span className=" text-md text-[#EDF4FC] font-bold max-sm:hidden sm:hidden lg:block">
               Joining in less than a minute!
             </span>
-            <div className="text-lg text-[#1cc2c4] bg-[#EDF4FC] rounded-2xl px-16 py-1">
-              Try it now!
-            </div>
+            <Link href={REDIRECT_URL}>
+              <div className="max-sm:text-xs max-sm:px-4 sm:px-8 max-sm:shadow-lg text-lg text-[#1cc2c4] bg-[#EDF4FC] rounded-2xl lg:px-16 py-1 hover:shadow-lg">
+                Try it now!
+              </div>
+            </Link>
           </div>
         </div>
       </footer>

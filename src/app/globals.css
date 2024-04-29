@@ -1,55 +1,40 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
 
-@layer components {
-  .nav-link {
-    @apply text-gray-700 text-base py-1 mx-4;
+  @layer components {
+    .nav-link {
+      @apply text-gray-700 text-base py-1 mx-4;
 
-    &.active {
-      @apply text-primary border-b border-primary;
+      &.active {
+        @apply text-primary border-b border-primary;
+      }
     }
   }
-}
-.bt-gradient {
-  transition: 0.5s;
-  background-size: 200% auto;
-}
+  .bt-gradient {
+    transition: 0.5s;
+    background-size: 200% auto;
+  }
 
-.bt-gradient:hover {
-  background-position: right center;
-}
-.btn-2 {
-  background-image: linear-gradient(
-    45deg,
-    rgba(28, 139, 196, 1) 0%,
-    rgba(4, 220, 222, 1) 33%,
-    rgba(28, 194, 196, 1) 66%,
-    rgba(28, 194, 196, 1) 100%
-  );
-}
-.txt-gradient {
-  background: -webkit-linear-gradient(#1cc2c4, #106162);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.txt-shadow {
-  text-shadow: 0px 1px 6px #6c7b8e;
-}
-
-.an {
-  width: 36px;
-  height: 36px;
-  transition: width 0.3s;
-}
-.an:hover {
-  width: 200px;
-}
-.an:hover div:nth-child(2) {
-  display: none;
-}
-.an:hover div:nth-child(1) {
-  display: block;
-}
+  .bt-gradient:hover {
+    background-position: right center;
+  }
+  .btn-2 {
+    background-image: linear-gradient(
+      45deg,
+      rgba(28, 139, 196, 1) 0%,
+      rgba(4, 220, 222, 1) 33%,
+      rgba(28, 194, 196, 1) 66%,
+      rgba(28, 194, 196, 1) 100%
+    );
+  }
+  .txt-gradient {
+    background: -webkit-linear-gradient(#1cc2c4, #106162);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .txt-shadow {
+    text-shadow: 0px 1px 6px #6c7b8e;
+  }
 
 

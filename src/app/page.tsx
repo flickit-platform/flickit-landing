@@ -117,11 +117,11 @@ export default function Home() {
               </div>
             </div>
             <div className="mt-4 flex gap- max-sm:gap-2 gap-4">
-              <Link href={REDIRECT_URL}>
+              <a href={REDIRECT_URL}>
                 <button className="max-sm:text-sm rounded-full border border-solid border-[#1cc2c4] bg-[#1CC2C4] hover:bg-[#1cc2c4bf]  px-16 py-2.5 text-[#edf4fc]">
                   Getting started
                 </button>
-              </Link>
+              </a>
               {/* <button className="max-sm:text-sm rounded-full  px-6 py-2.5 text-[#1cc2c4] hover:border hover:border-[#1cc2c4]">
                 Read more...
               </button> */}
@@ -434,7 +434,7 @@ export default function Home() {
       </section>
       <section className="max-sm:mt-32 sm:mt-32 lg:mt-52 mb-4 mx-auto">
         <div className="w-full flex justify-center items-center mb-16">
-          <Link
+          <a
             href={REDIRECT_URL}
             rel="noopener noreferrer"
             className="w-2/3 max-sm:w-full max-sm:px-4"
@@ -442,7 +442,7 @@ export default function Home() {
             <button className="hover:scale-105 hover:shadow-2xl max-sm:text-xl   max-sm:py-2 w-full bt-gradient btn-2 font-medium md:text-3xl lg:text-6xl text-[#edf4fc] text-center rounded-full py-4">
               Try it for free
             </button>
-          </Link>
+          </a>
         </div>
         <div className="max-sm:hidden flex items-center w-full justify-between sm:px-8 lg:px-16 lg:gap-4 xl:gap-8">
           <div className=" hover:bg-[url('/Polygon-bg-hover.svg')] bg-[url('/Polygon-bg.svg')] bg-no-repeat bg-contain h-[35vw] w-[33vw] flex flex-col justify-start items-center sm:pt-8   2xl:gap-16 sm:gap-2 md:gap-4 lg:gap-8 sm:px-4 md:px-4 xl:px-8 relative">
@@ -605,7 +605,7 @@ export default function Home() {
       </section> */}
 
       <footer className="max-sm:mt-8 mt-8">
-        <div className=" w-full rounded-t-[32px] bg-[#1cc2c4] flex justify-between px-8 pt-8 max-sm:bg-[url('/footer-bg-lines.svg')] bg-no-repeat bg-cover">
+        <div className=" w-full rounded-t-[32px] bg-[#1cc2c4] flex justify-between max-sm:px-4 max-sm:pt-4 sm :px-8 sm:pt-8 max-sm:bg-[url('/footer-bg-lines.svg')] bg-no-repeat bg-cover">
           {/* <div className="flex w-full items-center justify-center flex-col">
             <Image
               src={"/line-vector.svg"}
@@ -629,13 +629,13 @@ export default function Home() {
               alt={"powered"}
             />
           </div> */}
-          <div className="flex flex-col justify-between items-center w-1/4 mb-8 gap-8">
+          <div className=" flex flex-col justify-between items-center w-1/4 mb-8 gap-8">
             <span className="max-sm:hidden sm:hidden lg:block text-xl text-[#EDF4FC] font-bold">
               Get in touch
             </span>
-            <div className="flex justify-between items-center max-sm:gap-2 sm:gap-4">
-              <Link href="https://github.com/Flickit-Platform-Dev">
-                <div className="max-sm:p-1 max-sm:min-w-[32px] max-sm:min-h-[32px] max-sm:rounded-full sm:rounded-full bg-[#EDF4FC] lg:rounded-2xl p-2 min-w-[60px] min-h-[60px] flex items-center justify-center">
+            <div className="flex justify-between items-center max-sm:gap-2 sm:gap-4 relative z-10">
+              <a href="https://github.com/Flickit-Platform-Dev">
+                <div className="max-sm:p-1 max-sm:min-w-[36px] max-sm:min-h-[36px] max-sm:rounded-full sm:rounded-full bg-[#EDF4FC] lg:rounded-2xl p-2 min-w-[60px] min-h-[60px] flex items-center justify-center">
                   <Image
                     src={"/github-icn.svg"}
                     width={36}
@@ -644,21 +644,21 @@ export default function Home() {
                     className="max-sm:w-[20px] max-sm:h-[20px]"
                   />
                 </div>
-              </Link>
-              <Link href="mailto:info@flickit.org">
-                <div className="max-sm:p-1 max-sm:min-w-[32px] max-sm:min-h-[32px] max-sm:rounded-full sm:rounded-full bg-[#EDF4FC]  lg:rounded-2xl p-2 min-w-[60px] min-h-[60px] flex items-center justify-center  text-white sm:an cursor-pointer">
-                  <div className="text-[#1cc2c4] hidden">Info@flickit.org</div>
+              </a>
+              <a href="mailto:info@flickit.org" >
+                <div className=" max-sm:p-1 max-sm:min-w-[36px] max-sm:min-h-[36px] max-sm:rounded-full sm:rounded-full bg-[#EDF4FC]  lg:rounded-2xl p-2 min-w-[60px] min-h-[60px] flex items-center justify-center  text-white cursor-pointer w-[36px] h-[36px] lg:transition-width lg:duration-500 lg:hover:w-[200px] group">
+                  <div className="text-[#1cc2c4] hidden lg:group-hover:block">Info@flickit.org</div>
                   <div>
                     <Image
                       src={"/mail-icn.svg"}
                       width={36}
                       height={36}
                       alt={"mail icon"}
-                      className="max-sm:w-[17px] max-sm:h-[14px]"
+                      className="max-sm:w-[17px] max-sm:h-[14px] block lg:group-hover:hidden"
                     />
                   </div>
                 </div>
-              </Link>
+              </a>
             </div>
           </div>
           <div className=" w-1/2 flex justify-center items-end ">
@@ -688,11 +688,11 @@ export default function Home() {
             <span className=" text-md text-[#EDF4FC] font-bold max-sm:hidden sm:hidden lg:block">
               Joining in less than a minute!
             </span>
-            <Link href={REDIRECT_URL}>
-              <div className="max-sm:text-xs max-sm:px-4 sm:px-8 max-sm:shadow-lg text-lg text-[#1cc2c4] bg-[#EDF4FC] rounded-2xl lg:px-16 py-1 hover:shadow-lg">
+            <a href={REDIRECT_URL} className=" relative z-10">
+              <div className="max-sm:text-xs max-sm:px-2 sm:px-8 max-sm:shadow-lg text-lg text-[#1cc2c4] bg-[#EDF4FC] rounded-2xl lg:px-16 py-1 hover:shadow-lg">
                 Try it now!
               </div>
-            </Link>
+            </a>
           </div>
         </div>
       </footer>

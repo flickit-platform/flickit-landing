@@ -340,6 +340,9 @@ export default function Home() {
         </div>
         <div className="sm:hidden flex flex-col items-center justify-center top-8 relative bg-[url('/midle-shape-bg-mobile.svg')] w-full bg-no-repeat py-8 px-4">
           <div className="backdrop-blur-md w-full h-full bg-white/70 rounded-[32px] flex  flex-col p-4">
+            <div className="text-2xl font-bold leading-normal tracking-normal text-center text-[#1cc2c4] mb-1">
+              Flickit is specially helpful if...
+            </div>
             <div className=" flex justify-between flex-col h-full  gap-8 ">
               <div className="flex flex-col justify-between items-center">
                 <div className="flex w-full justify-between  gap-4">
@@ -362,7 +365,8 @@ export default function Home() {
                   />
                 </div>
                 <div>
-                  <div className="max-sm:mt-4 max-sm:text-xs max-sm:font-light text-base 2xl:text-2xl font-normal leading-relaxed tracking-normal text-center text-[#0A2342] ">
+                  <div
+                      className="max-sm:mt-4 max-sm:text-xs max-sm:font-light text-base 2xl:text-2xl font-normal leading-relaxed tracking-normal text-center text-[#0A2342] ">
                     If you're considering purchasing new software and are
                     uncertain about its technical specifications, seeking a
                     third-party opinion can be beneficial. A comprehensive

@@ -1,10 +1,10 @@
 import Image from "next/image";
 
-export default function Footer(props: any){
+export default function Footer(props: { redirectUrl: string }) {
     const {redirectUrl} = props
     return (
         <footer className="max-sm:mt-8 mt-8">
-            <div
+            <main
                 className=" w-full rounded-t-[32px] bg-[#1cc2c4] flex justify-between max-sm:px-4 max-sm:pt-4 sm :px-8 sm:pt-8 max-sm:bg-[url('/footer-bg-lines.svg')] bg-no-repeat bg-cover">
                 {/* <div className="flex w-full items-center justify-center flex-col">
             <Image
@@ -29,10 +29,10 @@ export default function Footer(props: any){
               alt={"powered"}
             />
           </div> */}
-                <div className=" flex flex-col justify-between items-center w-1/4 mb-8 gap-8">
-            <span className="max-sm:hidden sm:hidden lg:block text-xl text-[#EDF4FC] font-bold">
-              Get in touch
-            </span>
+                <section className=" flex flex-col justify-between items-center w-1/4 mb-8 gap-8">
+                    <span className="max-sm:hidden sm:hidden lg:block text-xl text-[#EDF4FC] font-bold">
+                      Get in touch
+                    </span>
                     <div className="flex justify-between items-center max-sm:gap-2 sm:gap-4 relative z-10">
                         <a href="https://github.com/Flickit-Platform-Dev" rel="noopener noreferrer">
                             <div
@@ -65,8 +65,8 @@ export default function Footer(props: any){
                             </div>
                         </a>
                     </div>
-                </div>
-                <div className=" w-1/2 flex justify-center items-end ">
+                </section>
+                <section className=" w-1/2 flex justify-center items-end ">
                     <Image
                         src={"/flickit-logo-footer.svg"}
                         width={180}
@@ -88,19 +88,19 @@ export default function Footer(props: any){
                         alt={"logo"}
                         className="max-sm:hidden absolute sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[60%] 2xl:w-[40%]"
                     />
-                </div>
-                <div className="flex flex-col justify-between items-center  w-1/4 md:mb-8 sm:mb-1">
-            <span className=" text-md text-[#EDF4FC] font-bold max-sm:hidden sm:hidden lg:block">
-              Joining in less than a minute!
-            </span>
+                </section>
+                <article className="flex flex-col justify-between items-center  w-1/4 md:mb-8 sm:mb-1">
+                    <h4 className=" text-md text-[#EDF4FC] font-bold max-sm:hidden sm:hidden lg:block">
+                      Joining in less than a minute!
+                    </h4>
                     <a href={redirectUrl} rel="noopener noreferrer" className=" relative z-10">
-                        <div
+                        <p
                             className="max-sm:text-xs max-sm:px-2 sm:px-8 max-sm:shadow-lg text-lg text-[#1cc2c4] bg-[#EDF4FC] rounded-2xl lg:px-16 py-1 hover:shadow-lg">
                             Try it now!
-                        </div>
+                        </p>
                     </a>
-                </div>
-            </div>
+                </article>
+            </main>
         </footer>
     )
 }

@@ -1,10 +1,10 @@
 import Image from "next/image";
 
-export default function BottomMain(props: any){
+export default function BottomMain(props: { redirectUrl: string }){
     const {redirectUrl} = props
     return (
-        <section className="max-sm:mt-32 sm:mt-32 lg:mt-52 mb-4 mx-auto">
-            <div className="w-full flex justify-center items-center mb-16">
+        <main className="max-sm:mt-32 sm:mt-32 lg:mt-52 mb-4 mx-auto">
+            <section className="w-full flex justify-center items-center mb-16">
                 <a
                     href={redirectUrl}
                     rel="noopener noreferrer"
@@ -15,57 +15,57 @@ export default function BottomMain(props: any){
                         Try it for free
                     </button>
                 </a>
-            </div>
-            <div className="max-sm:hidden flex items-center w-full justify-between sm:px-8 lg:px-16 lg:gap-4 xl:gap-8">
+            </section>
+            <section className="max-sm:hidden flex items-center w-full justify-between sm:px-8 lg:px-16 lg:gap-4 xl:gap-8">
                 <div
                     className=" hover:bg-[url('/Polygon-bg-hover.svg')] bg-[url('/Polygon-bg.svg')] bg-no-repeat bg-contain h-[35vw] w-[33vw] flex flex-col justify-start items-center sm:pt-8   2xl:gap-16 sm:gap-2 md:gap-4 lg:gap-8 sm:px-4 md:px-4 xl:px-8 relative">
-                    <div
+                    <h5
                         className="font-bold sm:text-base xl:text-3xl 2xl:text-5xl text-[#0A2342] text-center md:mt-[20%] lg:mt-[30%] 2xl:mt-[40%]">
                         Expert-Designed Assessment Kits
-                    </div>
-                    <div
+                    </h5>
+                    <p
                         className="font-light sm:text-xs xl:text-lg 2xl:text-3xl text-[#0A2342] text-center absolute top-[50%] 2xl:top-[55%] sm:px-4 md:px-4 xl:px-8 ">
                         Explore specialized assessment kits designed by experts for
                         various contexts, then select one that aligns with your needs and
                         interests.
-                    </div>
+                    </p>
                 </div>
                 <div
                     className=" hover:bg-[url('/Polygon-bg-hover.svg')] bg-[url('/Polygon-bg.svg')] bg-no-repeat bg-contain h-[35vw] w-[33vw] flex flex-col justify-start items-center sm:pt-8  2xl:gap-16  sm:gap-2 md:gap-4 lg:gap-8 sm:px-4 md:px-4 xl:px-8 relative">
-                    <div
+                    <h5
                         className="font-bold sm:text-base xl:text-3xl 2xl:text-5xl text-[#0A2342] text-center md:mt-[20%] lg:mt-[30%] 2xl:mt-[40%]">
                         Custom Kit Creation
-                    </div>
-                    <div
+                    </h5>
+                    <p
                         className="font-light sm:text-xs xl:text-lg 2xl:text-3xl text-[#0A2342] text-center absolute top-[50%] 2xl:top-[55%] sm:px-4 md:px-4 xl:px-8 ">
                         Based on your expertise, create a tailored kit that fully meets
                         your needs.
-                    </div>
+                    </p>
                 </div>
                 <div
                     className=" hover:bg-[url('/Polygon-bg-hover.svg')] bg-[url('/Polygon-bg.svg')] bg-no-repeat bg-contain h-[35vw] w-[33vw] flex flex-col justify-start items-center sm:pt-8   2xl:gap-16  sm:gap-2 md:gap-4 lg:gap-8  sm:px-4 md:px-4 xl:px-8 relative">
-                    <div
+                    <h5
                         className="font-bold sm:text-base xl:text-3xl 2xl:text-5xl text-[#0A2342] text-center md:mt-[20%] lg:mt-[30%] 2xl:mt-[40%]">
                         Comprehensive Reporting Insights
-                    </div>
-                    <div
+                    </h5>
+                    <p
                         className="font-light sm:text-xs xl:text-lg 2xl:text-3xl text-[#0A2342] text-center absolute top-[50%] 2xl:top-[55%] sm:px-4 md:px-4 xl:px-8 ">
                         Unlock actionable insights with detailed and comprehensive
                         reports.
-                    </div>
+                    </p>
                 </div>
-            </div>
+            </section>
 
-            <div className="sm:hidden flex flex-col mt-32">
+            <section className="sm:hidden flex flex-col mt-32">
                 <div className="flex justify-around items-center w-full">
-                    <div
+                    <h2
                         className="text-base font-bold text-[#EDFCFC] bg-[url('/polygon-o-mobile.svg')] bg-no-repeat bg-cover h-[172px] w-[150px] flex flex-col justify-center items-center gap-4 px-2 text-center">
                         Expert-Designed Assessment Kits
-                    </div>
-                    <div
+                    </h2>
+                    <h2
                         className="text-base font-bold text-[#EDFCFC] bg-[url('/polygon-g-mobile.svg')] bg-no-repeat bg-cover h-[172px] w-[150px] flex flex-col justify-center items-center gap-4 px-2 text-center">
                         Custom Kit Creation
-                    </div>
+                    </h2>
                 </div>
                 <div className="flex justify-between items-center w-full">
                     <Image
@@ -74,10 +74,10 @@ export default function BottomMain(props: any){
                         height={172}
                         alt={"left"}
                     />
-                    <div
+                    <h2
                         className="text-base font-bold text-[#EDFCFC] bg-[url('/polygon-r-mobile.svg')] bg-no-repeat bg-cover h-[172px] w-[150px] flex flex-col justify-center items-center gap-4 px-2 text-center">
                         Comprehensive Reporting Insights
-                    </div>
+                    </h2>
                     <Image
                         src={"/polygon-n-mobile-r.svg"}
                         width={75}
@@ -85,8 +85,7 @@ export default function BottomMain(props: any){
                         alt={"right"}
                     />
                 </div>
-            </div>
-        </section>
-
+            </section>
+        </main>
     )
 }

@@ -1,9 +1,9 @@
-export default function TopHeader(props: any) {
+export default function TopHeader(props:{ redirectUrl: string }) {
 
     const {redirectUrl} = props
 
     return (
-        <section className="mx-auto">
+        <main className="mx-auto">
             <div
                 className=" flex flex-col items-center justify-center relative top-16 lg:top-4 xl:top-4 2xl:top-16 w-full lg:h-[85vh] 2xl:h-full">
                 <img
@@ -39,23 +39,23 @@ export default function TopHeader(props: any) {
                     className="absolute z-[-1] left-[5%] top-[60%] max-sm:hidden sm:block "
                 />
 
-                <div
+                <section
                     className="flex flex-col items-center justify-center max-sm:w-full max-sm:px-4 max-sm:gap-8 sm:px-16 md:px-24 lg:px-32 xl:px-80  max-sm:my-2 mt-40 mb-16 gap-16">
-                    <div
+                    <h4
                         className="text-[#6C7B8E] mt-4 text-center max-sm:text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-normal relative w-full max-sm:px-8">
                         The Ultimate Tool for Assessing Your Software
-                    </div>
-                    <div
+                    </h4>
+                    <h1
                         className="text-center max-sm:text-3xl sm:text-4xl md:text-4xl lg:text-6xl leading-5 font-bold relative self-stretch txt-gradient ">
                         Say Goodbye to Software Quality Blind Spots with Expert Algorithms
-                    </div>
+                    </h1>
                     <div className="flex flex-col gap-6 items-center justify-center self-stretch shrink-0 relative">
-                        <div className="text-center max-sm:text-sm text-xl  font-normal relative self-stretch">
+                        <p className="text-center max-sm:text-sm text-xl  font-normal relative self-stretch">
                             Flickit is a software assessment platform. It allows software
                             owners and developers to assess their software across various
                             subjects and attributes. Users can customize their assessment
                             kits to meet their specific needs.
-                        </div>
+                        </p>
                     </div>
                     <div className="mt-4 flex gap- max-sm:gap-2 gap-4">
                         <a href={redirectUrl}>
@@ -68,8 +68,8 @@ export default function TopHeader(props: any) {
                 Read more...
               </button> */}
                     </div>
-                </div>
+                </section>
             </div>
-        </section>
+        </main>
     )
 }

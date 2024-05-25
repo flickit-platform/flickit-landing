@@ -19,9 +19,5 @@ export default function CarouselComponent(){
         },
     ];
 
-    return (
-        <section>
-            <ImageCarousel images={images}/>
-        </section>
-    )
+    return <ImageCarousel images={images}/>
 }

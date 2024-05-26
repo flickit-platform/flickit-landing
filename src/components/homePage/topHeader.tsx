@@ -8,11 +8,11 @@ export default function TopHeader(props:{ redirectUrl: string }) {
                 className=" flex flex-col items-center justify-center relative top-16 lg:top-4 xl:top-4 2xl:top-16 w-full lg:h-[85vh] 2xl:h-full">
                 <img
                     src={"/pol-1.svg"}
-                    className="absolute z-[-1] left-0 top-[15%] max-sm:hidden sm:block "
+                    className="absolute z-[-1] left-0 top-[9%] max-sm:hidden sm:block "
                 />
                 <img
                     src={"/pol-2.svg"}
-                    className="absolute z-[-1] left-[30%] top-0 max-sm:hidden sm:block "
+                    className="absolute z-[-1] left-[30%] top-0 max-sm:hidden sm:block lg:hidden 2xl:block"
                 />
                 <img
                     src={"/pol-3.svg"}

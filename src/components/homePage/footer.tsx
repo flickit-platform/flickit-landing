@@ -81,15 +81,19 @@ export default function Footer(props: { redirectUrl: string }) {
                         alt={"logo"}
                         className="sm:hidden absolute "
                     />
-                    <Image
-                        src={"/footer-bg.svg"}
-                        width={935}
-                        height={125}
-                        alt={"logo"}
-                        className="max-sm:hidden absolute sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[60%] 2xl:w-[40%]"
+                    {/*<Image*/}
+                    {/*    src={"/footer-bg.svg"}*/}
+                    {/*    width={935}*/}
+                    {/*    height={125}*/}
+                    {/*    alt={"logo"}*/}
+                    {/*    className="max-sm:hidden absolute sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[60%] 2xl:w-[40%]"*/}
+                    {/*/>*/}
+                    <img  src={"/footer-bg.svg"}
+                    className={"max-sm:hidden absolute sm:w-[550px] lg:w-[750px]"}
+                     alt={"logo"}
                     />
                 </section>
-                <article className="flex flex-col justify-between items-center  w-1/4 md:mb-8 sm:mb-1">
+                <article className="flex flex-col justify-center gap-2 items-center  w-1/4 md:mb-8 sm:mb-1">
                     <h4 className=" text-md text-[#EDF4FC] font-bold max-sm:hidden sm:hidden lg:block">
                       Joining in less than a minute!
                     </h4>

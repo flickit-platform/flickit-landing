@@ -54,3 +54,19 @@ export const cardsText: { title: string, text: string, img: string }[] = [
         img: "/sh-ill-3.svg"
     },
 ]
+export const bottomMainCard:{title:string,text:string}[] = [
+    {
+        title: "Expert-Designed Assessment Kits",
+        text:  "Explore specialized assessment kits designed by experts for various contexts, then select one that aligns with your needs and interests."
+    },
+    {
+        title: "Custom Kit Creation",
+        text:  "Based on your expertise, create a tailored kit that fully meets your needs."
+    },
+    {
+        title: "Comprehensive Reporting Insights",
+        text:  "Unlock actionable insights with detailed and comprehensive reports."
+    }
+]
+
+

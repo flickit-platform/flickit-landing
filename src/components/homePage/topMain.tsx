@@ -15,7 +15,7 @@ export default function TopMain() {
                     alt={"line vector"}
                 />
                 <h3
-                    className="text-5xl font-ubuntu text-justify font-bold text-moon-silver flex justify-center text-[#edf4fc] mb-16">
+                    className="text-4xl md:text-5xl font-ubuntu text-justify font-bold text-moon-silver flex justify-center text-[#edf4fc] mb-16">
                     How does it work?
                 </h3>
                 <div className="flex flex-row justify-between items-start md:gap-3 lg:gap-8 relative">
@@ -43,21 +43,21 @@ export default function TopMain() {
     function Cards({title, text, img}:{title:string, text:string, img:string}){
         return (
             <article
-                className="flex flex-col justify-between  items-center p-8 border border-solid border-gray-200 rounded-lg shadow-inner bg-teal-50  h-[450px] w-1/3">
-                <Image
-                    src={img}
-                    width={288}
-                    height={200}
-                    alt={"ilustration"}
-                    className="h-[240px]"
-                />
+                className="flex flex-col justify-center  items-center p-8 border border-solid border-gray-200 rounded-lg shadow-inner bg-teal-50  h-[450px] w-1/3">
+               <div className="w-full h-1/3 mb-4">
+                   <img
+                       src={img}
+                       alt={"ilustration"}
+                       className="h-full w-full object-contain"
+                   />
+               </div>
                 {/* <div className="text-shadow-sm font-Ubuntu text-sm font-medium leading-relaxed text-center text-gray-500">
                 Step 1.
               </div> */}
-                <h2 className=" text-xl font-medium text-center text-[#0A2342]">
+                <h2 className=" text-xl font-medium text-center text-[#0A2342] h-1/3 flex items-start">
                     {title}
                 </h2>
-                <p className="text-sm font-light leading-relaxed tracking-normal text-justify text-[#0A2342]">
+                <p className="text-sm font-light leading-relaxed tracking-normal text-justify  text-[#0A2342] h-1/3">
                     {text}
                 </p>
             </article>

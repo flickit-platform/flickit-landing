@@ -28,7 +28,7 @@ export default function BottomMain(props: { redirectUrl: string }){
                                {title}
                            </h5>
                            <p
-                               className="font-light  sm:text-[10px] md:text-[11px] xl:text-lg 2xl:text-2xl text-[#0A2342] text-center absolute top-[50%] 2xl:top-[50%] sm:px-4 md:px-4 xl:px-8 ">
+                               className="font-light  sm:text-[10px] md:text-[12px] xl:text-lg 2xl:text-2xl 3xl:text-3xl text-[#0A2342] text-center absolute top-[50%] 2xl:top-[50%] sm:px-4 md:px-4 xl:px-8 ">
                                {text}
                            </p>
                        </div>

@@ -41,7 +41,15 @@ module.exports = {
         't-left': 't-left 1.5s ease forwards',
         'fade-in': 'fade-in 2.2s ease forwards',
         'blink-caret': 'blink-caret 0.75s step-end infinite',
-      }
+      },
+    },
+    screens: {
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+      '3xl': '1998px',
     },
   },
   plugins: [],

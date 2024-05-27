@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useSelectedLayoutSegment } from "next/navigation";
 import FINavLink from "./FINavLink";
 import Link from "next/link";
-import { getRedirectUrl } from "../constants";
+import { getRedirectUrl } from "@/utils/constants";
 export default function FINav() {
   const [redirectUrl, setRedirectUrl] = useState("");
 

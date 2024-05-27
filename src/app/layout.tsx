@@ -1,5 +1,5 @@
 import "./globals.css";
-import FINav from "./components/nav/FINav";
+import FINav from "@/components/nav/FINav";
 export const metadata = {
   title: "Flickit",
   description: "Assessment platform",

@@ -18,7 +18,7 @@ export default function Home() {
     setRedirectUrl(getRedirectUrl());
   }, []);
 
-  return (
+return (
     <>
       <TopHeader redirectUrl={redirectUrl}/>
       <TopMain/>

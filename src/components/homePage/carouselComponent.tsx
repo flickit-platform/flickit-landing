@@ -45,7 +45,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({images}) => {
             className="max-sm:px-4 max-sm:py-4 w-full flex sm:p-8 md:p-16 lg:p-32 xl:p-48 2xl:p-64 bg-no-repeat bg-[url('/carousel-bg.svg')] bg-clip-padding bg-cover min-h-[550px] max-sm:min-h-[400px] max-sm:gap-0 max-sm:justify-between">
             <div className="flex flex-col justify-center items-center w-full transition-opacity duration-1000">
                 <section
-                    className="flex w-full 2xl:w-3/4 max-sm:flex-col max-sm:justify-start max-sm:items-center justify-between md:items-center lg:items-start max-sm:gap-4 sm:gap-4  md:gap-4 lg:gap-6 2xl:gap-24 xl:gap-16 max-sm:min-h-[320px] sm:min-h-[250px] md:min-h-[300px] lg:min-h-[350px] xl:min-h-[450px] 2xl:min-h-[500px]">
+                    className="flex w-full 2xl:w-full  max-sm:flex-col max-sm:justify-start max-sm:items-center justify-between md:items-center lg:items-start max-sm:gap-4 sm:gap-4  md:gap-4 lg:gap-6 2xl:gap-24 xl:gap-16 max-sm:min-h-[320px] sm:min-h-[250px] md:min-h-[300px] lg:min-h-[350px] xl:min-h-[450px] 2xl:min-h-[500px] items-center">
                     <img
                         src={images[currentSlide].img}
                         alt={`Slide ${currentSlide + 1}`}

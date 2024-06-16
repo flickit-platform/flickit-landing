@@ -9,7 +9,7 @@ import BottomMain from "@/components/homePage/bottomMain";
 import CarouselComponent from "@/components/homePage/carouselComponent";
 import Footer from "@/components/homePage/footer";
 import FaqComponents from "@/components/homePage/faqComponents";
-
+import "../config/i18n";
 
 export default function Home() {
   const [redirectUrl, setRedirectUrl] = useState('');

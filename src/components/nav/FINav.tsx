@@ -5,6 +5,7 @@ import { useSelectedLayoutSegment } from "next/navigation";
 import FINavLink from "./FINavLink";
 import Link from "next/link";
 import { getRedirectUrl } from "@/utils/constants";
+import {Trans} from "react-i18next";
 export default function FINav() {
   const [redirectUrl, setRedirectUrl] = useState("");
 
@@ -37,17 +38,17 @@ export default function FINav() {
   const activeSegment = useSelectedLayoutSegment();
 
   return (
-    <nav className="flex items-center justify-between max-sm:px-4 px-24 h-14 relative z-50 mx-auto bg-[#EDF4FC] shadow-md py-8 2xl:py-12">
+    <nav className="flex items-center justify-between max-sm:px-4 px-24 h-14 relative z-50 mx-auto bg-lightBg shadow-md py-8 2xl:py-12">
       <div className="flex gap-2 2xl:gap-8">
         <Image
-          src="/logo.svg"
+          src="/Logo-dark.svg"
           alt="Flickit"
           width={110}
           height={42}
           className="sm:w-[110px] md:w-[110px] lg:w-[110px] 2xl:w-[174px]"
         />
         <div className="py-1 px-3 border text-sm 2xl:text-xl font-bold text-[#D81E5B] border-[#D81E5B] rounded-[100px] bg-[#FDF1F5] flex justify-center items-center">
-          Beta Preview
+         <Trans i18nKey={"betaPreview"} />
         </div>
       </div>
       {/* <div>

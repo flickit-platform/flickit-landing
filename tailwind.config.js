@@ -11,8 +11,8 @@ module.exports = {
         primary: '#1CBEC1',
         ['primary-dark']: '#433DC4',
         ['primary-darker']: '#292752',
-        secondary: '#80BB9C'
-
+        secondary: '#80BB9C',
+        lightBg: "#182F4B"
       },
       fontFamily: {
 
@@ -52,5 +52,6 @@ module.exports = {
       '3xl': '1998px',
     },
   },
+  darkMode:['selector', '[data-mode="dark"]'],
   plugins: [],
 }

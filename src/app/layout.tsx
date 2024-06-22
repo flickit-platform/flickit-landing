@@ -1,16 +1,11 @@
 import "./globals.css";
 import FINav from "@/components/nav/FINav";
+import {ubuntu} from "@/utils/fonts";
+
 export const metadata = {
   title: "Flickit",
   description: "Assessment platform",
 };
-import { Ubuntu } from "next/font/google";
-const ubuntu = Ubuntu({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["300","400","500","700"],
-  variable: '--font-ubuntu',
-});
 export default function RootLayout({
   children,
 }: {

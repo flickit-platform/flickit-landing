@@ -60,8 +60,8 @@ export default function FINav() {
             </div> */}
       <div>
         <Link href={redirectUrl} rel="noopener noreferrer">
-          <button className="max-sm:hidden bg-primary text-white py-2.5  2xl:py-4 px-4  2xl:px-8 text-base 2xl:text-2xl font-semibold tracking-wider rounded-md">
-            Get started here!
+          <button className={`bg-navy text-white py-[0.156rem] px-[0.375rem]   sm:px-4 text-[0.219rem] leading-[0.313rem]  2xl:px-8 font-medium tracking-wider rounded-[100px]`}>
+           <Trans i18nKey={"openFlickit"} />
           </button>
         </Link>
       </div>

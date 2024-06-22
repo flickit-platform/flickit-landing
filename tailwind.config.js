@@ -12,7 +12,10 @@ module.exports = {
         ['primary-dark']: '#433DC4',
         ['primary-darker']: '#292752',
         secondary: '#80BB9C',
-        lightBg: "#182F4B"
+        lightBg: "#182F4B",
+        navyDeep: "#182F4B",
+        navy: "#00365C",
+        cyanLight: "#1CC2C4",
       },
       fontFamily: {
 

@@ -16,10 +16,11 @@ module.exports = {
         navyDeep: "#182F4B",
         navy: "#00365C",
         cyanLight: "#1CC2C4",
+        grayLight: "#9DA7B3"
       },
       fontFamily: {
-
         ubunto: ["var(--font-ubuntu)"],
+        sansation: [`var(--font-sansation)`],
       },
       keyframes: {
         ['t-right']: {

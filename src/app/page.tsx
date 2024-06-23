@@ -22,11 +22,11 @@ return (
     <>
       <TopHeader redirectUrl={redirectUrl}/>
       <TopMain/>
-      <FlickitIsHelpful/>
-      <BottomMain redirectUrl={redirectUrl}/>
-      <CarouselComponent/>
-      {/*<FaqComponents/>*/}
-      <Footer redirectUrl={redirectUrl}/>
+      {/*<FlickitIsHelpful/>*/}
+      {/*<BottomMain redirectUrl={redirectUrl}/>*/}
+      {/*<CarouselComponent/>*/}
+      {/*/!*<FaqComponents/>*!/*/}
+      {/*<Footer redirectUrl={redirectUrl}/>*/}
     </>
   );
 }

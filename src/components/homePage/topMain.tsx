@@ -4,16 +4,9 @@ import {cardsText} from "@/utils/db";
 export default function TopMain() {
 
     return (
-        <main className="max-sm:mt-16 mt-40 mx-auto max-sm:bg-[#EDFCFC] bg-[#1cc2c4]">
+        <main className="max-sm:mt-16 mt-40 mx-auto max-sm:bg-[#EDFCFC] ">
             <section
-                className="max-sm:hidden bg-[url('/bg-shapes.svg')] bg-clip-padding bg-cover r w-full bg-no-repeat h-[700px] py-16  md:px-8 lg:px-16 xl:px-32 2xl:px-64 reletive">
-                <Image
-                    src={"/polygon-vector.svg"}
-                    className="absolute z-1 left-4 mt-[-186px]"
-                    width={187}
-                    height={428}
-                    alt={"line vector"}
-                />
+                className="max-sm:hidden h-[700px] bg-gradient-to-b from-[#12335A] to-[#182F4B] py-16 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
                 <h3
                     className="text-4xl md:text-5xl font-ubuntu text-justify font-bold text-moon-silver flex justify-center text-[#edf4fc] mb-16">
                     How does it work?

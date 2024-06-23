@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={ubuntu.className}>
-      <body className="bg-gradient-to-r from-teal-50 via-moon-silver to-teal-50">
+      <body className="bg-[#0A2342]">
         <FINav />
         {children}
       </body>

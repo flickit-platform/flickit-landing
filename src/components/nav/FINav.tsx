@@ -6,6 +6,7 @@ import FINavLink from "./FINavLink";
 import Link from "next/link";
 import { getRedirectUrl } from "@/utils/constants";
 import {Trans} from "react-i18next";
+
 export default function FINav() {
   const [redirectUrl, setRedirectUrl] = useState("");
 
@@ -58,10 +59,20 @@ export default function FINav() {
                     </FINavLink>
                 )}
             </div> */}
-      <div>
+      <div className="flex justify-center items-center ">
+        <div className="flex justify-center items-center gap-4">
+          <Image
+              src={"/search_icon.svg"}
+              alt={"search_icon"}
+              width={15}
+              height={15}
+          />
+          <div className={"text-grayLight text-base"}>En</div>
+        </div>
         <Link href={redirectUrl} rel="noopener noreferrer">
-          <button className={`bg-navy text-white py-[0.156rem] px-[0.375rem]   sm:px-4 text-[0.219rem] leading-[0.313rem]  2xl:px-8 font-medium tracking-wider rounded-[100px]`}>
-           <Trans i18nKey={"openFlickit"} />
+          <button
+              className={`bg-navy text-white py-[0.156rem] px-[0.375rem]   sm:px-4 text-[0.219rem] sm:text-[0.875rem] leading-[0.313rem]  2xl:px-8 font-medium tracking-wider rounded-[100px]`}>
+            <Trans i18nKey={"openFlickit"}/>
           </button>
         </Link>
       </div>

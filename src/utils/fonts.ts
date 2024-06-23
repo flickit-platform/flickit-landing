@@ -27,6 +27,7 @@ const sansation = localFont({
             style: 'normal',
         }
     ],
+    variable: '--font-sansation',
 })
 
 export { ubuntu, sansation }

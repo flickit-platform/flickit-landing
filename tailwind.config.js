@@ -14,9 +14,9 @@ module.exports = {
         secondary: '#80BB9C',
         lightBg: "#182F4B",
         navyDeep: "#182F4B",
-        navy: "#00365C",
         cyanLight: "#1CC2C4",
-        grayLight: "#9DA7B3"
+        grayLight: "#9DA7B3",
+        blueLight: "#D0E4FF"
       },
       fontFamily: {
         ubunto: ["var(--font-ubuntu)"],

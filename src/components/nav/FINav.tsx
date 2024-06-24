@@ -39,16 +39,16 @@ export default function FINav() {
   const activeSegment = useSelectedLayoutSegment();
 
   return (
-    <nav className="flex items-center justify-between max-sm:px-4 px-24 h-14 relative z-50 mx-auto bg-lightBg shadow-md py-8 2xl:py-12">
-      <div className="flex gap-2 2xl:gap-8">
+    <nav className="flex items-center justify-between max-sm:px-4 px-24 h-8 sm:h-[4.5rem] relative z-50 mx-auto bg-lightBg shadow-md py-8 2xl:py-12">
+      <div className="flex justify-center items-center gap-2 2xl:gap-8">
         <Image
           src="/Logo-dark.svg"
           alt="Flickit"
-          width={110}
-          height={42}
+          width={144}
+          height={50}
           className="sm:w-[110px] md:w-[110px] lg:w-[110px] 2xl:w-[174px]"
         />
-        <div className="py-1 px-3 border text-sm 2xl:text-xl font-bold text-[#D81E5B] border-[#D81E5B] rounded-[100px] bg-[#FDF1F5] flex justify-center items-center">
+        <div className="py-1 px-3 border sm:h-6 text-sm 2xl:text-xl font-bold text-[#D81E5B] border-[#D81E5B] rounded-[100px] bg-[#FDF1F5] flex justify-center items-center">
          <Trans i18nKey={"betaPreview"} />
         </div>
       </div>
@@ -59,7 +59,7 @@ export default function FINav() {
                     </FINavLink>
                 )}
             </div> */}
-      <div className="flex justify-center items-center ">
+      <div className="flex justify-center items-center gap-8">
         <div className="flex justify-center items-center gap-4">
           <Image
               src={"/search_icon.svg"}
@@ -71,7 +71,7 @@ export default function FINav() {
         </div>
         <Link href={redirectUrl} rel="noopener noreferrer">
           <button
-              className={`bg-navy text-white py-[0.156rem] px-[0.375rem]   sm:px-4 text-[0.219rem] sm:text-[0.875rem] leading-[0.313rem]  2xl:px-8 font-medium tracking-wider rounded-[100px]`}>
+              className={`bg-blueLight text-white sm:h-10 sm:w-32 py-[0.156rem] px-[0.375rem]   sm:px-4 text-[0.219rem] sm:text-[0.875rem] leading-[0.313rem]  2xl:px-8 font-medium tracking-wider rounded-[6.25rem]`}>
             <Trans i18nKey={"openFlickit"}/>
           </button>
         </Link>

@@ -18,10 +18,13 @@ module.exports = {
         grayLight: "#9DA7B3",
         blueLight: "#D0E4FF",
         blueDeep: "#0A2342",
+        bluemaxLight: "#12335A",
+        bluemaxDeep: "#182F4B",
         lightRed: "#D81E5B",
         maxLightRed: "#FDF1F5",
         primaryFixed : "#D0ECFF",
-        primaryFixedVariant : "#00497B"
+        primaryFixedVariant : "#00497B",
+        whiteGray: "#E1EAF2",
       },
       fontFamily: {
         ubunto: ["var(--font-ubuntu)"],
@@ -51,6 +54,9 @@ module.exports = {
         'fade-in': 'fade-in 2.2s ease forwards',
         'blink-caret': 'blink-caret 0.75s step-end infinite',
       },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      }
     },
     screens: {
       'sm': '640px',

@@ -4,68 +4,29 @@ import {cardsText} from "@/utils/db";
 export default function TopMain() {
 
     return (
-        <main className="max-sm:mt-16 mt-40 mx-auto max-sm:bg-[#EDFCFC] ">
-            <section
-                className="max-sm:hidden h-[700px] bg-gradient-to-b from-[#12335A] to-[#182F4B] py-16 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
-                <h3
-                    className="text-4xl md:text-5xl font-ubuntu text-justify font-bold text-moon-silver flex justify-center text-[#edf4fc] mb-16">
-                    How does it work?
-                </h3>
-                <div className="flex flex-row justify-between items-start md:gap-3 lg:gap-8 relative">
-                    {cardsText.map((item,index) =>(
-                      <Cards {...item} key={index}/>
-                    ))}
-                </div>
-            </section>
-
-            <section
-                className="sm:hidden bg-[url('/bg-mobile.svg')] w-full bg-no-repeat bg-cover  h-[140vh] py-16 min-h-[950px]">
-                <h3 className="text-4xl text-center w-full font-bold  text-[#edf4fc] ">
-                    How does it work?
-                </h3>
-                <div className="flex flex-col justify-between p-8">
-                    {cardsText.map((item,index) =>(
-                        <CardsM {...item} count={index + 1} key={index}/>
-                    ))}
-                </div>
-            </section>
-        </main>
+        <section className="flex flex-col items-center gap-6 bg-gradient-to-b from-0% from-bluemaxLight to-100% to-bluemaxDeep p-9">
+            <h3 className="text-white font-semibold text-[1.5rem] leading-8">
+                How does it work?
+            </h3>
+            <article className="flex flex-col sm:flex-row justify-center items-stretch gap-4">
+                {cardsText.map(card =>{
+                    const {title, text, color} = card
+                    return (
+                        <Cards title={title} text={text} color={color} />
+                    )
+                })}
+            </article>
+        </section>
     )
 
-
-    function Cards({title, text, img}:{title:string, text:string, img:string}){
+    function Cards({title, text, color}: { title: string, text: string, color: string }) {
         return (
             <article
-                className="flex flex-col justify-center  items-center p-8 border border-solid border-gray-200 rounded-lg shadow-inner bg-teal-50  h-[450px] w-1/3">
-               <div className="w-full h-1/3 mb-4">
-                   <img
-                       src={img}
-                       alt={"ilustration"}
-                       className="h-full w-full object-contain"
-                   />
-               </div>
-                {/* <div className="text-shadow-sm font-Ubuntu text-sm font-medium leading-relaxed text-center text-gray-500">
-                Step 1.
-              </div> */}
-                <h2 className=" text-xl font-medium text-center text-blueDeep h-1/3 flex items-start">
+                className="flex flex-col justify-start  gap-y-3 w-full  px-4 py-3 rounded-2xl bg-[#375172] bg-opacity-30 sm:min-h-[16.6rem] sm:max-h-[16.6rem]">
+                <h2 style={{color}} className=" text-base font-semibold text-left">
                     {title}
                 </h2>
-                <p className="text-sm font-light leading-relaxed tracking-normal text-justify  text-blueDeep h-1/3">
-                    {text}
-                </p>
-            </article>
-        )
-    }
-
-    function CardsM({ title, text, count }:{title:string, text:string, count: number}){
-        return (
-            <article
-                style={count == 2 ? {marginLeft:"auto"} : {}}
-                className="bg-[url('/polygon-mobile.svg')] bg-no-repeat bg-cover h-[210px] w-[180px] flex flex-col justify-center items-center gap-4 px-2 text-center ">
-                <h2 className="text-sm font-medium text-[#1cc2c4] relative z-3 ">
-                    {title}
-                </h2>
-                <p className="text-xs font-light text-blueDeep relative z-3">
+                <p className="text-xs text-whiteGray font-light leading-relaxed tracking-normal text-justify text-overFlow4 ">
                     {text}
                 </p>
             </article>

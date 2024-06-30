@@ -10,6 +10,14 @@
         @apply text-primary border-b border-primary;
       }
     }
+    .text-overFlow4 {
+      display: -webkit-box;
+      max-width: 400px;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
   .bt-gradient {
     transition: 0.5s;

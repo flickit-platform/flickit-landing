@@ -47,10 +47,10 @@ export default function TopMain() {
                 {/* <div className="text-shadow-sm font-Ubuntu text-sm font-medium leading-relaxed text-center text-gray-500">
                 Step 1.
               </div> */}
-                <h2 className=" text-xl font-medium text-center text-[#0A2342] h-1/3 flex items-start">
+                <h2 className=" text-xl font-medium text-center text-blueDeep h-1/3 flex items-start">
                     {title}
                 </h2>
-                <p className="text-sm font-light leading-relaxed tracking-normal text-justify  text-[#0A2342] h-1/3">
+                <p className="text-sm font-light leading-relaxed tracking-normal text-justify  text-blueDeep h-1/3">
                     {text}
                 </p>
             </article>
@@ -65,7 +65,7 @@ export default function TopMain() {
                 <h2 className="text-sm font-medium text-[#1cc2c4] relative z-3 ">
                     {title}
                 </h2>
-                <p className="text-xs font-light text-[#0A2342] relative z-3">
+                <p className="text-xs font-light text-blueDeep relative z-3">
                     {text}
                 </p>
             </article>

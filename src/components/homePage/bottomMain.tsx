@@ -24,11 +24,11 @@ export default function BottomMain(props: { redirectUrl: string }){
                        <div
                            className=" hover:bg-[url('/Polygon-bg-hover.svg')] bg-[url('/Polygon-bg.svg')] bg-no-repeat bg-contain h-[35vw] w-[33vw] flex flex-col justify-start items-center sm:pt-8   2xl:gap-16  sm:gap-2 md:gap-4 lg:gap-8  sm:px-4 md:px-4 xl:px-8 relative">
                            <h5
-                               className="font-bold sm:text-base xl:text-3xl 2xl:text-5xl text-[#0A2342] text-center mt-[20%] md:mt-[25%] ">
+                               className="font-bold sm:text-base xl:text-3xl 2xl:text-5xl text-blueDeep text-center mt-[20%] md:mt-[25%] ">
                                {title}
                            </h5>
                            <p
-                               className="font-light  sm:text-[10px] md:text-[12px] xl:text-lg 2xl:text-2xl 3xl:text-3xl text-[#0A2342] text-center absolute top-[50%] 2xl:top-[50%] sm:px-4 md:px-4 xl:px-8 ">
+                               className="font-light  sm:text-[10px] md:text-[12px] xl:text-lg 2xl:text-2xl 3xl:text-3xl text-blueDeep text-center absolute top-[50%] 2xl:top-[50%] sm:px-4 md:px-4 xl:px-8 ">
                                {text}
                            </p>
                        </div>

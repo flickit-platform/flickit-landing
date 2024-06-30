@@ -22,7 +22,7 @@ export default function FlickitIsHelpful(){
                             />
                             <div className="mx-16 w-1/2 max-sm:w-full max-sm:mx-4">
                                 <h5
-                                    className="max-sm:text-sm text-2xl 2xl:text-4xl font-bold leading-normal tracking-normal text-left text-[#0A2342] mb-6 flex">
+                                    className="max-sm:text-sm text-2xl 2xl:text-4xl font-bold leading-normal tracking-normal text-left text-blueDeep mb-6 flex">
                                     <Image
                                         src={"/Polygon-1.svg"}
                                         width={40}
@@ -33,7 +33,7 @@ export default function FlickitIsHelpful(){
                                     If you are about to buy a software
                                 </h5>
                                 <p
-                                    className="max-sm:mt-4 max-sm:text-xs max-sm:font-light text-base 2xl:text-2xl font-normal leading-relaxed tracking-normal text-left text-[#0A2342]">
+                                    className="max-sm:mt-4 max-sm:text-xs max-sm:font-light text-base 2xl:text-2xl font-normal leading-relaxed tracking-normal text-left text-blueDeep">
                                     If you're considering purchasing new software and are
                                     uncertain about its technical specifications, seeking a
                                     third-party opinion can be beneficial. A comprehensive
@@ -53,7 +53,7 @@ export default function FlickitIsHelpful(){
                             />
                             <div className="mx-16 w-1/2 max-sm:w-full max-sm:mx-4 max-sm:mt-4">
                                 <h5
-                                    className="max-sm:w-2/3 max-sm:text-sm max-sm:m-auto text-2xl 2xl:text-4xl font-bold leading-normal tracking-normal text-center text-[#0A2342] mb-6 flex max-sm:flex-row-reverse flex-col-reverse items-center">
+                                    className="max-sm:w-2/3 max-sm:text-sm max-sm:m-auto text-2xl 2xl:text-4xl font-bold leading-normal tracking-normal text-center text-blueDeep mb-6 flex max-sm:flex-row-reverse flex-col-reverse items-center">
                                     If you want to assess your contractor's work
                                     <Image
                                         src={"/Polygon-2.svg"}
@@ -64,7 +64,7 @@ export default function FlickitIsHelpful(){
                                     />
                                 </h5>
                                 <p
-                                    className="max-sm:mt-4 max-sm:text-xs max-sm:font-light text-base 2xl:text-2xl font-normal leading-relaxed tracking-normal text-center text-[#0A2342] ">
+                                    className="max-sm:mt-4 max-sm:text-xs max-sm:font-light text-base 2xl:text-2xl font-normal leading-relaxed tracking-normal text-center text-blueDeep ">
                                     If you are developing a software and you wish to
                                     professionally assess the quality of their work in technical
                                     terms, you can seek assistance from expert evaluators in
@@ -83,7 +83,7 @@ export default function FlickitIsHelpful(){
                             />
                             <div className="mx-16 w-1/2 max-sm:w-full max-sm:mx-4">
                                 <h5
-                                    className="max-sm:flex-row-reverse max-sm:text-sm text-2xl 2xl:text-4xl font-bold leading-normal tracking-normal text-left text-[#0A2342] mb-6 flex">
+                                    className="max-sm:flex-row-reverse max-sm:text-sm text-2xl 2xl:text-4xl font-bold leading-normal tracking-normal text-left text-blueDeep mb-6 flex">
                                     <Image
                                         src={"/Polygon-3.svg"}
                                         width={40}
@@ -94,7 +94,7 @@ export default function FlickitIsHelpful(){
                                     If you are developing a software
                                 </h5>
                                 <p
-                                    className="max-sm:mt-4 max-sm:text-xs max-sm:font-light text-base 2xl:text-2xl font-normal leading-relaxed tracking-normal text-left text-[#0A2342] ">
+                                    className="max-sm:mt-4 max-sm:text-xs max-sm:font-light text-base 2xl:text-2xl font-normal leading-relaxed tracking-normal text-left text-blueDeep ">
                                     If you are developing a software and you wish to
                                     professionally assess the quality of your work in technical
                                     terms, you can seek assistance from expert evaluators in
@@ -116,7 +116,7 @@ export default function FlickitIsHelpful(){
                         <article className="flex flex-col justify-between items-center">
                             <div className="flex w-full justify-between  gap-4">
                                 <h5
-                                    className="max-sm:w-2/3 max-sm:text-sm max-sm:m-auto text-2xl 2xl:text-4xl font-bold leading-normal tracking-normal text-center text-[#0A2342] mb-6 flex max-sm:flex-row-reverse flex-col-reverse items-start">
+                                    className="max-sm:w-2/3 max-sm:text-sm max-sm:m-auto text-2xl 2xl:text-4xl font-bold leading-normal tracking-normal text-center text-blueDeep mb-6 flex max-sm:flex-row-reverse flex-col-reverse items-start">
                                     If you are about to buy a software
                                     <Image
                                         src={"/Polygon-1.svg"}
@@ -136,7 +136,7 @@ export default function FlickitIsHelpful(){
                             </div>
                             <div>
                                 <p
-                                    className="max-sm:mt-4 max-sm:text-xs max-sm:font-light text-base 2xl:text-2xl font-normal leading-relaxed tracking-normal text-center text-[#0A2342] ">
+                                    className="max-sm:mt-4 max-sm:text-xs max-sm:font-light text-base 2xl:text-2xl font-normal leading-relaxed tracking-normal text-center text-blueDeep ">
                                     If you're considering purchasing new software and are
                                     uncertain about its technical specifications, seeking a
                                     third-party opinion can be beneficial. A comprehensive
@@ -149,7 +149,7 @@ export default function FlickitIsHelpful(){
                         <article className="flex flex-col justify-between items-center">
                             <div className="flex w-full justify-between flex-col-reverse items-center  gap-4">
                                 <h5
-                                    className="max-sm:w-2/3 max-sm:text-sm max-sm:m-auto text-2xl 2xl:text-4xl font-bold leading-normal tracking-normal text-center text-[#0A2342] mb-6 flex max-sm:flex-row-reverse flex-col-reverse items-start">
+                                    className="max-sm:w-2/3 max-sm:text-sm max-sm:m-auto text-2xl 2xl:text-4xl font-bold leading-normal tracking-normal text-center text-blueDeep mb-6 flex max-sm:flex-row-reverse flex-col-reverse items-start">
                                     If you want to assess your contractor's work
                                     <Image
                                         src={"/Polygon-2.svg"}
@@ -169,7 +169,7 @@ export default function FlickitIsHelpful(){
                             </div>
                             <div>
                                 <p
-                                    className="max-sm:mt-4 max-sm:text-xs max-sm:font-light text-base 2xl:text-2xl font-normal leading-relaxed tracking-normal text-center text-[#0A2342] ">
+                                    className="max-sm:mt-4 max-sm:text-xs max-sm:font-light text-base 2xl:text-2xl font-normal leading-relaxed tracking-normal text-center text-blueDeep ">
                                     If you are developing a software and you wish to
                                     professionally assess the quality of their work in technical
                                     terms, you can seek assistance from expert evaluators in
@@ -181,7 +181,7 @@ export default function FlickitIsHelpful(){
                         <article className="flex flex-col justify-between items-center">
                             <div className="flex w-full justify-between flex-row-reverse gap-4">
                                 <h5
-                                    className="max-sm:w-2/3 max-sm:text-sm max-sm:m-auto text-2xl 2xl:text-4xl font-bold leading-normal tracking-normal text-center text-[#0A2342] mb-6 flex max-sm:flex-row-reverse flex-col-reverse items-start">
+                                    className="max-sm:w-2/3 max-sm:text-sm max-sm:m-auto text-2xl 2xl:text-4xl font-bold leading-normal tracking-normal text-center text-blueDeep mb-6 flex max-sm:flex-row-reverse flex-col-reverse items-start">
                                     If you are developing a software
                                     <Image
                                         src={"/Polygon-3.svg"}
@@ -201,7 +201,7 @@ export default function FlickitIsHelpful(){
                             </div>
                             <div>
                                 <p
-                                    className="max-sm:mt-4 max-sm:text-xs max-sm:font-light text-base 2xl:text-2xl font-normal leading-relaxed tracking-normal text-center text-[#0A2342] ">
+                                    className="max-sm:mt-4 max-sm:text-xs max-sm:font-light text-base 2xl:text-2xl font-normal leading-relaxed tracking-normal text-center text-blueDeep ">
                                     If you are developing a software and you wish to
                                     professionally assess the quality of your work in technical
                                     terms, you can seek assistance from expert evaluators in

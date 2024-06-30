@@ -20,7 +20,7 @@ export default function Home() {
 
 return (
     <>
-      {/*<TopHeader redirectUrl={redirectUrl}/>*/}
+      <TopHeader redirectUrl={redirectUrl}/>
       {/*<TopMain/>*/}
       {/*<FlickitIsHelpful/>*/}
       {/*<BottomMain redirectUrl={redirectUrl}/>*/}

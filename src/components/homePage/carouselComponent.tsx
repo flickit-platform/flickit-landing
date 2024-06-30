@@ -52,7 +52,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({images}) => {
                         className="transition-opacity duration-1000 max-sm:w-[140px] sm:w-[160px] md:w-[200px] lg:w-[300px] xl:w-[400px] 2xl:w-[500px]"
                     />
                     <div className="flex flex-col gap-2  lg:mt-12 xl:mt-24">
-                        <p className=" max-sm:text-sm sm:text-lg md:text-lg lg:text-xl xl:text-2xl  2xl:text-4xl font-medium text-[#0A2342] italic">
+                        <p className=" max-sm:text-sm sm:text-lg md:text-lg lg:text-xl xl:text-2xl  2xl:text-4xl font-medium text-blueDeep italic">
                             {images[currentSlide].description}
                         </p>
                         {/* <div className="flex gap-2 items-center"> */}

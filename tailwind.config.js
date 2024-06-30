@@ -17,6 +17,7 @@ module.exports = {
         cyanLight: "#1CC2C4",
         grayLight: "#9DA7B3",
         blueLight: "#D0E4FF",
+        blueDeep: "#0A2342",
         lightRed: "#D81E5B",
         maxLightRed: "#FDF1F5",
         primaryFixed : "#D0ECFF",

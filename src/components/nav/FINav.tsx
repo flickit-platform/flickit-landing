@@ -6,6 +6,7 @@ import FINavLink from "./FINavLink";
 import Link from "next/link";
 import { getRedirectUrl } from "@/utils/constants";
 import {Trans} from "react-i18next";
+import {sansation} from "@/utils/fonts";
 
 export default function FINav() {
   const [redirectUrl, setRedirectUrl] = useState("");
@@ -49,10 +50,10 @@ export default function FINav() {
             className=" h-6 sm:h-12 w-[4.375rem] sm:w-[6.875rem]  2xl:w-[10rem]"
         />
         <div
-            className="hidden sm:flex justify-center items-center  py-1 px-3 whitespace-nowrap  border sm:h-6 text-[0.875rem] 2xl:text-xl font-sansation font-bold text-lightRed border-lightRed rounded-[100px] bg-maxLightRed w-[7.8rem] 3xl:w-auto h-6">
+            className={`hidden sm:flex ${sansation.className} justify-center items-center  py-1 px-3 whitespace-nowrap  border sm:h-6 text-[0.875rem] 2xl:text-xl font-bold text-lightRed border-lightRed rounded-[100px] bg-maxLightRed w-[7.8rem] 3xl:w-auto h-6`}>
           <Trans i18nKey={"betaPreview"}/>
         </div>
-        <div className="flex sm:hidden justify-center items-center border border-solid border-lightRed text-lightRed text-[0.5rem] font-bold font-sansation rounded-[0.25rem] w-[1.56rem] ">
+        <div className={`flex sm:hidden justify-center items-center border border-solid border-lightRed text-lightRed text-[0.5rem] font-bold rounded-[0.25rem] w-[1.56rem] ${sansation.className}`}>
           <Trans i18nKey={"beta"}/>
         </div>
       </div>
@@ -80,7 +81,7 @@ export default function FINav() {
           </button>
         </Link>
       </div>
-      <div className="flex sm:hidden justify-center items-center  w-[5.75rem] h-[1.25rem] rounded-[6.25rem] bg-primaryFixed text-primaryFixedVariant px-4 whitespace-nowrap text-[0.688rem] font-semibold font-sansation ">
+      <div className={`flex sm:hidden justify-center items-center  w-[5.75rem] h-[1.25rem] rounded-[6.25rem] bg-primaryFixed text-primaryFixedVariant px-4 whitespace-nowrap text-[0.688rem] font-semibold ${sansation.className}`}>
         <Trans i18nKey={"getStart"}/>
       </div>
     </nav>

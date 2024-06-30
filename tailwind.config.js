@@ -18,6 +18,7 @@ module.exports = {
         grayLight: "#9DA7B3",
         blueLight: "#D0E4FF",
         lightRed: "#D81E5B",
+        maxLightRed: "#FDF1F5",
         primaryFixed : "#D0ECFF",
         primaryFixedVariant : "#00497B"
       },

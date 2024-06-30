@@ -39,17 +39,17 @@ export default function FINav() {
   const activeSegment = useSelectedLayoutSegment();
 
   return (
-    <nav className="flex items-center justify-between max-sm:px-4 px-24 h-8 sm:h-[4.5rem] relative z-50 mx-auto bg-lightBg shadow-md">
-      <div className="flex justify-center items-center gap-2 2xl:gap-8">
+    <nav className="flex items-center justify-between max-sm:px-4 px-16 md:px-24 h-8 sm:h-[4.5rem] relative z-50 mx-auto bg-lightBg shadow-md">
+      <div className="flex justify-center items-center gap-2 sm:gap-x-10 ">
         <Image
             src="/Logo-dark.svg"
             alt="Flickit"
             width={144}
             height={50}
-            className=" h-6 sm:h-12   w-[4.375rem] sm:w-[6.875rem]  2xl:w-[10rem]"
+            className=" h-6 sm:h-12 w-[4.375rem] sm:w-[6.875rem]  2xl:w-[10rem]"
         />
         <div
-            className="hidden sm:flex justify-center items-center py-1 px-3 border sm:h-6 text-sm 2xl:text-xl font-bold text-[#D81E5B] border-[#D81E5B] rounded-[100px] bg-[#FDF1F5]">
+            className="hidden sm:flex justify-center items-center  py-1 px-3 whitespace-nowrap  border sm:h-6 text-[0.875rem] 2xl:text-xl font-sansation font-bold text-lightRed border-lightRed rounded-[100px] bg-maxLightRed w-[7.8rem] 3xl:w-auto h-6">
           <Trans i18nKey={"betaPreview"}/>
         </div>
         <div className="flex sm:hidden justify-center items-center border border-solid border-lightRed text-lightRed text-[0.5rem] font-bold font-sansation rounded-[0.25rem] w-[1.56rem] ">

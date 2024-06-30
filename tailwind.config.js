@@ -16,7 +16,10 @@ module.exports = {
         navyDeep: "#182F4B",
         cyanLight: "#1CC2C4",
         grayLight: "#9DA7B3",
-        blueLight: "#D0E4FF"
+        blueLight: "#D0E4FF",
+        lightRed: "#D81E5B",
+        primaryFixed : "#D0ECFF",
+        primaryFixedVariant : "#00497B"
       },
       fontFamily: {
         ubunto: ["var(--font-ubuntu)"],

@@ -20,8 +20,8 @@ export default function Home() {
 
 return (
     <>
-      <TopHeader redirectUrl={redirectUrl}/>
-      <TopMain/>
+      {/*<TopHeader redirectUrl={redirectUrl}/>*/}
+      {/*<TopMain/>*/}
       {/*<FlickitIsHelpful/>*/}
       {/*<BottomMain redirectUrl={redirectUrl}/>*/}
       {/*<CarouselComponent/>*/}

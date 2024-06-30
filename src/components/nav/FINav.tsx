@@ -39,17 +39,21 @@ export default function FINav() {
   const activeSegment = useSelectedLayoutSegment();
 
   return (
-    <nav className="flex items-center justify-between max-sm:px-4 px-24 h-8 sm:h-[4.5rem] relative z-50 mx-auto bg-lightBg shadow-md py-8 2xl:py-12">
+    <nav className="flex items-center justify-between max-sm:px-4 px-24 h-8 sm:h-[4.5rem] relative z-50 mx-auto bg-lightBg shadow-md">
       <div className="flex justify-center items-center gap-2 2xl:gap-8">
         <Image
-          src="/Logo-dark.svg"
-          alt="Flickit"
-          width={144}
-          height={50}
-          className="sm:w-[110px] md:w-[110px] lg:w-[110px] 2xl:w-[174px]"
+            src="/Logo-dark.svg"
+            alt="Flickit"
+            width={144}
+            height={50}
+            className=" h-6 sm:h-12   w-[4.375rem] sm:w-[6.875rem]  2xl:w-[10rem]"
         />
-        <div className="py-1 px-3 border sm:h-6 text-sm 2xl:text-xl font-bold text-[#D81E5B] border-[#D81E5B] rounded-[100px] bg-[#FDF1F5] flex justify-center items-center">
-         <Trans i18nKey={"betaPreview"} />
+        <div
+            className="hidden sm:flex justify-center items-center py-1 px-3 border sm:h-6 text-sm 2xl:text-xl font-bold text-[#D81E5B] border-[#D81E5B] rounded-[100px] bg-[#FDF1F5]">
+          <Trans i18nKey={"betaPreview"}/>
+        </div>
+        <div className="flex sm:hidden justify-center items-center border border-solid border-lightRed text-lightRed text-[0.5rem] font-bold font-sansation rounded-[0.25rem] w-[1.56rem] ">
+          <Trans i18nKey={"beta"}/>
         </div>
       </div>
       {/* <div>
@@ -59,7 +63,7 @@ export default function FINav() {
                     </FINavLink>
                 )}
             </div> */}
-      <div className="flex justify-center items-center gap-8">
+      <div className="hidden sm:flex justify-center items-center gap-8">
         <div className="flex justify-center items-center gap-4">
           <Image
               src={"/search_icon.svg"}
@@ -71,10 +75,13 @@ export default function FINav() {
         </div>
         <Link href={redirectUrl} rel="noopener noreferrer">
           <button
-              className={`bg-blueLight text-white sm:h-10 sm:w-32 py-[0.156rem] px-[0.375rem]   sm:px-4 text-[0.219rem] sm:text-[0.875rem] leading-[0.313rem]  2xl:px-8 font-medium tracking-wider rounded-[6.25rem]`}>
+              className={`bg-blueLight text-white sm:h-10 sm:w-32 py-[0.156rem] px-[0.375rem]   sm:px-4 text-[0.219rem] sm:text-[0.875rem] leading-[0.313rem]  2xl:px-8 font-medium tracking-wider rounded-[6.25rem] h-[0.85rem]`}>
             <Trans i18nKey={"openFlickit"}/>
           </button>
         </Link>
+      </div>
+      <div className="flex sm:hidden justify-center items-center  w-[5.75rem] h-[1.25rem] rounded-[6.25rem] bg-primaryFixed text-primaryFixedVariant px-4 whitespace-nowrap text-[0.688rem] font-semibold font-sansation ">
+        <Trans i18nKey={"getStart"}/>
       </div>
     </nav>
   );

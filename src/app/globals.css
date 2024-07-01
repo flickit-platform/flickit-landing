@@ -10,13 +10,18 @@
         @apply text-primary border-b border-primary;
       }
     }
-    .text-overFlow4 {
+    .text-overFlow5 {
       display: -webkit-box;
       max-width: 400px;
-      -webkit-line-clamp: 4;
+      -webkit-line-clamp: 5;
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+    @media only screen and (min-width: 640px) {
+      .colorText {
+        color: #CED3D9 !important;
+      }
     }
   }
   .bt-gradient {

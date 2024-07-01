@@ -2,21 +2,19 @@ import Image from "next/image";
 
 export default function FlickitIsHelpful() {
     return (
-        <main className="mx-auto flex justify-center py-[2.37rem]  ">
-
-            <section className=" rounded-2xl h-[400px] w-[95%] bg-[#3B4F68] bg-opacity-30 relative">
+        <main className="mx-auto flex justify-center  py-[2.37rem]  ">
+            <section className=" flex justify-center items-start rounded-2xl h-[400px] w-[95%] bg-[#3B4F68] bg-opacity-30 relative">
                 <div className="absolute top-0 right-0 left-0 bottom-0 bg-[url(/bgShapes.svg)] blur-lg"/>
                 <div className="absolute top-0 right-0 left-0 bottom-0 bg-[url(/vector.svg)] mix-blend-overlay"/>
                 <section
-                    className={"bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#6C7B8E] from-0% to-[#3B4F68] to-100% rounded-lg px-5 pt-7 pb-4 flex justify-center items-center flex-col relative"}>
+                    className={"bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#6C7B8E] from-0% to-[#3B4F68] to-100% rounded-lg px-5 pt-7 pb-4 flex justify-center items-center flex-col gap-y-3 relative w-[90%]"}>
                     <div className="absolute w-[50px] h-[50px] bg-[url(/dollarSign.svg)] bg-no-repeat -top-[20px]"/>
-                    <h3>If you are about to buy a software</h3>
-                    <p className="text-xs">If you're considering purchasing new software and are uncertain about its
+                    <h3 className="text-white text-sm ">If you are about to buy a software</h3>
+                    <p className="text-xs text-[#EFF1F3]">If you're considering purchasing new software and are uncertain about its
                         technical specifications, seeking a third-party opinion can be beneficial. A comprehensive
                         assessment kit will offer insights into the software's technical aspects, empowering you to make
                         a well-informed decision.</p>
                 </section>
-
             </section>
         </main>
 

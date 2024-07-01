@@ -22,7 +22,7 @@ return (
     <>
       <TopHeader redirectUrl={redirectUrl}/>
       <TopMain/>
-      {/*<FlickitIsHelpful/>*/}
+      <FlickitIsHelpful/>
       {/*<BottomMain redirectUrl={redirectUrl}/>*/}
       {/*<CarouselComponent/>*/}
       {/*/!*<FaqComponents/>*!/*/}

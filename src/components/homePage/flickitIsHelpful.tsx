@@ -15,9 +15,9 @@ export default function FlickitIsHelpful() {
                         <section
                             key={index}
                             style={{background: "radial-gradient(circle at center, rgba(108, 123, 142, 40%) 0%, rgba(59, 79, 104, 40%) 100%)"}}
-                            className={"rounded-lg px-5 pt-7 pb-4 justify-center items-center gap-y-3  sm:gap-x-[3.25rem] relative w-[90%] sm:min-h-[14rem] grid grid-cols-1 sm:grid-cols-2 col-span-6"}>
-                            <div style={{background:`url(${item.img})`,backgroundRepeat: "no-repeat",backgroundPosition: "center top",backgroundSize:"contain"}} className="absolute flex justify-self-center w-[36px] h-[36px] sm:w-[70px] sm:h-[70px] -top-[18px] sm:-top-[33px]"/>
-                            <h3 className="text-white text-center sm:text-right text-sm font-medium sm:font-semibold sm:text-xl lg:text-3xl  ">{item.title}</h3>
+                            className={"rounded-lg px-5 pt-7 pb-4 justify-center items-center gap-y-3  sm:gap-x-[3.25rem] relative w-[90%] sm:min-h-[14rem] grid grid-cols-1 sm:grid-cols-2 col-span-6 shadow-lg"}>
+                            <div style={{background:`url(${item.img})`,backgroundRepeat: "no-repeat",backgroundPosition: "center top",backgroundSize:"contain",filter: `drop-shadow(0px 16px 16px rgba(${item.color}))`}} className="absolute flex justify-self-center w-[36px] h-[36px] sm:w-[70px] sm:h-[70px] -top-[18px] sm:-top-[33px] "/>
+                            <h3 className="text-white text-center sm:text-right text-sm font-medium sm:font-semibold sm:text-xl lg:text-3xl sm:pl-5 lg:pl-10">{item.title}</h3>
                             <p className="text-xs text-[#EFF1F3] sm:text-left sm:text-sm lg:text-base">
                             {item.text}
                             </p>

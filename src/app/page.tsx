@@ -5,6 +5,7 @@ import { getRedirectUrl } from "@/utils/constants";
 import TopHeader from "@/components/homePage/topHeader";
 import TopMain from "@/components/homePage/topMain";
 import FlickitIsHelpful from "@/components/homePage/flickitIsHelpful";
+import BtnMain from "@/components/homePage/btnMain";
 import BottomMain from "@/components/homePage/bottomMain";
 import CarouselComponent from "@/components/homePage/carouselComponent";
 import Footer from "@/components/homePage/footer";
@@ -23,7 +24,8 @@ return (
       <TopHeader redirectUrl={redirectUrl}/>
       <TopMain/>
       <FlickitIsHelpful/>
-      <BottomMain redirectUrl={redirectUrl}/>
+      <BtnMain redirectUrl={redirectUrl}/>
+        <BottomMain/>
       {/*<CarouselComponent/>*/}
       {/*/!*<FaqComponents/>*!/*/}
       {/*<Footer redirectUrl={redirectUrl}/>*/}

@@ -1,20 +1,21 @@
+export default function BottomMain(){
+    return(
+        <section className="h-[400px] w-full flex justify-center items-center  overflow-auto">
+            <div className="flex gap-16">
+                <Slide color={"bg-amber-400"}/>
+                <Slide color={"bg-red-400"}/>
+                <Slide color={"bg-blue-400"}/>
+            </div>
 
-export default function BottomMain(props: { redirectUrl: string }){
-    const {redirectUrl} = props
+        </section>
+    )
+}
+
+const Slide = ({color} : { color :string }) => {
+    const func = () =>{
+
+    }
     return (
-        <main className="mx-auto">
-            <section className="w-full flex justify-center items-center">
-                <a
-                    href={redirectUrl}
-                    rel="noopener noreferrer"
-                    className="w-1/2 lg:max-w-[62rem]"
-                >
-                    <button
-                        className="hover:scale-105 hover:shadow-2xl h-[2.5rem] sm:h-25 lg:h-32 text-base sm:text-xl lg:text-[3.75rem] w-full main-btn font-medium text-[#00365C] text-center rounded-[6.2rem]">
-                        Try it for free
-                    </button>
-                </a>
-            </section>
-        </main>
+        <div onClick={func} className={`min-w-[250px] h-[150px] ${color}`}></div>
     )
 }

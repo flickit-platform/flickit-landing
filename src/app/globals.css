@@ -32,13 +32,11 @@
   .bt-gradient:hover {
     background-position: right center;
   }
-  .btn-2 {
+  .main-btn {
     background-image: linear-gradient(
       45deg,
-      rgba(28, 139, 196, 1) 0%,
-      rgba(4, 220, 222, 1) 33%,
-      rgba(28, 194, 196, 1) 66%,
-      rgba(28, 194, 196, 1) 100%
+      rgba(182, 212, 254, 1) 0%,
+      rgba(208, 228, 255, 1) 100%
     );
   }
   .txt-gradient {

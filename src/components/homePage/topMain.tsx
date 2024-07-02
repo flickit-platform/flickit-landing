@@ -8,10 +8,10 @@ export default function TopMain() {
                 How does it work?
             </h3>
             <article className="flex flex-col sm:flex-row justify-center items-stretch gap-4 lg:w-[75%]">
-                {cardsText.map(card =>{
+                {cardsText.map((card,index) =>{
                     const {title, text, color} = card
                     return (
-                        <Cards title={title} text={text} color={color} />
+                        <Cards title={title} text={text} color={color} key={index} />
                     )
                 })}
             </article>

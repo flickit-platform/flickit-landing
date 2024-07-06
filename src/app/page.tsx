@@ -25,8 +25,8 @@ return (
       <TopMain/>
       <FlickitIsHelpful/>
       <BtnMain redirectUrl={redirectUrl}/>
-        <BottomMain/>
-      {/*<CarouselComponent/>*/}
+      <BottomMain/>
+      <CarouselComponent/>
       {/*/!*<FaqComponents/>*!/*/}
       {/*<Footer redirectUrl={redirectUrl}/>*/}
     </>

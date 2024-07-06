@@ -54,18 +54,21 @@ export const cardsText: { title: string, text: string, color: string }[] = [
         color: "#FFB872"
     },
 ]
-export const bottomMainCard:{title:string,text:string}[] = [
+export const bottomMainCard:{title:string,text:string,color:string}[] = [
     {
         title: "Expert-Designed Assessment Kits",
-        text:  "Explore specialized assessment kits designed by experts for various contexts, then select one that aligns with your needs and interests."
+        text:  "Explore specialized assessment kits designed by experts for various contexts, then select one that aligns with your needs and interests.",
+        color: "#C71C55"
     },
     {
         title: "Custom Kit Creation",
-        text:  "Based on your expertise, create a tailored kit that fully meets your needs."
+        text:  "Based on your expertise, create a tailored kit that fully meets your needs.",
+        color: "#9CCAFF"
     },
     {
         title: "Comprehensive Reporting Insights",
-        text:  "Unlock actionable insights with detailed and comprehensive reports."
+        text:  "Unlock actionable insights with detailed and comprehensive reports.",
+        color: "#FB9515"
     }
 ]
 export const flickitIsHelpful:{title:string,text:string,img:string,color:string}[] = [

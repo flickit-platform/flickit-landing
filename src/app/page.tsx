@@ -28,7 +28,7 @@ return (
       <BottomMain/>
       <CarouselComponent/>
       {/*/!*<FaqComponents/>*!/*/}
-      {/*<Footer redirectUrl={redirectUrl}/>*/}
+      <Footer redirectUrl={redirectUrl}/>
     </>
   );
 }

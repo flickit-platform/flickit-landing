@@ -3,7 +3,7 @@ import {bottomMainCard} from "@/utils/db";
 export default function BottomMain(){
     return(
             <section className="h-[13.3rem] sm:h-[41rem] w-full sm:px-16 sm:py-32 overflow-auto">
-            <div className="h-full w-full flex justify-between items-center overflow-auto">
+            <div className="h-full w-full flex scrollbar-hide justify-between items-center overflow-auto">
                 {bottomMainCard.map(items => {
                     return (
                         <Slide {...items}/>

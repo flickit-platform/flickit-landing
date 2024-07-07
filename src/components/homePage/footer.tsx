@@ -1,7 +1,7 @@
 export default function Footer() {
     return (
         <footer className="flex justify-center bg-gradient-to-b from-0% to-100% from-[#001D35] to-[#001224] ">
-            <main className=" flex justify-between items-start w-full md:w-[70%] h-[7rem] pt-6 px-8">
+            <main className=" flex justify-between items-start w-full md:w-[80%] h-[7rem] sm:h-[9rem] pt-6 px-8">
                 <div className="flex flex-col items-center justify-start">
                     <img className="w-[8.6rem] h-[3rem]" src="/footer-Logo.png"/>
                     <p className="text-white text-bold text-xs">Have doubt? Let's assess.</p>

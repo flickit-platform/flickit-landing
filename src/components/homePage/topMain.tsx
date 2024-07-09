@@ -4,8 +4,8 @@ export default function TopMain() {
 
     return (
         <section className="flex items-center justify-center bg-gradient-to-b from-0% from-bluemaxLight to-100% to-bluemaxDeep p-9 ">
-            <div className="flex flex-col items-center justify-center gap-6 max-w-[90rem]">
-                <h3 className="text-white font-semibold text-[1.5rem] leading-8">
+            <div className="flex flex-col items-center justify-center gap-6 sm:gap-[40px] lg:gap[69px] max-w-[90rem]">
+                <h3 className="text-white font-semibold text-[1.5rem] sm:text-[4rem] leading-8">
                     How does it work?
                 </h3>
                 <article className="flex flex-col sm:flex-row justify-center items-stretch gap-4 lg:w-[75%]">

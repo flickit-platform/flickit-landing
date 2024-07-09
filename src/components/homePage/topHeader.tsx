@@ -13,12 +13,12 @@ export default function TopHeader(props: { redirectUrl: string }) {
                 <div
                     className={"absolute bg-cover blur-2xl bg-[url(/meshGradiant.svg)] h-full w-full top-0 bottom-0 right-0 left-0"}/>
                 <section
-                    className={`${sansation.className} relative  text-center gap-y-4 sm:gap-y-5 flex flex-col items-center justify-center w-[18.5rem] sm:w-[32rem] lg:w-[55.43rem] 2xl:w-[60rem] 3xl:w-[80rem]`}>
+                    className={`!${sansation.className} relative  text-center gap-y-4 sm:gap-y-5 flex flex-col items-center justify-center w-[18.5rem] sm:w-[32rem] lg:w-[55.43rem] 2xl:w-[60rem] 3xl:w-[80rem]`}>
                     <div className="text-[0.688rem] sm:text-[1.563rem] text-[#EDF4FC] font-normal leading-8">
                         The ultimate tool for assessing your software
                     </div>
                     <div
-                        className="drop-shadow-[5px_5px_20px_rgba(255,255,255,0.4)] text-[#EDF4FC] text-[1.5rem] sm:text-[2.5rem] lg:text-[4.5rem] font-bold leading-8 sm:leading-10 lg:leading-[5.625rem]">
+                        className={`!${sansation.className} drop-shadow-[5px_5px_20px_rgba(255,255,255,0.4)] text-[#EDF4FC] text-[1.5rem] sm:text-[2.5rem] lg:text-[4.5rem] font-bold leading-8 sm:leading-10 lg:leading-[5.625rem]`}>
                         Say Goodbye to Software Quality Blind Spots with Expert Algorithms
                     </div>
                     <div className="font-light sm:font-normal text-[0.75rem] sm:text-[1.25rem] text-[#EDF4FC]">

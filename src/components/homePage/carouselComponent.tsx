@@ -42,8 +42,8 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({images}) => {
 
     return (
         <main
-            className=" w-full flex bg-no-repeat bg-[url('/carousel-bg.svg')] bg-cover pt-[2rem] ">
-            <div className="flex flex-col justify-center items-center w-full transition-opacity duration-1000">
+            className=" w-full flex bg-no-repeat bg-[url('/carousel-bg.svg')] bg-cover bg-center pt-[2rem] h-[18.3rem] sm:h-[32rem] lg:h-[40.7rem]">
+            <div className="flex flex-col justify-center items-center w-full transition-opacity duration-1000 ">
                 <section
                     className=" flex max-sm:justify-center max-sm:items-center justify-between md:items-start lg:items-start items-start gap-[23px] w-[16rem]  sm:w-[30rem] lg:w-[47rem] ">
                     <img
@@ -77,7 +77,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({images}) => {
                     </div>
                 </section>
                 <section
-                    className="flex w-full justify-center items-center max-sm:gap-1 sm:gap-2 gap-4 max-sm:pt-16 sm:pt-24">
+                    className="flex w-full justify-center items-center max-sm:gap-1 sm:gap-2 gap-4 max-sm:pt-16 sm:pt-24 pb-4">
                     {images.map((image, index) => {
                         return (
                             <img

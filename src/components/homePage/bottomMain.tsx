@@ -23,7 +23,7 @@ export default function BottomMain(){
 
     return(
             <section className="h-[13.3rem] sm:h-[25rem] lg:h-[41rem] flex justify-center w-full lg:px-16 lg:py-32 overflow-auto">
-            <div ref={sliderRef} className="h-full w-full flex gap-6 scrollbar-hide max-w-[1440px] justify-between items-center overflow-auto">
+            <div ref={sliderRef} className="h-full w-full flex gap-6 scrollbar-hide max-w-[1440px] justify-center items-center overflow-auto">
                 {bottomMainCard.map((items,index) => {
                     return (
                         <Slide movement={movement} {...items} key={index} index={index}/>

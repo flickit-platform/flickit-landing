@@ -1,71 +1,46 @@
-import Image from "next/image";
 import {bottomMainCard} from "@/utils/db";
+import {useRef} from "react";
 
-export default function BottomMain(props: { redirectUrl: string }){
-    const {redirectUrl} = props
-    return (
-        <main className="max-sm:mt-32 sm:mt-32 lg:mt-52 mb-4 mx-auto">
-            <section className="w-full flex justify-center items-center mb-16">
-                <a
-                    href={redirectUrl}
-                    rel="noopener noreferrer"
-                    className="w-2/3 max-sm:w-full max-sm:px-4"
-                >
-                    <button
-                        className="hover:scale-105 hover:shadow-2xl max-sm:text-xl   max-sm:py-2 w-full bt-gradient btn-2 font-medium md:text-3xl lg:text-6xl text-[#edf4fc] text-center rounded-full py-4">
-                        Try it for free
-                    </button>
-                </a>
-            </section>
-            <section className="max-sm:hidden flex items-center w-full justify-between sm:px-8 lg:px-16 lg:gap-4 xl:gap-8">
-                {bottomMainCard.map(item=>{
-                    const {text,title} = item
-                   return (
-                       <div
-                           className=" hover:bg-[url('/Polygon-bg-hover.svg')] bg-[url('/Polygon-bg.svg')] bg-no-repeat bg-contain h-[35vw] w-[33vw] flex flex-col justify-start items-center sm:pt-8   2xl:gap-16  sm:gap-2 md:gap-4 lg:gap-8  sm:px-4 md:px-4 xl:px-8 relative">
-                           <h5
-                               className="font-bold sm:text-base xl:text-3xl 2xl:text-5xl text-[#0A2342] text-center mt-[20%] md:mt-[25%] ">
-                               {title}
-                           </h5>
-                           <p
-                               className="font-light  sm:text-[10px] md:text-[12px] xl:text-lg 2xl:text-2xl 3xl:text-3xl text-[#0A2342] text-center absolute top-[50%] 2xl:top-[50%] sm:px-4 md:px-4 xl:px-8 ">
-                               {text}
-                           </p>
-                       </div>
-                   )
+export default function BottomMain(){
+    const sliderRef = useRef<any>(null)
+    const movement = (e: any,index:number) =>{
+        let slider = sliderRef.current
+        if(slider){
+            if(index == 0){
+                slider.scrollTo({
+                    left: -200 ,
+                    behavior: "smooth",
+                })
+
+            }else if(index == 2){
+                slider.scrollTo({
+                    left: 200 ,
+                    behavior: "smooth",
+                })
+            }
+        }
+    }
+
+    return(
+            <section className="h-[13.3rem] sm:h-[25rem] lg:h-[41rem] flex justify-center w-full lg:px-16 lg:py-32 overflow-auto">
+            <div ref={sliderRef} className="h-full w-full flex gap-6 scrollbar-hide max-w-[1440px] justify-center items-center overflow-auto">
+                {bottomMainCard.map((items,index) => {
+                    return (
+                        <Slide movement={movement} {...items} key={index} index={index}/>
+                    )
                 })}
-            </section>
+            </div>
+        </section>
+    )
+}
 
-            <section className="sm:hidden flex flex-col mt-32">
-                <div className="flex justify-around items-center w-full">
-                    <h2
-                        className="text-base font-bold text-[#EDFCFC] bg-[url('/polygon-o-mobile.svg')] bg-no-repeat bg-cover h-[172px] w-[150px] flex flex-col justify-center items-center gap-4 px-2 text-center">
-                        Expert-Designed Assessment Kits
-                    </h2>
-                    <h2
-                        className="text-base font-bold text-[#EDFCFC] bg-[url('/polygon-g-mobile.svg')] bg-no-repeat bg-cover h-[172px] w-[150px] flex flex-col justify-center items-center gap-4 px-2 text-center">
-                        Custom Kit Creation
-                    </h2>
-                </div>
-                <div className="flex justify-between items-center w-full">
-                    <Image
-                        src={"/polygon-n-mobile-l.svg"}
-                        width={75}
-                        height={172}
-                        alt={"left"}
-                    />
-                    <h2
-                        className="text-base font-bold text-[#EDFCFC] bg-[url('/polygon-r-mobile.svg')] bg-no-repeat bg-cover h-[172px] w-[150px] flex flex-col justify-center items-center gap-4 px-2 text-center">
-                        Comprehensive Reporting Insights
-                    </h2>
-                    <Image
-                        src={"/polygon-n-mobile-r.svg"}
-                        width={75}
-                        height={172}
-                        alt={"right"}
-                    />
-                </div>
-            </section>
-        </main>
+const Slide = (items: any) => {
+ const {color,text,title,movement,index} = items
+
+    return (
+        <div onClick={(e)=>movement(e,index)} style={{boxShadow: `inset 1px 1px 14px rgba(255, 255, 255, 12%)`}} className={`flex min-w-[9.37rem] gap-4 lg:gap-[79px] flex-col items-center justify-start w-[9.37rem] max-w-[9.37rem] h-[9.37rem] sm:w-[17rem] sm:max-w-[17rem] sm:h-[17rem] lg:w-[25rem] lg:h-[25rem] lg:min-w-[25rem] lg:min-h-[25rem] rounded-[0.75rem] sm:rounded-[2rem] px-2.5 sm:px-8 py-8 lg:py-[5.62rem] bg-gradient-to-b from-[#102D51] from-0% to-100% to-[#0A2342] `}>
+        <h3 style={{color}} className={"font-medium text-[0.875rem] lg:text-[1.726rem] text-center lg:w-[15.75rem] h-[2.5rem] sm:h-[5.12rem]"}>{title}</h3>
+        <h3 className="text-[0.375rem] sm:text-[0.6rem] lg:text-[1rem] text-[#EDF4FC] lg:w-[19rem] text-center">{text}</h3>
+        </div>
     )
 }

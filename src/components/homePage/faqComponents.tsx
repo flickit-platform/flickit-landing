@@ -92,7 +92,7 @@ export default function FaqComponents(){
                       </div>
                     </div>
                     <div
-                      className={`text-[10px] font-light text-[#0A2342] mt-4  ${
+                      className={`text-[10px] font-light text-blueDeep mt-4  ${
                         selectedFAQ === index ? "" : "hidden"
                       }`}
                     >

@@ -10,6 +10,22 @@
         @apply text-primary border-b border-primary;
       }
     }
+    .text-overFlow5 {
+      display: -webkit-box;
+      max-width: 400px;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    @media only screen and (min-width: 640px) {
+      .colorText {
+        color: #CED3D9 !important;
+      }
+    }
   }
   .bt-gradient {
     transition: 0.5s;
@@ -19,13 +35,11 @@
   .bt-gradient:hover {
     background-position: right center;
   }
-  .btn-2 {
+  .main-btn {
     background-image: linear-gradient(
       45deg,
-      rgba(28, 139, 196, 1) 0%,
-      rgba(4, 220, 222, 1) 33%,
-      rgba(28, 194, 196, 1) 66%,
-      rgba(28, 194, 196, 1) 100%
+      rgba(182, 212, 254, 1) 0%,
+      rgba(208, 228, 255, 1) 100%
     );
   }
   .txt-gradient {

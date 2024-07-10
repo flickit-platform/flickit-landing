@@ -5,6 +5,9 @@ import { useSelectedLayoutSegment } from "next/navigation";
 import FINavLink from "./FINavLink";
 import Link from "next/link";
 import { getRedirectUrl } from "@/utils/constants";
+import {Trans} from "react-i18next";
+import {sansation} from "@/utils/fonts";
+
 export default function FINav() {
   const [redirectUrl, setRedirectUrl] = useState("");
 
@@ -37,17 +40,21 @@ export default function FINav() {
   const activeSegment = useSelectedLayoutSegment();
 
   return (
-    <nav className="flex items-center justify-between max-sm:px-4 px-24 h-14 relative z-50 mx-auto bg-[#EDF4FC] shadow-md py-8 2xl:py-12">
-      <div className="flex gap-2 2xl:gap-8">
+    <nav className="flex items-center justify-between max-sm:px-4 px-16 md:px-24 h-8 sm:h-[4.5rem] relative z-50 mx-auto bg-lightBg shadow-md">
+      <div className="flex justify-center items-center gap-2 sm:gap-x-10 ">
         <Image
-          src="/logo.svg"
-          alt="Flickit"
-          width={110}
-          height={42}
-          className="sm:w-[110px] md:w-[110px] lg:w-[110px] 2xl:w-[174px]"
+            src="/Logo-dark.svg"
+            alt="Flickit"
+            width={144}
+            height={50}
+            className=" h-6 sm:h-12 w-[4.375rem] sm:w-[6.875rem]  2xl:w-[10rem]"
         />
-        <div className="py-1 px-3 border text-sm 2xl:text-xl font-bold text-[#D81E5B] border-[#D81E5B] rounded-[100px] bg-[#FDF1F5] flex justify-center items-center">
-          Beta Preview
+        <div
+            className={`hidden sm:flex !${sansation.className} justify-center items-center  py-1 px-3 whitespace-nowrap  border sm:h-6 text-[0.875rem] 2xl:text-xl font-bold text-lightRed border-lightRed rounded-[100px] bg-maxLightRed w-[7.8rem] 3xl:w-auto h-6`}>
+          <Trans i18nKey={"betaPreview"}/>
+        </div>
+        <div className={`flex sm:hidden justify-center items-center border border-solid border-lightRed text-lightRed text-[0.5rem] font-bold rounded-[0.25rem] w-[1.56rem] ${sansation.className}`}>
+          <Trans i18nKey={"beta"}/>
         </div>
       </div>
       {/* <div>
@@ -57,13 +64,29 @@ export default function FINav() {
                     </FINavLink>
                 )}
             </div> */}
-      <div>
+      <div className="hidden sm:flex justify-center items-center gap-8">
+        {/*<div className="flex justify-center items-center gap-4">*/}
+        {/*  <Image*/}
+        {/*      src={"/search_icon.svg"}*/}
+        {/*      alt={"search_icon"}*/}
+        {/*      width={15}*/}
+        {/*      height={15}*/}
+        {/*  />*/}
+        {/*  <div className={"text-grayLight text-base"}>En</div>*/}
+        {/*</div>*/}
         <Link href={redirectUrl} rel="noopener noreferrer">
-          <button className="max-sm:hidden bg-primary text-white py-2.5  2xl:py-4 px-4  2xl:px-8 text-base 2xl:text-2xl font-semibold tracking-wider rounded-md">
-            Get started here!
+          <button
+              className={`bg-blueLight text-[#00365C] sm:h-10 sm:w-32 py-[0.156rem] px-[0.375rem]   sm:px-4 text-[0.219rem] sm:text-[0.875rem] leading-[0.313rem]  font-medium tracking-wider rounded-[6.25rem] h-[0.85rem]`}>
+            <Trans i18nKey={"openFlickit"}/>
           </button>
         </Link>
       </div>
+      <Link className="flex sm:hidden" href={redirectUrl} rel="noopener noreferrer">
+        <div
+            className={`flex justify-center items-center  w-[5.75rem] h-[1.25rem] rounded-[6.25rem] bg-primaryFixed text-primaryFixedVariant px-4 whitespace-nowrap text-[0.688rem] font-semibold ${sansation.className}`}>
+          <Trans i18nKey={"getStart"}/>
+        </div>
+      </Link>
     </nav>
   );
 }

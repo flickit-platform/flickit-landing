@@ -83,8 +83,8 @@ export default function FINav() {
       </div>
       <Link className="flex sm:hidden" href={redirectUrl} rel="noopener noreferrer">
         <div
-            className={`flex justify-center items-center  w-[5.75rem] h-[1.25rem] rounded-[6.25rem] bg-primaryFixed text-primaryFixedVariant px-4 whitespace-nowrap text-[0.688rem] font-semibold ${sansation.className}`}>
-          <Trans i18nKey={"getStart"}/>
+            className={`flex justify-center items-center w-[5.75rem] h-[1.25rem] rounded-[6.25rem] bg-primaryFixed text-primaryFixedVariant px-4 whitespace-nowrap text-[0.688rem] font-semibold !${sansation.className}`}>
+          <Trans i18nKey={"enter"}/>
         </div>
       </Link>
     </nav>

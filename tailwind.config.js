@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        Primary: "#00365C",
+        Primary: "#2466A8",
         PrimaryContainer: "#205F94",
         SecondaryContainer: "#C71C55",
         Tertiary: "#8C5000",
@@ -21,6 +21,7 @@ module.exports = {
         OnSurface: "#243342",
         SurfaceVariant: "#E0E3E5",
         OnSurfaceVariant: "#73808C",
+        InverseOnSurface: "#F0F2F4",
         Outline: "#74777A",
         OutlineVariant: "#C4C7C9",
         InverseSurface: "#303131",

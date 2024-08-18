@@ -2,6 +2,53 @@
   @tailwind components;
   @tailwind utilities;
 
+  @layer base {
+    @font-face {
+      font-family: 'SansationR';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(../assets/fonts/Sansation_Regular.woff),
+           url(../assets/fonts/Sansation_Regular.ttf);
+    }
+    @font-face {
+      font-family: 'SansationB';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(../assets/fonts/Sansation_Bold.woff),
+           url(../assets/fonts/Sansation_Bold.ttf);
+    }
+    @font-face {
+      font-family: 'UbuntuL';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(../assets/fonts/Ubuntu-Light.ttf);
+    }
+    @font-face {
+      font-family: 'UbuntuR';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(../assets/fonts/Ubuntu-Regular.ttf);
+    }
+    @font-face {
+      font-family: 'UbuntuM';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(../assets/fonts/Ubuntu-Medium.ttf);
+    }
+    @font-face {
+      font-family: 'UbuntuB';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(../assets/fonts/Ubuntu-Bold.ttf);
+    }
+  }
+
   @layer components {
     .nav-link {
       @apply text-gray-700 text-base py-1 mx-4;
@@ -33,36 +80,42 @@
   }
 
   .display-large{
+    font-family: SansationB;
     font-weight: bold;
     font-size: 4.5rem;
     line-height: 5.75rem;
     letter-spacing: 0px;
   }
   .display-medium{
+    font-family: SansationR;
     font-weight: normal;
     font-size: 1.75rem;
     line-height: 2.25rem;
     letter-spacing: 0px;
   }
   .display-small{
+    font-family: SansationR;
     font-weight: normal;
     font-size: 1.5rem;
     line-height: 2rem;
     letter-spacing: 0px;
   }
   .headline-large{
+    font-family: UbuntuB;
     font-weight: bold;
     font-size: 4rem;
     line-height: 4.25rem;
     letter-spacing: 0px;
   }
   .headline-medium{
+    font-family: UbuntuB;
     font-weight: bold;
     font-size: 2rem;
     line-height: 2.25rem;
     letter-spacing: 0px;
   }
   .headline-small{
+    font-family: UbuntuM;
     font-weight: normal;
     font-size: 1.5rem;
     line-height: 2rem;
@@ -70,54 +123,63 @@
   }
 
   .title-large{
+    font-family: UbuntuM;
     font-weight: normal;
     font-size: 1.375rem;
     line-height: 1.75rem;
     letter-spacing: 0px;
   }
   .title-medium{
+    font-family: UbuntuM;
     font-weight: normal;
     font-size: 1rem;
     line-height: 1.5rem;
     letter-spacing: 0.15px;
   }
   .title-small{
+    font-family: UbuntuM;
     font-weight: normal;
     font-size: 0.875rem;
     line-height: 1.25rem;
     letter-spacing: 0.1px;
   }
   .body-large{
+    font-family: UbuntuR;
     font-weight: normal;
     font-size: 1rem;
     line-height: 1.5rem;
     letter-spacing: 0.5px;
   }
   .body-medium{
+    font-family: UbuntuL;
     font-weight: lighter;
     font-size: 0.875rem;
     line-height: 1.25rem;
     letter-spacing: 0.25px;
   }
   .body-small{
+    font-family: UbuntuL;
     font-weight: lighter;
     font-size: 0.75rem;
     line-height: 1rem;
     letter-spacing: 0.4px;
   }
   .label-large{
+    font-family: UbuntuB;
     font-weight: bold;
     font-size: 0.875rem;
     line-height: 1.25rem;
     letter-spacing: 0.1px;
   }
   .label-medium{
+    font-family: UbuntuM;
     font-weight: normal;
     font-size: 0.75rem;
     line-height: 1rem;
     letter-spacing: 0.5px;
   }
   .label-small{
+    font-family: SansationR;
     font-weight: normal;
     font-size: 0.688rem;
     line-height: 0.75rem;

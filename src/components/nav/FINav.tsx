@@ -50,7 +50,7 @@ export default function FINav() {
             className=" h-6 sm:h-12 w-[4.375rem] sm:w-[6.875rem]  2xl:w-[10rem]"
         />
         <div
-            className={`hidden sm:flex !${sansation.className} justify-center items-center  py-1 px-3 whitespace-nowrap  border sm:h-6 text-[0.875rem] 2xl:text-xl font-bold text-lightRed border-lightRed rounded-[100px] bg-maxLightRed w-[7.8rem] 2xl:w-auto h-6`}>
+            className={`hidden sm:flex !${sansation.className} justify-center items-center  py-1 px-3 whitespace-nowrap border sm:h-6 label-small 2xl:text-xl text-lightRed border-lightRed rounded-[100px] bg-maxLightRed w-[7.8rem] 2xl:w-auto h-6`}>
           <Trans i18nKey={"betaPreview"}/>
         </div>
         <div className={`flex sm:hidden justify-center items-center border border-solid border-lightRed text-lightRed text-[0.5rem] font-bold rounded-[0.25rem] w-[1.56rem] ${sansation.className}`}>
@@ -76,7 +76,7 @@ export default function FINav() {
         {/*</div>*/}
         <Link href={redirectUrl} rel="noopener noreferrer">
           <button
-              className={`bg-blueLight text-[#00365C] sm:h-10 sm:w-32 py-[0.156rem] px-[0.375rem]   sm:px-4 text-[0.219rem] sm:text-[0.875rem] leading-[0.313rem]  font-medium tracking-wider rounded-[6.25rem] h-[0.85rem]`}>
+              className={`bg-PrimaryFixed text-[#00365C] sm:h-10 sm:w-32 py-[0.156rem] px-[0.375rem]   sm:px-4 text-[0.219rem] sm:text-[0.875rem] leading-[0.313rem]  font-medium tracking-wider rounded-[6.25rem] h-[0.85rem]`}>
             <Trans i18nKey={"openFlickit"}/>
           </button>
         </Link>

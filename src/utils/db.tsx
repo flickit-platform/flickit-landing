@@ -71,24 +71,27 @@ export const bottomMainCard:{title:string,text:string,color:string}[] = [
         color: "#FB9515"
     }
 ]
-export const flickitIsHelpful:{title:string,text:string,img:string,color:string}[] = [
+export const flickitIsHelpful:{title:string,text:string,img:string,color:string,colorShadow:string}[] = [
     {
         title: "If you are about to buy a software",
         text:  "If you're considering purchasing new software and are uncertain about its technical specifications, seeking a third-party opinion can be beneficial. A comprehensive assessment kit will offer insights into the software's technical aspects, empowering you to make a well-informed decision.",
         img: "/dollarSign.svg",
-        color: "156, 202, 255,0.4"
+        color: "156, 202, 255,0.4",
+        colorShadow: "156, 202, 255,0.8"
     },
     {
         title: "If you want to assess your contractor's work",
         text:  "If you are developing a software and you wish to professionally assess the quality of their work in technical terms, you can seek assistance from expert evaluators in this field to inform you about the status of various technical aspects of the software.",
         img:"/diagram.svg",
-        color: "199, 28, 85,0.4"
+        color: "199, 28, 85,0.4",
+        colorShadow: "199, 28, 85,0.8"
     },
     {
         title: "If you are building a software",
         text:  "If you're developing software and aiming to assess its quality across various dimensions, consider utilizing Flickit as a self-assessment platform. This platform can assist you in identifying both your software strengths and weaknesses, empowering you to devise strategies to optimize your work and address any shortcomings effectively.",
         img: "/code.svg",
-        color: "251, 149, 21,0.4"
+        color: "251, 149, 21,0.4",
+        colorShadow: "251, 149, 21,0.8"
     }
 ]
 

@@ -26,7 +26,7 @@ module.exports = {
         Outline: "#74777A",
         OutlineVariant: "#C4C7C9",
         InverseSurface: "#303131",
-        InversePrimary: "#9CCAFF",
+        InversePrimary: "#ABCCED",
         SurfaceContainerLow: "#F2F4F6",
         SurfaceContainer: "#EDEFF1",
         SurfaceContainerHigh: "#E7E9EB",

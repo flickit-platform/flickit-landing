@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       colors: {
         Primary: "#2466A8",
+        OnPrimary: "#ffffff",
         PrimaryContainer: "#205F94",
         SecondaryContainer: "#C71C55",
         Tertiary: "#8C5000",
@@ -25,7 +26,6 @@ module.exports = {
         Outline: "#74777A",
         OutlineVariant: "#C4C7C9",
         InverseSurface: "#303131",
-        InverseOnSurface: "#EFF1F3",
         InversePrimary: "#9CCAFF",
         SurfaceContainerLow: "#F2F4F6",
         SurfaceContainer: "#EDEFF1",

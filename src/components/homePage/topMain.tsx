@@ -1,12 +1,13 @@
 import {cardsText} from "@/utils/db";
+import {Trans} from "react-i18next";
 
 export default function TopMain() {
 
     return (
-        <section className="flex items-center justify-center bg-gradient-to-b from-0% from-bluemaxLight to-100% to-navyDeep p-9 ">
+        <section className="flex items-center justify-center bg-gradient-to-b from-0% from-bluemaxLight to-100% to-navyDeep px-9 sm:h-[37.8rem] ">
             <div className="flex flex-col items-center justify-center gap-6 sm:gap-[40px] lg:gap[69px] max-w-[90rem]">
-                <h3 className="text-white font-semibold text-[1.5rem] sm:text-[4rem] leading-8">
-                    How does it work?
+                <h3 className=" text-OnPrimary font-semibold !text-[1.5rem] sm:!text-[4rem] leading-8 headline-large">
+                    <Trans i18nKey={"howDoesItWork"} />
                 </h3>
                 <article className="flex flex-col sm:flex-row justify-center items-stretch gap-4 lg:w-[75%]">
                     {cardsText.map((card, index) => {

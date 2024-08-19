@@ -40,7 +40,7 @@ export default function FINav() {
   const activeSegment = useSelectedLayoutSegment();
 
   return (
-    <nav className="flex items-center justify-between max-sm:px-4 px-16 md:px-24 h-8 sm:h-[4.5rem] relative z-50 mx-auto bg-lightBg shadow-md">
+    <nav className="flex items-center justify-between max-sm:px-4 px-16 md:px-24 h-8 sm:h-[4.5rem] relative z-50 mx-auto bg-lightBg shadow-md max-w-[1440px]">
       <div className="flex justify-center items-center gap-2 sm:gap-x-10 ">
         <Image
             src="/Logo-dark.svg"
@@ -50,7 +50,7 @@ export default function FINav() {
             className=" h-6 sm:h-12 w-[4.375rem] sm:w-[6.875rem]  2xl:w-[10rem]"
         />
         <div
-            className={`hidden sm:flex label-small justify-center items-center  py-1 px-3 whitespace-nowrap border sm:h-6 label-small 2xl:text-xl text-lightRed border-lightRed rounded-[100px] bg-maxLightRed w-[7.8rem] 2xl:w-auto h-6`}>
+            className={`hidden sm:flex label-small justify-center items-center py-1 px-3 whitespace-nowrap border sm:h-6 2xl:!text-lg text-lightRed border-lightRed rounded-[100px] bg-maxLightRed w-[7.8rem] 2xl:!w-auto h-6`}>
           <Trans i18nKey={"betaPreview"}/>
         </div>
         <div className={`flex sm:hidden justify-center items-center border border-solid border-lightRed text-lightRed text-[0.7rem] font-bold rounded-[0.25rem] w-[2rem] h-[1rem]`}>

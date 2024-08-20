@@ -69,7 +69,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({images}) => {
                                 </div>
                             </div>
                         </div>
-                        <p className="body-small sm:text-2xl lg:!display-small text-OnPrimary lg:text-InverseOnSurface italic">
+                        <p className="body-small sm:text-2xl lg:!display-small text-OnPrimary lg:text-InverseOnSurface italic sm:h-[250px]">
                             {images[currentSlide].description}
                         </p>
                         {/* <div className="flex gap-2 items-center"> */}
@@ -77,7 +77,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({images}) => {
                     </div>
                 </section>
                 <section
-                    className="flex w-full justify-center items-center max-sm:gap-1 sm:gap-2 gap-4 max-sm:pt-16 sm:pt-24 pb-4">
+                    className="flex w-full justify-center items-center max-sm:gap-1 sm:gap-2 gap-4 max-sm:pt-16 sm:pt-19 pb-4">
                     {images.map((image, index) => {
                         return (
                             <img

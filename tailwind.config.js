@@ -60,6 +60,7 @@ module.exports = {
         primaryFixedVariant : "#00497B",
         whiteGray: "#E1EAF2",
         whiteGrayLight: "#CED3D9",
+        surfaceMidNightBlack: "#0A2342"
       },
       fontFamily: {
         ubunto: ["var(--font-ubuntu)"],

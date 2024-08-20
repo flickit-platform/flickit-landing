@@ -45,7 +45,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({images}) => {
             className=" w-full flex bg-no-repeat bg-[url('/carousel-bg.svg')] bg-cover bg-center pt-[2rem] h-[18.3rem] sm:h-[32rem] lg:h-[40.7rem]">
             <div className="flex flex-col justify-center items-center w-full transition-opacity duration-1000 ">
                 <section
-                    className=" flex max-sm:justify-center max-sm:items-center justify-between md:items-start lg:items-start items-start gap-[23px] w-[16rem]  sm:w-[30rem] lg:w-[47rem] ">
+                    className=" flex max-sm:justify-center max-sm:items-center justify-between md:items-start lg:items-start items-start gap-[23px] w-[16rem]  sm:w-[36rem] lg:w-[47rem] ">
                     <img
                         src={images[currentSlide].img}
                         alt={`Slide ${currentSlide + 1}`}
@@ -60,16 +60,16 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({images}) => {
                                     className="transition-opacity duration-1000 sm:hidden w-[3.3rem] h-[3.3rem]"
                                 />
                                 <div>
-                                    <h3 className="text-xl sm:text-3xl lg:text-6xl font-bold text-[#EDFCFC]">
+                                    <h3 className="title-large sm:text-3xl lg:!headline-large text-OnPrimary">
                                         {images[currentSlide].name}
                                     </h3>
-                                    <h2 className="text-xs sm:text-base	lg:text-3xl	font-bold text-[#9CCAFF]">
+                                    <h2 className="text-xs sm:text-base	lg:text-3xl	font-bold text-PrimaryFixedDim">
                                         {images[currentSlide].title}
                                     </h2>
                                 </div>
                             </div>
                         </div>
-                        <p className="text-xs sm:text-2xl font-medium text-[#EDF4FC] italic">
+                        <p className="body-small sm:text-2xl lg:!display-small text-OnPrimary lg:text-InverseOnSurface italic">
                             {images[currentSlide].description}
                         </p>
                         {/* <div className="flex gap-2 items-center"> */}
@@ -84,8 +84,8 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({images}) => {
                                 key={index}
                                 src={
                                     currentSlide === index
-                                        ? "/carousel-step-selected.svg"
-                                        : "/carousel-step.svg"
+                                        ? "/carousel-step.svg"
+                                        : "/carousel-step-selected.svg"
                                 }
                                 onClick={() => setCurrentSlide(index)}
                                 alt={`Slide ${index + 1}`}

@@ -40,13 +40,14 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({images}) => {
     const swiperRef = useRef(null)
 
     const nextPhoto = (index: number) =>{
-        if(swiperRef?.current?.swiper)
-        if(index == 0){
-            swiperRef?.current?.swiper.slideNext()
-            setCurrentSlide(0)
-        }else {
-            swiperRef?.current?.swiper.slidePrev()
-            setCurrentSlide(1)
+        if(swiperRef?.current && swiperRef?.current?.swiper){
+            if(index == 0){
+                swiperRef?.current?.swiper?.slideNext()
+                setCurrentSlide(0)
+            }else {
+                swiperRef?.current?.swiper?.slidePrev()
+                setCurrentSlide(1)
+            }
         }
     }
 

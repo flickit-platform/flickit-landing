@@ -10,15 +10,9 @@ export default function BottomMain(){
 
     return(
             <section className="h-[13.3rem] sm:h-[25rem] lg:h-[41rem] flex justify-center mx-auto w-full lg:px-16 lg:py-32 overflow-auto ">
-            <div className="h-full w-full flex gap-6 scrollbar-hide overflow-x-auto overflow-y-hidden items-center px-3 sm:px-0 mx-auto">
+            <div className="h-full w-full flex gap-6 scrollbar-hide overflow-x-auto overflow-y-hidden items-center px-3 sm:px-0 mx-auto max-w-[1440px]">
               <Swiper
                   slidesPerView={2}
-                  breakpoints={{
-                      1565: {
-                          width: 1565,
-                          slidesPerView: 3,
-                      },
-                  }}
                   spaceBetween={1}
                   pagination={{
                       clickable: true,

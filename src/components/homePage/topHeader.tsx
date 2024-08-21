@@ -1,4 +1,3 @@
-import {sansation} from "@/utils/fonts";
 import Link from "next/link";
 import {Trans} from "react-i18next";
 

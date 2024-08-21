@@ -6,7 +6,6 @@ import FINavLink from "./FINavLink";
 import Link from "next/link";
 import { getRedirectUrl } from "@/utils/constants";
 import {Trans} from "react-i18next";
-import {sansation} from "@/utils/fonts";
 
 export default function FINav() {
   const [redirectUrl, setRedirectUrl] = useState("");

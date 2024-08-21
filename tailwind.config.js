@@ -62,10 +62,6 @@ module.exports = {
         whiteGrayLight: "#CED3D9",
         surfaceMidNightBlack: "#0A2342"
       },
-      fontFamily: {
-        ubunto: ["var(--font-ubuntu)"],
-        sansation: [`var(--font-sansation)`],
-      },
       keyframes: {
         ['t-right']: {
           '0%': { transform: 'translateX(100%)' },

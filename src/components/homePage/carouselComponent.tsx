@@ -101,16 +101,16 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({images}) => {
                                                     className="transition-opacity duration-1000 sm:hidden w-[3.3rem] h-[3.3rem]"
                                                 />
                                                 <div>
-                                                    <h3 className="title-large sm:text-3xl lg:!headline-large text-OnPrimary">
+                                                    <h3  style={{filter: `drop-shadow(0px 0px 4px #fff)`}}  className="title-large sm:text-3xl lg:!headline-large text-OnPrimary ">
                                                         {item.name}
                                                     </h3>
-                                                    <h2 className="text-xs sm:text-base	lg:text-3xl	font-bold text-PrimaryFixedDim">
+                                                    <h2 style={{filter: `drop-shadow(0px 0px 1px #fff)`}}  className="label-large  sm:text-base  lg:!headline-medium text-PrimaryFixedDim">
                                                         {item.title}
                                                     </h2>
                                                 </div>
                                             </div>
                                         </div>
-                                        <p className="body-small sm:text-2xl lg:!display-small text-OnPrimary lg:text-InverseOnSurface italic sm:h-[250px]">
+                                        <p style={{filter: `drop-shadow(0px 0px 9px #fff)`}}  className="body-small sm:text-2xl lg:!display-small text-OnPrimary lg:text-InverseOnSurface italic sm:h-[250px]">
                                             {item.description}
                                         </p>
                                         {/* <div className="flex gap-2 items-center"> */}

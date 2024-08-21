@@ -14,6 +14,12 @@ export default function BottomMain(){
               <Swiper
                   slidesPerView={2}
                   spaceBetween={1}
+                  breakpoints={{
+                      1306:{
+                          width:1300,
+                          slidesPerView: 3
+                      }
+                 }}
                   pagination={{
                       clickable: true,
                   }}

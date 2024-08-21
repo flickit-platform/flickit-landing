@@ -37,7 +37,7 @@ export default function CarouselComponent(){
 const ImageCarousel: React.FC<ImageCarouselProps> = ({images}) => {
     const [currentSlide, setCurrentSlide] = useState<number>(0);
 
-    const swiperRef = useRef(null)
+    const swiperRef = useRef<any>(null)
 
     const nextPhoto = (index: number) =>{
         if(swiperRef?.current && swiperRef?.current?.swiper){

@@ -6,7 +6,6 @@ import FINavLink from "./FINavLink";
 import Link from "next/link";
 import { getRedirectUrl } from "@/utils/constants";
 import {Trans} from "react-i18next";
-import {sansation} from "@/utils/fonts";
 
 export default function FINav() {
   const [redirectUrl, setRedirectUrl] = useState("");
@@ -40,7 +39,7 @@ export default function FINav() {
   const activeSegment = useSelectedLayoutSegment();
 
   return (
-    <nav className="flex items-center justify-between max-sm:px-4 px-16 md:px-24 h-8 sm:h-[4.5rem] relative z-50 mx-auto bg-lightBg shadow-md">
+    <nav className="flex items-center justify-between max-sm:px-4 px-16 md:px-24 h-8 sm:h-[4.5rem] relative z-50 mx-auto bg-lightBg shadow-md max-w-[1440px]">
       <div className="flex justify-center items-center gap-2 sm:gap-x-10 ">
         <Image
             src="/Logo-dark.svg"
@@ -50,10 +49,10 @@ export default function FINav() {
             className=" h-6 sm:h-12 w-[4.375rem] sm:w-[6.875rem]  2xl:w-[10rem]"
         />
         <div
-            className={`hidden sm:flex !${sansation.className} justify-center items-center  py-1 px-3 whitespace-nowrap  border sm:h-6 text-[0.875rem] 2xl:text-xl font-bold text-lightRed border-lightRed rounded-[100px] bg-maxLightRed w-[7.8rem] 3xl:w-auto h-6`}>
+            className={`hidden sm:flex label-small justify-center items-center py-1 px-3 whitespace-nowrap border sm:h-6 2xl:!text-lg text-lightRed border-lightRed rounded-[100px] bg-maxLightRed w-[7.8rem] 2xl:!w-auto h-6`}>
           <Trans i18nKey={"betaPreview"}/>
         </div>
-        <div className={`flex sm:hidden justify-center items-center border border-solid border-lightRed text-lightRed text-[0.5rem] font-bold rounded-[0.25rem] w-[1.56rem] ${sansation.className}`}>
+        <div className={`flex sm:hidden justify-center items-center border border-solid border-lightRed text-lightRed text-[0.7rem] font-bold rounded-[0.25rem] w-[2rem] h-[1rem]`}>
           <Trans i18nKey={"beta"}/>
         </div>
       </div>
@@ -76,15 +75,15 @@ export default function FINav() {
         {/*</div>*/}
         <Link href={redirectUrl} rel="noopener noreferrer">
           <button
-              className={`bg-blueLight text-[#00365C] sm:h-10 sm:w-32 py-[0.156rem] px-[0.375rem]   sm:px-4 text-[0.219rem] sm:text-[0.875rem] leading-[0.313rem]  font-medium tracking-wider rounded-[6.25rem] h-[0.85rem]`}>
+              className={`bg-PrimaryFixed text-Primary sm:h-10 sm:w-32 py-[0.156rem] px-[0.375rem] sm:px-4 text-[0.219rem] sm:text-[0.875rem] leading-[0.313rem] tracking-wider rounded-[6.25rem] h-[0.85rem] title-small`}>
             <Trans i18nKey={"openFlickit"}/>
           </button>
         </Link>
       </div>
       <Link className="flex sm:hidden" href={redirectUrl} rel="noopener noreferrer">
         <div
-            className={`flex justify-center items-center  w-[5.75rem] h-[1.25rem] rounded-[6.25rem] bg-primaryFixed text-primaryFixedVariant px-4 whitespace-nowrap text-[0.688rem] font-semibold ${sansation.className}`}>
-          <Trans i18nKey={"getStart"}/>
+            className={`flex justify-center items-center w-[3.75rem] h-[1.25rem] rounded-[6.25rem] bg-primaryFixed text-primaryFixedVariant px-4 whitespace-nowrap label-small`}>
+          <Trans i18nKey={"enter"}/>
         </div>
       </Link>
     </nav>

@@ -48,7 +48,7 @@ jobs:
           username: flickit-platform
           password: ${{ secrets.GH_PACKAGES_TOKEN }}
       - name: push image to GitHub Container Registry
-        run: docker push ghcr.io/flickit-platform/flickit-landing:v0.4.0"
+        run: docker push ghcr.io/flickit-platform/flickit-landing:v0.4.0
 
   Landing_Deploy_Latest:
     if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/main') }}

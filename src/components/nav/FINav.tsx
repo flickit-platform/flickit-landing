@@ -3,7 +3,6 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
 
 import {Trans} from "react-i18next";
 import {Button} from "@mui/material";
@@ -13,7 +12,7 @@ export default function FINav() {
 
     return (
         <nav style={{height: "64px", background: "#2466A8"}}>
-            <Container sx={{maxWidth: "1440px", px: {xs: "8px", py: "48px"}, display: "flex", justifyContent: "space-between" , alignItems: "center"}}>
+            <Box sx={{maxWidth: "1440px", px: {xs: "8px", sm: "48px"}, display: "flex", justifyContent: "space-between" , alignItems: "center"}}>
                 <Box sx={{height: "60px", width: "auto"}}>
                     <img src={"logo.svg"} style={{height: "100%"}} alt={"logo-icon"}/>
                 </Box>
@@ -39,7 +38,7 @@ export default function FINav() {
                         <Trans i18nKey={"SignUpFree"} />
                     </Typography>
                 </Button>
-            </Container>
+            </Box>
         </nav>
     );
 }

@@ -2,7 +2,19 @@
 
 import { createTheme } from "@mui/material/styles";
 import {farsiFontFamily, primaryFontFamily, secondaryFontFamily} from "@/utils/fonts";
+import { BreakpointOverrides } from '@mui/system';
 
+// 👇 TypeScript augmentation to allow '2xl'
+declare module '@mui/material/styles' {
+  interface BreakpointOverrides {
+    xs: true;
+    sm: true;
+    md: true;
+    lg: true;
+    xl: true;
+    xxl: true;
+  }
+}
 
 declare module "@mui/material/styles" {
   interface TypographyVariants {
@@ -99,7 +111,8 @@ export const theme = createTheme({
       sm: 600,
       md: 960,
       lg: 1280,
-      xl: 1620,
+      xl: 1440,
+      xxl: 1620
     },
   },
   typography: {

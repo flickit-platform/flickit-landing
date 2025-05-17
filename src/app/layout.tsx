@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={ubuntu.className}>
-            <body>
+            <body style={{margin: 0}}>
             <ThemeProvider theme={theme}>
                 <FINav />
                 {children}

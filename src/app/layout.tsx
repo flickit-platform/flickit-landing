@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={ubuntu.className}>
-      <body className="bg-blueDeep overflow-x-hidden">
+      <body>
         <FINav />
         {children}
       </body>

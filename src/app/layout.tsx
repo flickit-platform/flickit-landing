@@ -1,6 +1,8 @@
 import "./globals.css";
 import FINav from "@/components/nav/FINav";
 import {ubuntu} from "@/utils/fonts";
+import { ThemeProvider } from '@mui/material/styles';
+import {theme} from "@/config/theme";
 
 export const metadata = {
   title: "Flickit",
@@ -14,8 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={ubuntu.className}>
             <body>
-            <FINav />
-            {children}
+            <ThemeProvider theme={theme}>
+                <FINav />
+                {children}
+            </ThemeProvider>
             </body>
     </html>
   );

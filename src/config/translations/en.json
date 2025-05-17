@@ -1,15 +1,6 @@
 {
- "betaPreview" : "Beta Preview",
- "openFlickit" : "Open Flickit",
- "beta": "Beta",
- "getStart": "Get started",
- "enter": "Enter",
- "theUltimateTool": "The ultimate tool for assessing your software",
- "sayGoodBye": "Say Goodbye to Software Quality Blind Spots with Expert Algorithms",
- "flickitIsASoftwareAssessmentPlatform": "Flickit is a software assessment platform. It allows software owners and developers to assess their software across various subjects and attributes. Users can customize their assessment kits to meet their specific needs.",
- "getStarted": "Get started",
- "readMore": "Read more...",
- "howDoesItWork": "How does it work?",
- "flickitIsHelpful": "Flickit is specially helpful if...",
- "tryItForFree": "Try it for free"
+"kitLibrary": "Kit library",
+"blog": "blog",
+"contactUs": "Contact us",
+"SignUpFree": "Signup for free"
 }

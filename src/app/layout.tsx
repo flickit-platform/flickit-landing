@@ -13,10 +13,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={ubuntu.className}>
-      <body>
-        <FINav />
-        {children}
-      </body>
+            <body>
+            <FINav />
+            {children}
+            </body>
     </html>
   );
 }

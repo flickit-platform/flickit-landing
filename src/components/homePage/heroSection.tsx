@@ -7,11 +7,9 @@ import {Button, useMediaQuery} from "@mui/material";
 
 const HeroSection = () => {
 
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-
     return (
         <Box
-        sx={{display: "flex" ,height: "auto"}}
+        sx={{display: "flex" ,height: "auto", mb: "25px"}}
         >
             <Box sx={{height: "auto", flex: 1, bgcolor: "#1B4D7E"}}/>
             <Box
@@ -73,7 +71,7 @@ const HeroSection = () => {
                             borderRadius: "100px",
                             mt: {xs: "39px", sm:"27px"},
                             mb:{xs: "169px", xl :"175px"},
-                            boxShadow: "0 1px 5px 0 #000"
+                            boxShadow: "0 1px 5px 0 #0000001F",
                         }}
                     >
                         <Typography sx={{

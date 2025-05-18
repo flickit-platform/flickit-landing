@@ -25,15 +25,20 @@ export default function Navbar() {
                     <img src={"logo.svg"} style={{height: "100%"}} alt={"logo-icon"}/>
                 </Box>
                 <Box sx={{display: {xs: "none", md: "flex"}, gap: "40px", color: "#fff"}}>
-                    <Typography sx={{...theme.typography.titleLarge}}>
-                        <Trans i18nKey={"contactUs"}/>
-                    </Typography>
-                    <Typography sx={{...theme.typography.titleLarge}}>
+                    {/*<Typography sx={{...theme.typography.titleLarge}}>*/}
+                    {/*    <Trans i18nKey={"contactUs"}/>*/}
+                    {/*</Typography>*/}
+                    <Typography
+                        component={Link}
+                        href={"https://app.flickit.org/assessment-kits"}
+                        target="_blank"
+                        sx={{ ...theme.typography.titleLarge, textDecoration: 'none', color: "#fff" }}>
                         <Trans i18nKey={"kitLibrary"}/>
                     </Typography>
-                    <Typography sx={{...theme.typography.titleLarge}}>
-                        <Trans i18nKey={"blog"}/>
-                    </Typography>
+                    {/*<Typography*/}
+                    {/*    sx={{...theme.typography.titleLarge}}>*/}
+                    {/*    <Trans i18nKey={"blog"}/>*/}
+                    {/*</Typography>*/}
                 </Box>
                 <Button variant={"contained"}
                         size={isMobile ? "small" : "large"}

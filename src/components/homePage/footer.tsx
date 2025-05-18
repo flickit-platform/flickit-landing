@@ -4,10 +4,15 @@ import {Trans} from "react-i18next";
 import {Button} from "@mui/material";
 import Grid from '@mui/material/Grid';
 import {theme} from "@/config/theme";
+import Link from "next/link";
 
 
 export default function Footer() {
-    const footerLinks = ["flickitApp", "assessmentKits", "blog"]
+    const footerLinks = [
+        {title:"flickitApp", address: "https://app.flickit.org/"},
+        {title:"assessmentKits", address: "https://app.flickit.org/assessment-kits"},
+        // {title:"blog", address: ""},
+    ]
     return (
         <Box
             component={"footer"}
@@ -43,7 +48,8 @@ export default function Footer() {
                     }}>
                         <Typography sx={{
                             ...theme.typography.titleMedium,
-                            textAlign: {sx: "center", sm: "left"}
+                            textAlign: {sx: "center", sm: "left"},
+                            color: "#F0F2F4"
                         }}>
                             <Trans i18nKey={"links"}/>
                         </Typography>
@@ -54,8 +60,12 @@ export default function Footer() {
                         }}>
                             {footerLinks.map(link => {
                                 return (
-                                    <Typography key={link} sx={{...theme.typography.semiBoldMedium}}>
-                                        <Trans i18nKey={`${link}`}/>
+                                    <Typography
+                                        component={Link}
+                                        href={link.address}
+                                        target="_blank"
+                                        key={link.title} sx={{...theme.typography.semiBoldMedium, textDecoration: "none", color: "#F0F2F4"}}>
+                                        <Trans i18nKey={`${link.title}`}/>
                                     </Typography>
                                 )
                             })}
@@ -88,7 +98,7 @@ export default function Footer() {
                             }}>
                                 <Trans i18nKey={"feelFreeToReachUs"}/>
                             </Typography>
-                            <Button variant={"contained"}>
+                            <Button disabled={true} variant={"contained"}>
                                 <Trans i18nKey={"contactUs"}/>
                             </Button>
                         </Box>

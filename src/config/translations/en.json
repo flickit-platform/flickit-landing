@@ -1,15 +1,12 @@
 {
- "betaPreview" : "Beta Preview",
- "openFlickit" : "Open Flickit",
- "beta": "Beta",
- "getStart": "Get started",
- "enter": "Enter",
- "theUltimateTool": "The ultimate tool for assessing your software",
- "sayGoodBye": "Say Goodbye to Software Quality Blind Spots with Expert Algorithms",
- "flickitIsASoftwareAssessmentPlatform": "Flickit is a software assessment platform. It allows software owners and developers to assess their software across various subjects and attributes. Users can customize their assessment kits to meet their specific needs.",
- "getStarted": "Get started",
- "readMore": "Read more...",
- "howDoesItWork": "How does it work?",
- "flickitIsHelpful": "Flickit is specially helpful if...",
- "tryItForFree": "Try it for free"
+"kitLibrary": "Kit library",
+"blog": "blog",
+"contactUs": "Contact us",
+"SignUpFree": "Signup for free",
+"questionsAskedAnswers": "Questions Asked Answers Delivered Progress Made",
+"topBannerDesc": "With Flickit's structured self-assessments, discover strengths, detect risks early, and guide your growth — all from one clear dashboard.",
+"startSelfAssessment": "Start Your Free Self-Assessment",
+"feelFreeToReachUs": "Feel free to reach us",
+"contactUs": "contact Us",
+"flickitFooterText": "Flickit connects teams that need rigorous software assessments with the experts who provide them—arming leaders with clear insight and giving assessors a platform to shape a better digital world."
 }

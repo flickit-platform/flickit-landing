@@ -14,7 +14,7 @@
   );
 }
 .txt-gradient {
-  background: -webkit-linear-gradient(#1cc2c4, #106162);
+  background: #F9FAFB;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

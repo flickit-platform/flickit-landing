@@ -16,9 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body style={{ margin: 0 }}>
+      <body style={{ margin: 0, background: "#F9FAFB" }}>
         <ThemeProvider theme={theme}>
-          {/* <Navbar /> */}
+          <Navbar />
           {children}
         </ThemeProvider>
       </body>

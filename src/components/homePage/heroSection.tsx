@@ -3,9 +3,11 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import {Trans} from "react-i18next";
 import {theme} from "@/config/theme";
+import {useMediaQuery} from "@mui/material";
 
 const HeroSection = () => {
 
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
     return (
         <Box
@@ -64,7 +66,7 @@ const HeroSection = () => {
                 <Box sx={{width: "100%", mt: {xs: "67px"}, mb: {xs: "76px"}, mx: "auto"}}>
                     <Box
                         component={"img"}
-                        src={"flickitMainIcon-m.svg"}
+                        src={isMobile ? "flickitMainIcon-m.svg" : "flickitMainIcon-d.svg"}
                     />
                 </Box>
             </Box>

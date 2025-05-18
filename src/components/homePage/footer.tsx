@@ -4,7 +4,6 @@ import {Trans} from "react-i18next";
 import {Button} from "@mui/material";
 import Grid from '@mui/material/Grid';
 import {theme} from "@/config/theme";
-import {min} from "@popperjs/core/lib/utils/math";
 
 
 export default function Footer() {
@@ -13,21 +12,25 @@ export default function Footer() {
         <Box
             component={"footer"}
             sx={{background: "#2B333B", py: "42px", px: {xs: 1, sm: "48px"}}}>
-            <Grid sx={{display: "flex", gap: {xs: "101px", sm: "unset"}}} container>
-                <Grid size={{xs: 12, sm: 4}}>
+            <Grid container sx={{
+                maxWidth:"1440px",
+                mx:"auto",
+                display: "flex",
+                gap: {xs: "101px", sm: "unset"}
+            }}>
+                <Grid order={{ xs: 3, sm: 1 }} size={{xs: 12, sm: 4}}>
                     <img src={"logo.svg"}/>
-                    <Typography sx={{...theme.typography.bodyMedium, color: "#F0F2F4", maxWidth: "428px"}}>
+                    <Typography sx={{...theme.typography.bodyMedium, color: "#F0F2F4", maxWidth: {sm :"428px"}}}>
                         <Trans i18nKey={"flickitFooterText"}/>
                     </Typography>
                 </Grid>
-                <Grid size={{xs: 12, sm: 4}}
+                <Grid order={2} size={{xs: 12, sm: 4}}
                       sx={{
                           color: "#F0F2F4",
                           display: "flex",
                           flexDirection: "column",
                           justifyContent: "center",
                           alignItems: "center",
-
                       }}>
 
                     <Box sx={{
@@ -44,7 +47,11 @@ export default function Footer() {
                         }}>
                             <Trans i18nKey={"links"}/>
                         </Typography>
-                        <Box sx={{display: "flex", flexDirection: {xs: "row", sm: "column"},  gap: {xs: "48px", sm: "unset"},}}>
+                        <Box sx={{
+                            display: "flex",
+                            flexDirection: {xs: "row", sm: "column"},
+                            gap: {xs: "48px", sm: "unset"},
+                        }}>
                             {footerLinks.map(link => {
                                 return (
                                     <Typography key={link} sx={{...theme.typography.semiBoldMedium}}>
@@ -56,13 +63,13 @@ export default function Footer() {
 
                     </Box>
                 </Grid>
-                <Grid size={{xs: 12, sm: 4}}
+                <Grid order={{ xs: 1, sm: 3 }} size={{xs: 12, sm: 4}}
                 >
                     <Box
                         sx={{
                             display: "flex",
                             justifyContent: "center",
-                            alignItems: "center",
+                            alignItems: {xs: "center", sm: "flex-end"},
                             flexDirection: {xs: "row", sm: "column"},
                             gap: 2
                         }}

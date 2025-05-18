@@ -1,11 +1,20 @@
-"use client"
+"use client";
 
 import { createTheme } from "@mui/material/styles";
-import {farsiFontFamily, primaryFontFamily, secondaryFontFamily} from "@/utils/fonts";
-import { BreakpointOverrides } from '@mui/system';
-
+import {
+  farsiFontFamily,
+  primaryFontFamily,
+  secondaryFontFamily,
+} from "@/utils/fonts";
+import { BreakpointOverrides } from "@mui/system";
+declare module "@mui/material/styles/createPalette" {
+  interface TypeBackground {
+    secondary: string;
+    secondaryDark: string;
+  }
+}
 // 👇 TypeScript augmentation to allow '2xl'
-declare module '@mui/material/styles' {
+declare module "@mui/material/styles" {
   interface BreakpointOverrides {
     xs: true;
     sm: true;
@@ -68,7 +77,6 @@ declare module "@mui/material/styles" {
     semiBoldMedium?: React.CSSProperties;
     semiBoldSmall?: React.CSSProperties;
   }
-
 }
 
 // Update the Typography's variant prop options
@@ -100,11 +108,46 @@ declare module "@mui/material/Typography" {
   }
 }
 
+const palette = {
+  primary: {
+    main: "#2466A8",
+    contrastText: "#FFFFFF",
+    light: "#EDF3F8",
+    dark: "#1B4D7E",
+  },
+  secondary: {
+    main: "#B8144B",
+    contrastText: "#FFFFFF",
+    light: "#E51A5E",
+    dark: "#8A0F38",
+  },
+  background: { secondary: "#EDF4FC", secondaryDark: "#121d33" },
+  error: {
+    main: "#8A0F24",
+    contrastText: "#fff",
+    dark: "#5C0A18",
+    light: "#F6ECED",
+  },
+  success: {
+    main: "#3D8F3D",
+    contrastText: "#fff",
+    dark: "#2E6B2E",
+    light: "#EFF6EF",
+  },
+  info: {
+    main: "#6C8093",
+    contrastText: "#fff",
+    dark: "#6C8093",
+    light: "#F3F5F6",
+  },
+  warning: { main: "#CC7400", contrastText: "#fff", light: "#F4E7D7" },
+};
 // const is_farsi = Boolean(localStorage.getItem("lang") === "fa");
 const is_farsi = true;
 
 export const theme = createTheme({
   direction: is_farsi ? "rtl" : "ltr",
+  palette,
   breakpoints: {
     values: {
       xs: 0,
@@ -112,7 +155,7 @@ export const theme = createTheme({
       md: 960,
       lg: 1280,
       xl: 1440,
-      xxl: 1620
+      xxl: 1620,
     },
   },
   typography: {
@@ -293,6 +336,15 @@ export const theme = createTheme({
       fontFamily: is_farsi ? farsiFontFamily : secondaryFontFamily,
       lineHeight: 1.6,
       opacity: 0.85,
+    },
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: "none",
+        },
+      },
     },
   },
 });

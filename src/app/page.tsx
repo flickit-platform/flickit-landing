@@ -6,13 +6,11 @@ import HeroSection from "@/components/homePage/heroSection";
 import Cards from "@/components/homePage/cards";
 
 export default function Home() {
-
-
-    return (
-        <>
-            <HeroSection/>
-            <Cards/>
-            <Footer/>
-        </>
-    );
+  return (
+    <>
+      <HeroSection />
+      <Cards />
+      <Footer />
+    </>
+  );
 }

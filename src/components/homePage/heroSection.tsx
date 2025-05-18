@@ -12,7 +12,7 @@ const HeroSection = () => {
       <Box
         sx={{
           width: "100%",
-          maxWidth: "1533px",
+          maxWidth: "1534px",
           height: "auto",
           display: "flex",
           justifyContent: "center",

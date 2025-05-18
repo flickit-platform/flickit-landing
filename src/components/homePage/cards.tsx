@@ -49,7 +49,12 @@ const Cards = () => {
   ];
 
   return (
-    <Box sx={{ ...styles.centerCVH }} gap={15} px={{ xs: 2, md: 6 }} mb={6}>
+    <Box
+      sx={{ ...styles.centerCVH }}
+      gap={15}
+      px={{ xs: 2, md: 6, xxl: 30 }}
+      mb={6}
+    >
       <Typography variant="headlineLarge" textAlign="center">
         <Trans
           i18nKey="whatCanYouAssessWith"

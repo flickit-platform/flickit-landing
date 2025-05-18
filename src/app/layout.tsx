@@ -1,5 +1,5 @@
 import "./globals.css";
-import FINav from "@/components/nav/FINav";
+import Navbar from "@/components/nav/Navbar";
 import {ubuntu} from "@/utils/fonts";
 import { ThemeProvider } from '@mui/material/styles';
 import {theme} from "@/config/theme";
@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en" className={ubuntu.className}>
             <body style={{margin: 0}}>
             <ThemeProvider theme={theme}>
-                <FINav />
+                <Navbar />
                 {children}
             </ThemeProvider>
             </body>

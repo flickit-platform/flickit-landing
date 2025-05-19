@@ -57,7 +57,6 @@ const Cards = () => {
       sx={{ ...styles.centerCVH }}
       gap={15}
       px={{ xs: 2, md: 6, xxl: 30 }}
-      mb={6}
     >
       <Typography variant="headlineLarge" textAlign="center">
         <Trans
@@ -73,8 +72,7 @@ const Cards = () => {
       <Grid
         container
         spacing={{ md: 3 }}
-        columns={{ xs: 3, sm: 8, md: 12 }}
-        gap={{ xs: 18, sm: 3 }}
+        columns={{ xs: 3, sm: 4, md: 6, lg: 12 }}
         alignItems="stretch"
       >
         {cardsData.map((item, index) => (

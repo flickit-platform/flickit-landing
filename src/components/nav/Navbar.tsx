@@ -3,7 +3,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-
+import "@/config/i18n";
 import {Trans} from "react-i18next";
 import {Button, useMediaQuery} from "@mui/material";
 import {theme} from "@/config/theme";
@@ -22,7 +22,7 @@ export default function Navbar() {
                 alignItems: "center"
             }}>
                 <Box sx={{height: "60px", width: "auto"}}>
-                    <img src={"logo.svg"} style={{height: "100%"}} alt={"logo-icon"}/>
+                    <img src={"/logo.svg"} style={{height: "100%"}} alt={"logo-icon"}/>
                 </Box>
                 <Box sx={{display: {xs: "none", md: "flex"}, gap: "40px", color: "#fff"}}>
                     {/*<Typography sx={{...theme.typography.titleLarge}}>*/}

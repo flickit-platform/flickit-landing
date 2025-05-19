@@ -6,6 +6,7 @@ import { Trans } from "react-i18next";
 const Cards = () => {
   const cardsData = [
     {
+      id: "384",
       imageUrl: "goal.svg",
       chipLabel: "Software performance evaluation kit",
       title:
@@ -16,6 +17,7 @@ const Cards = () => {
       caseStudyLogo: "amazon.svg",
     },
     {
+      id: "363",
       imageUrl: "magnifier.svg",
       chipLabel: "Tool maturity",
       title: "How Tool Maturity Enhances Both Speed and Quality",
@@ -26,6 +28,7 @@ const Cards = () => {
       caseStudyLogo: "etsy.svg",
     },
     {
+      id: "386",
       imageUrl: "chart.svg",
       chipLabel: "Internal Audit Kit",
       title: "Ensuring Long-Term Viability and Sustainability of Software",
@@ -36,6 +39,7 @@ const Cards = () => {
       caseStudyLogo: "facebook.svg",
     },
     {
+      id: "385",
       imageUrl: "checklist.svg",
       chipLabel: "Vendor Evaluation Kit",
       title:
@@ -49,7 +53,12 @@ const Cards = () => {
   ];
 
   return (
-    <Box sx={{ ...styles.centerCVH }} gap={15} px={{ xs: 2, md: 6 }} mb={6}>
+    <Box
+      sx={{ ...styles.centerCVH }}
+      gap={15}
+      px={{ xs: 2, md: 6, xxl: 30 }}
+      mb={6}
+    >
       <Typography variant="headlineLarge" textAlign="center">
         <Trans
           i18nKey="whatCanYouAssessWith"

@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Typography, Chip, Button } from "@mui/material";
 import { Trans } from "react-i18next";
 import { theme } from "@/config/theme";
+import Link from "next/link";
 
 interface Props {
   imageUrl: string;
@@ -10,6 +11,7 @@ interface Props {
   description: string;
   caseStudyDesc: string;
   caseStudyLogo: string;
+  id: string;
 }
 
 const IMAGE_HEIGHT = 160;
@@ -23,6 +25,7 @@ const ResponsiveCard = ({
   description,
   caseStudyDesc,
   caseStudyLogo,
+  id,
 }: Props) => {
   return (
     <Box
@@ -32,7 +35,11 @@ const ResponsiveCard = ({
         height: "100%",
         display: "flex",
         flexDirection: "column",
+        textDecoration: "none",
+        color: "unset",
       }}
+      component={Link}
+      href={"https://app.flickit.org/assessment-kits/" + id}
     >
       <Box
         sx={{

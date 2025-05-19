@@ -55,8 +55,6 @@ const ResponsiveCard = ({
           textDecoration: "none",
           color: "unset",
         }}
-        component={Link}
-        href={"https://app.flickit.org/assessment-kits/" + id}
       >
         <Box
           component="img"
@@ -124,10 +122,24 @@ const ResponsiveCard = ({
             gap: 1,
           }}
         >
-          <Button variant="outlined" fullWidth>
+          <Button
+            variant="outlined"
+            fullWidth
+            component={Link}
+            href={"https://app.flickit.org/assessment-kits/" + id}
+          >
             <Trans i18nKey="moreAboutThisKit" />
           </Button>
-          <Button variant="contained" fullWidth>
+          <Button
+            variant="contained"
+            fullWidth
+            component={Link}
+            href={
+              "https://stage.flickit.org/assessment-kits/" +
+              id +
+              `#createAssessment?id=${id}&title=${encodeURIComponent(title)}`
+            }
+          >
             <Trans i18nKey="createAssessment" />
           </Button>
         </Box>

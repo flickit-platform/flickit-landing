@@ -21,7 +21,7 @@ if (typeof window !== "undefined") {
 i18n.use(initReactI18next).init({
   resources,
   lng: storedLanguage,
-  fallbackLng: "fa",
+  fallbackLng: "en",
 
   interpolation: {
     escapeValue: false,

@@ -35,11 +35,7 @@ const ResponsiveCard = ({
         height: "100%",
         display: "flex",
         flexDirection: "column",
-        textDecoration: "none",
-        color: "unset",
       }}
-      component={Link}
-      href={"https://app.flickit.org/assessment-kits/" + id}
     >
       <Box
         sx={{
@@ -56,7 +52,11 @@ const ResponsiveCard = ({
           minWidth: 0,
           overflow: "visible",
           height: "100%",
+          textDecoration: "none",
+          color: "unset",
         }}
+        component={Link}
+        href={"https://app.flickit.org/assessment-kits/" + id}
       >
         <Box
           component="img"
@@ -158,8 +158,9 @@ const ResponsiveCard = ({
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          minHeight: 120,
+          minHeight: { xs: "unset", md: 60, lg: 70 },
         }}
+        mb={{ xs: 18, lg: 2 }}
       >
         {caseStudyLogo && (
           <Box
@@ -189,9 +190,9 @@ const ResponsiveCard = ({
         >
           {caseStudyDesc}
         </Typography>
-        <Button variant="outlined" size="small">
+        {/* <Button variant="outlined" size="small">
           <Trans i18nKey="learnMore" />
-        </Button>
+        </Button> */}
       </Box>
     </Box>
   );

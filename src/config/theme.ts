@@ -143,7 +143,7 @@ const palette = {
   warning: { main: "#CC7400", contrastText: "#fff", light: "#F4E7D7" },
 };
 // const is_farsi = Boolean(localStorage.getItem("lang") === "fa");
-const is_farsi = true;
+const is_farsi = false;
 
 export const theme = createTheme({
   direction: is_farsi ? "rtl" : "ltr",

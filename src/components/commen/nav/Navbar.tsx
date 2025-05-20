@@ -8,8 +8,11 @@ import {Trans} from "react-i18next";
 import {Button, useMediaQuery} from "@mui/material";
 import {theme} from "@/config/theme";
 import Link from "next/link";
+import useDialog from "@/utils/useDialog";
+import ContactUsDialog from "@/components/commen/contactUs/contactUs";
 
 export default function Navbar() {
+    const dialogProps = useDialog();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
     return (
         <nav style={{height: "64px", background: "#2466A8", width: "100%"}}>
@@ -25,9 +28,12 @@ export default function Navbar() {
                     <img src={"/logo.svg"} style={{height: "100%"}} alt={"logo-icon"}/>
                 </Box>
                 <Box sx={{display: {xs: "none", md: "flex"}, gap: "40px", color: "#fff"}}>
-                    {/*<Typography sx={{...theme.typography.titleLarge}}>*/}
-                    {/*    <Trans i18nKey={"contactUs"}/>*/}
-                    {/*</Typography>*/}
+                    <Typography
+                        onClick={()=> dialogProps.openDialog({open: true})
+                    }
+                        sx={{...theme.typography.titleLarge, textDecoration: 'none', color: "#fff", cursor: "pointer"}}>
+                        <Trans i18nKey={"contactUs"}/>
+                    </Typography>
                     <Typography
                         component={Link}
                         href={"https://app.flickit.org/assessment-kits"}
@@ -58,6 +64,7 @@ export default function Navbar() {
                     </Typography>
                 </Button>
             </Box>
+            <ContactUsDialog {...dialogProps} />
         </nav>
     );
 }

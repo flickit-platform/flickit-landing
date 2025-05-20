@@ -5,6 +5,8 @@ import { Button } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { theme } from "@/config/theme";
 import Link from "next/link";
+import ContactUsDialog from "@/components/commen/contactUs/contactUs";
+import useDialog from "@/utils/useDialog";
 
 export default function Footer() {
   const footerLinks = [
@@ -15,6 +17,9 @@ export default function Footer() {
     },
     // {title:"blog", address: ""},
   ];
+
+    const dialogProps = useDialog();
+
   return (
     <Box
       component={"footer"}
@@ -128,13 +133,16 @@ export default function Footer() {
               >
                 <Trans i18nKey={"feelFreeToReachUs"} />
               </Typography>
-              <Button disabled={true} variant={"contained"}>
+              <Button
+                  onClick={()=> dialogProps.openDialog({open: true})}
+                  variant={"contained"}>
                 <Trans i18nKey={"contactUs"} />
               </Button>
             </Box>
           </Box>
         </Grid>
       </Grid>
+        <ContactUsDialog {...dialogProps} />
     </Box>
   );
 }

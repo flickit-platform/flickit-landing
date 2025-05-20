@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import { Trans } from "react-i18next";
 import { theme } from "@/config/theme";
 import { Button } from "@mui/material";
+import Link from "next/link";
 
 const HeroSection = () => {
   return (
@@ -66,6 +67,9 @@ const HeroSection = () => {
             <Trans i18nKey={"topBannerDesc"} />
           </Typography>
           <Button
+            component={Link}
+            href={"https://app.flickit.org/assessment-kits"}
+            target="_blank"
             variant={"contained"}
             sx={{
               bgcolor: "#F3F5F6",

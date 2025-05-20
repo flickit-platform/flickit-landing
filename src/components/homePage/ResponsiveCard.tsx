@@ -1,17 +1,17 @@
 import React from "react";
-import { Box, Typography, Chip, Button } from "@mui/material";
-import { Trans } from "react-i18next";
-import { theme } from "@/config/theme";
+import {Box, Typography, Chip, Button, Tooltip} from "@mui/material";
+import {Trans} from "react-i18next";
+import {theme} from "@/config/theme";
 import Link from "next/link";
 
 interface Props {
-  imageUrl: string;
-  chipLabel: string;
-  title: string;
-  description: string;
-  caseStudyDesc: string;
-  caseStudyLogo: string;
-  id: string;
+    imageUrl: string;
+    chipLabel: string;
+    title: string;
+    description: string;
+    caseStudyDesc: string;
+    caseStudyLogo: string;
+    id: string;
 }
 
 const IMAGE_HEIGHT = 160;
@@ -191,23 +191,44 @@ const ResponsiveCard = ({
           />
         )}
 
-        <Typography variant="labelSmall" color="#97A6B8" mb={0.5}>
-          <Trans i18nKey="globalCaseStudy" />
-        </Typography>
-        <Typography
-          variant="semiBoldMedium"
-          color="#2466A8"
-          textAlign="center"
-          sx={{ mb: 2 }}
-        >
-          {caseStudyDesc}
-        </Typography>
-        {/* <Button variant="outlined" size="small">
-          <Trans i18nKey="learnMore" />
-        </Button> */}
-      </Box>
-    </Box>
-  );
+                <Typography variant="labelSmall" color="#97A6B8" mb={0.5}>
+                    <Trans i18nKey="globalCaseStudy"/>
+                </Typography>
+                <Tooltip title={caseStudyDesc}>
+                    <Box
+                        sx={{
+                            textOverflow: "ellipsis",
+                            width: "100%",
+                            height: "120px",
+                        }}
+                    >
+                        <Typography
+                            variant="semiBoldMedium"
+                            color="#2466A8"
+                            textAlign="center"
+                            sx={{
+                                overflow: "hidden",
+                                mb: 2,
+                                whiteSpace: "pre-wrap",
+                                display: "-webkit-box",
+                                WebkitLineClamp: 2,
+                                WebkitBoxOrient: "vertical",
+                            }}
+                        >
+                            {caseStudyDesc}
+                        </Typography>
+                    </Box>
+
+                </Tooltip>
+                <Button
+                    component={Link}
+                    href={"/blog/1"}
+                    variant="outlined" size="small">
+                    <Trans i18nKey="learnMore"/>
+                </Button>
+            </Box>
+        </Box>
+    );
 };
 
 export default ResponsiveCard;

@@ -2,6 +2,7 @@
 
 import { createTheme } from "@mui/material/styles";
 import { farsiFontFamily, primaryFontFamily } from "@/utils/fonts";
+import i18next from "i18next";
 import { BreakpointOverrides } from "@mui/system";
 declare module "@mui/material/styles/createPalette" {
   interface TypeBackground {
@@ -138,8 +139,7 @@ const palette = {
   },
   warning: { main: "#CC7400", contrastText: "#fff", light: "#F4E7D7" },
 };
-// const is_farsi = Boolean(localStorage.getItem("lang") === "fa");
-const is_farsi = false;
+const is_farsi = Boolean(localStorage.getItem("lang") === "fa");
 
 export const theme = createTheme({
   direction: is_farsi ? "rtl" : "ltr",

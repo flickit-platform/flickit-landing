@@ -7,18 +7,18 @@ import Typography from "@mui/material/Typography";
 import {Trans} from "react-i18next";
 import {theme} from "@/config/theme";
 
+const mainBox = [
+    {title: "Published on", subTitle: "Mar 4, 2020"},
+    {title: "Read time", subTitle: "8 min"},
+    {title: "Category", subTitle: "App Development"}
+]
+
 const Article = (props: any) => {
     const {
         TopTitle = "How Facebook Messenger Cut Technical Debt to Boost Performance",
         subTitle = "Facebook Messenger, with over a billion users worldwide, became an essential communication tool—but behind the scenes, it was struggling with a growing problem common in fast-evolving software: technical debt",
         img ="/articleTop.svg"
     } = props
-
-    const mainBox = [
-        {title: "Published on", subTitle: "Mar 4, 2020"},
-        {title: "Read time", subTitle: "8 min"},
-        {title: "Category", subTitle: "App Development"}
-    ]
 
     return (
         <Box sx={{maxWidth: "824px", margin: "auto", mt: "40px"}}>

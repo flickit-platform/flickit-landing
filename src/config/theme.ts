@@ -139,7 +139,7 @@ const palette = {
   },
   warning: { main: "#CC7400", contrastText: "#fff", light: "#F4E7D7" },
 };
-const is_farsi = Boolean(localStorage.getItem("lang") === "fa");
+export const is_farsi = i18next.language === "fa"
 
 export const theme = createTheme({
   direction: is_farsi ? "rtl" : "ltr",

@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 
 import {Trans} from "react-i18next";
 import {Button, useMediaQuery} from "@mui/material";
-import {theme} from "@/config/theme";
+import {is_farsi, theme} from "@/config/theme";
 import Link from "next/link";
 import useDialog from "@/utils/useDialog";
 import ContactUsDialog from "@/components/commen/contactUs/contactUs";
@@ -78,7 +78,7 @@ export default function Navbar() {
                                 ...theme.typography.semiBoldLarge,
                                 color: "#2466A8",
                                 textDecoration: 'none',
-                                fontFamily: theme.direction == "rtl"
+                                fontFamily: is_farsi
                                     ? farsiFontFamily
                                     : primaryFontFamily,
                             }}>

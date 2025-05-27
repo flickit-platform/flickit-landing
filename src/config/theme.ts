@@ -1,7 +1,7 @@
 "use client";
 
 import { createTheme } from "@mui/material/styles";
-import { farsiFontFamily, primaryFontFamily } from "@/utils/Fonts";
+import { farsiFontFamily, primaryFontFamily } from "@/utils/fonts";
 import { BreakpointOverrides } from "@mui/system";
 declare module "@mui/material/styles/createPalette" {
   interface TypeBackground {

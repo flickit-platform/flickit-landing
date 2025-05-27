@@ -1,0 +1,77 @@
+{
+  "facebookEn":
+    {  "content":
+   [
+     {"title": "Setting the Stage: Growth, Debt, and the Cost of Speed"},
+     {"p": "Messenger launched in 2011 as a simple chat app carved out of Facebook’s main application. By 2013 it carried voice calls. In 2015 it added video. By 2018 a user could exchange money, order an Uber, play casual games, host group calls, and even speak to chatbots—all without leaving Messenger."},
+     {"p": "That feature boom paid off in daily-active-user numbers, but every new capability came with additional code, more build targets, extra background services, and inevitably more edge-case bugs. Facebook’s leadership culture is famous for the mantra “move fast”; the shadow side of moving fast is that codebases can ossify faster than anyone expects."},
+     {"p": "On iOS the Messenger binary ballooned to ~130 MB—uncomfortably close to Apple’s 200 MB cellular-download ceiling. Engineering dashboards showed alarming trends:"},
+     {"ul": [{
+       "li": "Cold-start time creeping beyond two seconds on flagship phones"},
+       {"li": "Double-digit regressions in performance metrics on older devices"},
+       {"li": "A rising curve of “code-coverage gaps,” where critical paths lacked tests"}
+     ] },
+     {"p": "Individually these metrics weren’t fatal. Together they pointed to an existential problem: Messenger had become a technical-debt minefield. Teams spent more time navigating legacy abstractions than shipping features—classic “innovation tax.”"},
+     {"title": "The Moment of Truth: When Metrics Cross the Red Line"},
+     {"p": " Facebook’s culture is data-obsessed; every significant feature has a dashboard. That habit paid off when Messenger’s leads searched for a single lurking function to justify drastic action. Two numbers made the case:"},
+     {"ul": [
+       {"li": "Launch latency &gt; 2 s: internal user-experience studies show drop-offs above 1.5 s."},
+       {"li": "Binary size 130 MB: at this pace the app would hit Apple’s 200 MB limit within 18 months, forcing painful compromises (or turning away new installs on cellular)."}
+     ] },
+     {"p": "Plenty of apps survive with two-second launches, but Messenger’s audience is global, many on mid-tier devices. A two-second average on iPhone meant three or four seconds on a $100 Android phone in Brazil or India—unacceptable for a chat tool."},
+     {"p": " Something radical had to happen. The leadership green-lit a full-scale internal audit—the largest code review in Messenger’s history."},
+     {"title": "Anatomy of an Internal Audit"},
+     {"p":  "The audit team combined senior mobile engineers, performance analysts, and tooling experts. Over the months they ran:"},
+     {"ul": [
+       {"li": "Static code analysis (complexity, duplication, dead code)"},
+       {"li": "Dynamic tracing of boot sequences to chart hotspots in launch flows"},
+       {"li": "Dependency graphs to hunt for obsolete frameworks"},
+       {"li": "Crash-log clustering to surface fragile sub-systems"},
+       {"li": "Developer “pain surveys”: anonymous feedback on least maintainable modules"}
+     ] },
+     {"p": "Findings shocked even seasoned staff:"},
+     {"p": "MetricBefore AuditDesiredGapLines of code (iOS)1.7 M &lt; 500 k-1.2 MUnique view controllers40 &lt; 10-30Cold-start time2080 ms1000 ms-1080 msBinary size130 MB80 MB-50 MB"},
+     {
+       "table": [
+         {
+           "thead":
+             {"tr": [
+               {"th": "Metric"},
+               {"th": "Before Audit"},
+               {"th": "Desired"},
+               {"th": "Gap"}
+             ]}
+         },
+         {
+           "tbody": [
+             {"tr": [
+               {"td": "Lines of code (iOS)"},
+               {"td": "1.7 M"},
+               {"td": "< 500 k"},
+               {"td": "-1.2 M"}
+             ]},
+             {"tr": [
+               {"td": "Unique view controllers"},
+               {"td": "40"},
+               {"td": "< 10"},
+               {"td": "-30"}
+             ]},
+             {"tr": [
+               {"td":  "Cold-start time"},
+               {"td":  "2080 ms"},
+               {"td":  "1000 ms"},
+               {"td":  "-1080 ms"}
+             ]},
+             {"tr": [
+               {"td":  "Binary size"},
+               {"td":  "130 MB"},
+               {"td":  "80 MB"},
+               {"td":  "-50 MB"}
+             ]}
+           ]
+         }
+       ]
+     }
+   ]
+    }
+}

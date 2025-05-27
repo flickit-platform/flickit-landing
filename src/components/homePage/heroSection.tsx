@@ -2,7 +2,7 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { Trans } from "react-i18next";
-import { theme } from "@/config/theme";
+import { theme } from "@/config/Theme";
 import { Button } from "@mui/material";
 import Link from "next/link";
 
@@ -19,8 +19,8 @@ const HeroSection = () => {
           justifyContent: "center",
           alignItems: "center",
           backgroundImage: {
-            xs: "url(/flickitHeroBg-m.svg)",
-            sm: "url(/flickitHeroBg-d.svg)",
+            xs: "url(/flickit-hero-bg-m.svg)",
+            sm: "url(/flickit-hero-bg-d.svg)",
           },
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat !important",
@@ -48,7 +48,7 @@ const HeroSection = () => {
               pt: { xs: "45px", sm: "77px" },
             }}
           >
-            <Trans i18nKey={"questionsAskedAnswers"} />
+            <Trans i18nKey={"hero.questionsAskedAnswers"} />
           </Typography>
 
           <Typography
@@ -64,7 +64,7 @@ const HeroSection = () => {
               mt: "20px",
             }}
           >
-            <Trans i18nKey={"topBannerDesc"} />
+            <Trans i18nKey={"hero.topBannerDesc"} />
           </Typography>
           <Button
             component={Link}
@@ -92,7 +92,7 @@ const HeroSection = () => {
                 color: "#2466A8",
               }}
             >
-              <Trans i18nKey={"startSelfAssessment"} />
+              <Trans i18nKey={"hero.startSelfAssessment"} />
             </Typography>
           </Button>
         </Box>

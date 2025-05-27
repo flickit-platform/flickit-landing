@@ -1,6 +1,6 @@
-import Navbar from "@/components/commen/nav/Navbar";
+import Navbar from "@/components/common/nav/Navbar";
 import { ThemeProvider } from "@mui/material/styles";
-import { theme } from "@/config/theme";
+import { theme } from "@/config/Theme";
 import "@/assets/font/fonts.css"
 
 export const metadata = {

@@ -1,4 +1,4 @@
-import { farsiFontFamily, primaryFontFamily } from "@/utils/fonts";
+import { farsiFontFamily, primaryFontFamily } from "@/utils/Fonts";
 import { keyframes, SxProps, Theme } from "@mui/material/styles";
 
 

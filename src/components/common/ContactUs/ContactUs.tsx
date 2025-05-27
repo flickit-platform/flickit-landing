@@ -1,8 +1,8 @@
 "use client"
 
 import { useMemo, useState } from "react";
-import { CEDialog, CEDialogActions } from "@/components/commen/dialogs/CEDialog";
-import { theme } from "@/config/theme";
+import { CEDialog, CEDialogActions } from "@/components/common/dialogs/CEDialog";
+import { theme } from "@/config/Theme";
 import { Trans } from "react-i18next";
 import { t } from "i18next";
 import Typography from "@mui/material/Typography";
@@ -11,7 +11,7 @@ import CheckCircleOutlineRoundedIcon from "@mui/icons-material/CheckCircleOutlin
 import { DialogProps } from "@mui/material/Dialog";
 import { useForm as useFormSpree } from "@formspree/react";
 import { FormProvider, useForm } from "react-hook-form";
-import { InputFieldUC } from "@/components/commen/fields/InputField";
+import { InputFieldUC } from "@/components/common/fields/InputField";
 
 interface IContactUsDialogProps extends DialogProps {
     onClose: () => void;
@@ -54,7 +54,7 @@ const ContactUsDialog = (props: IContactUsDialogProps) => {
     const socialIcon = [
         {
             id: 1,
-            icon: "/whatsApp.svg",
+            icon: "/whats-app.svg",
             bg: "#3D8F3D14",
             link : {WhatsappLink, WhatsappWebLink} ,
         },
@@ -70,7 +70,7 @@ const ContactUsDialog = (props: IContactUsDialogProps) => {
                     sx={theme.typography.semiBoldXLarge}
                     textTransform={"uppercase"}
                 >
-                    <Trans i18nKey="contactUs" />
+                    <Trans i18nKey="common.contactUs" />
                 </Typography>
             }
         >
@@ -95,16 +95,16 @@ const ContactUsDialog = (props: IContactUsDialogProps) => {
                             sx={{ fontSize: 64, color: "success.main", mb: 1 }}
                         />
                         <Typography variant="h5" sx={{ fontWeight: "bold", mb: 1 }}>
-                            <Trans i18nKey="thankYouForYourMessage" />
+                            <Trans i18nKey="common.thankYouForYourMessage" />
                         </Typography>
                         <Typography variant="body2" sx={{ color: "text.secondary" }}>
-                            <Trans i18nKey="weWillGetBackToYouSoon" />
+                            <Trans i18nKey="common.weWillGetBackToYouSoon" />
                         </Typography>
                     </Box>
 
                     <CEDialogActions
                         hideCancelButton
-                        submitButtonLabel={t("okGotIt")}
+                        submitButtonLabel={t("common.okGotIt")}
                         closeDialog={close}
                         onSubmit={close}
                     />
@@ -116,15 +116,15 @@ const ContactUsDialog = (props: IContactUsDialogProps) => {
                         style={{ padding: 24 }}
                     >
                         <Typography variant="body1" sx={{ mb: 2 }}>
-                            <Trans i18nKey="contactUsIntroText" />
+                            <Trans i18nKey="common.contactUsIntroText" />
                         </Typography>
 
-                        <InputFieldUC name="email" label={t("yourEmail")} required />
+                        <InputFieldUC name="email" label={t("common.yourEmail")} required />
 
                         <Box sx={{ mt: 2 }}>
                             <InputFieldUC
                                 name="message"
-                                label={t("yourMessage")}
+                                label={t("common.yourMessage")}
                                 multiline
                                 rows={4}
                                 required
@@ -133,9 +133,9 @@ const ContactUsDialog = (props: IContactUsDialogProps) => {
                     </form>
 
                     <CEDialogActions
-                        cancelLabel={t("cancel")}
+                        cancelLabel={t("common.cancel")}
                         contactSection={socialIcon}
-                        submitButtonLabel={t("confirm")}
+                        submitButtonLabel={t("common.confirm")}
                         onClose={close}
                         loading={state.submitting}
                         onSubmit={()=>methods.handleSubmit(onSubmit)}

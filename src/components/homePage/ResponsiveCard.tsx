@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography, Chip, Button } from "@mui/material";
 import { Trans } from "react-i18next";
-import { theme } from "@/config/theme";
+import { theme } from "@/config/Theme";
 import Link from "next/link";
 
 interface Props {
@@ -128,7 +128,7 @@ const ResponsiveCard = ({
             component={Link}
             href={"https://app.flickit.org/assessment-kits/" + id}
           >
-            <Trans i18nKey="moreAboutThisKit" />
+            <Trans i18nKey="main.moreAboutThisKit" />
           </Button>
           <Button
             variant="contained"
@@ -140,7 +140,7 @@ const ResponsiveCard = ({
               `#createAssessment?id=${id}&title=${encodeURIComponent(title)}`
             }
           >
-            <Trans i18nKey="createAssessment" />
+            <Trans i18nKey="main.createAssessment" />
           </Button>
         </Box>
         <Box
@@ -192,7 +192,7 @@ const ResponsiveCard = ({
         )}
 
         <Typography variant="labelSmall" color="#97A6B8" mb={0.5}>
-          <Trans i18nKey="globalCaseStudy" />
+          <Trans i18nKey="main.globalCaseStudy" />
         </Typography>
         <Typography
           variant="semiBoldMedium"
@@ -203,7 +203,7 @@ const ResponsiveCard = ({
           {caseStudyDesc}
         </Typography>
         {/* <Button variant="outlined" size="small">
-          <Trans i18nKey="learnMore" />
+          <Trans i18nKey="main.learnMore" />
         </Button> */}
       </Box>
     </Box>

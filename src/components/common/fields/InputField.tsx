@@ -4,11 +4,11 @@ import InputAdornment from "@mui/material/InputAdornment";
 import TextField, { OutlinedTextFieldProps } from "@mui/material/TextField";
 import { ReactNode, useState, useRef, useEffect, ChangeEvent } from "react";
 import { useFormContext } from "react-hook-form";
-import getFieldError from "@/utils/getFieldError";
-import { theme } from "@/config/theme";
-import languageDetector from "@/utils/languageDetector";
+import getFieldError from "@/utils/GetFieldError";
+import { theme } from "@/config/Theme";
+import languageDetector from "@/utils/LanguageDetector";
 import { t } from "i18next";
-import {primaryFontFamily} from "@/utils/fonts";
+import {primaryFontFamily} from "@/utils/Fonts";
 
 const InputField = () => {
     return <TextField />;

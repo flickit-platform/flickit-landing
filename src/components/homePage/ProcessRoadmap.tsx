@@ -129,7 +129,7 @@ const PinLabel = ({ pin, variant = "headlineMedium" }: PinLabelProps) => (
       my: 2,
       px: 2,
       textAlign: "center",
-      ...styles.centerVH,
+      ...styles.centerCH,
       gap: 1,
     }}
   >

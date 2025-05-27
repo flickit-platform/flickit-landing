@@ -6,7 +6,7 @@ import Grid from "@mui/material/Grid";
 import { theme } from "@/config/theme";
 import Link from "next/link";
 import ContactUsDialog from "@/components/common/ContactUs/ContactUs";
-import useDialog from "@/utils/UseDialog";
+import useDialog from "@/utils/useDialog";
 
 export default function Footer() {
   const footerLinks = [

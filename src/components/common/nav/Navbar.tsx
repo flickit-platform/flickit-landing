@@ -8,7 +8,7 @@ import {Trans} from "react-i18next";
 import {Button, useMediaQuery} from "@mui/material";
 import {theme} from "@/config/theme";
 import Link from "next/link";
-import useDialog from "@/utils/UseDialog";
+import useDialog from "@/utils/useDialog";
 import ContactUsDialog from "@/components/common/ContactUs/ContactUs";
 
 export default function Navbar() {

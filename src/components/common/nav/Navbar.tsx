@@ -9,7 +9,7 @@ import {Button, useMediaQuery} from "@mui/material";
 import {theme} from "@/config/theme";
 import Link from "next/link";
 import useDialog from "@/utils/useDialog";
-import ContactUsDialog from "@/components/commen/contactUs/contactUs";
+import ContactUsDialog from "@/components/common/ContactUs/ContactUs";
 
 export default function Navbar() {
     const dialogProps = useDialog();
@@ -32,18 +32,18 @@ export default function Navbar() {
                         onClick={()=> dialogProps.openDialog({open: true})
                     }
                         sx={{...theme.typography.titleLarge, textDecoration: 'none', color: "#fff", cursor: "pointer"}}>
-                        <Trans i18nKey={"contactUs"}/>
+                        <Trans i18nKey={"common.contactUs"}/>
                     </Typography>
                     <Typography
                         component={Link}
                         href={"https://app.flickit.org/assessment-kits"}
                         target="_blank"
                         sx={{ ...theme.typography.titleLarge, textDecoration: 'none', color: "#fff" }}>
-                        <Trans i18nKey={"kitLibrary"}/>
+                        <Trans i18nKey={"nav.kitLibrary"}/>
                     </Typography>
                     {/*<Typography*/}
                     {/*    sx={{...theme.typography.titleLarge}}>*/}
-                    {/*    <Trans i18nKey={"blog"}/>*/}
+                    {/*    <Trans i18nKey={"nav.blog"}/>*/}
                     {/*</Typography>*/}
                 </Box>
                 <Button variant={"contained"}
@@ -60,7 +60,7 @@ export default function Navbar() {
                             ...theme.typography.semiBoldLarge, color: "#2466A8",
                             textDecoration: 'none'
                         }}>
-                        <Trans i18nKey={"SignUpFree"}/>
+                        <Trans i18nKey={"nav.signUpFree"}/>
                     </Typography>
                 </Button>
             </Box>

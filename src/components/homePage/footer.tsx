@@ -5,20 +5,20 @@ import { Button } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { theme } from "@/config/theme";
 import Link from "next/link";
-import ContactUsDialog from "@/components/commen/contactUs/contactUs";
+import ContactUsDialog from "@/components/common/ContactUs/ContactUs";
 import useDialog from "@/utils/useDialog";
 
 export default function Footer() {
   const footerLinks = [
-    { title: "flickitApp", address: "https://app.flickit.org/" },
+    { title: "footer.flickitApp", address: "https://app.flickit.org/" },
     {
-      title: "assessmentKits",
+      title: "footer.assessmentKits",
       address: "https://app.flickit.org/assessment-kits",
     },
     // {title:"blog", address: ""},
   ];
 
-    const dialogProps = useDialog();
+  const dialogProps = useDialog();
 
   return (
     <Box
@@ -44,7 +44,7 @@ export default function Footer() {
             }}
             textAlign="justify"
           >
-            <Trans i18nKey={"flickitFooterText"} />
+            <Trans i18nKey={"footer.flickitFooterText"} />
           </Typography>
         </Grid>
         <Grid
@@ -74,7 +74,7 @@ export default function Footer() {
                 color: "#F0F2F4",
               }}
             >
-              <Trans i18nKey={"links"} />
+              <Trans i18nKey={"footer.links"} />
             </Typography>
             <Box
               sx={{
@@ -115,7 +115,7 @@ export default function Footer() {
           >
             <img
               style={{ width: "137px", height: "120px" }}
-              src={"emailIcon.svg"}
+              src={"email-icon.svg"}
             />
             <Box
               sx={{
@@ -131,18 +131,19 @@ export default function Footer() {
                   color: "#F0F2F4",
                 }}
               >
-                <Trans i18nKey={"feelFreeToReachUs"} />
+                <Trans i18nKey={"footer.feelFreeToReachUs"} />
               </Typography>
               <Button
-                  onClick={()=> dialogProps.openDialog({open: true})}
-                  variant={"contained"}>
-                <Trans i18nKey={"contactUs"} />
+                onClick={() => dialogProps.openDialog({ open: true })}
+                variant={"contained"}
+              >
+                <Trans i18nKey="common.contactUs" />
               </Button>
             </Box>
           </Box>
         </Grid>
       </Grid>
-        <ContactUsDialog {...dialogProps} />
+      <ContactUsDialog {...dialogProps} />
     </Box>
   );
 }

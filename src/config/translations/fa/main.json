@@ -1,0 +1,16 @@
+{
+  "moreAboutThisKit": "More about this kit",
+  "createAssessment": "Create assessment",
+  "globalCaseStudy": "Global case study",
+  "learnMore": "Learn more",
+  "whatCanYouAssessWith": "What can you assess with <style>{{app}}</style>?",
+  "howItWorks": "How <style>it</style> works?",
+  "pin1Title": "1. Kit selection",
+  "pin1Desc": "Pick the assessment kit that matches your goals.",
+  "pin2Title": "2. Answering question",
+  "pin2Desc": "Complete the entire questionnaire accurately.",
+  "pin3Title": "3. Viewing report",
+  "pin3Desc": "Explore your detailed insights and action points.",
+  "pin4Title": "4. Sharing report",
+  "pin4Desc": "Send results to teammates or stakeholders."
+}

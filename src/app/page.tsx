@@ -1,10 +1,10 @@
 "use client";
 
-import Footer from "@/components/homePage/Footer";
+import Footer from "@/components/homePage/footer";
 import "../config/i18n";
-import HeroSection from "@/components/homePage/HeroSection";
-import Cards from "@/components/homePage/Cards";
-import ProcessRoadmap from "@/components/homePage/ProcessRoadmap";
+import HeroSection from "@/components/homePage/heroSection";
+import Cards from "@/components/homePage/cards";
+import ProcessRoadmap from "@/components/homePage/processRoadmap";
 
 export default function Home() {
   return (

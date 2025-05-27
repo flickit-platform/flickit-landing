@@ -1,5 +1,5 @@
 import React from "react";
-import ResponsiveCard from "./ResponsiveCard";
+import ResponsiveCard from "./responsiveCard";
 import { Box, Grid, Typography } from "@mui/material";
 import { styles } from "@/config/styles";
 import { Trans } from "react-i18next";

@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import { Trans } from "react-i18next";
 import { useTheme } from "@mui/material/styles";
-import { styles } from "@/config/Styles";
+import { styles } from "@/config/styles";
 
 type Pin = {
   id: number;

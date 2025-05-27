@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react";
-import { styles } from "@/config/Styles";
+import { styles } from "@/config/styles";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import useScreenResize from "@/utils/UseScreenResize";

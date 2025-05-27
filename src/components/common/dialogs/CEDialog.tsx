@@ -2,7 +2,7 @@ import { PropsWithChildren } from "react";
 import { styles } from "@/config/styles";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
-import useScreenResize from "@/utils/UseScreenResize";
+import useScreenResize from "@/utils/useScreenResize";
 import Dialog, { DialogProps } from "@mui/material/Dialog";
 import DialogActions, { DialogActionsProps } from "@mui/material/DialogActions";
 import Grid from "@mui/material/Grid";

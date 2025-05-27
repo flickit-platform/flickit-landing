@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { CEDialog, CEDialogActions } from "@/components/common/dialogs/CEDialog";
-import { theme } from "@/config/Theme";
+import { theme } from "@/config/theme";
 import { Trans } from "react-i18next";
 import { t } from "i18next";
 import Typography from "@mui/material/Typography";

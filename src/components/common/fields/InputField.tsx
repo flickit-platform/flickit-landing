@@ -5,7 +5,7 @@ import TextField, { OutlinedTextFieldProps } from "@mui/material/TextField";
 import { ReactNode, useState, useRef, useEffect, ChangeEvent } from "react";
 import { useFormContext } from "react-hook-form";
 import getFieldError from "@/utils/GetFieldError";
-import { theme } from "@/config/Theme";
+import { theme } from "@/config/theme";
 import languageDetector from "@/utils/LanguageDetector";
 import { t } from "i18next";
 import {primaryFontFamily} from "@/utils/Fonts";

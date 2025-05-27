@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 
 import {Trans} from "react-i18next";
 import {Button, useMediaQuery} from "@mui/material";
-import {theme} from "@/config/Theme";
+import {theme} from "@/config/theme";
 import Link from "next/link";
 import useDialog from "@/utils/UseDialog";
 import ContactUsDialog from "@/components/common/ContactUs/ContactUs";

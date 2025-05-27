@@ -11,7 +11,7 @@ import Button from "@mui/material/Button";
 import { Trans } from "react-i18next";
 import { t } from "i18next";
 import Typography from "@mui/material/Typography";
-import { theme } from "@/config/Theme";
+import { theme } from "@/config/theme";
 import Box from "@mui/material/Box";
 
 interface ICEDialogProps extends Omit<DialogProps, "title"> {

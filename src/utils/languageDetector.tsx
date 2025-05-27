@@ -1,4 +1,4 @@
-import { theme } from "@/config/Theme";
+import { theme } from "@/config/theme";
 
 const languageDetector = (text?: string | null) => {
   const farsiChars = new Set("ابپتثجچحخدذرزژسشصضطظعغفقکگلمنوهی");

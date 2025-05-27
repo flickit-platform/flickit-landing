@@ -3,7 +3,7 @@ import Typography from "@mui/material/Typography";
 import { Trans } from "react-i18next";
 import { Button } from "@mui/material";
 import Grid from "@mui/material/Grid";
-import { theme } from "@/config/Theme";
+import { theme } from "@/config/theme";
 import Link from "next/link";
 import ContactUsDialog from "@/components/common/ContactUs/ContactUs";
 import useDialog from "@/utils/UseDialog";

@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography, Chip, Button } from "@mui/material";
 import { Trans } from "react-i18next";
-import { theme } from "@/config/Theme";
+import { theme } from "@/config/theme";
 import Link from "next/link";
 
 interface Props {

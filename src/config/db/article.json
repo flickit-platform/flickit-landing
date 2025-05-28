@@ -31,47 +31,21 @@
      ] },
      {"p": "Findings shocked even seasoned staff:"},
      {"p": "MetricBefore AuditDesiredGapLines of code (iOS)1.7 M &lt; 500 k-1.2 MUnique view controllers40 &lt; 10-30Cold-start time2080 ms1000 ms-1080 msBinary size130 MB80 MB-50 MB"},
-     {
-       "table": [
-         {
-           "thead":
-             {"tr": [
-               {"th": "Metric"},
-               {"th": "Before Audit"},
-               {"th": "Desired"},
-               {"th": "Gap"}
-             ]}
-         },
-         {
-           "tbody": [
-             {"tr": [
-               {"td": "Lines of code (iOS)"},
-               {"td": "1.7 M"},
-               {"td": "< 500 k"},
-               {"td": "-1.2 M"}
-             ]},
-             {"tr": [
-               {"td": "Unique view controllers"},
-               {"td": "40"},
-               {"td": "< 10"},
-               {"td": "-30"}
-             ]},
-             {"tr": [
-               {"td":  "Cold-start time"},
-               {"td":  "2080 ms"},
-               {"td":  "1000 ms"},
-               {"td":  "-1080 ms"}
-             ]},
-             {"tr": [
-               {"td":  "Binary size"},
-               {"td":  "130 MB"},
-               {"td":  "80 MB"},
-               {"td":  "-50 MB"}
-             ]}
-           ]
-         }
+     {"table" : {
+       "thead": [
+         "Metric",
+         "Before Audit",
+         "Desired",
+         "Gap"
+       ],
+       "tbody": [
+         ["Lines of code (iOS)", "1.7 M", "< 500 k", "-1.2 M"],
+         ["Unique view controllers", "40", "< 10", "-30"],
+         ["Cold-start time", "2080 ms", "1000 ms", "-1080 ms"],
+         ["Binary size", "130 MB", "80 MB", "-50 MB"]
        ]
      }
+   }
    ]
     }
 }

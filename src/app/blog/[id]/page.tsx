@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import {Trans} from "react-i18next";
 import {theme} from "@/config/theme";
 import {styles} from "@/config/styles";
-import {Divider, List, ListItem, ListItemText} from "@mui/material";
+import {Divider, List, ListItem, ListItemText, Paper, TableContainer} from "@mui/material";
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -20,6 +20,13 @@ const mainBox = [
     {title: "Read time", subTitle: "8 min"},
     {title: "Category", subTitle: "App Development"}
 ]
+
+const rows = [
+    { metric: 'Lines of code (iOS)', before: '1.7 M', desired: '< 500 k', gap: '-1.2 M' },
+    { metric: 'Unique view controllers', before: '40', desired: '< 10', gap: '-30' },
+    { metric: 'Cold-start time', before: '2080 ms', desired: '1000 ms', gap: '-1080 ms' },
+    { metric: 'Binary size', before: '130 MB', desired: '80 MB', gap: '-50 MB' },
+];
 
 const Article = (props: any) => {
     const {
@@ -48,76 +55,33 @@ const Article = (props: any) => {
             </List>
 
         }else if(table){
-
+const { thead, tbody } = table
             return (
-              <>
-                    {table.map((tab: any)=>{
-                        return (
-                            <Table size="small" aria-label="a dense table">
-                            <TableHead>
-                                <TableRow>
-                                    {tab?.thead?.tr.map((i: any)=>{
-                                        const {th} = i
-                                        return (
-                                            <TableCell key={th}>{th}</TableCell>
-                                        )
-                                    })}
+                <TableContainer component={Paper}>
+                    <Table>
+                        <TableHead>
+                            <TableRow>
+                                {thead.map((head: any, index: number) => (
+                                    <TableCell key={index} align={index === 0 ? "left" : "right"}>
+                                        <strong>{head}</strong>
+                                    </TableCell>
+                                ))}
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {tbody.map((row: any, rowIndex: number) => (
+                                <TableRow key={rowIndex}>
+                                    {row.map((cell: any, cellIndex: number) => (
+                                        <TableCell key={cellIndex} align={cellIndex === 0 ? "left" : "right"}>
+                                            {cell}
+                                        </TableCell>
+                                    ))}
                                 </TableRow>
-                            </TableHead>
-                            <TableBody>
-                                {tab?.tbody?.map((i: any)=>{
-
-                                    const {tr} = i
-                                    return (
-                                        <TableRow
-
-                                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                                        >
-                                            {tr.map((item: any) =>{
-                                                const {td} = item
-                                                return (
-                                                    <TableCell align="left">{td}</TableCell>
-                                                )
-                                            })}
-                                        </TableRow>
-                                    )
-                                })}
-                            </TableBody>
-                            </Table>
-                        )
-                    })}
-              </>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
             )
-
-
-
-            // return <Table size="small" aria-label="a dense table">
-            //     <TableHead>
-            //         <TableRow>
-            //             {table.thead.tr.map(i=>{
-            //                 return (
-            //                     <TableCell>{i}</TableCell>
-            //                 )
-            //             })}
-            //         </TableRow>
-            //     </TableHead>
-            //     <TableBody>
-            //         {rows.map((row) => (
-            //             <TableRow
-            //                 key={row.name}
-            //                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            //             >
-            //                 <TableCell component="th" scope="row">
-            //                     {row.name}
-            //                 </TableCell>
-            //                 <TableCell align="right">{row.calories}</TableCell>
-            //                 <TableCell align="right">{row.fat}</TableCell>
-            //                 <TableCell align="right">{row.carbs}</TableCell>
-            //                 <TableCell align="right">{row.protein}</TableCell>
-            //             </TableRow>
-            //         ))}
-            //     </TableBody>
-            // </Table>
         }
     }
 

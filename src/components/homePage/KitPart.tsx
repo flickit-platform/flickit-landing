@@ -3,6 +3,7 @@ import { Box, Typography, Chip, Button } from "@mui/material";
 import { Trans } from "react-i18next";
 import { theme } from "@/config/theme";
 import Link from "next/link";
+import { styles } from "@/config/styles";
 
 interface Props {
   imageUrl: string;
@@ -45,7 +46,7 @@ const ResponsiveCard = ({
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          borderRadius: "1rem",
+          borderRadius: "12px",
           boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.25)",
           bgcolor: "background.paper",
           maxWidth: "100%",
@@ -167,9 +168,7 @@ const ResponsiveCard = ({
           p: 3,
           pt: 2.5,
           pb: 2,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
+          ...styles.centerCH,
           minHeight: { xs: "unset", md: 60, lg: 70 },
         }}
         mb={{ xs: 18, lg: 2 }}

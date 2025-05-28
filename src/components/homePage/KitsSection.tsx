@@ -1,5 +1,5 @@
 import React from "react";
-import ResponsiveCard from "./ResponsiveCard";
+import Kit from "./KitPart";
 import { Box, Grid, Typography } from "@mui/material";
 import { styles } from "@/config/styles";
 import { Trans } from "react-i18next";
@@ -50,7 +50,7 @@ const cardsData = [
     caseStudyLogo: "fujistu.jpeg",
   },
 ];
-const Cards = () => {
+const Kits = () => {
   return (
     <Box sx={{ ...styles.centerCVH }} gap={15} px={{ xs: 2, md: 6, xxl: 30 }}>
       <Typography variant="headlineLarge" textAlign="center">
@@ -76,7 +76,7 @@ const Cards = () => {
             size={{ xs: 2, sm: 4, md: 3 }}
             sx={{ display: "flex" }}
           >
-            <ResponsiveCard {...item} />
+            <Kit {...item} />
           </Grid>
         ))}
       </Grid>
@@ -84,4 +84,4 @@ const Cards = () => {
   );
 };
 
-export default Cards;
+export default Kits;

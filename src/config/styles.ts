@@ -149,11 +149,10 @@ const buttons = {
 const box = {
   shadowStyle: style({
     background: "#fff",
-    borderRadius: "12px",
+    borderRadius: "16px",
     width: "100%",
     backgroundColor: "#fff",
-    boxShadow: "0 0 8px 0 #0A234240",
-    mb: { xs: "10px", sm: "40px" },
+    boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.25)",
   }),
   boxStyle: style({
     background: "#fff",

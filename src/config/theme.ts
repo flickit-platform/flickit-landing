@@ -309,7 +309,7 @@ export const theme = createTheme({
     semiBoldXLarge: {
       fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
       fontWeight: "500",
-      fontSize: "1.375rem",
+      fontSize: "1.25rem",
       lineHeight: "1.75rem",
       letterSpacing: "0px",
     },

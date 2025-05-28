@@ -15,7 +15,7 @@ interface IUseDialogProps {
 /**
  * #### Hook for creating dialog logics
  *
- * you can pass context on create or on open dialog which is recommended way
+ * you can pass context on create or on open dialog which is recommonded way
  * remember to pass context type otherwise we don't set your context
  */
 const useDialog = (props: IUseDialogProps = {}) => {

@@ -1,11 +1,9 @@
-"use client";
-
-import * as React from 'react';
+"use client";;
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
 import {Trans} from "react-i18next";
-import {Button, useMediaQuery} from "@mui/material";
+import { Button } from "@mui/material";
 import {is_farsi, theme} from "@/config/theme";
 import Link from "next/link";
 import useDialog from "@/utils/useDialog";
@@ -13,10 +11,11 @@ import ContactUsDialog from "@/components/commen/contactUs/contactUs";
 import LanguageSelector from "@/components/commen/languageSelector";
 import {styles} from "@/config/styles";
 import {farsiFontFamily, primaryFontFamily} from "@/utils/fonts";
+import useScreenResize from '@/utils/useScreenResize';
 
 export default function Navbar() {
     const dialogProps = useDialog();
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+    const isMobile = useScreenResize("sm");
     return (
         <nav style={{
             height: "44px",

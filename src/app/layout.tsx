@@ -1,4 +1,4 @@
-import Navbar from "@/components/commen/nav/Navbar";
+import Navbar from "@/components/common/nav/Navbar";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "@/config/theme";
 import "@/assets/font/fonts.css"

@@ -1,13 +1,14 @@
 import { Box, Typography } from "@mui/material";
 import { styles } from "@/config/styles";
+import { Trans } from "react-i18next";
 
 interface Props {
   icon: string;
-  title: string;
-  desc: string;
+  titleKey: string;
+  descKey: string;
 }
 
-const FeatureCard = ({ icon, title, desc }: Props) => (
+const FeatureCard = ({ icon, titleKey, descKey }: Props) => (
   <Box
     sx={{
       ...styles.centerCH,
@@ -24,12 +25,12 @@ const FeatureCard = ({ icon, title, desc }: Props) => (
       gap: 2,
     }}
   >
-    <Box component="img" src={icon} alt={title} sx={{ maxWidth: 45 }} />
+    <Box component="img" src={icon} alt={titleKey} sx={{ maxWidth: 45 }} />
     <Typography variant="semiBoldXLarge" textAlign="center">
-      {title}
+      <Trans i18nKey={titleKey} />
     </Typography>
     <Typography variant="bodyLarge" textAlign="center" color="#2B333B">
-      {desc}
+      <Trans i18nKey={descKey} />
     </Typography>
   </Box>
 );

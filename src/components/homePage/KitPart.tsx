@@ -7,24 +7,23 @@ import { styles } from "@/config/styles";
 
 interface Props {
   imageUrl: string;
-  chipLabel: string;
-  title: string;
-  description: string;
-  caseStudyDesc: string;
+  chipLabelKey: string;
+  titleKey: string;
+  descKey: string;
+  caseStudyDescKey: string;
   caseStudyLogo: string;
   id: string;
 }
 
 const IMAGE_HEIGHT = 160;
-
 const LOGO_SIZE = 24;
 
 const ResponsiveCard = ({
   imageUrl,
-  chipLabel,
-  title,
-  description,
-  caseStudyDesc,
+  chipLabelKey,
+  titleKey,
+  descKey,
+  caseStudyDescKey,
   caseStudyLogo,
   id,
 }: Props) => {
@@ -91,13 +90,13 @@ const ResponsiveCard = ({
               mb: 1,
               mx: "auto",
             }}
-            label={chipLabel}
+            label={<Trans i18nKey={chipLabelKey} />}
             variant="outlined"
             color="primary"
             size="small"
           />
           <Typography variant="titleLarge" textAlign="center" sx={{ mb: 1 }}>
-            {title}
+            <Trans i18nKey={titleKey} />
           </Typography>
           <Typography
             variant="bodyLarge"
@@ -111,7 +110,7 @@ const ResponsiveCard = ({
               alignItems: "flex-start",
             }}
           >
-            {description}
+            <Trans i18nKey={descKey} />
           </Typography>
         </Box>
         <Box
@@ -138,7 +137,10 @@ const ResponsiveCard = ({
             href={
               "https://stage.flickit.org/assessment-kits/" +
               id +
-              `#createAssessment?id=${id}&title=${encodeURIComponent(title)}`
+              `#createAssessment?id=${id}&title=${encodeURIComponent(
+                // ترجمه عنوان برای URL لازم نیست
+                ""
+              )}`
             }
           >
             <Trans i18nKey="main.createAssessment" />
@@ -158,7 +160,6 @@ const ResponsiveCard = ({
         />
       </Box>
 
-      {/* Global Case Study Box */}
       <Box
         sx={{
           mt: 6,
@@ -199,7 +200,7 @@ const ResponsiveCard = ({
           textAlign="center"
           sx={{ mb: 2 }}
         >
-          {caseStudyDesc}
+          <Trans i18nKey={caseStudyDescKey} />
         </Typography>
         {/* <Button variant="outlined" size="small">
           <Trans i18nKey="main.learnMore" />

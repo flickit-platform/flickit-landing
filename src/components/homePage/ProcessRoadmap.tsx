@@ -1,8 +1,8 @@
 import React from "react";
-import { Box, Typography, useMediaQuery } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { Trans } from "react-i18next";
-import { useTheme } from "@mui/material/styles";
 import { styles } from "@/config/styles";
+import useScreenResize from "@/utils/useScreenResize";
 
 type Pin = {
   id: number;
@@ -231,8 +231,7 @@ const RoadmapImageWithPins = ({
 );
 
 const ProcessRoadmap: React.FC = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMobile = useScreenResize("sm");
   const streetImg = isMobile ? "/mobile-street.svg" : "/street.svg";
 
   return (

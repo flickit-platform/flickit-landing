@@ -6,6 +6,7 @@ import HeroSection from "@/components/homePage/Hero";
 import KitsSection from "@/components/homePage/KitsSection";
 import ProcessRoadmap from "@/components/homePage/ProcessRoadmap";
 import Features from "@/components/homePage/Features";
+import FaqSection from "@/components/homePage/FaqSection";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <KitsSection />
       <ProcessRoadmap />
       <Features />
+      <FaqSection />
       <Footer />
     </>
   );

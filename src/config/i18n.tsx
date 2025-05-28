@@ -1,7 +1,7 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import en from "./translations/en.json";
-import fa from "./translations/fa.json";
+import en from "./translations/en";
+import fa from "./translations/fa";
 
 export const resources = {
   en: {
@@ -16,7 +16,6 @@ let storedLanguage = "en";
 
 if (typeof window !== "undefined") {
   storedLanguage = localStorage.getItem("lang") ?? "en";
-  document.dir = storedLanguage === "fa" ? "rtl" : "ltr";
 }
 i18n.use(initReactI18next).init({
   resources,

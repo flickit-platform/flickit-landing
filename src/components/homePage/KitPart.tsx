@@ -3,27 +3,27 @@ import {Box, Typography, Chip, Button, Tooltip} from "@mui/material";
 import {Trans} from "react-i18next";
 import {theme} from "@/config/theme";
 import Link from "next/link";
+import { styles } from "@/config/styles";
 
 interface Props {
-    imageUrl: string;
-    chipLabel: string;
-    title: string;
-    description: string;
-    caseStudyDesc: string;
-    caseStudyLogo: string;
-    id: string;
+  imageUrl: string;
+  chipLabelKey: string;
+  titleKey: string;
+  descKey: string;
+  caseStudyDescKey: string;
+  caseStudyLogo: string;
+  id: string;
 }
 
 const IMAGE_HEIGHT = 160;
-
 const LOGO_SIZE = 24;
 
 const ResponsiveCard = ({
   imageUrl,
-  chipLabel,
-  title,
-  description,
-  caseStudyDesc,
+  chipLabelKey,
+  titleKey,
+  descKey,
+  caseStudyDescKey,
   caseStudyLogo,
   id,
 }: Props) => {
@@ -45,7 +45,7 @@ const ResponsiveCard = ({
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          borderRadius: "1rem",
+          borderRadius: "12px",
           boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.25)",
           bgcolor: "background.paper",
           maxWidth: "100%",
@@ -90,13 +90,13 @@ const ResponsiveCard = ({
               mb: 1,
               mx: "auto",
             }}
-            label={chipLabel}
+            label={<Trans i18nKey={chipLabelKey} />}
             variant="outlined"
             color="primary"
             size="small"
           />
           <Typography variant="titleLarge" textAlign="center" sx={{ mb: 1 }}>
-            {title}
+            <Trans i18nKey={titleKey} />
           </Typography>
           <Typography
             variant="bodyLarge"
@@ -110,7 +110,7 @@ const ResponsiveCard = ({
               alignItems: "flex-start",
             }}
           >
-            {description}
+            <Trans i18nKey={descKey} />
           </Typography>
         </Box>
         <Box
@@ -128,7 +128,7 @@ const ResponsiveCard = ({
             component={Link}
             href={"https://app.flickit.org/assessment-kits/" + id}
           >
-            <Trans i18nKey="moreAboutThisKit" />
+            <Trans i18nKey="main.moreAboutThisKit" />
           </Button>
           <Button
             variant="contained"
@@ -137,10 +137,13 @@ const ResponsiveCard = ({
             href={
               "https://stage.flickit.org/assessment-kits/" +
               id +
-              `#createAssessment?id=${id}&title=${encodeURIComponent(title)}`
+              `#createAssessment?id=${id}&title=${encodeURIComponent(
+                // ترجمه عنوان برای URL لازم نیست
+                ""
+              )}`
             }
           >
-            <Trans i18nKey="createAssessment" />
+            <Trans i18nKey="main.createAssessment" />
           </Button>
         </Box>
         <Box
@@ -157,7 +160,6 @@ const ResponsiveCard = ({
         />
       </Box>
 
-      {/* Global Case Study Box */}
       <Box
         sx={{
           mt: 6,
@@ -167,9 +169,7 @@ const ResponsiveCard = ({
           p: 3,
           pt: 2.5,
           pb: 2,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
+          ...styles.centerCH,
           minHeight: { xs: "unset", md: 60, lg: 70 },
         }}
         mb={{ xs: 18, lg: 2 }}
@@ -192,9 +192,9 @@ const ResponsiveCard = ({
         )}
 
                 <Typography variant="labelSmall" color="#97A6B8" mb={0.5}>
-                    <Trans i18nKey="globalCaseStudy"/>
+                    <Trans i18nKey="main.globalCaseStudy"/>
                 </Typography>
-                <Tooltip title={caseStudyDesc}>
+                <Tooltip title={caseStudyDescKey}>
                     <Box
                         sx={{
                             textOverflow: "ellipsis",
@@ -215,10 +215,9 @@ const ResponsiveCard = ({
                                 WebkitBoxOrient: "vertical",
                             }}
                         >
-                            {caseStudyDesc}
+                            <Trans i18nKey={caseStudyDescKey} />
                         </Typography>
                     </Box>
-
                 </Tooltip>
                 <Button
                     component={Link}

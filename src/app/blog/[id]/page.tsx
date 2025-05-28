@@ -32,7 +32,7 @@ const Article = (props: any) => {
             return <Typography sx={{
                 ...theme.typography.headlineSmall,
                 mt: 2,
-                fontSize: "3rem",
+                fontSize: {xs: "1.6rem", sm: "3rem"},
                 fontWeight: "bold",
                 lineHeight: "auto"
             }}>
@@ -124,7 +124,8 @@ const Article = (props: any) => {
                 src={image}
                 sx={{
                     borderRadius: 2,
-                    mb: 2
+                    mb: 2,
+                    width: {xs:  "90%", sm: "100%"}
                 }}
             >
             </Box>
@@ -132,15 +133,13 @@ const Article = (props: any) => {
     }
 
     return (
-        <Box sx={{maxWidth: "824px", margin: "auto", mt: "40px"}}>
-
+        <Box sx={{maxWidth: "824px", margin: "auto", mt: "40px", px: {xs: 1, sm : 3, md: 13}, }}>
             {data.facebookEn.content.map(item => {
                 const {topTitle, mainTitle, subTitle, infoBox, image} = item
                 const listOfItems = {topTitle, mainTitle, subTitle, infoBox, image}
                 return makeSentence(listOfItems)
             })}
-
-            <Box sx={{px: 13}}>
+            <Box sx={{ px: {xs: 1, sm : 3, md: 13}}}>
                 {data.facebookEn.content.map(item => {
                     const {title, p, ul, table, pb} = item
                     const listOfItems = {title, p, ul, table, pb}

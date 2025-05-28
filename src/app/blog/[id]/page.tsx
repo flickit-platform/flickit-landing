@@ -139,7 +139,7 @@ const Article = (props: any) => {
                 const listOfItems = {topTitle, mainTitle, subTitle, infoBox, image}
                 return makeSentence(listOfItems)
             })}
-            <Box sx={{ px: {xs: 1, sm : 3, md: 13}}}>
+            <Box sx={{ px: {xs: 1, sm : 3, md: 13}, mb: "40px"}}>
                 {data.facebookEn.content.map(item => {
                     const {title, p, ul, table, pb} = item
                     const listOfItems = {title, p, ul, table, pb}

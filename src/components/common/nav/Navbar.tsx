@@ -46,18 +46,18 @@ export default function Navbar() {
                             color: "#fff",
                             cursor: "pointer"
                         }}>
-                        <Trans i18nKey={"contactUs"}/>
+                        <Trans i18nKey={"common.contactUs"}/>
                     </Typography>
                     <Typography
                         component={Link}
                         href={"https://app.flickit.org/assessment-kits"}
                         target="_blank"
                         sx={{...theme.typography.titleMedium, textDecoration: 'none', color: "#fff"}}>
-                        <Trans i18nKey={"kitLibrary"}/>
+                        <Trans i18nKey={"nav.kitLibrary"}/>
                     </Typography>
                     {/*<Typography*/}
                     {/*    sx={{...theme.typography.titleMedium, textDecoration: 'none', color: "#fff"}}>*/}
-                    {/*    <Trans i18nKey={"blog"}/>*/}
+                    {/*    <Trans i18nKey={"nav.blog"}/>*/}
                     {/*</Typography>*/}
                 </Box>
                 <Box sx={{...styles.centerVH, gap: "32px"}}>
@@ -81,7 +81,7 @@ export default function Navbar() {
                                     ? farsiFontFamily
                                     : primaryFontFamily,
                             }}>
-                            <Trans i18nKey={"SignUpFree"}/>
+                            <Trans i18nKey={"nav.signUpFree"}/>
                         </Typography>
                     </Button>
                 </Box>

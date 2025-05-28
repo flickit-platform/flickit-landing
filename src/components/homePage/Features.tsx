@@ -7,43 +7,43 @@ import { Trans } from "react-i18next";
 const features = [
   {
     icon: "/icons/ready-made.svg",
-    title: "Ready-made kits.",
-    desc: "Choose from curated assessments designed for common roles, domains, and maturity objectives—no setup required.",
+    titleKey: "main.readyMade.title",
+    descKey: "main.readyMade.desc",
   },
   {
     icon: "/icons/analytics.svg",
-    title: "Actionable analytics",
-    desc: "Instantly turn responses into maturity scores, strengths, gaps, and prioritized next steps you can act on right away.",
+    titleKey: "main.analytics.title",
+    descKey: "main.analytics.desc",
   },
   {
     icon: "/icons/effortless.svg",
-    title: "Effortless questionnaires",
-    desc: "Skip logic makes answering fast, clear, and frustration-free.",
+    titleKey: "main.effortless.title",
+    descKey: "main.effortless.desc",
   },
   {
     icon: "/icons/expert-guidance.svg",
-    title: "Expert guidance on demand",
-    desc: "Book sessions with certified assessors for deep-dive reviews, interpretation, or roadmap validation whenever you need.",
+    titleKey: "main.expertGuidance.title",
+    descKey: "main.expertGuidance.desc",
   },
   {
     icon: "/icons/pen.svg",
-    title: "Custom assessments, made for you",
-    desc: "Need something specific? We'll connect you with an expert who can design a tailored assessment kit that fits your team’s exact context and goals.",
-  },
-  {
-    icon: "/icons/collabration.svg",
-    title: "AI-powered insights",
-    desc: "Leverage advanced AI to uncover hidden patterns, benchmark against peers, and forecast ROI for improvement actions.",
+    titleKey: "main.customAssessment.title",
+    descKey: "main.customAssessment.desc",
   },
   {
     icon: "/icons/cloud.svg",
-    title: "Real-time team collaboration",
-    desc: "Invite colleagues to co-fill questionnaires, see each other’s progress instantly, and lock answers when consensus is reached.",
+    titleKey: "main.aiPowered.title",
+    descKey: "main.aiPowered.desc",
+  },
+  {
+    icon: "/icons/collabration.svg",
+    titleKey: "main.teamCollab.title",
+    descKey: "main.teamCollab.desc",
   },
   {
     icon: "/icons/share.svg",
-    title: "3-Click report sharing",
-    desc: "Share reports with stakeholders via a secure link in seconds.",
+    titleKey: "main.sharing.title",
+    descKey: "main.sharing.desc",
   },
 ];
 

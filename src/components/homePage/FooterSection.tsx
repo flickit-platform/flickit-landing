@@ -35,7 +35,7 @@ export default function Footer() {
         }}
       >
         <Grid order={{ xs: 3, sm: 1 }} size={{ xs: 12, sm: 4 }}>
-          <img src={"logo.svg"} />
+          <img src={"/logo.svg"} />
           <Typography
             sx={{
               ...theme.typography.bodyMedium,

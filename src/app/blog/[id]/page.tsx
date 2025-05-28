@@ -1,149 +1,32 @@
 "use client"
 
-import React from 'react';
+import { useMemo } from "react";
 import "@/config/i18n";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import {theme} from "@/config/theme";
-import {styles} from "@/config/styles";
-import {Divider, List, ListItem, ListItemText, Paper, TableContainer} from "@mui/material";
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import data from "@/config/db/article.json";
+import { facebookFA , facebookEN } from "@/config/db-Article";
+import i18n from "i18next";
+import {pageMaker} from "@/utils/pageMaker";
 
-const Article = (props: any) => {
+const Article = () => {
 
-    const makeSentence = (item: any) => {
-        const {title, p, ul, table, pb, topTitle, mainTitle, subTitle, infoBox, image} = item
+    const currentLang = useMemo(()=>{
+        return i18n.language;
+    },[i18n.language])
 
-        if (title) {
-            return <Typography component={"h2"}
-                               sx={{...theme.typography.semiBoldXLarge, color: "#000", mb: 1}}>{title}</Typography>
-        } else if (p) {
-            return <Typography sx={{...theme.typography.semiBoldMedium, color: "#2B333B", mb: 2}}>{p}</Typography>
-        } else if (topTitle) {
-            return <Typography sx={{...theme.typography.semiBoldXLarge, color: theme.palette.primary.main}}>
-                {topTitle}
-            </Typography>
-        } else if (mainTitle) {
-            return <Typography sx={{
-                ...theme.typography.headlineSmall,
-                mt: 2,
-                fontSize: {xs: "1.6rem", sm: "3rem"},
-                fontWeight: "bold",
-                lineHeight: "auto"
-            }}>
-                {mainTitle}
-            </Typography>
-        } else if (subTitle) {
-            return <Typography sx={{
-                ...theme.typography.semiBoldMedium,
-                color: "#3D4D5C80",
-                mt: 2,
-            }}>
-                {subTitle}
-            </Typography>
-        } else if (ul) {
-            return <List disablePadding sx={{listStyleType: 'disc', paddingInlineStart: 3, mb: 2}}>
-                {ul.map((itemText: any) => {
-                    const {li} = itemText
-                    return (
-                        <ListItem sx={{display: 'list-item'}} disablePadding>
-                            <ListItemText primaryTypographyProps={{
-                                sx: {
-                                    all: "unset", ...theme.typography.semiBoldMedium,
-                                    color: "#2B333B"
-                                }
-                            }}>{li}</ListItemText>
-                        </ListItem>
-                    )
-                })}
-            </List>
-        } else if (table) {
-            const {thead, tbody} = table
-            return (
-                <TableContainer sx={{mb: 2}} component={Paper}>
-                    <Table>
-                        <TableHead>
-                            <TableRow>
-                                {thead.map((head: any, index: number) => (
-                                    <TableCell key={index} align={index === 0 ? "left" : "right"}>
-                                        <strong>{head}</strong>
-                                    </TableCell>
-                                ))}
-                            </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            {tbody.map((row: any, rowIndex: number) => (
-                                <TableRow key={rowIndex}>
-                                    {row.map((cell: any, cellIndex: number) => (
-                                        <TableCell key={cellIndex} align={cellIndex === 0 ? "left" : "right"}>
-                                            {cell}
-                                        </TableCell>
-                                    ))}
-                                </TableRow>
-                            ))}
-                        </TableBody>
-                    </Table>
-                </TableContainer>
-            )
-        } else if (pb) {
-            return <Typography
-                sx={{...theme.typography.semiBoldMedium, color: "#2B333B", mb: 2, fontWeight: "bold"}}>{pb}</Typography>
-        } else if (infoBox) {
-            return <Box sx={{...styles.centerVH, my: 2, py: 2}}>
-                {infoBox.map((item: any, index: number) => {
-                    return (
-                        <>
-                            {index !== 0 && (
-                                <Divider
-                                    orientation="vertical"
-                                    flexItem
-                                    sx={{borderColor: theme.palette.primary.main, mx: 1}}
-                                />
-                            )}
-                            <Box sx={{px: "24px"}}>
-                                <Typography
-                                    sx={{...theme.typography.bodyMedium, color: "#3D4D5C80"}}>{item.title}</Typography>
-                                <Typography
-                                    sx={{
-                                        ...theme.typography.semiBoldMedium,
-                                        color: "#6C8093"
-                                    }}>{item.subTitle}</Typography>
-                            </Box>
-                        </>
-                    )
-                })}
-            </Box>
-        } else if (image) {
-            return <Box
-                component={"img"}
-                src={image}
-                sx={{
-                    borderRadius: 2,
-                    mb: 2,
-                    width: {xs:  "90%", sm: "100%"}
-                }}
-            >
-            </Box>
-        }
-    }
+    const articles = currentLang === 'fa' ? facebookFA : facebookEN;
 
     return (
-        <Box sx={{maxWidth: "824px", margin: "auto", mt: "40px", px: {xs: 1, sm : 3, md: 13}, }}>
-            {data.facebookEn.content.map(item => {
+        <Box sx={{maxWidth: "824px", margin: "auto", mt: "80px", px: {xs: 1, sm : 3, md: 13}, }}>
+            {articles.content.map(item => {
                 const {topTitle, mainTitle, subTitle, infoBox, image} = item
                 const listOfItems = {topTitle, mainTitle, subTitle, infoBox, image}
-                return makeSentence(listOfItems)
+                return pageMaker(listOfItems)
             })}
             <Box sx={{ px: {xs: 1, sm : 3, md: 13}, mb: "40px"}}>
-                {data.facebookEn.content.map(item => {
-                    const {title, p, ul, table, pb} = item
-                    const listOfItems = {title, p, ul, table, pb}
-                    return makeSentence(listOfItems)
+                {articles.content.map(item => {
+                 const {title, p, ul, table, pb} = item
+                 const listOfItems = {title, p, ul, table, pb}
+                 return pageMaker(listOfItems)
                 })}
             </Box>
         </Box>

@@ -1,7 +1,6 @@
 "use client";;
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-
 import {Trans} from "react-i18next";
 import { Button } from "@mui/material";
 import {is_farsi, theme} from "@/config/theme";
@@ -23,7 +22,8 @@ export default function Navbar() {
             width: "100%",
             boxShadow: "0 0 8px 0 #0A234240",
             position: "fixed",
-            zIndex: 4
+            zIndex: 4,
+            top: 0
         }}>
             <Box sx={{
                 mx: "auto",
@@ -34,7 +34,7 @@ export default function Navbar() {
                 alignItems: "center"
             }}>
                 <Box sx={{height: "100%", width: "auto"}}>
-                    <img src={"logo.svg"} style={{height: "44px"}} alt={"logo-icon"}/>
+                    <img src={"/logo.svg"} style={{height: "44px"}} alt={"logo-icon"}/>
                 </Box>
                 <Box sx={{display: {xs: "none", md: "flex"}, gap: "40px", color: "#fff"}}>
                     <Typography

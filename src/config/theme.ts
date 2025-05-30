@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { createTheme } from "@mui/material/styles";
 import { farsiFontFamily, primaryFontFamily } from "@/utils/fonts";
@@ -140,7 +140,7 @@ const palette = {
   warning: { main: "#CC7400", contrastText: "#fff", light: "#F4E7D7" },
 };
 
-export const is_farsi = localStorage.lang === "fa";
+export const is_farsi = typeof window !== "undefined" && localStorage.lang === "fa";
 
 export const theme = createTheme({
   direction: is_farsi ? "rtl" : "ltr",

@@ -1,3 +1,5 @@
+"use client";
+
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import en from "./translations/en";
@@ -11,8 +13,10 @@ export const resources = {
     translation: fa,
   },
 };
-const storedLanguage = localStorage.getItem("lang") ?? "en";
-document.dir = storedLanguage === "fa" ? "rtl" : "ltr";
+const storedLanguage =
+  (typeof window !== "undefined" && localStorage.getItem("lang")) || "en";
+// document.dir =
+//   typeof window !== "undefined" && storedLanguage === "fa" ? "rtl" : "ltr";
 i18n.use(initReactI18next).init({
   resources,
   lng: storedLanguage,

@@ -221,7 +221,7 @@ const ResponsiveCard = ({
                 </Tooltip>
                 <Button
                     component={Link}
-                    href={"/blog/1"}
+                    href={`/blog/${id}`}
                     variant="outlined" size="small">
                     <Trans i18nKey="learnMore"/>
                 </Button>

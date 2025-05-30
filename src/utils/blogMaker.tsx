@@ -9,14 +9,14 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Box from "@mui/material/Box";
 
-export const pageMaker = (item: any) => {
-    const {title, p, ul, table, pb, topTitle, mainTitle, subTitle, infoBox, image} = item
+export const blogMaker = (item: any) => {
+    const {title, p, ul, table, pb, topTitle, mainTitle, subTitle, infoBox, image, ulBold} = item
 
     if (title) {
         return <Typography component={"h2"}
                            sx={{...theme.typography.semiBoldXLarge, color: "#000", mb: 1}}>{title}</Typography>
     } else if (p) {
-        return <Typography sx={{...theme.typography.semiBoldMedium, color: "#2B333B", mb: 2}}>{p}</Typography>
+        return <Typography sx={{...theme.typography.semiBoldMedium, color: "#2B333B", mb: 2, fontWeight: "regular"}}>{p}</Typography>
     } else if (topTitle) {
         return <Typography sx={{...theme.typography.semiBoldXLarge, color: theme.palette.primary.main}}>
             {topTitle}
@@ -55,6 +55,47 @@ export const pageMaker = (item: any) => {
                 )
             })}
         </List>
+    }else if(ulBold){
+      return <List disablePadding sx={{ listStyleType: 'disc', paddingInlineStart: 3, mb: 2 }}>
+          {ulBold.map((itemText: any, index: number) => {
+              const { li } = itemText;
+
+              const colonIndex = li.indexOf(':');
+              const periodIndex = li.indexOf('.');
+              let splitIndex = -1;
+
+              if (colonIndex !== -1 && (periodIndex === -1 || colonIndex < periodIndex)) {
+                  splitIndex = colonIndex;
+              } else if (periodIndex !== -1) {
+                  splitIndex = periodIndex;
+              }
+
+              const hasSplit = splitIndex !== -1;
+              const boldText = hasSplit ? li.slice(0, splitIndex) : li;
+              const restText = hasSplit ? li.slice(splitIndex) : '';
+
+              return (
+                  <ListItem key={index} sx={{ display: 'list-item' }} disablePadding>
+                      <ListItemText
+                          primaryTypographyProps={{
+                              component: "span",
+                              sx: {
+                                  all: "unset",
+                                  ...theme.typography.semiBoldMedium,
+                                  color: "#2B333B",
+                                  fontWeight: "regular"
+                              },
+                          }}
+                      >
+                          <Box component="span" fontWeight="bold">
+                              {boldText}
+                          </Box>
+                          {restText}
+                      </ListItemText>
+                  </ListItem>
+              );
+          })}
+      </List>
     } else if (table) {
         const {thead, tbody} = table
         return (

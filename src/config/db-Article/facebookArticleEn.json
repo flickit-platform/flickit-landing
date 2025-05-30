@@ -146,7 +146,7 @@
       },
       {"p":  "After proving that a 75 % reduction was plausible, engineers divided the remaining work into four quarters:"},
       {
-        "ul": [
+        "ulBold": [
           {
             "li": "Quarter 1:  Build the new client core, including unified SQLite schema and data observers."
           },
@@ -166,7 +166,7 @@
       },
       {"title":  "Migration Nightmares—and How They Were Avoided"},
       {
-        "ul": [
+        "ulBold": [
           {
             "li": "Dual-write consistency: For months both codebases coexisted. Messages had to appear in either version seamlessly. Engineers built dual-write shims at the database layer so writes landed in both schemas until cut-over day."
           },
@@ -226,7 +226,7 @@
       {"pb": "Qualitatively, users reported snappier chats, faster attachment previews, and fewer “scroll-jank” moments. Perhaps most important, developers noticed build times plummet and pull requests shrink—a cultural win that predicts future velocity."},
       {"title":  "Lessons for Any Engineering Team Facing Technical Debt"},
       {
-        "ul": [
+        "ulBold": [
           {
             "li": "Instrument everything. You cannot fix what you cannot measure. Cold-start graphs made the business case undeniable."
           },

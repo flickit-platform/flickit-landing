@@ -5,7 +5,7 @@ import "@/config/i18n";
 import Box from "@mui/material/Box";
 import { facebookFA , facebookEN } from "@/config/db-Article";
 import i18n from "i18next";
-import {pageMaker} from "@/utils/pageMaker";
+import {blogMaker} from "@/utils/blogMaker";
 
 const Article = () => {
 
@@ -20,13 +20,13 @@ const Article = () => {
             {articles.content.map(item => {
                 const {topTitle, mainTitle, subTitle, infoBox, image} = item
                 const listOfItems = {topTitle, mainTitle, subTitle, infoBox, image}
-                return pageMaker(listOfItems)
+                return blogMaker(listOfItems)
             })}
-            <Box sx={{ px: {xs: 1, sm : 3, md: 13}, mb: "40px"}}>
+            <Box sx={{ px: {xs: 1, sm : 3, md: 13}, mb: "40px",fontWeight: "regular"}}>
                 {articles.content.map(item => {
-                 const {title, p, ul, table, pb} = item
-                 const listOfItems = {title, p, ul, table, pb}
-                 return pageMaker(listOfItems)
+                 const {title, p, ul, table, pb, ulBold} = item
+                 const listOfItems = {title, p, ul, table, pb, ulBold}
+                 return blogMaker(listOfItems)
                 })}
             </Box>
         </Box>

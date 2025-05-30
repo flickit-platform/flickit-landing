@@ -336,13 +336,6 @@ export const theme = createTheme({
     },
   },
   components: {
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          textTransform: "none",
-        },
-      },
-    },
     MuiCssBaseline: {
       styleOverrides: `
         html {
@@ -377,6 +370,13 @@ export const theme = createTheme({
         scrollbar-color: #888 #f0f0f0;
 
       `,
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: "none",
+        },
+      },
     },
   },
 });

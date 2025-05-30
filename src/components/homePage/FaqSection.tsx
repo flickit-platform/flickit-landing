@@ -41,7 +41,7 @@ const FaqSection = () => {
         textAlign="center"
         sx={{ mb: { xs: 0, md: 10 }, fontWeight: 700 }}
       >
-        People usually ask about
+        <Trans i18nKey="main.faq" />
       </Typography>
 
       {faqs.map((item, idx) => (
@@ -63,7 +63,7 @@ const FaqSection = () => {
             alt=""
             sx={{
               width: { xs: 140, md: "unset" },
-              maxWidth: { xs: 140, md: 250},
+              maxWidth: { xs: 140, md: 250 },
               mb: { xs: 2, md: 0 },
             }}
             color="#2B333B"

@@ -6,6 +6,7 @@
   "whatCanYouAssessWith": "What can you assess with <style>{{app}}</style>?",
   "whatMakesDifferent": "What makes <style>{{app}}</style> different?",
   "howItWorks": "How <style>it</style> works?",
+  "faq": "People usually ask about",
   "pin1Title": "1. Kit selection",
   "pin1Desc": "Pick the assessment kit that matches your goals.",
   "pin2Title": "2. Answering question",

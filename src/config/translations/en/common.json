@@ -8,5 +8,8 @@
   "yourEmail": "Your Email",
   "yourMessage": "Your Message",
   "confirm": "Confirm",
-  "cancel": "Cancel"
+  "cancel": "Cancel",
+  "joinTheWaitlist": "Join the waitlist",
+  "waitlistDec": "This kit is currently in development and will be publicly available soon. If you'd like to be notified when it's released, feel free to leave your email and we'll let you know.",
+  "joinWaitlist": "Join waitlist"
 }

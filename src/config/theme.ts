@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { createTheme } from "@mui/material/styles";
 import { farsiFontFamily, primaryFontFamily } from "@/utils/fonts";
@@ -139,7 +139,8 @@ const palette = {
   },
   warning: { main: "#CC7400", contrastText: "#fff", light: "#F4E7D7" },
 };
-export const is_farsi = i18next.language === "fa"
+
+export const is_farsi = typeof window !== "undefined" && localStorage.lang === "fa";
 
 export const theme = createTheme({
   direction: is_farsi ? "rtl" : "ltr",
@@ -335,6 +336,41 @@ export const theme = createTheme({
     },
   },
   components: {
+    MuiCssBaseline: {
+      styleOverrides: `
+        html {
+          scroll-behavior: smooth;
+          font-display: swap;
+        }
+        body {
+          background: #EDEFF1;
+          direction:${is_farsi ? "rtl" : "ltr"};
+        }
+        ::-webkit-scrollbar {
+          width: 15px;
+          height: 12px; 
+        }
+
+        ::-webkit-scrollbar-track {
+          background: #f0f0f0;
+        }
+
+        ::-webkit-scrollbar-thumb {
+          background-color: rgba(136, 136, 136, 0.58); 
+          border-radius: 6px; 
+          border: 3px solid #f0f0f0;
+          min-height: 100px
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+          background-color: #555;
+        }
+
+        scrollbar-width: thin; 
+        scrollbar-color: #888 #f0f0f0;
+
+      `,
+    },
     MuiButton: {
       styleOverrides: {
         root: {

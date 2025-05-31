@@ -1,6 +1,5 @@
 {
-  "questionsAskedAnswers": "Questions Asked Answers Delivered Progress Made",
-  "topBannerDesc": "With Flickit's structured self-assessments, discover strengths, detect risks early, and guide your growth — all from one clear dashboard.",
-  "startSelfAssessment": "Start Your Free Self-Assessment",
-  "createAssessment": "Create assessment"
+  "topBannerTitle": "Let's change this!!",
+  "topBannerDesc": "Flickit is an intelligent assessment platform for software products and teams. With ready-made kits and AI-powered analysis, you can quickly obtain a detailed report on your technical strengths and weaknesses—and start improving right away.",
+  "startSelfAssessment": "Start your free self-assessment"
 }

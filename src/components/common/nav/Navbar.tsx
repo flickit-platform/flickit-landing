@@ -1,16 +1,16 @@
-"use client";;
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import {Trans} from "react-i18next";
+"use client";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import { Trans } from "react-i18next";
 import { Button } from "@mui/material";
-import {is_farsi, theme} from "@/config/theme";
+import { is_farsi, theme } from "@/config/theme";
 import Link from "next/link";
 import useDialog from "@/utils/useDialog";
 import ContactUsDialog from "@/components/common/ContactUs/ContactUs";
 import LanguageSelector from "@/components/common/languageSelector";
-import {styles} from "@/config/styles";
-import {farsiFontFamily, primaryFontFamily} from "@/utils/fonts";
-import useScreenResize from '@/utils/useScreenResize';
+import { styles } from "@/config/styles";
+import { farsiFontFamily, primaryFontFamily } from "@/utils/fonts";
+import useScreenResize from "@/utils/useScreenResize";
 
 export default function Navbar() {
     const dialogProps = useDialog();

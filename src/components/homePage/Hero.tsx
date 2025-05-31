@@ -20,7 +20,7 @@ const HeroSection = () => {
           alignItems: "center",
           backgroundImage: {
             xs: "url(/flickit-hero-bg-m.svg)",
-            sm: "url(/flickit-hero-bg-d.svg)",
+            sm: "url(/hero.svg)",
           },
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat !important",
@@ -48,7 +48,7 @@ const HeroSection = () => {
               pt: { xs: "45px", sm: "77px" },
             }}
           >
-            <Trans i18nKey={"hero.questionsAskedAnswers"} />
+            <Trans i18nKey={"hero.topBannerTitle"} />
           </Typography>
 
           <Typography
@@ -77,23 +77,12 @@ const HeroSection = () => {
               mt: { xs: "39px", sm: "27px" },
               mb: { xs: "169px", xl: "175px" },
               boxShadow: "0 1px 5px 0 #0000001F",
+              ...theme.typography.titleMedium,
+              color: theme.palette.primary.main,
             }}
             size="large"
           >
-            <Typography
-              sx={{
-                ...theme.typography.semiBoldXLarge,
-                whiteSpace: "nowrap",
-                fontWeight: 400,
-                textTransform: "uppercase",
-                [theme.breakpoints.down("sm")]: {
-                  ...theme.typography.semiBoldMedium,
-                },
-                color: "#2466A8",
-              }}
-            >
-              <Trans i18nKey={"hero.startSelfAssessment"} />
-            </Typography>
+            <Trans i18nKey={"hero.startSelfAssessment"} />
           </Button>
         </Box>
       </Box>

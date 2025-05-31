@@ -7,7 +7,7 @@ import { Trans } from "react-i18next";
 const cardsData = [
   {
     id: "384",
-    imageUrl: "goal.svg",
+    imageUrl: "/speed.svg",
     chipLabelKey: "main.kit.softwarePerformance.chipLabel",
     titleKey: "main.kit.softwarePerformance.title",
     descKey: "main.kit.softwarePerformance.desc",

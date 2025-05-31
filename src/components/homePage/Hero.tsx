@@ -19,8 +19,8 @@ const HeroSection = () => {
           justifyContent: "center",
           alignItems: "center",
           backgroundImage: {
-            xs: "url(/flickit-hero-bg-m.svg)",
-            sm: "url(/hero.svg)",
+            xs: "url(/hero-m.svg)",
+            sm: "url(/hero-d.svg)",
           },
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat !important",

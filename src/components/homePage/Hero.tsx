@@ -8,12 +8,12 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <Box sx={{ display: "flex", height: "auto", mb: "25px" }}>
-      <Box sx={{ height: "auto", flex: 1, bgcolor: "#1B4D7E" }} />
+    <Box sx={{ display: "flex", height: "auto", mb: "25px", justifyContent: "center", pt: "44px"}}>
+      <Box sx={{ height: "auto", flex: 1, bgcolor: theme.direction == "rtl" ? "#D5E5F6" : "#1B4D7E" }} />
       <Box
         sx={{
           width: "100%",
-          maxWidth: "1534px",
+          maxWidth: "1440px",
           height: "auto",
           display: "flex",
           justifyContent: "center",
@@ -86,7 +86,7 @@ const HeroSection = () => {
           </Button>
         </Box>
       </Box>
-      <Box sx={{ height: "auto", flex: 1, bgcolor: "#D5E5F6" }} />
+      <Box sx={{ height: "auto", flex: 1, bgcolor: theme.direction == "rtl" ? "#1B4D7E" : "#D5E5F6" }} />
     </Box>
   );
 };

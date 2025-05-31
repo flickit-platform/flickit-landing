@@ -1,7 +1,7 @@
 import React from "react";
-import { Box, Typography, Chip, Button } from "@mui/material";
-import { Trans } from "react-i18next";
-import { theme } from "@/config/theme";
+import {Box, Typography, Chip, Button, Tooltip} from "@mui/material";
+import {Trans} from "react-i18next";
+import {theme} from "@/config/theme";
 import Link from "next/link";
 import { styles } from "@/config/styles";
 
@@ -191,23 +191,43 @@ const ResponsiveCard = ({
           />
         )}
 
-        <Typography variant="labelSmall" color="#97A6B8" mb={0.5}>
-          <Trans i18nKey="main.globalCaseStudy" />
-        </Typography>
-        <Typography
-          variant="semiBoldMedium"
-          color="#2466A8"
-          textAlign="center"
-          sx={{ mb: 2 }}
-        >
-          <Trans i18nKey={caseStudyDescKey} />
-        </Typography>
-        {/* <Button variant="outlined" size="small">
-          <Trans i18nKey="main.learnMore" />
-        </Button> */}
-      </Box>
-    </Box>
-  );
+                <Typography variant="labelSmall" color="#97A6B8" mb={0.5}>
+                    <Trans i18nKey="main.globalCaseStudy"/>
+                </Typography>
+                <Tooltip title={caseStudyDescKey}>
+                    <Box
+                        sx={{
+                            textOverflow: "ellipsis",
+                            width: "100%",
+                            height: "120px",
+                        }}
+                    >
+                        <Typography
+                            variant="semiBoldMedium"
+                            color="#2466A8"
+                            textAlign="center"
+                            sx={{
+                                overflow: "hidden",
+                                mb: 2,
+                                whiteSpace: "pre-wrap",
+                                display: "-webkit-box",
+                                WebkitLineClamp: 2,
+                                WebkitBoxOrient: "vertical",
+                            }}
+                        >
+                            <Trans i18nKey={caseStudyDescKey} />
+                        </Typography>
+                    </Box>
+                </Tooltip>
+                <Button
+                    component={Link}
+                    href={`/blog/${id}`}
+                    variant="outlined" size="small">
+                    <Trans i18nKey="learnMore"/>
+                </Button>
+            </Box>
+        </Box>
+    );
 };
 
 export default ResponsiveCard;

@@ -25,7 +25,7 @@ const Customers = () => {
                 mx: "auto",
                 maxWidth: "1440px",
                 px: {xs: "24px", md: "114px"},
-                py: "24px",
+                py: {xs: "24px", md: "38px"},
                 gap: {xs: "34px", md: "80px"}
             }}>
                 <Typography
@@ -39,7 +39,7 @@ const Customers = () => {
                 >
                     <Trans i18nKey={"common.TrustedCustomers"}/>
                 </Typography>
-                <Box sx={{...styles.centerVH, gap: "24px"}}>
+                <Box sx={{...styles.centerVH, gap: {xs: "15px", sm: "24px"}}}>
                     {customers.map((img, index) => {
                         return (
                             <Box
@@ -47,8 +47,10 @@ const Customers = () => {
                                     cursor: "pointer",
                                     transition: "transform 0.3s ease-in-out",
                                     transform: hoveredIndex === index ? "scale(1.05)" : "scale(1)",
-                                    height: {xs: "40px", md: "80px"},
-                                    width: {xs: "40px", md: "80px"}
+                                    height: {xs: "auto", md: "80px"},
+                                    width: {xs: "auto", md: "80px"},
+                                    minWidth: "40px",
+                                    minHeight: "40px"
                                 }}>
                                 <img
                                     onMouseEnter={() => setHoveredIndex(index)}

@@ -8,15 +8,9 @@ import i18n from "i18next";
 import {blogMaker} from "@/utils/blogMaker";
 import {useParams} from "next/navigation";
 
-interface IArticle {
-    id: string,
-    lang: string,
-    content: []
-}
-
 const Article = () => {
     const {id} = useParams()
-    const [article, setArticle] = useState<IArticle>({id: "", lang: "", content: []})
+    const [article, setArticle] = useState<any>({})
     const currentLang = useMemo(()=>{
         return i18n.language;
     },[i18n.language])
@@ -31,13 +25,13 @@ const Article = () => {
 
     return (
         <Box sx={{maxWidth: "824px", margin: "auto", mt: "80px", px: {xs: 1, sm : 3, md: 13}, }}>
-            {article?.content.map(item => {
+            {article?.content.map((item: any) => {
                 const {topTitle, mainTitle, subTitle, infoBox, image} = item
                 const listOfItems = {topTitle, mainTitle, subTitle, infoBox, image}
                 return blogMaker(listOfItems)
             })}
             <Box sx={{ px: {xs: 1, sm : 3, md: 13}, mb: "40px",fontWeight: "regular"}}>
-                {article?.content.map(item => {
+                {article?.content.map((item: any) => {
                  const {title, p, ul, table, pb, ulBold} = item
                  const listOfItems = {title, p, ul, table, pb, ulBold}
                  return blogMaker(listOfItems)

@@ -13,6 +13,8 @@ interface Props {
   caseStudyDescKey: string;
   caseStudyLogo: string;
   id: string;
+  waitList?: boolean
+  dialogProps?: any
 }
 
 const IMAGE_HEIGHT = 160;
@@ -26,6 +28,8 @@ const ResponsiveCard = ({
   caseStudyDescKey,
   caseStudyLogo,
   id,
+  waitList,
+  dialogProps
 }: Props) => {
   return (
     <Box
@@ -113,39 +117,57 @@ const ResponsiveCard = ({
             <Trans i18nKey={descKey} />
           </Typography>
         </Box>
-        <Box
-          sx={{
-            width: "100%",
-            mt: "auto",
-            display: "flex",
-            flexDirection: "column",
-            gap: 1,
-          }}
-        >
-          <Button
-            variant="outlined"
-            fullWidth
-            component={Link}
-            href={"https://app.flickit.org/assessment-kits/" + id}
+          {!waitList && <Box
+              sx={{
+                  width: "100%",
+                  mt: "auto",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 1,
+              }}
           >
-            <Trans i18nKey="main.moreAboutThisKit" />
-          </Button>
-          <Button
-            variant="contained"
-            fullWidth
-            component={Link}
-            href={
-              "https://stage.flickit.org/assessment-kits/" +
-              id +
-              `#createAssessment?id=${id}&title=${encodeURIComponent(
-                // ترجمه عنوان برای URL لازم نیست
-                ""
-              )}`
-            }
+              <Button
+                  variant="outlined"
+                  fullWidth
+                  component={Link}
+                  href={"https://app.flickit.org/assessment-kits/" + id}
+              >
+                  <Trans i18nKey="main.moreAboutThisKit" />
+              </Button>
+              <Button
+                  variant="contained"
+                  fullWidth
+                  component={Link}
+                  href={
+                      "https://stage.flickit.org/assessment-kits/" +
+                      id +
+                      `#createAssessment?id=${id}&title=${encodeURIComponent(
+                          // ترجمه عنوان برای URL لازم نیست
+                          ""
+                      )}`
+                  }
+              >
+                  <Trans i18nKey="main.createAssessment" />
+              </Button>
+          </Box> }
+          {waitList && <Box
+              sx={{
+                  width: "100%",
+                  mt: "auto",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 1,
+              }}
           >
-            <Trans i18nKey="main.createAssessment" />
-          </Button>
-        </Box>
+              <Button
+                  variant="contained"
+                  fullWidth
+                  onClick={() => dialogProps.openDialog({ open: true })}
+              >
+                  <Trans i18nKey="main.joinTheWaitlist" />
+              </Button>
+          </Box>}
+
         <Box
           sx={{
             position: "absolute",

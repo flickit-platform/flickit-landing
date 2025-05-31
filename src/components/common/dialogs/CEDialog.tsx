@@ -20,6 +20,7 @@ interface ICEDialogProps extends Omit<DialogProps, "title"> {
   style?: any;
   titleStyle?: any;
   contentStyle?: any;
+  icon?: any;
 }
 type TDialogContextType = "update" | "create" | "convert";
 export const CEDialog = (props: PropsWithChildren<ICEDialogProps>) => {
@@ -30,6 +31,7 @@ export const CEDialog = (props: PropsWithChildren<ICEDialogProps>) => {
     style,
     titleStyle,
     contentStyle,
+    icon,
     ...rest
   } = props;
   const fullScreen = useScreenResize("sm");
@@ -45,15 +47,16 @@ export const CEDialog = (props: PropsWithChildren<ICEDialogProps>) => {
     >
       {title && (
         <DialogTitle
-          textTransform={"uppercase"}
           sx={{
             ...styles.centerV,
+            gap: "6px",
             ...titleStyle,
             bgcolor: theme.palette.primary.main,
             color: "#fff",
           }}
         >
-          {title}
+         {icon && icon}
+         {title}
         </DialogTitle>
       )}
       <DialogContent
@@ -133,7 +136,7 @@ export const CEDialogActions = (props: ICEDialogActionsProps) => {
       }}
     >
       {contactSection?.length && (
-        <Box sx={{ display: "flex", alignItems: "center", mr: "auto", gap: 2 }}>
+        <Box sx={{ display: "flex", alignItems: "center", marginInlineEnd: "auto", gap: 2 }}>
           <Typography
             sx={{
               ...theme.typography.semiBoldLarge,

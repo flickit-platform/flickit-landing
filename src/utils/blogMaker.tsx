@@ -46,10 +46,11 @@ const typeRenderMap: Record<string, (value: any) => JSX.Element> = {
     ul: (value) => (
         <List disablePadding sx={{listStyleType: 'disc', paddingInlineStart: 3, mb: 2}}>
             {value.map((itemText: any, i: number) => (
-                <ListItem key={i} sx={{display: 'list-item'}} disablePadding>
+                <ListItem key={i} sx={{display: 'list-item', textAlign: "justify"}} disablePadding>
                     <ListItemText primaryTypographyProps={{
                         sx: {
-                            all: "unset", ...theme.typography.semiBoldMedium,
+                            all: "unset",
+                            ...theme.typography.semiBoldMedium,
                             color: "#2B333B"
                         }
                     }}>{itemText.li}</ListItemText>
@@ -104,7 +105,7 @@ const typeRenderMap: Record<string, (value: any) => JSX.Element> = {
                     <TableHead>
                         <TableRow>
                             {thead.map((head: any, index: number) => (
-                                <TableCell key={index} align={index === 0 ? "left" : "right"}>
+                                <TableCell key={index} sx={{textAlign: "justify"}} >
                                     <strong>{head}</strong>
                                 </TableCell>
                             ))}
@@ -114,7 +115,7 @@ const typeRenderMap: Record<string, (value: any) => JSX.Element> = {
                         {tbody.map((row: any, rowIndex: number) => (
                             <TableRow key={rowIndex}>
                                 {row.map((cell: any, cellIndex: number) => (
-                                    <TableCell key={cellIndex} align={cellIndex === 0 ? "left" : "right"}>
+                                    <TableCell key={cellIndex} sx={{textAlign: "justify"}}>
                                         {cell}
                                     </TableCell>
                                 ))}

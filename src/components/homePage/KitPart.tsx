@@ -249,13 +249,8 @@ const ResponsiveCard = ({
           variant="outlined"
           size="small"
         >
-<<<<<<< HEAD
-          <Trans i18nKey={caseStudyDescKey} />
-        </Typography>
-=======
           <Trans i18nKey="main.learnMore" />
         </Button>
->>>>>>> main
       </Box>
       <WaitingListDialog
         {...dialogProps}

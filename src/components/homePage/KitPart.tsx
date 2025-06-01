@@ -37,6 +37,30 @@ const ResponsiveCard = ({
         flexDirection: "column",
       }}
     >
+        <Box
+            sx={{
+            position: "absolute",
+            top:"-30px",
+            right: 0,
+            width: {xs: "45px", sm: "65px"},
+            height: "auto",
+            zIndex: 2,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
+        }}>
+            <Box
+                component={"img"}
+                src={"/notice.svg"}
+            />
+            <Typography sx={{
+                ...theme.typography.labelLarge,
+                color: theme.palette.secondary.main,
+                position: "absolute"
+            }}>
+                <Trans i18nKey={"common.free"} />
+            </Typography>
+        </Box>
       <Box
         sx={{
           position: "relative",

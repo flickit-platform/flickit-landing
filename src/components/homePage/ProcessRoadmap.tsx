@@ -124,10 +124,7 @@ const PinLabel = ({ pin, variant = "headlineMedium" }: PinLabelProps) => (
   <Box
     sx={{
       width: "100%",
-      maxWidth: 356,
-      mx: "auto",
       my: 2,
-      px: 2,
       textAlign: "center",
       ...styles.centerCH,
       gap: 1,

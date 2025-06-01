@@ -157,7 +157,7 @@ const RoadmapImageWithPins = ({
     sx={{
       position: "relative",
       width: "100%",
-      maxWidth: isMobile ? "unset" : 1440,
+      maxWidth: isMobile ? 470 : 1440,
       aspectRatio: isMobile ? "442/717" : "1440/831",
       mx: "auto",
       my: isMobile ? 2 : 0,
@@ -231,7 +231,7 @@ const RoadmapImageWithPins = ({
 );
 
 const ProcessRoadmap: React.FC = () => {
-  const isMobile = useScreenResize("sm");
+  const isMobile = useScreenResize("md");
   const streetImg = isMobile ? "/mobile-street.svg" : "/street.svg";
 
   return (

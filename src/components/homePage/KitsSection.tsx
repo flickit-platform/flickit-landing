@@ -1,4 +1,3 @@
-import React from "react";
 import Kit from "./KitPart";
 import { Box, Grid, Typography } from "@mui/material";
 import { styles } from "@/config/styles";
@@ -40,6 +39,7 @@ const cardsData = [
     descKey: "main.kit.vendorEvaluation.desc",
     caseStudyDescKey: "main.kit.vendorEvaluation.caseStudyDesc",
     caseStudyLogo: "fujistu.jpeg",
+    waitList: true,
   },
 ];
 

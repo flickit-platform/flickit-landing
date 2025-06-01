@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { createTheme } from "@mui/material/styles";
 import { farsiFontFamily, primaryFontFamily } from "@/utils/fonts";
@@ -140,7 +140,8 @@ const palette = {
   warning: { main: "#CC7400", contrastText: "#fff", light: "#F4E7D7" },
 };
 
-export const is_farsi = typeof window !== "undefined" && localStorage.lang === "fa";
+export const is_farsi =
+  typeof window !== "undefined" && localStorage.lang === "fa";
 
 export const theme = createTheme({
   direction: is_farsi ? "rtl" : "ltr",
@@ -375,6 +376,217 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           textTransform: "none",
+        },
+      },
+    },
+    MuiDialogTitle: {
+      defaultProps: {
+        bgcolor: palette.primary.main,
+        color: palette.primary.contrastText,
+        fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+        marginBottom: "8px",
+      },
+    },
+    MuiDialogActions: {
+      styleOverrides: {
+        root: {
+          "& > :not(:first-of-type)": {
+            marginLeft: is_farsi ? "-24px" : "8px",
+          },
+        },
+      },
+    },
+    MuiButtonGroup: {
+      defaultProps: {
+        color: "primary",
+      },
+    },
+    MuiTypography: {
+      defaultProps: {
+        variantMapping: {
+          subSmall: "h6",
+          subMedium: "h6",
+          subLarge: "h6",
+        },
+      },
+    },
+    MuiTabs: {
+      styleOverrides: {
+        root: {
+          borderRadius: "0px",
+          overflow: "auto",
+          padding: "0px 8px",
+          borderBottom: "1px solid #d3d3d3",
+        },
+        indicator: {
+          backgroundColor: palette.secondary.main,
+          borderRadius: 1,
+        },
+      },
+    },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          minHeight: "40px",
+          transition: "background-color .1s ease, color .1s ease",
+          color: "rgba(0, 0, 0, 0.6)", // Default text color
+          "&.Mui-selected": {
+            color: palette.secondary.main,
+            fontWeight: "bold",
+          },
+          "&.MuiTabs-indicator": {
+            backgroundColor: "#2466A8",
+          },
+        },
+      },
+    },
+
+    MuiFormLabel: {
+      styleOverrides: {
+        root: {
+          "&.MuiInputLabel-root": {
+            textAlign: "right",
+            left: !is_farsi ? "unset" : "0",
+            right: is_farsi ? "0" : "unset",
+            transform: !is_farsi
+              ? "translate(16px, 9px) scale(1)"
+              : "translate(-6px, 9px) scale(1)",
+            "&.Mui-focused, &.MuiInputLabel-shrink": {
+              transform: !is_farsi
+                ? "translate(12px, -9px) scale(0.71)"
+                : "translate(-12px, -9px) scale(0.71)",
+              transformOrigin: !is_farsi ? "top left" : "top right",
+            },
+            maxWidth: "fit-content",
+          },
+        },
+      },
+    },
+    MuiChip: {
+      styleOverrides: {
+        root: {
+          ".MuiChip-label": {
+            unicodeBidi: "plaintext",
+          },
+          ".MuiChip-deleteIcon": {
+            marginLeft: is_farsi ? "4px" : "-4px",
+            marginRight: is_farsi ? "-4px" : "4px",
+          },
+          ".MuiChip-icon": {
+            marginLeft: is_farsi ? "-10px" : "0",
+            marginRight: is_farsi ? "0" : "-10px",
+          },
+        },
+      },
+    },
+
+    MuiFormHelperText: {
+      styleOverrides: {
+        root: {
+          textAlign: is_farsi ? "right" : "left",
+        },
+      },
+    },
+
+    MuiOutlinedInput: {
+      styleOverrides: {
+        notchedOutline: {
+          textAlign: is_farsi ? "right" : "left",
+          left: 0,
+          right: 0,
+        },
+      },
+    },
+
+    MuiInputAdornment: {
+      styleOverrides: {
+        root: {
+          marginRight: is_farsi ? "8px" : "unset",
+          marginLeft: is_farsi ? "unset" : "8px",
+        },
+      },
+    },
+    MuiTableCell: {
+      styleOverrides: {
+        root: {
+          textAlign: is_farsi ? "right" : "left",
+        },
+      },
+    },
+    MuiCardHeader: {
+      styleOverrides: {
+        avatar: {
+          marginRight: !is_farsi ? "16px" : "unset",
+          marginLeft: is_farsi ? "16px" : "unset",
+        },
+      },
+    },
+    MuiAlert: {
+      styleOverrides: {
+        action: {
+          marginLeft: !is_farsi ? "auto" : "-8px",
+          marginRight: is_farsi ? "auto" : "-8px",
+        },
+      },
+    },
+    MuiListItemText: {
+      styleOverrides: {
+        root: {
+          textAlign: is_farsi ? "right" : "left",
+        },
+      },
+    },
+    MuiTooltip: {
+      styleOverrides: {
+        tooltip: {
+          color: "#FFFFFF",
+          backgroundColor: "#576675E6",
+        },
+      },
+    },
+    MuiAutocomplete: {
+      styleOverrides: {
+        inputRoot: {
+          paddingRight: !is_farsi ? "42px !important" : "8px !important",
+          paddingLeft: is_farsi ? "42px !important" : "8px !important",
+        },
+      },
+    },
+    MuiFormControlLabel: {
+      styleOverrides: {
+        root: {
+          marginLeft: "-10px",
+          marginRight: "-10px",
+        },
+      },
+    },
+    MuiSelect: {
+      styleOverrides: {
+        icon: {
+          right: !is_farsi ? "7px" : "unset",
+          left: is_farsi ? "7px" : "unset",
+        },
+        select: {
+          paddingLeft: is_farsi ? "32px" : "16px",
+          paddingRight: !is_farsi ? "32px !important" : "16px !important",
+        },
+      },
+    },
+    MuiInputBase: {
+      styleOverrides: {
+        input: {
+          fontSize: "16px",
+        },
+        root: {
+          fontSize: "16px",
+        },
+      },
+    },
+    //@ts-expect-error
+    MuiTabPanel: {
+      styleOverrides: {
+        root: {
+          padding: "4px 2px",
         },
       },
     },

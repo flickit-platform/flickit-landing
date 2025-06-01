@@ -9,5 +9,10 @@
   "yourMessage": "Your Message",
   "confirm": "Confirm",
   "cancel": "Cancel",
-  "TrustedCustomers": "Trusted by amazing teams and leaders"
+  "joinTheWaitlist": "Join the waitlist",
+  "waitlistDec": "This kit is currently in development and will be publicly available soon. If you'd like to be notified when it's released, feel free to leave your email and we'll let you know.",
+  "joinWaitlist": "Join waitlist",
+  "TrustedCustomers": "Trusted by amazing teams and leaders",
+  "requiredFieldError": "This field is required.",
+  "invalidEmail": "Please enter a valid email address."
 }

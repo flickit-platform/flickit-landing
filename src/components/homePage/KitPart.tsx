@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Chip, Button } from "@mui/material";
+import { Box, Typography, Chip, Button, Tooltip } from "@mui/material";
 import { Trans } from "react-i18next";
 import { theme } from "@/config/theme";
 import Link from "next/link";
@@ -218,14 +218,44 @@ const ResponsiveCard = ({
         <Typography variant="labelSmall" color="#97A6B8" mb={0.5}>
           <Trans i18nKey="main.globalCaseStudy" />
         </Typography>
-        <Typography
-          variant="semiBoldMedium"
-          color="#2466A8"
-          textAlign="center"
-          sx={{ mb: 2 }}
+        <Box
+          sx={{
+            textOverflow: "ellipsis",
+            width: "100%",
+            height: "120px",
+          }}
         >
+          <Typography
+            variant="semiBoldMedium"
+            color="#2466A8"
+            textAlign="center"
+            sx={{
+              overflow: "hidden",
+              mb: 2,
+              whiteSpace: "pre-wrap",
+              display: "-webkit-box",
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: "vertical",
+            }}
+          >
+            <Trans i18nKey={caseStudyDescKey} />
+          </Typography>
+        </Box>
+        <Button
+          target="_blank"
+          disabled={id !== "386"}
+          component={Link}
+          href={`/blog/${id}`}
+          variant="outlined"
+          size="small"
+        >
+<<<<<<< HEAD
           <Trans i18nKey={caseStudyDescKey} />
         </Typography>
+=======
+          <Trans i18nKey="main.learnMore" />
+        </Button>
+>>>>>>> main
       </Box>
       <WaitingListDialog
         {...dialogProps}

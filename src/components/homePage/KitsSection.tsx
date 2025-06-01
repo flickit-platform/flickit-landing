@@ -3,7 +3,7 @@ import Kit from "./KitPart";
 import { Box, Grid, Typography } from "@mui/material";
 import { styles } from "@/config/styles";
 import { Trans } from "react-i18next";
-import WaitingListDialog from "@/components/common/waitingListDialog/waitingListDialog";
+import WaitingListDialog from "@/components/common/dialogs/WaitingListDialog";
 import useDialog from "@/utils/useDialog";
 
 const cardsData = [

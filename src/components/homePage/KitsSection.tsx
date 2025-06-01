@@ -34,7 +34,7 @@ const cardsData = [
   },
   {
     id: "385",
-    imageUrl: "checklist.svg",
+    imageUrl: "ai-kit.svg",
     chipLabelKey: "main.kit.vendorEvaluation.chipLabel",
     titleKey: "main.kit.vendorEvaluation.title",
     descKey: "main.kit.vendorEvaluation.desc",

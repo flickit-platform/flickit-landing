@@ -62,27 +62,27 @@
   "kit": {
     "softwarePerformance": {
       "chipLabel": "Software performance evaluation kit",
-      "title": "Ensure Your Product's Readiness for Scaling with this assessment kit",
+      "title": "Ensure your product's readiness for scaling with this assessment kit",
       "desc": "Make sure your product is ready to scale with Software Performance Evaluation. Assess its ability to handle growth and avoid technical or business setbacks before scaling.",
       "caseStudyDesc": "Amazon: How Latency Optimization Boosted Revenue"
     },
     "toolMaturity": {
       "chipLabel": "Tool maturity",
-      "title": "How Tool Maturity Enhances Both Speed and Quality",
+      "title": "How Tool Maturity enhances both speed and quality",
       "desc": "Users don't wait. This kit checks the health of your software performance (Latency, Throughput, Resource Use) and fixes bottlenecks before they become a problem during high-demand periods.",
-      "caseStudyDesc": "How Etsy Accelerated Deployment up to fifty deploy per day with DevOps Automation?"
+      "caseStudyDesc": "How Etsy Accelerated Deployment up to 50 deploy per day with DevOps Automation?"
     },
     "internalAudit": {
       "chipLabel": "Internal Audit Kit",
-      "title": "Ensuring Long-Term Viability and Sustainability of Software",
-      "desc": "Having features isn’t enough. We need to ensure that the cost of maintaining, fixing bugs, and dealing with technical debt won’t hurt the software’s long-term sustainability. This kit examines the economic and technical health of your product.",
+      "title": "Ensuring long-term viability and sustainability of software",
+      "desc": "Features alone aren’t enough — this kit helps you assess the technical and economic health of your product to ensure long-term sustainability.",
       "caseStudyDesc": "Facebook Messenger: How Technical Debt Was Eliminated for Faster Performance"
     },
     "vendorEvaluation": {
       "chipLabel": "Vendor Evaluation Kit",
-      "title": "Assessing Vendor Performance and Ensuring High-Quality Deliverables",
-      "desc": "If the output from your vendors isn’t up to standard, the organization may pay the price for years to come. This kit checks the quality, security, and scalability of vendor deliveries.",
-      "caseStudyDesc": "Fujitsu's Failure: How Poor Vendor Control Led to a Billion-Dollar Disaster"
+      "title": "Assessing AI integration for product development",
+      "desc": "Evaluate how effectively AI is being used across your product development lifecycle. This kit helps you identify gaps, reduce risks, and unlock opportunities for smarter, faster innovation.",
+      "caseStudyDesc": ""
     }
   }
 }

@@ -1,10 +1,7 @@
-import React from "react";
 import Kit from "./KitPart";
 import { Box, Grid, Typography } from "@mui/material";
 import { styles } from "@/config/styles";
 import { Trans } from "react-i18next";
-import WaitingListDialog from "@/components/common/dialogs/WaitingListDialog";
-import useDialog from "@/utils/useDialog";
 
 const cardsData = [
   {
@@ -47,7 +44,6 @@ const cardsData = [
 ];
 
 const Kits = () => {
-  const dialogProps = useDialog();
   return (
     <Box sx={{ ...styles.centerCVH }} gap={15} px={{ xs: 2, md: 6, xxl: 30 }}>
       <Typography variant="headlineLarge" textAlign="center">
@@ -71,11 +67,10 @@ const Kits = () => {
             size={{ xs: 2, sm: 4, md: 3 }}
             sx={{ display: "flex" }}
           >
-            <Kit {...item} dialogProps={dialogProps} />
+            <Kit {...item} />
           </Grid>
         ))}
       </Grid>
-      <WaitingListDialog {...dialogProps} />
     </Box>
   );
 };

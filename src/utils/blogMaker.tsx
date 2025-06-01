@@ -16,7 +16,7 @@ const typeRenderMap: Record<string, (value: any) => JSX.Element> = {
         <Typography sx={{...theme.typography.semiBoldXLarge, color: "#000", mb: 1}}>{value}</Typography>
     ),
     p: (value) => (
-        <Typography sx={{...theme.typography.semiBoldMedium, color: "#2B333B", mb: 2, fontWeight: "regular"}}>{value}</Typography>
+        <Typography sx={{...theme.typography.semiBoldMedium, color: "#2B333B", mb: 2, fontWeight: "regular", textAlign: "justify"}}>{value}</Typography>
     ),
     topTitle: (value) => (
         <Typography sx={{...theme.typography.semiBoldXLarge, color: theme.palette.primary.main}}>
@@ -51,7 +51,8 @@ const typeRenderMap: Record<string, (value: any) => JSX.Element> = {
                         sx: {
                             all: "unset",
                             ...theme.typography.semiBoldMedium,
-                            color: "#2B333B"
+                            color: "#2B333B",
+                            textAlign: "justify"
                         }
                     }}>{itemText.li}</ListItemText>
                 </ListItem>
@@ -85,7 +86,8 @@ const typeRenderMap: Record<string, (value: any) => JSX.Element> = {
                                     all: "unset",
                                     ...theme.typography.semiBoldMedium,
                                     color: "#2B333B",
-                                    fontWeight: "regular"
+                                    fontWeight: "regular",
+                                    textAlign: "justify"
                                 },
                             }}
                         >
@@ -128,7 +130,7 @@ const typeRenderMap: Record<string, (value: any) => JSX.Element> = {
     },
     pBold: (value) => (
         <Typography
-            sx={{...theme.typography.semiBoldMedium, color: "#2B333B", mb: 2, fontWeight: "bold"}}>{value}</Typography>
+            sx={{...theme.typography.semiBoldMedium, color: "#2B333B", mb: 2, fontWeight: "bold", textAlign: "justify"}}>{value}</Typography>
     ),
     infoBox: (value) => (
         <Box sx={{...styles.centerVH, my: 2, py: 2}}>

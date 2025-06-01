@@ -194,7 +194,6 @@ const ResponsiveCard = ({
                 <Typography variant="labelSmall" color="#97A6B8" mb={0.5}>
                     <Trans i18nKey="main.globalCaseStudy"/>
                 </Typography>
-                <Tooltip title={caseStudyDescKey}>
                     <Box
                         sx={{
                             textOverflow: "ellipsis",
@@ -218,12 +217,12 @@ const ResponsiveCard = ({
                             <Trans i18nKey={caseStudyDescKey} />
                         </Typography>
                     </Box>
-                </Tooltip>
                 <Button
+                    disabled={id !== "386"}
                     component={Link}
                     href={`/blog/${id}`}
                     variant="outlined" size="small">
-                    <Trans i18nKey="learnMore"/>
+                    <Trans i18nKey="main.learnMore"/>
                 </Button>
             </Box>
         </Box>

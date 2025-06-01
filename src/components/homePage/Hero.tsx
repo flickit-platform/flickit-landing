@@ -9,18 +9,18 @@ import Link from "next/link";
 const HeroSection = () => {
   return (
     <Box sx={{ display: "flex", height: "auto", mb: "25px", justifyContent: "center", pt: "44px"}}>
-      <Box sx={{ height: "auto", flex: 1, bgcolor: theme.direction == "rtl" ? "#D5E5F6" : "#1B4D7E" }} />
       <Box
         sx={{
           width: "100%",
-          maxWidth: "1440px",
           height: "auto",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           backgroundImage: {
-            xs: "url(/hero-m.svg)",
-            sm: "url(/hero-d.svg)",
+            xs: "url(/hero-xs.svg)",
+            sm: "url(/hero-sm.svg)",
+            md: "url(/hero-md.svg)",
+            xl: "url(/hero-xl.svg)",
           },
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat !important",
@@ -29,7 +29,7 @@ const HeroSection = () => {
       >
         <Box
           sx={{
-            mx: { xs: "52px", sm: "auto" },
+            mx: { xs: "52px", sm: "30px",md: "auto" },
             maxWidth: { xs: "336px", sm: "657px" },
             color: "#fff",
             textAlign: "center",
@@ -86,7 +86,6 @@ const HeroSection = () => {
           </Button>
         </Box>
       </Box>
-      <Box sx={{ height: "auto", flex: 1, bgcolor: theme.direction == "rtl" ? "#1B4D7E" : "#D5E5F6" }} />
     </Box>
   );
 };

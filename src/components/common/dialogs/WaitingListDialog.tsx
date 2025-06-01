@@ -22,7 +22,7 @@ const WaitingListDialog = (props:any) => {
     const onSubmit = (data: any) => {
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (!emailRegex.test(data.email)) {
-            setEmailError(t("invalidEmail"));
+            setEmailError(t("common.invalidEmail"));
             return;
         }
         setEmailError("");
@@ -72,7 +72,12 @@ const WaitingListDialog = (props:any) => {
                         style={{ padding: "0px", width: "100%", marginInlineEnd: "auto" }}
                     >
 
-                        <InputFieldUC name="email" label={t("common.yourEmail")} required />
+                        <InputFieldUC
+                                      name="email"
+                                      label={t("common.yourEmail")}
+                                      required
+                                      placeholder={t("common.yourEmail")}
+                        />
                     </form>
                 </Box>
 

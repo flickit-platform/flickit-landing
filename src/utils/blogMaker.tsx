@@ -9,8 +9,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Box from "@mui/material/Box";
 
-export const blogMaker = (item: any) => {
-    const {title, p, ul, table, pb, topTitle, mainTitle, subTitle, infoBox, image, ulBold} = item
+export const BlogMaker = (item: any) => {
+    const {title, p, ul, table, pBold, topTitle, mainTitle, subTitle, infoBox, image, ulBold} = item
 
     if (title) {
         return <Typography component={"h2"}
@@ -124,9 +124,9 @@ export const blogMaker = (item: any) => {
                 </Table>
             </TableContainer>
         )
-    } else if (pb) {
+    } else if (pBold) {
         return <Typography
-            sx={{...theme.typography.semiBoldMedium, color: "#2B333B", mb: 2, fontWeight: "bold"}}>{pb}</Typography>
+            sx={{...theme.typography.semiBoldMedium, color: "#2B333B", mb: 2, fontWeight: "bold"}}>{pBold}</Typography>
     } else if (infoBox) {
         return <Box sx={{...styles.centerVH, my: 2, py: 2}}>
             {infoBox.map((item: any, index: number) => {

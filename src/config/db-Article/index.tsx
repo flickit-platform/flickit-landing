@@ -1,4 +1,4 @@
-import facebookFA from "./facebookArticleFa.json"
-import facebookEN from "./facebookArticleEn.json"
+import facebookFA from "./FafacebookArticle.json"
+import facebookEN from "./EnFacebookArticle.json"
 
 export  {facebookFA, facebookEN}

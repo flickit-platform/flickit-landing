@@ -10,7 +10,7 @@
         {"title": "Read time", "subTitle": "8 min"},
         {"title": "Category", "subTitle": "App Development"}
       ]},
-      {"image": "/articleTop.svg"},
+      {"image": "/facebook-banner.svg"},
       {
         "title": "Setting the Stage: Growth, Debt, and the Cost of Speed"
       },
@@ -134,13 +134,13 @@
       {
         "p": "A rewrite can easily replace old complexity with new complexity unless disciplined scope rules exist. Messenger distilled its strategy into four deceptively simple imperatives."
       },
-      {"pb": "1. Use the OS"},
+      {"pBold": "1. Use the OS"},
       {"p": "If iOS already ships a high-performance JSON parser, don’t reinvent one. If modern UIKit components solve a problem, dump the custom fork. By leaning on Apple’s battle-tested frameworks, Messenger could remove tons of bespoke layers—shrinking both code and memory use."},
-      {"pb": "2. Reuse the UI"},
+      {"pBold": "2. Reuse the UI"},
       {"p": "Earlier versions had forty distinct view controllers, many nearly identical. LightSpeed collapses them into template-driven screens. A single view controller renders lists, grids, and detail views by ingesting a structural template from SQLite. Changing layout now means tweaking data, not shipping new code"},
-      {"pb": "3. Leverage SQLite"},
+      {"pBold": "3. Leverage SQLite"},
       {"p": "Traditional Messenger used in-memory caches glued together with home-grown transaction systems. Those layers added latency and edge cases. LightSpeed puts all authoritative state in SQLite; the UI observes tables. Concurrency, caching, and transactions come “for free” from SQLite’s engine."},
-      {"pb": "4. Move Everything Else to the Server"},
+      {"pBold": "4. Move Everything Else to the Server"},
       {"p": "Historically, each client feature spoke directly to its server counterpart via a bespoke protocol. LightSpeed introduced a server broker—a gateway between Messenger and backend services. By consolidating network code paths, the team reduced redundancy and made it easier to deprecate legacy endpoints."},
       {
         "title": "From Prototype to Full Rewrite: Engineering the New Core"
@@ -181,7 +181,7 @@
       },
       {"p": "Thanks to rigorous project management, the dreaded “second-system effect” never materialized."},
       {"title": "The Payoff: What “2× Faster” Looks Like in Practice"},
-      {"pb": "After twelve months Messenger 2.0 reached App Store users. Metrics told the story:"},
+      {"pBold": "After twelve months Messenger 2.0 reached App Store users. Metrics told the story:"},
       {
         "table": {
           "thead": [
@@ -224,7 +224,7 @@
           ]
         }
       },
-      {"pb": "Qualitatively, users reported snappier chats, faster attachment previews, and fewer “scroll-jank” moments. Perhaps most important, developers noticed build times plummet and pull requests shrink—a cultural win that predicts future velocity."},
+      {"pBold": "Qualitatively, users reported snappier chats, faster attachment previews, and fewer “scroll-jank” moments. Perhaps most important, developers noticed build times plummet and pull requests shrink—a cultural win that predicts future velocity."},
       {"title":  "Lessons for Any Engineering Team Facing Technical Debt"},
       {
         "ulBold": [

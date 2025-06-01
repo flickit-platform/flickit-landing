@@ -5,7 +5,7 @@ import "@/config/i18n";
 import Box from "@mui/material/Box";
 import * as data from "@/config/db-Article";
 import i18n from "i18next";
-import {blogMaker} from "@/utils/blogMaker";
+import {BlogMaker} from "@/utils/blogMaker";
 import {useParams} from "next/navigation";
 
 const Article = () => {
@@ -25,16 +25,16 @@ const Article = () => {
 
     return (
         <Box sx={{maxWidth: "824px", margin: "auto", mt: "80px", px: {xs: 1, sm : 3, md: 13}, }}>
-            {article?.content.map((item: any) => {
+            {article?.content?.map((item: any) => {
                 const {topTitle, mainTitle, subTitle, infoBox, image} = item
                 const listOfItems = {topTitle, mainTitle, subTitle, infoBox, image}
-                return blogMaker(listOfItems)
+                return BlogMaker(listOfItems)
             })}
             <Box sx={{ px: {xs: 1, sm : 3, md: 13}, mb: "40px",fontWeight: "regular"}}>
-                {article?.content.map((item: any) => {
-                 const {title, p, ul, table, pb, ulBold} = item
-                 const listOfItems = {title, p, ul, table, pb, ulBold}
-                 return blogMaker(listOfItems)
+                {article?.content?.map((item: any) => {
+                 const {title, p, ul, table, pBold, ulBold} = item
+                 const listOfItems = {title, p, ul, table, pBold, ulBold}
+                 return BlogMaker(listOfItems)
                 })}
             </Box>
         </Box>

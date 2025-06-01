@@ -31,7 +31,7 @@ const FaqSection = () => {
         bgcolor: "#EAF2FB",
         py: 4,
         borderRadius: 4,
-        mt: { xs: 6, md: 10 },
+        mt: 10,
         ...styles.centerCV,
       }}
       px={{ xs: 2, md: 16, xxl: 30 }}
@@ -39,7 +39,7 @@ const FaqSection = () => {
       <Typography
         variant={isMobile ? "headlineSmall" : "headlineLarge"}
         textAlign="center"
-        sx={{ mb: { xs: 0, md: 10 }, fontWeight: 700 }}
+        sx={{ mb: 10, fontWeight: 700 }}
       >
         <Trans i18nKey="main.faq" />
       </Typography>
@@ -62,8 +62,8 @@ const FaqSection = () => {
             src={item.icon}
             alt=""
             sx={{
-              width: { xs: 140, md: "unset" },
-              maxWidth: { xs: 140, md: 250 },
+              width: { xs: 140, sm: 200, md: "unset" },
+              maxWidth: { xs: 140, sm: 200, md: 250 },
               mb: { xs: 2, md: 0 },
             }}
             color="#2B333B"

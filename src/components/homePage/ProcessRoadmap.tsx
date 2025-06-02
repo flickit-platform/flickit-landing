@@ -232,11 +232,10 @@ const ProcessRoadmap: React.FC = () => {
   const streetImg = isMobile ? "/mobile-street.svg" : "/street.svg";
 
   return (
-    <Box sx={{ ...styles.centerCVH }} my={isMobile ? 6 : 16}>
+    <Box sx={{ ...styles.centerCVH }} my={4}>
       <Typography
         variant={isMobile ? "headlineMedium" : "headlineLarge"}
         textAlign="center"
-        mb={isMobile ? 4 : 8}
       >
         <Trans
           i18nKey="main.howItWorks"

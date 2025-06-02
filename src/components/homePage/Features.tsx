@@ -49,10 +49,10 @@ const features = [
 
 const FeaturesSection = () => (
   <Box
-    gap={8}
+    gap={4}
     sx={{
       ...styles.centerCVH,
-      py: { xs: 2, md: 12 },
+      py: { xs: 2, md: 4 },
       bgcolor: "#F9FAFB",
     }}
     px={{ xs: 2, md: 6, xxl: 30 }}
@@ -60,7 +60,7 @@ const FeaturesSection = () => (
     <Typography
       variant="headlineLarge"
       textAlign="center"
-      sx={{ mb: { xs: 0, md: 8 }, fontWeight: 700 }}
+      sx={{ mb: { xs: 0, md: 2 } }}
     >
       <Trans
         i18nKey="main.whatMakesDifferent"

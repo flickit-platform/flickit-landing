@@ -197,6 +197,7 @@ const ResponsiveCard = ({
         )}
         <Box
           sx={{
+            visibility: id == "385" ? "hidden" : "unset",
             position: "absolute",
             left: "50%",
             bottom: "-46px",
@@ -210,6 +211,7 @@ const ResponsiveCard = ({
       </Box>
       <Box
         sx={{
+          visibility: id == "385" ? "hidden" : "unset",
           mt: 6,
           position: "relative",
           bgcolor: "#F0F4F8",

@@ -15,7 +15,7 @@ const cardsData = [
   },
   {
     id: "363",
-    imageUrl: "magnifier.svg",
+    imageUrl: "/magnifier.svg",
     chipLabelKey: "main.kit.toolMaturity.chipLabel",
     titleKey: "main.kit.toolMaturity.title",
     descKey: "main.kit.toolMaturity.desc",
@@ -24,7 +24,7 @@ const cardsData = [
   },
   {
     id: "386",
-    imageUrl: "chart.svg",
+    imageUrl: "/chart.svg",
     chipLabelKey: "main.kit.internalAudit.chipLabel",
     titleKey: "main.kit.internalAudit.title",
     descKey: "main.kit.internalAudit.desc",
@@ -33,7 +33,7 @@ const cardsData = [
   },
   {
     id: "385",
-    imageUrl: "ai-kit.svg",
+    imageUrl: "/ai-kit.svg",
     chipLabelKey: "main.kit.vendorEvaluation.chipLabel",
     titleKey: "main.kit.vendorEvaluation.title",
     descKey: "main.kit.vendorEvaluation.desc",

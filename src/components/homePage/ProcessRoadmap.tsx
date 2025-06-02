@@ -124,10 +124,7 @@ const PinLabel = ({ pin, variant = "headlineMedium" }: PinLabelProps) => (
   <Box
     sx={{
       width: "100%",
-      maxWidth: 356,
-      mx: "auto",
       my: 2,
-      px: 2,
       textAlign: "center",
       ...styles.centerCH,
       gap: 1,
@@ -157,7 +154,7 @@ const RoadmapImageWithPins = ({
     sx={{
       position: "relative",
       width: "100%",
-      maxWidth: isMobile ? "unset" : 1440,
+      maxWidth: isMobile ? 470 : 1440,
       aspectRatio: isMobile ? "442/717" : "1440/831",
       mx: "auto",
       my: isMobile ? 2 : 0,
@@ -231,15 +228,14 @@ const RoadmapImageWithPins = ({
 );
 
 const ProcessRoadmap: React.FC = () => {
-  const isMobile = useScreenResize("sm");
+  const isMobile = useScreenResize("md");
   const streetImg = isMobile ? "/mobile-street.svg" : "/street.svg";
 
   return (
-    <Box sx={{ ...styles.centerCVH }} my={isMobile ? 6 : 16}>
+    <Box sx={{ ...styles.centerCVH }} my={4}>
       <Typography
         variant={isMobile ? "headlineMedium" : "headlineLarge"}
         textAlign="center"
-        mb={isMobile ? 4 : 8}
       >
         <Trans
           i18nKey="main.howItWorks"

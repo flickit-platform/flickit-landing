@@ -38,7 +38,7 @@ const getFieldError = (
   const error = errors?.[name];
   const hasError = !!error?.type;
   const errorMessagesBaseOnErrorTypes: TErrorMessagesBaseOnErrorTypes = {
-    required: <Trans i18nKey="requiredFieldError" />,
+    required: <Trans i18nKey="common.requiredFieldError" />,
 
     minLength: (
       <Trans

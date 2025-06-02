@@ -1,9 +1,12 @@
 import React from "react";
-import { Box, Typography, Chip, Button } from "@mui/material";
+import { Box, Typography, Chip, Button, Tooltip } from "@mui/material";
 import { Trans } from "react-i18next";
 import { theme } from "@/config/theme";
 import Link from "next/link";
 import { styles } from "@/config/styles";
+import WaitingListDialog from "../common/dialogs/WaitingListDialog";
+import useDialog from "@/utils/useDialog";
+import { t } from "i18next";
 
 interface Props {
   imageUrl: string;
@@ -13,6 +16,8 @@ interface Props {
   caseStudyDescKey: string;
   caseStudyLogo: string;
   id: string;
+  waitList?: boolean;
+  dialogProps?: any;
 }
 
 const IMAGE_HEIGHT = 160;
@@ -26,7 +31,10 @@ const ResponsiveCard = ({
   caseStudyDescKey,
   caseStudyLogo,
   id,
+  waitList,
 }: Props) => {
+  const dialogProps = useDialog();
+
   return (
     <Box
       sx={{
@@ -137,39 +145,56 @@ const ResponsiveCard = ({
             <Trans i18nKey={descKey} />
           </Typography>
         </Box>
-        <Box
-          sx={{
-            width: "100%",
-            mt: "auto",
-            display: "flex",
-            flexDirection: "column",
-            gap: 1,
-          }}
-        >
-          <Button
-            variant="outlined"
-            fullWidth
-            component={Link}
-            href={"https://app.flickit.org/assessment-kits/" + id}
+        {!waitList ? (
+          <Box
+            sx={{
+              width: "100%",
+              mt: "auto",
+              display: "flex",
+              flexDirection: "column",
+              gap: 1,
+            }}
           >
-            <Trans i18nKey="main.moreAboutThisKit" />
-          </Button>
-          <Button
-            variant="contained"
-            fullWidth
-            component={Link}
-            href={
-              "https://stage.flickit.org/assessment-kits/" +
-              id +
-              `#createAssessment?id=${id}&title=${encodeURIComponent(
-                // ترجمه عنوان برای URL لازم نیست
-                ""
-              )}`
-            }
+            <Button
+              variant="outlined"
+              fullWidth
+              component={Link}
+              href={"https://app.flickit.org/assessment-kits/" + id}
+            >
+              <Trans i18nKey="main.moreAboutThisKit" />
+            </Button>
+            <Button
+              variant="contained"
+              fullWidth
+              component={Link}
+              href={
+                "https://stage.flickit.org/assessment-kits/" +
+                id +
+                `#createAssessment?id=${id}&title=${encodeURIComponent("")}`
+              }
+            >
+              <Trans i18nKey="main.createAssessment" />
+            </Button>
+          </Box>
+        ) : (
+          <Box
+            sx={{
+              width: "100%",
+              mt: "auto",
+              display: "flex",
+              flexDirection: "column",
+              gap: 1,
+            }}
           >
-            <Trans i18nKey="main.createAssessment" />
-          </Button>
-        </Box>
+            <Button
+              variant="contained"
+              fullWidth
+              onClick={() => dialogProps.openDialog({ open: true })}
+            >
+              <Trans i18nKey="main.joinTheWaitlist" />
+            </Button>
+          </Box>
+        )}
         <Box
           sx={{
             position: "absolute",
@@ -183,7 +208,6 @@ const ResponsiveCard = ({
           }}
         />
       </Box>
-
       <Box
         sx={{
           mt: 6,
@@ -218,18 +242,44 @@ const ResponsiveCard = ({
         <Typography variant="labelSmall" color="#97A6B8" mb={0.5}>
           <Trans i18nKey="main.globalCaseStudy" />
         </Typography>
-        <Typography
-          variant="semiBoldMedium"
-          color="#2466A8"
-          textAlign="center"
-          sx={{ mb: 2 }}
+        <Box
+          sx={{
+            textOverflow: "ellipsis",
+            width: "100%",
+            height: "120px",
+          }}
         >
-          <Trans i18nKey={caseStudyDescKey} />
-        </Typography>
-        {/* <Button variant="outlined" size="small">
+          <Typography
+            variant="semiBoldMedium"
+            color="#2466A8"
+            textAlign="center"
+            sx={{
+              overflow: "hidden",
+              mb: 2,
+              whiteSpace: "pre-wrap",
+              display: "-webkit-box",
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: "vertical",
+            }}
+          >
+            <Trans i18nKey={caseStudyDescKey} />
+          </Typography>
+        </Box>
+        <Button
+          target="_blank"
+          disabled={id !== "386"}
+          component={Link}
+          href={`/blog/${id}`}
+          variant="outlined"
+          size="small"
+        >
           <Trans i18nKey="main.learnMore" />
-        </Button> */}
+        </Button>
       </Box>
+      <WaitingListDialog
+        {...dialogProps}
+        kitTitle={t(titleKey, { lng: "en" })}
+      />
     </Box>
   );
 };

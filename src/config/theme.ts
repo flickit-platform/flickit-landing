@@ -191,7 +191,7 @@ export const theme = createTheme({
       fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
       fontWeight: "bold",
       fontSize: "2rem",
-      lineHeight: "2.25rem",
+      lineHeight: "140%",
       letterSpacing: is_farsi ? "0px" : "0",
     },
     headlineLarge: {

@@ -51,8 +51,8 @@ const AnimatedTextBanner = () => {
           ...styles.centerVH,
           background:
             "radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(171,203,237,0.15) 100%)",
-          py: { xs: "4px", md: "24px" },
-          px: { xs: "16px", md: "32px" },
+          py: { xs: "8px", md: "24px" },
+          px: "32px",
           borderRadius: "16px",
           display: "inline-flex",
         }}

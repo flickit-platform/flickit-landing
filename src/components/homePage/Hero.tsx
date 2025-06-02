@@ -5,7 +5,7 @@ import { Trans } from "react-i18next";
 import { theme } from "@/config/theme";
 import { Button } from "@mui/material";
 import Link from "next/link";
-import AnimatedTextBanner from "../common/AnimatedTextBanner";
+import AnimatedTextBanner from "./AnimatedTextBanner";
 
 const HeroSection = () => {
   return (
@@ -41,7 +41,7 @@ const HeroSection = () => {
           <Typography
             sx={{
               ...theme.typography.displayLarge,
-              [theme.breakpoints.down("sm")]: {
+              [theme.breakpoints.down("md")]: {
                 ...theme.typography.headlineMedium,
               },
             }}
@@ -52,7 +52,7 @@ const HeroSection = () => {
           <Typography
             sx={{
               ...theme.typography.displaySmall,
-              [theme.breakpoints.down("sm")]: {
+              [theme.breakpoints.down("md")]: {
                 ...theme.typography.semiBoldLarge,
               },
               mt: 2,

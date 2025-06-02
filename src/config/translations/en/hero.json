@@ -1,5 +1,21 @@
 {
   "topBannerTitle": "Let's change this!!",
   "topBannerDesc": "Flickit is an intelligent assessment platform for software products and teams. With ready-made kits and AI-powered analysis, you can quickly obtain a detailed report on your technical strengths and weaknesses—and start improving right away.",
-  "startSelfAssessment": "Start your free self-assessment"
+  "startSelfAssessment": "Start your free self-assessment",
+  "quotes": {
+    "systemGotHacked": "Our system got hacked!",
+    "userDataLeaked": "User data leaked!",
+    "systemNotBooting": "The system won't boot!",
+    "clientCommitmentsUnmet": "We're unable to meet client commitments.",
+    "reputationAtStake": "Our organization's reputation is at stake.",
+    "lowTeamProductivity": "Development team productivity is low.",
+    "slowReleases": "Releases are taking too long.",
+    "budgetRunningOut": "We're running out of budget.",
+    "dontTrustOutputs": "I don’t trust the current outputs.",
+    "peopleLeaving": "Talented people are leaving our team.",
+    "tooManyBugs": "We have too many bugs.",
+    "notUserFriendly": "Our product isn't user-friendly.",
+    "missingCertifications": "Lack of required certifications is blocking new projects.",
+    "technicalIssueBlockingDev": "A technical issue has stopped our dev team."
+  }
 }

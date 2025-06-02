@@ -31,7 +31,6 @@ const FaqSection = () => {
         bgcolor: "#EAF2FB",
         py: 4,
         borderRadius: 4,
-        mt: 10,
         ...styles.centerCV,
       }}
       px={{ xs: 2, md: 16, xxl: 30 }}
@@ -39,7 +38,7 @@ const FaqSection = () => {
       <Typography
         variant={isMobile ? "headlineSmall" : "headlineLarge"}
         textAlign="center"
-        sx={{ mb: 10, fontWeight: 700 }}
+        sx={{ mb: 4 }}
       >
         <Trans i18nKey="main.faq" />
       </Typography>
@@ -51,7 +50,7 @@ const FaqSection = () => {
             display: "flex",
             flexDirection: idx % 2 === 0 ? "row" : "row-reverse",
             justifyContent: idx % 2 === 0 ? "start" : "end",
-            textAlign: idx % 2 === 0 ? "left" : "right",
+            textAlign: idx % 2 === 0 ? "start" : "end",
             alignItems: "center",
             mt: isMobile ? 8 : -8,
             gap: 4,

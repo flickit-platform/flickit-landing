@@ -12,6 +12,7 @@ const cardsData = [
     descKey: "main.kit.softwarePerformance.desc",
     caseStudyDescKey: "main.kit.softwarePerformance.caseStudyDesc",
     caseStudyLogo: "amazon.svg",
+    free: true
   },
   {
     id: "363",
@@ -21,6 +22,7 @@ const cardsData = [
     descKey: "main.kit.toolMaturity.desc",
     caseStudyDescKey: "main.kit.toolMaturity.caseStudyDesc",
     caseStudyLogo: "etsy.svg",
+    free: true
   },
   {
     id: "386",
@@ -30,6 +32,7 @@ const cardsData = [
     descKey: "main.kit.internalAudit.desc",
     caseStudyDescKey: "main.kit.internalAudit.caseStudyDesc",
     caseStudyLogo: "facebook.svg",
+    free: false
   },
   {
     id: "385",
@@ -40,6 +43,7 @@ const cardsData = [
     caseStudyDescKey: "main.kit.vendorEvaluation.caseStudyDesc",
     caseStudyLogo: "fujistu.jpeg",
     waitList: true,
+    free: true
   },
 ];
 

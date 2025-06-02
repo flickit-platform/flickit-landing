@@ -6,40 +6,44 @@ import { Trans } from "react-i18next";
 const cardsData = [
   {
     id: "384",
-    imageUrl: "goal.svg",
+    imageUrl: "/speed.svg",
     chipLabelKey: "main.kit.softwarePerformance.chipLabel",
     titleKey: "main.kit.softwarePerformance.title",
     descKey: "main.kit.softwarePerformance.desc",
     caseStudyDescKey: "main.kit.softwarePerformance.caseStudyDesc",
     caseStudyLogo: "amazon.svg",
+    free: true
   },
   {
     id: "363",
-    imageUrl: "magnifier.svg",
+    imageUrl: "/magnifier.svg",
     chipLabelKey: "main.kit.toolMaturity.chipLabel",
     titleKey: "main.kit.toolMaturity.title",
     descKey: "main.kit.toolMaturity.desc",
     caseStudyDescKey: "main.kit.toolMaturity.caseStudyDesc",
     caseStudyLogo: "etsy.svg",
+    free: true
   },
   {
     id: "386",
-    imageUrl: "chart.svg",
+    imageUrl: "/chart.svg",
     chipLabelKey: "main.kit.internalAudit.chipLabel",
     titleKey: "main.kit.internalAudit.title",
     descKey: "main.kit.internalAudit.desc",
     caseStudyDescKey: "main.kit.internalAudit.caseStudyDesc",
     caseStudyLogo: "facebook.svg",
+    free: false
   },
   {
     id: "385",
-    imageUrl: "checklist.svg",
+    imageUrl: "/ai-kit.svg",
     chipLabelKey: "main.kit.vendorEvaluation.chipLabel",
     titleKey: "main.kit.vendorEvaluation.title",
     descKey: "main.kit.vendorEvaluation.desc",
     caseStudyDescKey: "main.kit.vendorEvaluation.caseStudyDesc",
     caseStudyLogo: "fujistu.jpeg",
     waitList: true,
+    free: true
   },
 ];
 

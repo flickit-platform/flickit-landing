@@ -18,6 +18,7 @@ interface Props {
   id: string;
   waitList?: boolean;
   dialogProps?: any;
+  free: boolean
 }
 
 const IMAGE_HEIGHT = 160;
@@ -32,6 +33,7 @@ const ResponsiveCard = ({
   caseStudyLogo,
   id,
   waitList,
+  free
 }: Props) => {
   const dialogProps = useDialog();
 
@@ -45,6 +47,36 @@ const ResponsiveCard = ({
         flexDirection: "column",
       }}
     >
+        {
+            free && <Box
+            sx={{
+                position: "absolute",
+                top:"-30px",
+                [theme.direction == "rtl" ? "left" : "right" ]: "-15px",
+                width: "65px",
+                height: "auto",
+                zIndex: 2,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center"
+            }}>
+            <Box
+                component={"img"}
+                src={"/notice.svg"}
+                sx={{
+                    width: "100%",
+                    height: "100%"
+                }}
+            />
+            <Typography sx={{
+                ...theme.typography.labelLarge,
+                color: theme.palette.secondary.main,
+                position: "absolute"
+            }}>
+                <Trans i18nKey={"common.free"} />
+            </Typography>
+        </Box>
+        }
       <Box
         sx={{
           position: "relative",
@@ -173,6 +205,7 @@ const ResponsiveCard = ({
         )}
         <Box
           sx={{
+            visibility: id == "385" ? "hidden" : "unset",
             position: "absolute",
             left: "50%",
             bottom: "-46px",
@@ -186,6 +219,7 @@ const ResponsiveCard = ({
       </Box>
       <Box
         sx={{
+          visibility: id == "385" ? "hidden" : "unset",
           mt: 6,
           position: "relative",
           bgcolor: "#F0F4F8",

@@ -9,19 +9,19 @@ import AnimatedTextBanner from "./AnimatedTextBanner";
 
 const HeroSection = () => {
   return (
-    <Box sx={{ display: "flex", height: "auto", mb: "25px" }}>
-      <Box sx={{ height: "auto", flex: 1, bgcolor: "#1B4D7E" }} />
+    <Box sx={{ display: "flex", height: "auto", mb: "25px", justifyContent: "center", pt: "44px"}}>
       <Box
         sx={{
           width: "100%",
-          maxWidth: "1534px",
           height: "auto",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           backgroundImage: {
-            xs: "url(/flickit-hero-bg-m.svg)",
-            sm: "url(/hero.svg)",
+            xs: "url(/hero-xs.svg)",
+            sm: "url(/hero-sm.svg)",
+            md: "url(/hero-md.svg)",
+            xl: "url(/hero-xl.svg)",
           },
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat !important",
@@ -81,7 +81,6 @@ const HeroSection = () => {
           </Button>
         </Box>
       </Box>
-      <Box sx={{ height: "auto", flex: 1, bgcolor: "#D5E5F6" }} />
     </Box>
   );
 };

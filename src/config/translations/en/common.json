@@ -14,5 +14,6 @@
   "joinWaitlist": "Join waitlist",
   "TrustedCustomers": "Trusted by amazing teams and leaders",
   "requiredFieldError": "This field is required.",
-  "invalidEmail": "Please enter a valid email address."
+  "invalidEmail": "Please enter a valid email address.",
+  "free": "Free"
 }

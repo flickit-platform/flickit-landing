@@ -18,13 +18,13 @@ interface Props {
   id: string;
   waitList?: boolean;
   dialogProps?: any;
-  free: boolean
+  free: boolean;
 }
 
 const IMAGE_HEIGHT = 160;
 const LOGO_SIZE = 24;
 
-const ResponsiveCard = ({
+const KitPart = ({
   imageUrl,
   chipLabelKey,
   titleKey,
@@ -33,7 +33,7 @@ const ResponsiveCard = ({
   caseStudyLogo,
   id,
   waitList,
-  free
+  free,
 }: Props) => {
   const dialogProps = useDialog();
 
@@ -47,36 +47,39 @@ const ResponsiveCard = ({
         flexDirection: "column",
       }}
     >
-        {
-            free && <Box
+      {free && (
+        <Box
+          sx={{
+            position: "absolute",
+            top: "-30px",
+            [theme.direction == "rtl" ? "left" : "right"]: "-15px",
+            width: "65px",
+            height: "auto",
+            zIndex: 2,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Box
+            component={"img"}
+            src={"/notice.svg"}
             sx={{
-                position: "absolute",
-                top:"-30px",
-                [theme.direction == "rtl" ? "left" : "right" ]: "-15px",
-                width: "65px",
-                height: "auto",
-                zIndex: 2,
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center"
-            }}>
-            <Box
-                component={"img"}
-                src={"/notice.svg"}
-                sx={{
-                    width: "100%",
-                    height: "100%"
-                }}
-            />
-            <Typography sx={{
-                ...theme.typography.labelLarge,
-                color: theme.palette.secondary.main,
-                position: "absolute"
-            }}>
-                <Trans i18nKey={"common.free"} />
-            </Typography>
+              width: "100%",
+              height: "100%",
+            }}
+          />
+          <Typography
+            sx={{
+              ...theme.typography.labelLarge,
+              color: theme.palette.secondary.main,
+              position: "absolute",
+            }}
+          >
+            <Trans i18nKey={"common.free"} />
+          </Typography>
         </Box>
-        }
+      )}
       <Box
         sx={{
           position: "relative",
@@ -94,6 +97,7 @@ const ResponsiveCard = ({
           height: "100%",
           textDecoration: "none",
           color: "unset",
+          flexGrow: 1,
         }}
       >
         <Box
@@ -120,6 +124,7 @@ const ResponsiveCard = ({
             width: "100%",
             mt: 3,
             gap: 1,
+            minHeight: "180px",
           }}
         >
           <Chip
@@ -129,6 +134,7 @@ const ResponsiveCard = ({
               borderColor: "#87ACD2 !important",
               mb: 1,
               mx: "auto",
+              borderRadius: "8px",
             }}
             label={<Trans i18nKey={chipLabelKey} />}
             variant="outlined"
@@ -148,6 +154,10 @@ const ResponsiveCard = ({
               minHeight: "60px",
               display: "flex",
               alignItems: "flex-start",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              WebkitLineClamp: 3,
+              WebkitBoxOrient: "vertical",
             }}
           >
             <Trans i18nKey={descKey} />
@@ -228,7 +238,8 @@ const ResponsiveCard = ({
           pt: 2.5,
           pb: 2,
           ...styles.centerCH,
-          minHeight: { xs: "unset", md: 60, lg: 70 },
+          minHeight: "fit-content",
+          flexGrow: 0,
         }}
         mb={{ xs: 18, lg: 2 }}
       >
@@ -256,7 +267,9 @@ const ResponsiveCard = ({
           sx={{
             textOverflow: "ellipsis",
             width: "100%",
-            height: "120px",
+            minHeight: "60px",
+            maxHeight: "80px",
+            overflow: "hidden",
           }}
         >
           <Typography
@@ -264,11 +277,9 @@ const ResponsiveCard = ({
             color="#2466A8"
             textAlign="center"
             sx={{
-              overflow: "hidden",
               mb: 2,
               whiteSpace: "pre-wrap",
               display: "-webkit-box",
-              WebkitLineClamp: 2,
               WebkitBoxOrient: "vertical",
             }}
           >
@@ -294,4 +305,4 @@ const ResponsiveCard = ({
   );
 };
 
-export default ResponsiveCard;
+export default KitPart;

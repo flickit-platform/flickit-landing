@@ -16,6 +16,7 @@
   "pin4Title": "4. Sharing report",
   "pin4Desc": "Send results to teammates or stakeholders.",
   "joinTheWaitlist": "Join the waitlist",
+  "flickit": "Flickit",
   "faq1": {
     "question": "Is it complicated to set up?",
     "answer": "No — You can launch your first assessment in minutes. No coding, no heavy onboarding."
@@ -85,5 +86,6 @@
       "desc": "Evaluate how effectively AI is being used across your product development lifecycle. This kit helps you identify gaps, reduce risks, and unlock opportunities for smarter, faster innovation.",
       "caseStudyDesc": ""
     }
-  }
+  },
+  "viewAllAssessmentKits": "View all assessment kits"
 }

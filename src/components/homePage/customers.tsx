@@ -25,25 +25,18 @@ const Customers = () => {
           flexDirection: { xs: "column-reverse", md: "row" },
           mx: "auto",
           maxWidth: "1440px",
-          px: { xs: "24px", md: "114px" },
+          px: 23,
           py: { xs: "24px", md: "38px" },
-          gap: { xs: "34px", md: "80px" },
+          justifyContent: "space-between",
         }}
       >
         <Typography
-          sx={
-            isMobile
-              ? {
-                  ...theme.typography.semiBoldLarge,
-                  color: theme.palette.info.main,
-                }
-              : {
-                  ...theme.typography.semiBoldXLarge,
-                  color: theme.palette.info.main,
-                }
-          }
+          sx={{
+            ...theme.typography.semiBoldXLarge,
+            color: theme.palette.info.main,
+          }}
         >
-          <Trans i18nKey={"common.TrustedCustomers"} />
+          <Trans i18nKey={"common.trustedCustomers"} />
         </Typography>
         <Box sx={{ ...styles.centerVH, gap: { xs: "15px", sm: "24px" } }}>
           {customers.map((img, index) => {

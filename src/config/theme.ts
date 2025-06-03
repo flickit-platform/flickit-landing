@@ -150,8 +150,8 @@ const fontWeight = {
   extraBold: 800,
   bold: 700,
   semiBold: 600,
-  medium: 500,
-  regular: 400,
+  medium: 400,
+  regular: 300,
   light: 300,
 };
 export const theme = createTheme({

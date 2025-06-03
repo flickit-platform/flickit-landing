@@ -1,8 +1,10 @@
-import Kit from "./KitPart";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import { styles } from "@/config/styles";
 import { Trans } from "react-i18next";
 import { motion } from "framer-motion";
+import KitPart from "./KitPart";
+import { theme } from "@/config/theme";
+import { t } from "i18next";
 
 const cardsData = [
   {
@@ -69,11 +71,11 @@ const cardVariants = {
 
 const Kits = () => {
   return (
-    <Box sx={{ ...styles.centerCVH }} gap={15} px={{ xs: 2, md: 6, xxl: 30 }}>
-      <Typography variant="headlineLarge" textAlign="center">
+    <Box sx={{ ...styles.centerCVH }} px={{ xs: 2, md: 6, xxl: 30 }}>
+      <Typography variant="headlineLarge" textAlign="center" mb={15}>
         <Trans
           i18nKey="main.whatCanYouAssessWith"
-          values={{ app: "Flickit" }}
+          values={{ app: t("main.flickit") }}
           components={{
             style: <span style={{ color: "#2466A8" }} />,
           }}
@@ -99,12 +101,24 @@ const Kits = () => {
               sx={{ display: "flex" }}
             >
               <motion.div variants={cardVariants} style={{ width: "100%" }}>
-                <Kit {...item} />
+                <KitPart {...item} />
               </motion.div>
             </Grid>
           ))}
         </Grid>
       </motion.div>
+      <Button
+        variant="contained"
+        size="large"
+        sx={{
+          borderRadius: "24px",
+          marginBlock: 7,
+          ...theme.typography.titleLarge,
+          fontWeight: 600,
+        }}
+      >
+        <Trans i18nKey="main.viewAllAssessmentKits" />
+      </Button>
     </Box>
   );
 };

@@ -34,7 +34,8 @@ const FaqSection = () => {
         borderRadius: 4,
         ...styles.centerCV,
       }}
-      px={{ xs: 2, md: 16, xxl: 30 }}
+      px={{ xs: 2, md: 18, xxl: 30 }}
+      mt={10}
     >
       <Typography
         variant={isMobile ? "headlineSmall" : "headlineLarge"}

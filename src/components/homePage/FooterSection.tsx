@@ -16,12 +16,16 @@ export default function Footer() {
   return (
     <Box
       component={"footer"}
+<<<<<<< HEAD
       sx={{
         background: "#2a333b",
         backgroundImage: { md: "url(/footer.svg)" },
         py: "38px",
         px: { xs: 1, sm: "48px" },
       }}
+=======
+      sx={{ background: "#2B333B", p: {xs: "64px 24px 32px", sm: "42px 48px"}, px: { xs: 1, sm: "48px" } }}
+>>>>>>> main
     >
       <Grid
         container
@@ -58,12 +62,17 @@ export default function Footer() {
             <Trans i18nKey={"footer.flickitFooterText"} />
           </Typography>
         </Grid>
+<<<<<<< HEAD
         <Grid
           order={2}
           size={{ xs: 12, sm: 4 }}
           sx={{ display: { xs: "none", sm: "grid" } }}
         ></Grid>
         <Grid order={{ xs: 1, sm: 3 }} size={{ xs: 12, sm: 2.65 }}>
+=======
+        <Grid order={2} size={{ xs: 12, sm: 4 }} sx={{display: {xs: "none", sm: "grid" }}} ></Grid>
+        <Grid order={{ xs: 1, sm: 3 }} size={{ xs: 12, sm: 4 }}>
+>>>>>>> main
           <Box
             sx={{
               display: "flex",
@@ -85,6 +94,7 @@ export default function Footer() {
             >
               <Typography
                 sx={{
+                  ...theme.typography.titleLarge,
                   color: "#F0F2F4",
                 }}
               >

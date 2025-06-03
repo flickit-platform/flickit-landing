@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import KitPart from "./KitPart";
 import { theme } from "@/config/theme";
 import { t } from "i18next";
+import Link from "next/link";
 
 const cardsData = [
   {
@@ -110,6 +111,8 @@ const Kits = () => {
       <Button
         variant="contained"
         size="large"
+        component={Link}
+        href={"https://app.flickit.org/assessment-kits/"}
         sx={{
           borderRadius: "24px",
           marginBlock: 7,

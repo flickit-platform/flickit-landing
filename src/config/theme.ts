@@ -27,6 +27,7 @@ declare module "@mui/material/styles" {
     headlineSmall: React.CSSProperties;
     headlineMedium: React.CSSProperties;
     headlineLarge: React.CSSProperties;
+    headlineXLarge: React.CSSProperties;
     displaySmall: React.CSSProperties;
     displayMedium: React.CSSProperties;
     displayLarge: React.CSSProperties;
@@ -53,6 +54,7 @@ declare module "@mui/material/styles" {
     headlineSmall?: React.CSSProperties;
     headlineMedium?: React.CSSProperties;
     headlineLarge?: React.CSSProperties;
+    headlineXLarge?: React.CSSProperties;
     displaySmall?: React.CSSProperties;
     displayMedium?: React.CSSProperties;
     displayLarge?: React.CSSProperties;
@@ -82,6 +84,7 @@ declare module "@mui/material/Typography" {
     headlineSmall?: true;
     headlineMedium?: true;
     headlineLarge?: true;
+    headlineXLarge?: true;
     displaySmall?: true;
     displayMedium?: true;
     displayLarge?: true;
@@ -143,6 +146,14 @@ const palette = {
 export const is_farsi =
   typeof window !== "undefined" && localStorage.lang === "fa";
 
+const fontWeight = {
+  extraBold: 800,
+  bold: 700,
+  semiBold: 600,
+  medium: 500,
+  regular: 400,
+  light: 300,
+};
 export const theme = createTheme({
   direction: is_farsi ? "rtl" : "ltr",
   palette,
@@ -182,139 +193,149 @@ export const theme = createTheme({
     },
     headlineSmall: {
       fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
-      fontWeight: "bold",
+      fontWeight: fontWeight.bold,
       fontSize: "1.5rem",
       lineHeight: "2rem",
       letterSpacing: is_farsi ? "0px" : "-3%",
     },
     headlineMedium: {
       fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
-      fontWeight: "bold",
+      fontWeight: fontWeight.bold,
       fontSize: "2rem",
-      lineHeight: "140%",
-      letterSpacing: is_farsi ? "0px" : "0",
+      lineHeight: is_farsi ? "auto" : "2.25rem",
+      letterSpacing: "0px",
     },
     headlineLarge: {
       fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
-      fontWeight: "bold",
-      fontSize: "2.5rem",
-      lineHeight: "2.7rem",
-      letterSpacing: is_farsi ? "0px" : "0",
+      fontWeight: fontWeight.bold,
+      fontSize: "3rem",
+      lineHeight: "auto",
+      letterSpacing: "0px",
+    },
+    headlineXLarge: {
+      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+      fontWeight: fontWeight.bold,
+      fontSize: "4rem",
+      lineHeight: "auto",
+      letterSpacing: "0px",
     },
     displaySmall: {
       fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
       fontSize: "1.5rem",
-      fontWeight: "light",
+      fontWeight: fontWeight.regular,
       letterSpacing: is_farsi ? "0px" : "0",
       lineHeight: "2rem",
     },
     displayMedium: {
       fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
       fontSize: "1.75rem",
-      fontWeight: "Bold",
+      fontWeight: fontWeight.bold,
       lineHeight: "2.25rem",
       letterSpacing: is_farsi ? "0px" : "0",
     },
     displayLarge: {
       fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
       fontSize: "4.5rem",
-      fontWeight: "bold",
+      fontWeight: fontWeight.bold,
       lineHeight: "5.75rem",
       letterSpacing: is_farsi ? "0px" : "0",
     },
     titleSmall: {
       fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
-      fontWeight: 600,
+      fontWeight: fontWeight.bold,
       fontSize: "0.875rem",
-      lineHeight: "1.25rem",
+      lineHeight: is_farsi ? "auto" : "1.25rem",
       letterSpacing: is_farsi ? "0px" : ".1px",
     },
     titleMedium: {
       fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
-      fontWeight: 500,
+      fontWeight: fontWeight.bold,
       fontSize: "1rem",
       letterSpacing: is_farsi ? "0px" : ".15px",
-      lineHeight: "1.5rem",
+      lineHeight: is_farsi ? "auto" : "1.5rem",
     },
     titleLarge: {
       fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
-      fontWeight: 600,
+      fontWeight: fontWeight.bold,
       fontSize: "1.375rem",
-      lineHeight: "1.75rem",
+      lineHeight: is_farsi ? "auto" : "1.75rem",
       letterSpacing: is_farsi ? "0px" : "0",
     },
     bodySmall: {
       fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
-      fontWeight: "400",
+      fontWeight: fontWeight.regular,
       fontSize: "0.75rem",
+      lineHeight: is_farsi ? "auto" : "150%",
       letterSpacing: is_farsi ? "0px" : "0.4px",
     },
     bodyMedium: {
       fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
-      fontWeight: 400,
+      fontWeight: fontWeight.regular,
       fontSize: "0.875rem",
-      lineHeight: "1.5rem",
+      lineHeight: is_farsi ? "auto" : "150%",
       letterSpacing: is_farsi ? "0px" : "0.25px",
     },
     bodyLarge: {
       fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
-      fontWeight: 300,
+      fontWeight: fontWeight.regular,
       fontSize: "1rem",
+      lineHeight: is_farsi ? "auto" : "1.5rem",
       letterSpacing: is_farsi ? "0px" : "0.5px",
     },
     labelSmall: {
       fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
-      fontWeight: "400",
-      fontSize: "0.68rem",
-      lineHeight: "1rem",
+      fontWeight: is_farsi ? fontWeight.bold : fontWeight.regular,
+      fontSize: is_farsi ? "0.625rem" : "0.68rem",
+      lineHeight: is_farsi ? "auto" : "1rem",
       letterSpacing: "0px",
     },
     labelMedium: {
       fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
-      fontWeight: 500,
+      fontWeight: is_farsi ? fontWeight.bold : fontWeight.semiBold,
       fontSize: "0.75rem",
-      lineHeight: "1rem",
+      lineHeight: is_farsi ? "auto" : "1rem",
       letterSpacing: is_farsi ? "0px" : "0.5px",
     },
     labelLarge: {
       fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
-      fontWeight: "bold",
+      fontWeight: fontWeight.bold,
       fontSize: "0.875rem",
-      lineHeight: "1.125rem",
+      lineHeight: is_farsi ? "auto" : "1.25rem",
       letterSpacing: is_farsi ? "0px" : "0.1px",
     },
     labelCondensed: {
       fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
-      fontWeight: 500,
+      fontWeight: fontWeight.regular,
       fontSize: "0.75rem",
       lineHeight: "0.75rem",
-      letterSpacing: "0.5px",
+      letterSpacing: is_farsi ? "0px" : "0.5px",
     },
     semiBoldSmall: {
       fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
-      fontWeight: "500",
+      fontWeight: is_farsi ? fontWeight.medium : fontWeight.semiBold,
       fontSize: "0.75rem",
-      lineHeight: "1rem",
+      lineHeight: is_farsi ? "auto" : "1rem",
       letterSpacing: is_farsi ? "0px" : "0.5px",
-    },
-    semiBoldLarge: {
-      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
-      fontWeight: "500",
-      fontSize: "1rem",
-      letterSpacing: is_farsi ? "0px" : "0.15px",
     },
     semiBoldMedium: {
       fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
-      fontWeight: "500",
+      fontWeight: is_farsi ? fontWeight.medium : fontWeight.semiBold,
       fontSize: "0.875rem",
-      lineHeight: "1.25rem",
+      lineHeight: is_farsi ? "auto" : "1.25rem",
       letterSpacing: is_farsi ? "0px" : "0.1px",
+    },
+    semiBoldLarge: {
+      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+      fontWeight: is_farsi ? fontWeight.medium : fontWeight.semiBold,
+      fontSize: "1rem",
+      lineHeight: is_farsi ? "auto" : "1.5rem",
+      letterSpacing: is_farsi ? "0px" : "0.15px",
     },
     semiBoldXLarge: {
       fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
-      fontWeight: "500",
-      fontSize: "1.25rem",
-      lineHeight: "1.75rem",
+      fontWeight: is_farsi ? fontWeight.medium : fontWeight.semiBold,
+      fontSize: is_farsi ? "1.25rem" : "1.375rem",
+      lineHeight: is_farsi ? "auto" : "1.75rem",
       letterSpacing: "0px",
     },
     button: {

@@ -63,7 +63,7 @@ const pins: Pin[] = [
     left: "75.7%",
     top: "54%",
     leftMobile: "57.5%",
-    topMobile: "61%",
+    topMobile: "64%",
     url: "/green-pin.svg",
     labelPosition: "top",
   },
@@ -160,7 +160,7 @@ const RoadmapImageWithPins = ({
       aspectRatio: isMobile ? "442/717" : "1440/831",
       mx: "auto",
       my: isMobile ? 2 : 0,
-      mt: isMobile ? undefined : -6,
+      mt: isMobile ? undefined : -15,
     }}
   >
     <img
@@ -247,7 +247,7 @@ const ProcessRoadmap: React.FC = () => {
   const streetImg = isMobile ? "/mobile-street.svg" : "/street.svg";
 
   return (
-    <Box sx={{ ...styles.centerCVH }} my={4}>
+    <Box sx={{ ...styles.centerCVH }} mt={20}>
       <Typography
         variant={isMobile ? "headlineMedium" : "headlineLarge"}
         textAlign="center"

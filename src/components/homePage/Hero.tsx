@@ -9,7 +9,15 @@ import AnimatedTextBanner from "./AnimatedTextBanner";
 
 const HeroSection = () => {
   return (
-    <Box sx={{ display: "flex", height: "auto", mb: "25px", justifyContent: "center", pt: "44px"}}>
+    <Box
+      sx={{
+        display: "flex",
+        height: "auto",
+        mb: "25px",
+        justifyContent: "center",
+        pt: "44px",
+      }}
+    >
       <Box
         sx={{
           width: "100%",
@@ -31,7 +39,7 @@ const HeroSection = () => {
         <Box
           sx={{
             mx: { xs: "52px", sm: "auto" },
-            maxWidth: { xs: "336px", sm: "736px" },
+            maxWidth: { xs: "336px", sm: "600px", lg: "736px" },
             color: "#fff",
             textAlign: "center",
           }}
@@ -74,6 +82,8 @@ const HeroSection = () => {
               boxShadow: "0 1px 5px 0 #0000001F",
               ...theme.typography.titleMedium,
               color: theme.palette.primary.main,
+              fontWeight: 600,
+
             }}
             size="large"
           >

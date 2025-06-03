@@ -4,6 +4,7 @@ import FeatureCard from "./Feature";
 import { styles } from "@/config/styles";
 import { Trans } from "react-i18next";
 import { motion } from "framer-motion";
+import { t } from "i18next";
 
 const features = [
   {
@@ -70,15 +71,16 @@ const FeaturesSection = () => (
       bgcolor: "#F9FAFB",
     }}
     px={{ xs: 2, md: 6, xxl: 30 }}
+    mt={20}
   >
     <Typography
       variant="headlineLarge"
       textAlign="center"
-      sx={{ mb: { xs: 0, md: 2 } }}
+      sx={{ mb: { xs: 0, md: 14 } }}
     >
       <Trans
         i18nKey="main.whatMakesDifferent"
-        values={{ app: "Flickit" }}
+        values={{ app: t("main.flickit") }}
         components={{ style: <span style={{ color: "#2466A8" }} /> }}
       />
     </Typography>

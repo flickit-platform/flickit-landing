@@ -12,17 +12,14 @@ const FeatureCard = ({ icon, titleKey, descKey }: Props) => (
   <Box
     sx={{
       ...styles.centerCH,
-      py: 2,
+      py: 4,
       px: 2,
       borderRadius: "12px",
       bgcolor: "background.paper",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "flex-start",
-      height: 220,
+      justifyContent:"flex-start",
+      minHeight: 250,
       boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.25)",
-      gap: 1,
+      gap: 2,
     }}
   >
     <Box component="img" src={icon} alt={titleKey} sx={{ maxWidth: 45 }} />

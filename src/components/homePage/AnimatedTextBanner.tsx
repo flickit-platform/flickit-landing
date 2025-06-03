@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { motion, AnimatePresence } from "framer-motion";
 import { styles } from "@/config/styles";
-import { useTheme } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 import { farsiFontFamily, primaryFontFamily } from "@/utils/fonts";
@@ -27,7 +26,6 @@ const messages = [
 
 const AnimatedTextBanner = () => {
   const [index, setIndex] = useState(0);
-  const theme = useTheme();
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -40,7 +38,7 @@ const AnimatedTextBanner = () => {
   return (
     <Box
       sx={{
-        mt: 15,
+        mt: 10,
         mb: 2,
         position: "relative",
         ...styles.centerH,
@@ -60,15 +58,20 @@ const AnimatedTextBanner = () => {
         <AnimatePresence mode="wait">
           <motion.div
             key={index}
-            initial={{ y: -30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 30, opacity: 0 }}
+            initial={{ opacity: 0, width: 0 }}
+            animate={{ opacity: 1, width: "auto" }}
+            exit={{ opacity: 0, width: 0 }}
             transition={{ duration: 0.5 }}
+            style={{
+              whiteSpace: "nowrap",
+              overflow: "hidden",
+              textAlign: "center",
+            }}
           >
             <Typography
               sx={{
-                fontStyle: "italic",
-                fontWeight: 600,
+                fontStyle: i18next.language === "fa" ? "none" : "italic",
+                fontWeight: 400,
                 color: "#fff",
                 fontSize: {
                   xs: "24px",
@@ -78,7 +81,7 @@ const AnimatedTextBanner = () => {
                   i18next.language === "fa"
                     ? farsiFontFamily
                     : primaryFontFamily,
-                whiteSpace: "nowrap",
+                display: "inline-block",
               }}
             >
               {t(messages[index])}

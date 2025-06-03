@@ -6,14 +6,22 @@ import Grid from "@mui/material/Grid";
 import { theme } from "@/config/theme";
 import ContactUsDialog from "@/components/common/ContactUs/ContactUs";
 import useDialog from "@/utils/useDialog";
+import { styles } from "@/config/styles";
+import useScreenResize from "@/utils/useScreenResize";
 
 export default function Footer() {
   const dialogProps = useDialog();
 
+  const isMobile = useScreenResize("sm");
   return (
     <Box
       component={"footer"}
-      sx={{ background: "#2B333B", py: "42px", px: { xs: 1, sm: "48px" } }}
+      sx={{
+        background: "#2a333b",
+        backgroundImage: { md: "url(/footer.svg)" },
+        py: "38px",
+        px: { xs: 1, sm: "48px" },
+      }}
     >
       <Grid
         container
@@ -21,37 +29,51 @@ export default function Footer() {
           maxWidth: "1440px",
           mx: "auto",
           display: "flex",
-          gap: { xs: "101px", sm: "unset" },
+          gap: { xs: 8, sm: "unset" },
         }}
       >
-        <Grid order={{ xs: 3, sm: 1 }} size={{ xs: 12, sm: 4 }}>
-          <img src={"/logo.svg"} />
+        <Grid
+          order={{ xs: 3, sm: 1 }}
+          size={{ xs: 12, sm: 5.35 }}
+          sx={{
+            ...styles.centerCV,
+            justifyContent: { xs: "flex-start", md: "cente" },
+            textAlign: { xs: "center", md: "justify" },
+          }}
+        >
+          <img
+            alt="logo"
+            src={"/logo.svg"}
+            style={{ margin: isMobile ? "0 auto" : "0", maxWidth: 170 }}
+          />
           <Typography
             sx={{
               ...theme.typography.bodyMedium,
               color: "#F0F2F4",
-              maxWidth: { sm: "428px" },
+              maxWidth: { sm: 390 },
+              mt: 2,
+              textAlign: { xs: "center", md: "justify" },
             }}
-            textAlign="justify"
           >
             <Trans i18nKey={"footer.flickitFooterText"} />
           </Typography>
         </Grid>
-        <Grid order={2} size={{ xs: 12, sm: 4 }}></Grid>
-        <Grid order={{ xs: 1, sm: 3 }} size={{ xs: 12, sm: 4 }}>
+        <Grid
+          order={2}
+          size={{ xs: 12, sm: 4 }}
+          sx={{ display: { xs: "none", sm: "grid" } }}
+        ></Grid>
+        <Grid order={{ xs: 1, sm: 3 }} size={{ xs: 12, sm: 2.65 }}>
           <Box
             sx={{
               display: "flex",
               justifyContent: "center",
-              alignItems: { xs: "center", sm: "flex-end" },
+              alignItems: "center",
               flexDirection: { xs: "row", sm: "column" },
               gap: 2,
             }}
           >
-            <img
-              style={{ width: "137px", height: "120px" }}
-              src={"email-icon.svg"}
-            />
+            <img src={"email-icon.svg"} />
             <Box
               sx={{
                 display: "flex",

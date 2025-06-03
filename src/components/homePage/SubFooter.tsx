@@ -18,8 +18,8 @@ export default function FooterGradientCTA() {
         height: {
             xs: "155px",
             sm: "150px",
-            md: "80px",
-            xl: "100px",
+            md: "70px",
+            xl: "85px",
         },
         display: "flex",
         flexDirection: {xs: "column", md: "row"},
@@ -52,7 +52,11 @@ export default function FooterGradientCTA() {
             transform: theme.direction == "rtl"?  "rotate(180deg)" : "",
         }}
         />
-      <Typography variant="headlineSmall" color="#fff" textAlign="center" sx={{zIndex: 2}}>
+      <Typography  sx={{
+          ...theme.typography.titleLarge,
+          textAlign: "center",
+          color: "#fff",
+          zIndex: 2}}>
         {isMobile ? (
           message.split(".").map(
             (sentence, i) =>
@@ -70,14 +74,15 @@ export default function FooterGradientCTA() {
                 position: "relative",
                 [theme.direction == "rtl" ? "left" : "right"]: {
                     md: "26%",
-                    xxl: "22%"
+                    xl: "28%",
+                    xxl: "26%"
                 },
                 top: 0,
                 bottom: 0,
                 gap: {
                 md: "50px",
-                xl: "30px",
-                xxl: "40px",
+                xl: "45px",
+                xxl: "45px",
                 } ,
                 color: "#fff"
             }} >
@@ -121,8 +126,9 @@ export default function FooterGradientCTA() {
           color: "#2466A8",
           position: {md: "absolute"},
           [theme.direction == "rtl" ? "left" : "right"]: {
-              md: "2%",
-              xl: "4%"
+              md: "10%",
+              xl: "20%",
+              xxl:"20%"
           },
             height: {md: "58px"},
           boxShadow: "0 2px 12px 0 rgba(36,102,168,0.15)",
@@ -140,8 +146,7 @@ export default function FooterGradientCTA() {
                     ...theme.typography.titleMedium
                 },
                 ...theme.typography.titleLarge,
-        }}
-            variant={isMobile ? "inherit" : "titleLarge"}>
+        }}>
           <Trans i18nKey="hero.startSelfAssessment" />
         </Typography>
       </Button>

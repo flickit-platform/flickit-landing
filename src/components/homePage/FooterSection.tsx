@@ -18,7 +18,7 @@ export default function Footer() {
       component={"footer"}
       sx={{
         background: "#2a333b",
-        backgroundImage: { md: "url(/footer.svg)" },
+        backgroundImage: { md: "url(/Footer.svg)" },
         py: "38px",
         px: { xs: 1, sm: "48px" },
       }}

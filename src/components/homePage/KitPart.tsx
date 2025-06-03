@@ -240,8 +240,9 @@ const KitPart = ({
           ...styles.centerCH,
           minHeight: "fit-content",
           flexGrow: 0,
+          display: { xs: !waitList ? "flex" : "none", md: "flex" },
         }}
-        mb={{ xs: 18, lg: 2 }}
+        mb={{ xs: 18, md: 10, lg: 2 }}
       >
         {caseStudyLogo && (
           <Box
@@ -267,7 +268,7 @@ const KitPart = ({
           sx={{
             textOverflow: "ellipsis",
             width: "100%",
-            minHeight: "60px",
+            minHeight: "70px",
             maxHeight: "80px",
             overflow: "hidden",
           }}

@@ -25,16 +25,23 @@ const Customers = () => {
           flexDirection: { xs: "column-reverse", md: "row" },
           mx: "auto",
           maxWidth: "1440px",
-          px: 23,
+          px: { xs: "24px", md: "114px" },
           py: { xs: "24px", md: "38px" },
-          justifyContent: "space-between",
+          gap: { xs: "34px", md: "80px" },
         }}
       >
         <Typography
-          sx={{
-            ...theme.typography.semiBoldXLarge,
-            color: theme.palette.info.main,
-          }}
+          sx={
+            isMobile
+              ? {
+                  ...theme.typography.semiBoldLarge,
+                  color: theme.palette.info.main,
+                }
+              : {
+                  ...theme.typography.semiBoldXLarge,
+                  color: theme.palette.info.main,
+                }
+          }
         >
           <Trans i18nKey={"common.trustedCustomers"} />
         </Typography>

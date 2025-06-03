@@ -60,7 +60,7 @@ const FaqSection = () => {
               justifyContent: idx % 2 === 0 ? "start" : "end",
               textAlign: idx % 2 === 0 ? "start" : "end",
               alignItems: "center",
-              mt: isMobile ? 8 : -8,
+              mt: isMobile ? 8 : idx === 2 ? -4 : -8,
               gap: 4,
             }}
           >
@@ -75,8 +75,14 @@ const FaqSection = () => {
               }}
               color="#2B333B"
             />
-            <Box sx={{ ...styles.centerCV }} maxWidth={{ lg: 570, xxl: 900 }} gap="12px">
-              <Typography variant={isMobile ? "semiBoldLarge" : "semiBoldXLarge"}>
+            <Box
+              sx={{ ...styles.centerCV }}
+              maxWidth={{ lg: 570, xxl: 900 }}
+              gap="12px"
+            >
+              <Typography
+                variant={isMobile ? "semiBoldLarge" : "semiBoldXLarge"}
+              >
                 <Trans i18nKey={item.questionKey} />
               </Typography>
               <Typography variant={isMobile ? "bodyMedium" : "bodyLarge"}>

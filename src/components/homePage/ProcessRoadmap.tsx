@@ -63,7 +63,7 @@ const pins: Pin[] = [
     left: "75.7%",
     top: "54%",
     leftMobile: "57.5%",
-    topMobile: "61%",
+    topMobile: "64%",
     url: "/green-pin.svg",
     labelPosition: "top",
   },

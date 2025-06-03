@@ -72,10 +72,10 @@ export default function FooterGradientCTA() {
                 display: "flex",
                 alignItems: "center",
                 position: "relative",
-                [theme.direction == "rtl" ? "left" : "right"]: {
-                    md: "26%",
-                    xl: "28%",
-                    xxl: "26%"
+                [theme.direction == "rtl" ? "right" : "left"]: {
+                    md: "2%",
+                    xl: "3%",
+                    xxl: "0%"
                 },
                 top: 0,
                 bottom: 0,
@@ -124,11 +124,11 @@ export default function FooterGradientCTA() {
           py: isMobile ? 1 : 2,
           bgcolor: "#fff",
           color: "#2466A8",
-          position: {md: "absolute"},
-          [theme.direction == "rtl" ? "left" : "right"]: {
+          position: {md: "relative"},
+          [theme.direction == "rtl" ? "right" : "left"]: {
               md: "10%",
-              xl: "20%",
-              xxl:"20%"
+              xl: "10%",
+              xxl:"5%"
           },
             height: {md: "58px"},
           boxShadow: "0 2px 12px 0 rgba(36,102,168,0.15)",

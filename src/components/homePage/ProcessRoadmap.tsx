@@ -3,6 +3,7 @@ import { Box, Typography } from "@mui/material";
 import { Trans } from "react-i18next";
 import { styles } from "@/config/styles";
 import useScreenResize from "@/utils/useScreenResize";
+import { motion } from "framer-motion"; // فقط این اضافه شد
 
 type Pin = {
   id: number;
@@ -23,10 +24,10 @@ const pins: Pin[] = [
     titleKey: "main.pin1Title",
     descKey: "main.pin1Desc",
     color: "#CE2A4B",
-    left: "19.3%",
-    top: "55%",
+    left: "16.3%",
+    top: "49%",
     leftMobile: "22%",
-    topMobile: "11%",
+    topMobile: "5%",
     url: "/red-pin.svg",
     labelPosition: "top-right",
   },
@@ -35,10 +36,10 @@ const pins: Pin[] = [
     titleKey: "main.pin2Title",
     descKey: "main.pin2Desc",
     color: "#2466A8",
-    left: "32.5%",
-    top: "71.5%",
+    left: "29.5%",
+    top: "65.5%",
     leftMobile: "54%",
-    topMobile: "27%",
+    topMobile: "21%",
     url: "/blue-pin.svg",
     labelPosition: "bottom-left",
   },
@@ -47,10 +48,10 @@ const pins: Pin[] = [
     titleKey: "main.pin3Title",
     descKey: "main.pin3Desc",
     color: "#F39318",
-    left: "53%",
-    top: "60%",
-    leftMobile: "40%",
-    topMobile: "52%",
+    left: "50%",
+    top: "54%",
+    leftMobile: "30%",
+    topMobile: "46%",
     url: "/orange-pin.svg",
     labelPosition: "bottom-right",
   },
@@ -59,10 +60,10 @@ const pins: Pin[] = [
     titleKey: "main.pin4Title",
     descKey: "main.pin4Desc",
     color: "#388E3C",
-    left: "78.7%",
-    top: "60%",
-    leftMobile: "65.5%",
-    topMobile: "71%",
+    left: "75.7%",
+    top: "54%",
+    leftMobile: "57.5%",
+    topMobile: "61%",
     url: "/green-pin.svg",
     labelPosition: "top",
   },
@@ -115,12 +116,13 @@ const getLabelStyle = (pos: Pin["labelPosition"]) => {
   }
 };
 
-type PinLabelProps = {
+const PinLabel = ({
+  pin,
+  variant = "headlineMedium",
+}: {
   pin: Pin;
   variant?: "headlineMedium" | "headlineSmall";
-};
-
-const PinLabel = ({ pin, variant = "headlineMedium" }: PinLabelProps) => (
+}) => (
   <Box
     sx={{
       width: "100%",
@@ -175,10 +177,20 @@ const RoadmapImageWithPins = ({
         pointerEvents: "none",
       }}
     />
-    {pins.map((pin) => (
-      <Box
+
+    {pins.map((pin, index) => (
+      <motion.div
         key={pin.id}
-        sx={{
+        initial={{ opacity: 0, scale: 0.5 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{
+          delay: index * 0.3,
+          type: "spring",
+          stiffness: 120,
+          damping: 10,
+        }}
+        viewport={{ once: true, amount: 0.3 }}
+        style={{
           position: "absolute",
           left: isMobile ? pin.leftMobile : pin.left,
           top: isMobile ? pin.topMobile : pin.top,
@@ -186,7 +198,10 @@ const RoadmapImageWithPins = ({
           zIndex: 2,
           pointerEvents: "none",
           width: 81,
-          ...styles.centerCH,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
         <img
@@ -222,7 +237,7 @@ const RoadmapImageWithPins = ({
             </Typography>
           </Box>
         )}
-      </Box>
+      </motion.div>
     ))}
   </Box>
 );
@@ -242,6 +257,7 @@ const ProcessRoadmap: React.FC = () => {
           components={{ style: <span style={{ color: "#2466A8" }} /> }}
         />
       </Typography>
+
       {isMobile ? (
         <Box width="100%">
           <PinLabel pin={pins[0]} variant="headlineSmall" />

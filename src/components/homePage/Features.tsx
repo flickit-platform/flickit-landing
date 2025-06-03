@@ -3,6 +3,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import FeatureCard from "./Feature";
 import { styles } from "@/config/styles";
 import { Trans } from "react-i18next";
+import { motion } from "framer-motion";
 
 const features = [
   {
@@ -47,6 +48,19 @@ const features = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
 const FeaturesSection = () => (
   <Box
     gap={4}
@@ -64,42 +78,48 @@ const FeaturesSection = () => (
     >
       <Trans
         i18nKey="main.whatMakesDifferent"
-        values={{
-          app: "Flickit",
-        }}
-        components={{
-          style: <span style={{ color: "#2466A8" }} />,
-        }}
+        values={{ app: "Flickit" }}
+        components={{ style: <span style={{ color: "#2466A8" }} /> }}
       />
     </Typography>
-    <Grid
-      container
-      spacing={{ xs: 3 }}
-      alignItems="stretch"
-      justifyContent="center"
+
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
     >
-      {features.map((item, index) => (
-        <Grid
-          key={index}
-          size={{ xs: 12, sm: 6, lg: 3 }}
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            mt: {
-              xs: 0,
-              lg:
-                index == 1 || index === 3
-                  ? 20
-                  : index == 4 || index === 6
-                  ? -20
-                  : 0,
-            },
-          }}
-        >
-          <FeatureCard {...item} />
-        </Grid>
-      ))}
-    </Grid>
+      <Grid
+        container
+        spacing={{ xs: 3 }}
+        alignItems="stretch"
+        justifyContent="center"
+      >
+        {features.map((item, index) => (
+          <Grid
+            key={index}
+            size={{ xs: 12, sm: 6, lg: 3 }}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              mt: {
+                xs: 0,
+                lg:
+                  index == 1 || index === 3
+                    ? 20
+                    : index == 4 || index === 6
+                    ? -20
+                    : 0,
+              },
+            }}
+          >
+            <motion.div variants={cardVariants}>
+              <FeatureCard {...item} />
+            </motion.div>
+          </Grid>
+        ))}
+      </Grid>
+    </motion.div>
   </Box>
 );
 

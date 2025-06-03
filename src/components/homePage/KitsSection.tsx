@@ -2,6 +2,7 @@ import Kit from "./KitPart";
 import { Box, Grid, Typography } from "@mui/material";
 import { styles } from "@/config/styles";
 import { Trans } from "react-i18next";
+import { motion } from "framer-motion";
 
 const cardsData = [
   {
@@ -12,7 +13,7 @@ const cardsData = [
     descKey: "main.kit.softwarePerformance.desc",
     caseStudyDescKey: "main.kit.softwarePerformance.caseStudyDesc",
     caseStudyLogo: "amazon.svg",
-    free: true
+    free: true,
   },
   {
     id: "363",
@@ -22,7 +23,7 @@ const cardsData = [
     descKey: "main.kit.toolMaturity.desc",
     caseStudyDescKey: "main.kit.toolMaturity.caseStudyDesc",
     caseStudyLogo: "etsy.svg",
-    free: true
+    free: true,
   },
   {
     id: "386",
@@ -32,7 +33,7 @@ const cardsData = [
     descKey: "main.kit.internalAudit.desc",
     caseStudyDescKey: "main.kit.internalAudit.caseStudyDesc",
     caseStudyLogo: "facebook.svg",
-    free: false
+    free: false,
   },
   {
     id: "385",
@@ -43,9 +44,28 @@ const cardsData = [
     caseStudyDescKey: "main.kit.vendorEvaluation.caseStudyDesc",
     caseStudyLogo: "fujistu.jpeg",
     waitList: true,
-    free: true
+    free: true,
   },
 ];
+
+// framer-motion variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2 },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
 
 const Kits = () => {
   return (
@@ -59,22 +79,32 @@ const Kits = () => {
           }}
         />
       </Typography>
-      <Grid
-        container
-        spacing={{ md: 3 }}
-        columns={{ xs: 3, sm: 4, md: 6, lg: 12 }}
-        alignItems="stretch"
+
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
       >
-        {cardsData.map((item, index) => (
-          <Grid
-            key={item.id}
-            size={{ xs: 2, sm: 4, md: 3 }}
-            sx={{ display: "flex" }}
-          >
-            <Kit {...item} />
-          </Grid>
-        ))}
-      </Grid>
+        <Grid
+          container
+          spacing={{ md: 3 }}
+          columns={{ xs: 3, sm: 4, md: 6, lg: 12 }}
+          alignItems="stretch"
+        >
+          {cardsData.map((item, index) => (
+            <Grid
+              key={item.id}
+              size={{ xs: 2, sm: 4, md: 3 }}
+              sx={{ display: "flex" }}
+            >
+              <motion.div variants={cardVariants} style={{ width: "100%" }}>
+                <Kit {...item} />
+              </motion.div>
+            </Grid>
+          ))}
+        </Grid>
+      </motion.div>
     </Box>
   );
 };

@@ -3,6 +3,7 @@ import { Box, Typography, Link } from "@mui/material";
 import { styles } from "@/config/styles";
 import useScreenResize from "@/utils/useScreenResize";
 import { Trans } from "react-i18next";
+import { motion } from "framer-motion";
 
 const faqs = [
   {
@@ -44,42 +45,45 @@ const FaqSection = () => {
       </Typography>
 
       {faqs.map((item, idx) => (
-        <Box
+        <motion.div
           key={idx}
-          sx={{
-            display: "flex",
-            flexDirection: idx % 2 === 0 ? "row" : "row-reverse",
-            justifyContent: idx % 2 === 0 ? "start" : "end",
-            textAlign: idx % 2 === 0 ? "start" : "end",
-            alignItems: "center",
-            mt: isMobile ? 8 : -8,
-            gap: 4,
-          }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: idx * 0.25, duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <Box
-            component="img"
-            src={item.icon}
-            alt=""
             sx={{
-              width: { xs: 140, sm: 200, md: "unset" },
-              maxWidth: { xs: 140, sm: 200, md: 250 },
-              mb: { xs: 2, md: 0 },
+              display: "flex",
+              flexDirection: idx % 2 === 0 ? "row" : "row-reverse",
+              justifyContent: idx % 2 === 0 ? "start" : "end",
+              textAlign: idx % 2 === 0 ? "start" : "end",
+              alignItems: "center",
+              mt: isMobile ? 8 : -8,
+              gap: 4,
             }}
-            color="#2B333B"
-          />
-          <Box
-            sx={{ ...styles.centerCV }}
-            maxWidth={{ lg: 570, xxl: 900 }}
-            gap="12px"
           >
-            <Typography variant={isMobile ? "semiBoldLarge" : "semiBoldXLarge"}>
-              <Trans i18nKey={item.questionKey} />
-            </Typography>
-            <Typography variant={isMobile ? "bodyMedium" : "bodyLarge"}>
-              <Trans i18nKey={item.answerKey} />
-            </Typography>
+            <Box
+              component="img"
+              src={item.icon}
+              alt=""
+              sx={{
+                width: { xs: 140, sm: 200, md: "unset" },
+                maxWidth: { xs: 140, sm: 200, md: 250 },
+                mb: { xs: 2, md: 0 },
+              }}
+              color="#2B333B"
+            />
+            <Box sx={{ ...styles.centerCV }} maxWidth={{ lg: 570, xxl: 900 }} gap="12px">
+              <Typography variant={isMobile ? "semiBoldLarge" : "semiBoldXLarge"}>
+                <Trans i18nKey={item.questionKey} />
+              </Typography>
+              <Typography variant={isMobile ? "bodyMedium" : "bodyLarge"}>
+                <Trans i18nKey={item.answerKey} />
+              </Typography>
+            </Box>
           </Box>
-        </Box>
+        </motion.div>
       ))}
     </Box>
   );

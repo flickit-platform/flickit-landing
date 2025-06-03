@@ -112,7 +112,7 @@ const Kits = () => {
         variant="contained"
         size="large"
         component={Link}
-        href={"https://app.flickit.org/assessment-kits/"}
+        href={"https://app.flickit.org/assessment-kits"}
         sx={{
           borderRadius: "24px",
           marginBlock: 7,

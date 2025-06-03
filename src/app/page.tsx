@@ -16,7 +16,7 @@ export default function Home() {
       <HeroSection />
       <KitsSection />
       <Customers/>
-      <ProcessRoadmap />
+      {/*<ProcessRoadmap />*/}
       <Features />
       <FaqSection />
       <SubFooter />

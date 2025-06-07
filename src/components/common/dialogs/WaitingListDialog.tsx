@@ -15,9 +15,7 @@ import { Box } from "@mui/material";
 
 const WaitingListDialog = (props: any) => {
   const methods = useForm();
-  const [state, handleSubmitSpree] = useFormSpree(
-    import.meta.env.VITE_FORM_SPREE
-  );
+  const [state, handleSubmitSpree] = useFormSpree("myzeoqrg");
   const { kitTitle, onClose, ...rest } = props;
   const abortController = useMemo(() => new AbortController(), [rest.open]);
   const [dialogKey, setDialogKey] = useState(0);

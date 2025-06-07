@@ -86,30 +86,30 @@ export default function FooterGradientCTA() {
                 } ,
                 color: "#fff"
             }} >
-                <Typography sx={{
-                    [theme.breakpoints.down("xxl")]: {
-                        ...theme.typography.titleMedium
-                    },
-                    ...theme.typography.headlineSmall
-                }}>
-                    <Trans i18nKey={"footer.understandYourStrengths"} />
-                </Typography>
-                <Typography sx={{
-                    [theme.breakpoints.down("xxl")]: {
-                        ...theme.typography.titleMedium
-                    },
-                    ...theme.typography.headlineSmall
-                }}>
-                    <Trans i18nKey={"footer.eliminateRisks"} />
-                </Typography>
-                <Typography sx={{
-                    [theme.breakpoints.down("xxl")]: {
-                        ...theme.typography.titleMedium
-                    },
-                    ...theme.typography.headlineSmall
-                }}>
-                    <Trans i18nKey={"footer.buildWithConfidence"} />
-                </Typography>
+                {/*<Typography sx={{*/}
+                {/*    [theme.breakpoints.down("xxl")]: {*/}
+                {/*        ...theme.typography.titleMedium*/}
+                {/*    },*/}
+                {/*    ...theme.typography.headlineSmall*/}
+                {/*}}>*/}
+                {/*    <Trans i18nKey={"footer.understandYourStrengths"} />*/}
+                {/*</Typography>*/}
+                {/*<Typography sx={{*/}
+                {/*    [theme.breakpoints.down("xxl")]: {*/}
+                {/*        ...theme.typography.titleMedium*/}
+                {/*    },*/}
+                {/*    ...theme.typography.headlineSmall*/}
+                {/*}}>*/}
+                {/*    <Trans i18nKey={"footer.eliminateRisks"} />*/}
+                {/*</Typography>*/}
+                {/*<Typography sx={{*/}
+                {/*    [theme.breakpoints.down("xxl")]: {*/}
+                {/*        ...theme.typography.titleMedium*/}
+                {/*    },*/}
+                {/*    ...theme.typography.headlineSmall*/}
+                {/*}}>*/}
+                {/*    <Trans i18nKey={"footer.buildWithConfidence"} />*/}
+                {/*</Typography>*/}
             </Box>
         )}
       </Typography>
@@ -124,11 +124,10 @@ export default function FooterGradientCTA() {
           py: isMobile ? 1 : 2,
           bgcolor: "#fff",
           color: "#2466A8",
-          position: {md: "relative"},
-          [theme.direction == "rtl" ? "right" : "left"]: {
-              md: "1%",
-              xl: "10%",
-              xxl:"5%"
+          position: {md: "absolute"},
+          [theme.direction == "rtl" ? "left" : "right"]: {
+              md: "2%",
+              xl: "5%",
           },
             height: {md: "58px"},
           boxShadow: "0 2px 12px 0 rgba(36,102,168,0.15)",

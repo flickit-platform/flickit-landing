@@ -42,14 +42,13 @@ export default function FooterGradientCTA() {
             backgroundImage:{
                 xs: "url(/sub-footer-xs.svg)",
                 sm: "url(/sub-footer-sm.svg)",
-                md: "url(/sub-footer-md.svg)",
-                xl: "url(/sub-footer-xl.svg)",
+                md: theme.direction == "rtl" ? "url(/fa-sub-footer-md.svg)" : "url(/en-sub-footer-md.svg)",
+                xl: theme.direction == "rtl" ? "url(/fa-sub-footer-xl.svg)" : "url(/en-sub-footer-xl.svg)",
             },
             backgroundSize: {xs: "cover", md: "contain"},
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             overflow: "visible",
-            transform: theme.direction == "rtl"?  "rotate(180deg)" : "",
         }}
         />
       <Typography  sx={{
@@ -57,7 +56,7 @@ export default function FooterGradientCTA() {
           textAlign: "center",
           color: "#fff",
           zIndex: 2}}>
-        {isMobile ? (
+        {isMobile && (
           message.split(".").map(
             (sentence, i) =>
               sentence.trim() && (
@@ -66,52 +65,7 @@ export default function FooterGradientCTA() {
                   <br />
                 </React.Fragment>
               )
-          )
-        ) : (
-            <Box sx={{
-                display: "flex",
-                alignItems: "center",
-                position: "relative",
-                [theme.direction == "rtl" ? "right" : "left"]: {
-                    md: "2%",
-                    xl: "3%",
-                    xxl: "0%"
-                },
-                top: 0,
-                bottom: 0,
-                gap: {
-                md: "50px",
-                xl: "45px",
-                xxl: "45px",
-                } ,
-                color: "#fff"
-            }} >
-                {/*<Typography sx={{*/}
-                {/*    [theme.breakpoints.down("xxl")]: {*/}
-                {/*        ...theme.typography.titleMedium*/}
-                {/*    },*/}
-                {/*    ...theme.typography.headlineSmall*/}
-                {/*}}>*/}
-                {/*    <Trans i18nKey={"footer.understandYourStrengths"} />*/}
-                {/*</Typography>*/}
-                {/*<Typography sx={{*/}
-                {/*    [theme.breakpoints.down("xxl")]: {*/}
-                {/*        ...theme.typography.titleMedium*/}
-                {/*    },*/}
-                {/*    ...theme.typography.headlineSmall*/}
-                {/*}}>*/}
-                {/*    <Trans i18nKey={"footer.eliminateRisks"} />*/}
-                {/*</Typography>*/}
-                {/*<Typography sx={{*/}
-                {/*    [theme.breakpoints.down("xxl")]: {*/}
-                {/*        ...theme.typography.titleMedium*/}
-                {/*    },*/}
-                {/*    ...theme.typography.headlineSmall*/}
-                {/*}}>*/}
-                {/*    <Trans i18nKey={"footer.buildWithConfidence"} />*/}
-                {/*</Typography>*/}
-            </Box>
-        )}
+          ))}
       </Typography>
 
       <Button

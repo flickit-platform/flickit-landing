@@ -36,6 +36,17 @@ const KitPart = ({
   free,
 }: Props) => {
   const dialogProps = useDialog();
+  const handleKitClick = (e: any, id: any, title: any) => {
+    (window as any).dataLayer.push({
+      event: "ppms.cm:trackEvent",
+      parameters: {
+        category: "Kit List",
+        action: "Click",
+        name: title,
+        value: id,
+      },
+    });
+  };
 
   return (
     <Box
@@ -190,6 +201,7 @@ const KitPart = ({
                 id +
                 `#createAssessment?id=${id}&title=${encodeURIComponent("")}`
               }
+              onClick={(e) => handleKitClick(e, id, t(titleKey))}
             >
               <Trans i18nKey="main.createAssessment" />
             </Button>

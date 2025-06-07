@@ -126,7 +126,7 @@ export default function FooterGradientCTA() {
           color: "#2466A8",
           position: {md: "relative"},
           [theme.direction == "rtl" ? "right" : "left"]: {
-              md: "10%",
+              md: "1%",
               xl: "10%",
               xxl:"5%"
           },

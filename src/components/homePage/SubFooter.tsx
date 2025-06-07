@@ -49,6 +49,7 @@ export default function FooterGradientCTA() {
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             overflow: "visible",
+            filter: 'drop-shadow(0 0 4px #000)',
         }}
         />
       <Typography  sx={{

@@ -75,15 +75,15 @@ export default function FooterGradientCTA() {
         size="large"
         sx={{
           px: 2.25,
-          py: isMobile ? 1 : 2,
           bgcolor: "#fff",
           color: "#2466A8",
           position: {md: "absolute"},
           [theme.direction == "rtl" ? "left" : "right"]: {
-              md: "2%",
-              xl: "5%",
+              md: "4%",
+              xl: "8%",
+              xxl: "15%",
           },
-            height: {md: "58px"},
+            height: {xl: "58px"},
           boxShadow: "0 2px 12px 0 rgba(36,102,168,0.15)",
           "&:hover": {
             bgcolor: "#F3F7FB",

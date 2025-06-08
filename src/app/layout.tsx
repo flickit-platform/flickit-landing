@@ -42,7 +42,7 @@ export default function RootLayout({
                 firstScriptElement,
               );
               window.clarity("consent");
-            })(window, document, "clarity", "script", "${process.env.VITE_PUBLIC_CLARITY_KEY}");
+            })(window, document, "clarity", "script", "${process.env.VITE_CLARITY_KEY}");
           `}
       </Script>
 

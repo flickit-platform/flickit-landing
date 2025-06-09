@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Typography, Chip, Button, Tooltip } from "@mui/material";
 import { Trans } from "react-i18next";
 import { theme } from "@/config/theme";
@@ -7,6 +7,7 @@ import { styles } from "@/config/styles";
 import WaitingListDialog from "../common/dialogs/WaitingListDialog";
 import useDialog from "@/utils/useDialog";
 import { t } from "i18next";
+import { LoadingButton } from "@mui/lab";
 
 interface Props {
   imageUrl: string;
@@ -36,6 +37,7 @@ const KitPart = ({
   free,
 }: Props) => {
   const dialogProps = useDialog();
+  const [loading, setLoading] = useState<null | "more" | "create">(null);
 
   const handleKitClick = (id: any, title: any) => {
     (window as any).dataLayer.push({
@@ -49,14 +51,17 @@ const KitPart = ({
     });
   };
 
-  const createAssessment = (e: any, id: any, title: any) => {
+  const createAssessment = (e: any, id: any, title?: any) => {
     e.preventDefault();
     e.stopPropagation();
     handleKitClick(id, title);
-    window.location.href =
-      "https://app.flickit.org/assessment-kits/" +
-      id +
-      `#createAssessment?id=${id}&title=${title}`;
+    setLoading(title ? "create" : "more");
+
+    setTimeout(() => {
+      window.location.href =
+        "https://app.flickit.org/assessment-kits/" + id + title ??
+        `#createAssessment?id=${id}&title=${title}`;
+    }, 600);
   };
 
   return (
@@ -198,18 +203,19 @@ const KitPart = ({
             <Button
               variant="outlined"
               fullWidth
-              component={Link}
-              href={"https://app.flickit.org/assessment-kits/" + id}
+              loading={loading === "more"}
+              onClick={(e) => createAssessment(e, id)}
             >
               <Trans i18nKey="main.moreAboutThisKit" />
             </Button>
-            <Button
+            <LoadingButton
               variant="contained"
               fullWidth
+              loading={loading === "create"}
               onClick={(e) => createAssessment(e, id, t(titleKey))}
             >
               <Trans i18nKey="main.createAssessment" />
-            </Button>
+            </LoadingButton>
           </Box>
         ) : (
           <Box

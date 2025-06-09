@@ -36,7 +36,8 @@ const KitPart = ({
   free,
 }: Props) => {
   const dialogProps = useDialog();
-  const handleKitClick = (e: any, id: any, title: any) => {
+
+  const handleKitClick = (id: any, title: any) => {
     (window as any).dataLayer.push({
       event: "ppms.cm:trackEvent",
       parameters: {
@@ -46,6 +47,16 @@ const KitPart = ({
         value: id,
       },
     });
+  };
+
+  const createAssessment = (e: any, id: any, title: any) => {
+    e.preventDefault();
+    e.stopPropagation();
+    handleKitClick(id, title);
+    window.location.href =
+      "https://app.flickit.org/assessment-kits/" +
+      id +
+      `#createAssessment?id=${id}&title=${title}`;
   };
 
   return (
@@ -195,13 +206,7 @@ const KitPart = ({
             <Button
               variant="contained"
               fullWidth
-              component={Link}
-              href={
-                "https://stage.flickit.org/assessment-kits/" +
-                id +
-                `#createAssessment?id=${id}&title=${encodeURIComponent("")}`
-              }
-              onClick={(e) => handleKitClick(e, id, t(titleKey))}
+              onClick={(e) => createAssessment(e, id, t(titleKey))}
             >
               <Trans i18nKey="main.createAssessment" />
             </Button>

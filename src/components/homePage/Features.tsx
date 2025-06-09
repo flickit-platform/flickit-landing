@@ -70,8 +70,8 @@ const FeaturesSection = () => (
       py: { xs: 2, md: 4 },
       bgcolor: "#F9FAFB",
     }}
-    px={{ xs: 2, md: 6, xxl: 30 }}
-    mt={20}
+    px={{ xs: 6, xxl: 30 }}
+    mt={{ xs: 11, md: 20 }}
   >
     <Typography
       variant="headlineLarge"

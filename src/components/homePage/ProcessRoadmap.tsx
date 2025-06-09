@@ -125,11 +125,11 @@ const PinLabel = ({
 }) => (
   <Box
     sx={{
-      width: "100%",
-      my: 2,
+      my: 4,
       textAlign: "center",
       ...styles.centerCH,
       gap: 1,
+      px: { xs: 8, md: 0 },
     }}
   >
     <Typography variant={variant} color={pin.color}>
@@ -247,7 +247,7 @@ const ProcessRoadmap: React.FC = () => {
   const streetImg = isMobile ? "/mobile-street.svg" : "/street.svg";
 
   return (
-    <Box sx={{ ...styles.centerCVH }} mt={20}>
+    <Box sx={{ ...styles.centerCVH }} mt={{ xs: 11, md: 20 }}>
       <Typography
         variant={isMobile ? "headlineMedium" : "headlineLarge"}
         textAlign="center"

@@ -6,6 +6,7 @@ import { styles } from "@/config/styles";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 import { farsiFontFamily, primaryFontFamily } from "@/utils/fonts";
+import useScreenResize from "@/utils/useScreenResize";
 
 const messages = [
   "hero.quotes.systemGotHacked",
@@ -27,6 +28,7 @@ const messages = [
 const AnimatedTextBanner = () => {
   const [index, setIndex] = useState(0);
   const { t } = useTranslation();
+  const isMobile = useScreenResize("sm");
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -38,7 +40,7 @@ const AnimatedTextBanner = () => {
   return (
     <Box
       sx={{
-        mt: 10,
+        mt: { xs: 0, md: 10 },
         mb: 2,
         position: "relative",
         ...styles.centerH,
@@ -58,12 +60,12 @@ const AnimatedTextBanner = () => {
         <AnimatePresence mode="wait">
           <motion.div
             key={index}
-            initial={{ opacity: 0, width: 0 }}
-            animate={{ opacity: 1, width: "auto" }}
-            exit={{ opacity: 0, width: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
             style={{
-              whiteSpace: "nowrap",
+              whiteSpace: isMobile ? "wrap" : "nowrap",
               overflow: "hidden",
               textAlign: "center",
             }}

@@ -13,9 +13,9 @@ const HeroSection = () => {
       sx={{
         display: "flex",
         height: "auto",
-        mb: "25px",
+        mb: { xs: "-40px", sm: 0, md: "25px" },
         justifyContent: "center",
-        pt: "44px",
+        pt: { xs: "0px", md: "44px" },
       }}
     >
       <Box
@@ -34,12 +34,13 @@ const HeroSection = () => {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat !important",
           backgroundPosition: "center",
+          minHeight: { xs: "700px", sm: "none" },
         }}
       >
         <Box
           sx={{
-            mx: { xs: "52px", sm: "auto" },
-            maxWidth: { xs: "336px", sm: "600px", lg: "736px" },
+            mx: { xs: "40px", sm: "auto" },
+            maxWidth: { xs: "400px", sm: "600px", lg: "736px" },
             color: "#fff",
             textAlign: "center",
           }}
@@ -83,7 +84,6 @@ const HeroSection = () => {
               ...theme.typography.titleMedium,
               color: theme.palette.primary.main,
               fontWeight: 600,
-
             }}
             size="large"
           >

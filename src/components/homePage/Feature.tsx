@@ -16,8 +16,8 @@ const FeatureCard = ({ icon, titleKey, descKey }: Props) => (
       px: 2,
       borderRadius: "12px",
       bgcolor: "background.paper",
-      justifyContent:"flex-start",
-      minHeight: 250,
+      justifyContent: "flex-start",
+      minHeight: { xs: 200, sm: 250 },
       boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.25)",
       gap: 2,
     }}

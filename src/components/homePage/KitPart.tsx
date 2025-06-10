@@ -59,8 +59,8 @@ const KitPart = ({
 
     setTimeout(() => {
       window.location.href =
-        "https://app.flickit.org/assessment-kits/" + id + title ??
-        `#createAssessment?id=${id}&title=${title}`;
+      title ?  "https://app.flickit.org/assessment-kits/" + id + title ??
+        `#createAssessment?id=${id}&title=${title}` : `https://app.flickit.org/assessment-kits/${id}/`;
     }, 600);
   };
 

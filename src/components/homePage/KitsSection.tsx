@@ -83,31 +83,35 @@ const Kits = () => {
         />
       </Typography>
 
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+      <Grid
+        container
+        spacing={{ md: 3 }}
+        columns={{ xs: 3, sm: 4, md: 6, lg: 12 }}
+        alignItems="stretch"
       >
-        <Grid
-          container
-          spacing={{ md: 3 }}
-          columns={{ xs: 3, sm: 4, md: 6, lg: 12 }}
-          alignItems="stretch"
-        >
-          {cardsData.map((item, index) => (
-            <Grid
-              key={item.id}
-              size={{ xs: 2, sm: 4, md: 3 }}
-              sx={{ display: "flex" }}
+        {cardsData.map((item, index) => (
+          <Grid
+            key={item.id}
+            size={{ xs: 2, sm: 4, md: 3 }}
+            sx={{ display: "flex" }}
+          >
+            <motion.div
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{
+                duration: 0.7,
+                delay: index * 0.15,
+                ease: "easeOut",
+              }}
+              style={{ width: "100%" }}
             >
-              <motion.div variants={cardVariants} style={{ width: "100%" }}>
-                <KitPart {...item} />
-              </motion.div>
-            </Grid>
-          ))}
-        </Grid>
-      </motion.div>
+              <KitPart {...item} />
+            </motion.div>
+          </Grid>
+        ))}
+      </Grid>
       <Button
         variant="contained"
         size="large"
@@ -118,6 +122,10 @@ const Kits = () => {
           marginBlock: 7,
           ...theme.typography.titleLarge,
           fontWeight: 600,
+          textAlign: "center",
+          [theme.breakpoints.down("md")]: {
+            ...theme.typography.titleMedium,
+          },
         }}
       >
         <Trans i18nKey="main.viewAllAssessmentKits" />

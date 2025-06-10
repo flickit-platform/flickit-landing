@@ -7,6 +7,7 @@ import * as data from "@/config/db-Article";
 import i18n from "i18next";
 import {BlogMaker} from "@/utils/blogMaker";
 import {useParams} from "next/navigation";
+import { appWithTranslation } from 'next-i18next';
 
 const Article = () => {
     const {id} = useParams()
@@ -41,4 +42,4 @@ const Article = () => {
     );
 };
 
-export default Article;
+export default appWithTranslation(Article);

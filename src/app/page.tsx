@@ -9,8 +9,9 @@ import ProcessRoadmap from "@/components/homePage/ProcessRoadmap";
 import Features from "@/components/homePage/Features";
 import FaqSection from "@/components/homePage/FaqSection";
 import Customers from "@/components/homePage/customers";
+import { appWithTranslation } from 'next-i18next';
 
-export default function Home() {
+function Home() {
   return (
     <>
       <HeroSection />
@@ -24,3 +25,4 @@ export default function Home() {
     </>
   );
 }
+export default appWithTranslation(Home)

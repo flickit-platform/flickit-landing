@@ -53,7 +53,7 @@ export default function Navbar() {
           >
             <Typography
               component={Link}
-              href={"https://app.flickit.org/"}
+              href={process.env.VITE_LOCAL_BASE_URL ?? ""}
               variant="semiBoldMedium"
               sx={{
                 color: "#2466A8",

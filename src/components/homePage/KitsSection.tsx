@@ -116,7 +116,7 @@ const Kits = () => {
         variant="contained"
         size="large"
         component={Link}
-        href={"https://app.flickit.org/assessment-kits"}
+        href={process.env.VITE_LOCAL_BASE_URL + "assessment-kits"}
         sx={{
           borderRadius: "24px",
           marginBlock: 7,

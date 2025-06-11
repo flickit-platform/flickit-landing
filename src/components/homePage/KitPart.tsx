@@ -55,11 +55,15 @@ const KitPart = ({
     e.preventDefault();
     e.stopPropagation();
     handleKitClick(id, title);
-    window.location.href =
+    setLoading(title ? "create" : "more");
+
+    setTimeout(() => {
+      window.location.href =
       process.env.VITE_LOCAL_BASE_URL +
       "assessment-kits/" +
       id +
       `#createAssessment?id=${id}`;
+    }, 1000);
   };
 
   return (
@@ -201,10 +205,13 @@ const KitPart = ({
             <Button
               variant="outlined"
               fullWidth
+<<<<<<< Updated upstream
               loading={loading === "more"}
               onClick={(e) => createAssessment(e, id)}
+=======
               component={Link}
               href={process.env.VITE_LOCAL_BASE_URL + "assessment-kits/" + id}
+>>>>>>> Stashed changes
             >
               <Trans i18nKey="main.moreAboutThisKit" />
             </Button>

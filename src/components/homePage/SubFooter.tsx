@@ -94,7 +94,7 @@ export default function FooterGradientCTA() {
             xl: "8%",
             xxl: "15%",
           },
-          height: { xl: "58px" },
+          height: { xl: "42px" },
           boxShadow: "0 2px 12px 0 rgba(36,102,168,0.15)",
           "&:hover": {
             bgcolor: "#F3F7FB",
@@ -104,14 +104,7 @@ export default function FooterGradientCTA() {
           whiteSpace: "nowrap",
         }}
       >
-        <Typography
-          sx={{
-            [theme.breakpoints.down("xl")]: {
-              ...theme.typography.titleMedium,
-            },
-            ...theme.typography.titleLarge,
-          }}
-        >
+        <Typography variant="titleMedium">
           <Trans i18nKey="hero.startSelfAssessment" />
         </Typography>
       </Button>

@@ -324,7 +324,6 @@ const KitPart = ({
         </Box>
         <Button
           target="_blank"
-          disabled={id !== "386"}
           component={Link}
           href={`/blog/${id}`}
           variant="outlined"

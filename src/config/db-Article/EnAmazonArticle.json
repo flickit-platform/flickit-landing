@@ -1,0 +1,65 @@
+{
+    "id": "384",
+    "lang": "en",
+    "content": [
+      {"topTitle":  "Global case study"},
+      {"mainTitle":  "The Cost of a Millisecond: What Amazon Learned About Performance Optimization"},
+      {"subTitle": "A 2006 A/B test showed Amazon that adding just 100 ms of page-load time shaved ≈ 1 % off revenue. That blunt equation turned performance into a board-level priority and triggered a multi-year overhaul of architecture, culture, and tooling. The eight sections below track that transformation and the billions of dollars it unlocked."},
+      {"infoBox": [
+        {"title": "Published on", "subTitle": "Mar 4, 2020"},
+        {"title": "Read time", "subTitle": "10 min"},
+        {"title": "Category", "subTitle": "App Development"}
+      ]},
+      {"image": "/amazon-banner.svg"},
+      {
+        "title": "Origins — When Obidos Became a Bottleneck"
+      },
+      {
+        "p": "In early 2006 software engineer Greg Linden added artificial latency to Amazon’s checkout flow in 100 ms increments and A/B-tested the impact on live shoppers. The numbers stunned leadership: each extra 100 ms lopped roughly 1 % off gross sales—a revenue swing of millions of dollars per day at holiday scale. ConductorGigaSpaces Linden condensed the finding into a single slide titled “Speed Matters”, later shown in Stanford’s CS345 course; the deck became required reading for new engineering managers. www.slideshare.net Jeff Bezos circulated the chart across the S-Team with a blunt directive: “Bring me your fastest and slowest pages next week.” From that moment forward, latency joined price, selection, and convenience as a core metric of Amazon’s customer obsession."
+      },
+      {
+        "title": "The 100 ms A/B Test That Changed Everything"
+      },
+      {
+        "p": "Through the late-1990s the retail site ran on a two-tier Perl/C application called Obidos, backed by one shared Oracle cluster. An internal 1998 memo—The Distributed Computing Manifesto—warned that global traffic growth had turned shared tables into “the throttle on innovation,” slowing both page builds and development velocity.\nMedian page-load times crept past two seconds for U.S. users; buyers in Australia or Brazil, reaching U.S. servers over multiple hops, often waited four or five. High-scalability engineer Lee Atchison later recalled that a single catalog-search call fanned out to 100 + database joins, so adding one more join for a new feature felt trivial—until hundreds of such “tiny” joins collided in production.\nBecause no one had yet proved a dollar cost, performance routinely lost the roadmap battle to feature demand.\n"
+      },
+      {
+        "title": "The Experiment That Put a Price on Delay – Measuring Revenue Loss 100 ms at a Time"
+      },
+      {
+        "p": "Through the late-1990s the retail site ran on a two-tier Perl/C application called Obidos, backed by one shared Oracle cluster. An internal 1998 memo—The Distributed Computing Manifesto—warned that global traffic growth had turned shared tables into “the throttle on innovation,” slowing both page builds and development velocity.\n"
+      },
+      {
+        "p": "Median page-load times crept past two seconds for U.S. users; buyers in Australia or Brazil, reaching U.S. servers over multiple hops, often waited four or five. High-scalability engineer Lee Atchison later recalled that a single catalog-search call fanned out to 100 + database joins, so adding one more join for a new feature felt trivial—until hundreds of such “tiny” joins collided in production.\n"
+      },
+      {
+        "p": "Because no one had yet proved a dollar cost, performance routinely lost the roadmap battle to feature demand."
+      },
+      {
+        "title": "The Experiment That Put a Price on Delay – Measuring Revenue Loss 100 ms at a Time"
+      },
+      {
+        "p": "Linden’s test finally bridged engineering metrics to P&L. By inserting server-side sleep statements, the team isolated network variance and charted conversion against precise latency slices. Revenue dropped almost linearly: about 1 % per 100 ms. Conductor Even more alarming, mobile shoppers—then a small but fast-growing segment—were twice as sensitive to delay. A subsequent test on product pages replicated the slope, terminating early because “the loss was too expensive to continue.” GigaSpaces The experiment destroyed the comforting myth that customers would tolerate slow pages for new bells and whistles; speed itself was a feature customers would pay for via higher conversion and basket size. Bezos called it “the clearest equation between engineering and cash we’ve ever seen,” according to a 2007 internal ops review quoted by Linden in his blog."
+      },
+      {
+        "title": "Turning Speed into a Company-Wide Mandate – Latency Budgets, Release Gates, Executive Accountability"
+      },
+      {
+        "p": "Within months, every new Product Requirement Document gained a latency budget table—P50, P90, and P99 targets for the end-to-end request. Missing the budget blocked launch exactly like failing a security CVE. Performance tests became part of the Continuous Integration pipeline; teams added synthetic monitors that failed a build if a hot path exceeded its SLA.\n\n“Speed is a leadership decision,” CEO Andy Jassy later told the Harvard Business Review summit, arguing that leaders must “organise and remove structural blockers” to keep teams fast.\nMonthly Ops reviews added a red-amber-green latency dashboard just below revenue and margin. Any feature team proposing extra calls to an upstream API had to include a compensating plan—cache the response, move the call off the hot path, or take something else out."
+      },
+      {
+        "title": "Cultural Reinforcement and Leadership Support – From ‘Speed Matters’ Emails to Perf-Based Incentives"
+      },
+      {
+        "p": "Amazon baked the latency ethic into its Leadership Principles: “Bias for Action—Speed matters in business.” Directors installed “speed bar-raisers”—engineers who could veto a design if it jeopardised budgets. A “perf tax” policy meant any regression forced the owning team to start its next sprint with a fix story; conversely, deleting 25 ms from a high-traffic endpoint earned public kudos and sometimes a spot bonus. Internal dashboards ranked organisations by milliseconds removed each quarter, fostering friendly rivalry. Jassy’s 2024 email on culture reinforced the point: “Decision velocity is linked to customer loyalty. Slow pages are silent churn.”"
+      },
+      {
+        "title": "Business Impact and Metrics – From Mobile Checkout Uplift to Multi-Million-Dollar Savings"
+      },
+      {"p": "he new rigor paid off quickly. In 2012 the Payments team removed a redundant fraud-check RPC, trimming 300 ms and lifting mobile checkout conversion ≈ 6 %, a gain analysts pegged at $400 million annualised.\n Edge caching through CloudFront, launched with 14 POPs in 2008, cut image-fetch latency for Sydney shoppers from 3.2 s to 900 ms and boosted add-to-cart by 12 % in Australia. Fifteen years later CloudFront serves 600 + edge locations and delivers the NFL and FIFA World Cups at sub-second glass-to-glass delay. Finance memos quoted by AllThingsDistributed credited latency projects with $66 million in 2014 infrastructure OPEX savings thanks to lower retransmits and more efficient EC2 utilisation.\nEven when cost trumped purity—Prime Video’s 2023 decision to fold several micro-services back into a single process—the motive was still latency: consolidating hops saved 90 % compute and 35 ms tail latency.In Amazon’s experience, faster pages didn’t just retain customers; they funded the very engineering work that kept the flywheel spinning."},
+      {"title":  "Conclusion"},
+      {
+        "p": "Amazon’s 100 ms discovery proved that milliseconds compound into millions of dollars. By institutionalising performance—technically (micro-services, CloudFront, budgets) and culturally (leadership mandates, incentives)—the company built a self-reinforcing engine where speed fuels revenue and innovation. Teams adopting similar data-driven performance programs can expect not only happier users but a measurable boost to the bottom line."
+      }
+    ]
+}

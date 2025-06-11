@@ -1,10 +1,10 @@
 {
     "id": "386",
-  "lang": "en",
+    "lang": "en",
     "content": [
       {"topTitle":  "Global case study"},
-      {"mainTitle":  "How Facebook Messenger Cut Technical Debt to Boost Performance"},
-      {"subTitle": "Facebook Messenger, with over a billion users worldwide, became an essential communication tool—but behind the scenes, it was struggling with a growing problem common in fast-evolving software: technical debt"},
+      {"mainTitle":  "How Facebook Messenger Cut 80 % of Code and Halved Launch Time"},
+      {"subTitle": "Project LightSpeed: an inside look at the bold rewrite that turned a lumbering mobile giant into a lean, ultra-fast experience"},
       {"infoBox": [
         {"title": "Published on", "subTitle": "Mar 4, 2020"},
         {"title": "Read time", "subTitle": "8 min"},
@@ -43,12 +43,12 @@
         "title": "The Moment of Truth: When Metrics Cross the Red Line"
       },
       {
-        "p": " Facebook’s culture is data-obsessed; every significant feature has a dashboard. That habit paid off when Messenger’s leads searched for a single lurking function to justify drastic action. Two numbers made the case:"
+        "p": "Facebook’s culture is data-obsessed; every significant feature has a dashboard. That habit paid off when Messenger’s leads searched for a single forcing function to justify drastic action. Two numbers made the case:"
       },
       {
         "ul": [
           {
-            "li": "Launch latency &gt; 2 s: internal user-experience studies show drop-offs above 1.5 s."
+            "li": "Launch latency > 2 s: internal user-experience studies show drop-offs above 1.5 s."
           },
           {
             "li": "Binary size 130 MB: at this pace the app would hit Apple’s 200 MB limit within 18 months, forcing painful compromises (or turning away new installs on cellular)."
@@ -59,13 +59,13 @@
         "p": "Plenty of apps survive with two-second launches, but Messenger’s audience is global, many on mid-tier devices. A two-second average on iPhone meant three or four seconds on a $100 Android phone in Brazil or India—unacceptable for a chat tool."
       },
       {
-        "p": " Something radical had to happen. The leadership green-lit a full-scale internal audit—the largest code review in Messenger’s history."
+        "p": "Something radical had to happen. The leadership green-lit a full-scale internal audit—the largest code review in Messenger’s history."
       },
       {
         "title": "Anatomy of an Internal Audit"
       },
       {
-        "p": "The audit team combined senior mobile engineers, performance analysts, and tooling experts. Over the months they ran:"
+        "p": "The audit team combined senior mobile engineers, performance analysts, and tooling experts. Over three months they ran:"
       },
       {
         "ul": [
@@ -90,7 +90,7 @@
         "p": "Findings shocked even seasoned staff:"
       },
       {
-        "p": "MetricBefore AuditDesiredGapLines of code (iOS)1.7 M &lt; 500 k-1.2 MUnique view controllers40 &lt; 10-30Cold-start time2080 ms1000 ms-1080 msBinary size130 MB80 MB-50 MB"
+        "p": "MetricBefore AuditDesiredGapLines of code (iOS)1.7 M< 500 k-1.2 MUnique view controllers40< 10-30Cold-start time2080 ms1000 ms-1080 msBinary size130 MB80 MB-50 MB"
       },
       {
         "table": {

@@ -1,0 +1,170 @@
+{
+  "id": "363",
+  "lang": "en",
+  "content": [
+    { "topTitle": "Global case study" },
+    {
+      "mainTitle": "How Etsy Turned a Friday-Night Outage into 50 Deploys a Day—and Rewrote the DevOps Playbook"
+    },
+    {
+      "subTitle": "A single production crash in 2009 convinced Etsy’s leaders that shipping code once a week was more dangerous than shipping dozens of times a day. Over the next five years the Brooklyn marketplace built Deployinator, wired “measure everything” dashboards to every commit, and turned blameless post-mortems into a cultural ritual. By 2014 the company averaged 50 + production pushes daily—API-only updates in 18 seconds, full-site releases in under three minutes—while incident rates and mean-time-to-recover kept falling."
+    },
+    {
+      "infoBox": [
+        { "title": "Published on", "subTitle": "Mar 4, 2020" },
+        { "title": "Read time", "subTitle": "8 min" },
+        { "title": "Category", "subTitle": "App Development" }
+      ]
+    },
+    { "image": "/etsy-banner.jpeg" },
+    {
+      "title": "Introduction – The Friday Failure That Reset Etsy’s Priorities"
+    },
+    {
+      "p": "On 3 April 2009 a routine Friday push took down Etsy’s front page for hours. Engineers had to SSH into hundreds of web servers to restore a site backup while angry sellers tweeted about lost weekend sales. New CTO Chad Dickerson called the outage “a canary in our coal mine” and asked ops director John Allspaw for a single brief: releases must become safe, boring, and frequent."
+    },
+    {
+      "p": "Two stats framed the challenge. First, Etsy shipped once a week—always on Friday because traffic dipped before the craft-seller rush of Saturday. Second, the average diff shipped on those Fridays contained 4 000 + changed lines touching several database tables, so blast radius was huge. If Etsy wanted to experiment with payments, search, or seller analytics, it needed a release pipeline that made change inexpensive and failure non-catastrophic. The outage gave executives license to invest."
+    },
+    {
+      "title": "Origins of the Bottleneck – Manual Scripts, Weekly Freeze-Ups"
+    },
+    {
+      "p": "Before the overhaul, deployments used a Bash wrapper nick-named push.sh that SCP’ed artifacts to every front-end. An ops engineer tailed logs by hand; if errors spiked they initiated a manual rollback that blocked the entire engineering floor from the office VPN. Developers hated the “Friday freeze,” so they batched features: database migrations, CSS redesigns, ad-hoc A/B code—all at once. That batching increased risk, making freeze-ups more common."
+    },
+    {
+      "p": "Allspaw summarised the vicious cycle at Velocity 2010: “Fear of deploys makes them bigger; bigger deploys make them scarier.”The only exit was to flip the equation: shrink every change until failure no longer hurt, then ship so often that recovery became routine muscle memory."
+    },
+    {
+      "title": "Deployinator and ChatOps – Automating the Path to Production"
+    },
+    {
+      "p": "Allspaw’s team spent six weeks extracting push.sh into Deployinator, a Ruby/Sinatra web app with a single “Ship It!” button. Press once and Deployinator would:"
+    },
+    {
+      "ul": [
+        {
+          "li": "Tag the Git SHA."
+        },
+        {
+          "li": "Run unit, integration, and Selenium tests in parallel."
+        },
+        {
+          "li": "Build RPM artifacts and upload them to an internal YUM repo."
+        },
+        {
+          "li": "Use Capistrano to deploy to staggered web-server rings (canary → half-fleet → full-fleet)."
+        },
+        {
+          "li": "Warm memcached keys and page cache."
+        },
+        {
+          "li": "Announce each stage in an IRC room with green ✓ or red ✗ links to Grafana dashboards."
+        }
+      ]
+    },
+    {
+      "p": "If error rate or p99 latency deviated by more than two standard deviations, Deployinator auto-rolled back to the previous SHA, re-registered servers in the load balancer, and posted “Reverted in 23 s” to chat."
+    },
+    { "pBold": "Try servers and one-click reverts" },
+    {
+      "p": "Every pull request automatically spawned a disposable VM (nick-named “try” servers) that mirrored production packages and environment variables. Reviewers clicked a shared URL to interact with the feature exactly as buyers would. Because every SHA could deploy or revert in one click, launch fear evaporated."
+    },
+    { "pBold": "Chat-triggered deploys" },
+    {
+      "p": "IRC bots bridged human chat and machine state: !deploy production executed the pipeline; !graph latency posted a 10-minute latency sparkline; !halt aborted the rollout mid-way. The arrangement, later called ChatOps, kept Dev and Ops in the same conversation, removing ticket queues and hand-offs. "
+    },
+    {
+      "title": "Measure Everything – Metrics as a First-Class Feature"
+    },
+    {
+      "p": "In 2010 engineer Laura Thomson published the blog post “Measure Anything, Measure Everything” explaining Etsy’s rule: if collecting a metric took more than one line of Python, the tooling had failed."
+    },
+    {
+      "ul": [
+        {
+          "li": "StatsD: — a 200-line Node.js daemon—accepted UDP counters or timers from any service and forwarded them to Graphite. Engineers instrumented new code with a single increment('carts.added') call."
+        },
+        {
+          "li": "TV dashboards: outside the Brooklyn cafeteria showed deploy velocity, 99th-percentile page load, checkout conversion, and error budgets; these screens turned invisible latency drifts into public embarrassment."
+        },
+        {
+          "li": "Deploy health checks grabbed key KPIs five minutes pre- and post-deploy; a delta over 5 % triggered auto-rollback."
+        }
+      ]
+    },
+    {
+      "p": "Because metrics were trivial to emit, engineers graphed everything from search-result skew to coffee-machine queue length, normalising a data-driven culture."
+    },
+    {
+      "title": "Blameless Post-Mortems – From Punishment to Learning Loops"
+    },
+    {
+      "p": "Pre-2009 post-mortems often devolved into “root-cause who” hunts. Allspaw replaced the template with blameless post-mortems borrowed from aerospace: the engineer whose action triggered an incident narrated timeline, assumptions, and surprises “without fear of punishment or retribution.” Etsy"
+    },
+    {
+      "p": "Key routines:"
+    },
+    {
+      "ul": [
+        {
+          "li": "“What surprised you?” captured mismatched mental models."
+        },
+        {
+          "li": "Action items landed in Jira before closing the meeting—infra upgrade, test addition, or Deployinator guardrail—so lessons materialised in code, not docs."
+        },
+        {
+          "li": "Facilitators rotated; every engineer learned to mediate failure discussions, scaling empathy muscle. Etsy"
+        }
+      ]
+    },
+    {
+      "p": "Psychological safety let junior engineers click Ship It! on day three; if something broke, the system caught it, and the team called it “paying tuition.” Fear no longer limited velocity."
+    },
+    {
+      "title": "Fifty Deploys a Day – Metrics and Business Impact"
+    },
+    {
+      "p": "By Q1 2014 Etsy averaged 50–70 production deploys per weekday, confirmed by Daniel Schauenberg at QCon London. An API-only change shipped in ≈ 18 s, a full site deploy in < 3 min, measured from button press to edge-cache warm."
+    },
+    {
+      "p": "Incident frequency fell 20 % year-over-year because each change touched fewer lines. Mean-time-to-recover dropped from hours to single-digit minutes; common rollback cause: CSS regressions, not data loss. Developer onboarding accelerated: new hires shipped customer-visible code in their first week, a hiring pitch in tech-interview loops."
+    },
+    {
+      "p": "Business wins included:"
+    },
+    {
+      "ul": [
+        {
+          "li": "Faster A/B iteration. Seller conversion experiments launched in hours, not weeks."
+        },
+        {
+          "li": "Holiday readiness. Cyber Monday 2013 saw 3 × baseline deploys to handle feature flags for promotions, with zero Sev-1 incidents."
+        },
+        {
+          "li": "Morale bump. Internal surveys logged a 15 % rise in “I feel safe pushing code” between 2011–2014."
+        }
+      ]
+    },
+    { "title": "Challenges and Trade-Offs" },
+    {
+      "p": "Success bred new friction. Database migrations needed feature flags and backward-compatible schemas because hundreds of pushes a week touched tables. Metric cardinality exploded — StatsD packets sometimes spiked CPU; the team added StatsD aggregator tiers to roll up high-card signals. Slack replaced IRC, bringing richer alert routing but causing alert fatigue; engineers introduced threshold-learning algorithms to mute flapping graphs."
+    },
+    { "title": "Lessons for Software Teams" },
+    {
+      "p": "Success bred new friction. Database migrations needed feature flags and backward-compatible schemas because hundreds of pushes a week touched tables. Metric cardinality exploded — StatsD packets sometimes spiked CPU; the team added StatsD aggregator tiers to roll up high-card signals. Slack replaced IRC, bringing richer alert routing but causing alert fatigue; engineers introduced threshold-learning algorithms to mute flapping graphs."
+    },
+    {
+      "table": {
+        "thead": ["Practice", "Etsy implementation", "Why it scaled"],
+        "tbody": [
+          ["Automate the boring", "One-click Deployinator, chat bots", "Removes heroics, codifies rollback"],
+          ["Instrument by default", "StatsD one-linear, public dashboards", "Data > opinion; gaurd-rails catch regressions"],
+          ["Flag, don’t fork", "Feature toggles wrap risky code", "Decouple deploy from launch"],
+          ["Learn without blame", "Post-mortems focus on context", "Safety enables velocity"],
+          ["Ship tiny diffs", "50 + pushes/day, 18 s API deploy", "Small blast radius, fast MTTR"]
+        ]
+      }
+    }
+  ]
+}

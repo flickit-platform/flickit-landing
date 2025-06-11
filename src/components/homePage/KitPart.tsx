@@ -55,13 +55,11 @@ const KitPart = ({
     e.preventDefault();
     e.stopPropagation();
     handleKitClick(id, title);
-    setLoading(title ? "create" : "more");
-
-    setTimeout(() => {
-      window.location.href =
-        "https://app.flickit.org/assessment-kits/" + id + title ??
-        `#createAssessment?id=${id}&title=${title}`;
-    }, 600);
+    window.location.href =
+      process.env.VITE_LOCAL_BASE_URL +
+      "assessment-kits/" +
+      id +
+      `#createAssessment?id=${id}`;
   };
 
   return (
@@ -205,6 +203,8 @@ const KitPart = ({
               fullWidth
               loading={loading === "more"}
               onClick={(e) => createAssessment(e, id)}
+              component={Link}
+              href={process.env.VITE_LOCAL_BASE_URL + "assessment-kits/" + id}
             >
               <Trans i18nKey="main.moreAboutThisKit" />
             </Button>

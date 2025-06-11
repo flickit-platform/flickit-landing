@@ -72,7 +72,7 @@ const HeroSection = () => {
 
           <Button
             component={Link}
-            href={"https://app.flickit.org/assessment-kits"}
+            href={process.env.VITE_LOCAL_BASE_URL + "assessment-kits"}
             target="_blank"
             variant={"contained"}
             sx={{

@@ -8,5 +8,5 @@ export const getEnv = (key: keyof ImportMetaEnv, fallback = ""): string => {
 // Specific exports for each variable
 export const VITE_LOCAL_BASE_URL = getEnv(
   "VITE_LOCAL_BASE_URL",
-  "https://stage.flickit.org/"
+  "https://app.flickit.org/"
 );

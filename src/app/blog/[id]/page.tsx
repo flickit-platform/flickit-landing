@@ -9,7 +9,7 @@ import {BlogMaker} from "@/utils/blogMaker";
 import {useParams} from "next/navigation";
 import { appWithTranslation } from 'next-i18next';
 
-const Article = () => {
+function Article () {
     const {id} = useParams()
     const [article, setArticle] = useState<any>({})
     const currentLang = useMemo(()=>{

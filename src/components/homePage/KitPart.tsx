@@ -205,13 +205,8 @@ const KitPart = ({
             <Button
               variant="outlined"
               fullWidth
-<<<<<<< Updated upstream
               loading={loading === "more"}
               onClick={(e) => createAssessment(e, id)}
-=======
-              component={Link}
-              href={process.env.VITE_LOCAL_BASE_URL + "assessment-kits/" + id}
->>>>>>> Stashed changes
             >
               <Trans i18nKey="main.moreAboutThisKit" />
             </Button>

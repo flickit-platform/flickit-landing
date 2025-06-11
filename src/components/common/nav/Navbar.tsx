@@ -11,6 +11,7 @@ import LanguageSelector from "@/components/common/languageSelector";
 import { styles } from "@/config/styles";
 import { farsiFontFamily, primaryFontFamily } from "@/utils/fonts";
 import useScreenResize from "@/utils/useScreenResize";
+import { VITE_LOCAL_BASE_URL } from "@/utils/env";
 
 export default function Navbar() {
   const dialogProps = useDialog();
@@ -53,7 +54,7 @@ export default function Navbar() {
           >
             <Typography
               component={Link}
-              href={process.env.VITE_LOCAL_BASE_URL ?? ""}
+              href={VITE_LOCAL_BASE_URL ?? ""}
               variant="semiBoldMedium"
               sx={{
                 color: "#2466A8",

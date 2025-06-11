@@ -42,6 +42,7 @@ const Customers = () => {
                   color: theme.palette.info.main,
                 }
           }
+          textAlign="center"
         >
           <Trans i18nKey={"common.trustedCustomers"} />
         </Typography>

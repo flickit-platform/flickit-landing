@@ -40,7 +40,7 @@ const AnimatedTextBanner = () => {
   return (
     <Box
       sx={{
-        mt: { xs: 0, md: 10 },
+        mt: { xs: 6, sm: 0, md: 10 },
         mb: 2,
         position: "relative",
         ...styles.centerH,

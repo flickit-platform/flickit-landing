@@ -8,6 +8,7 @@ import WaitingListDialog from "../common/dialogs/WaitingListDialog";
 import useDialog from "@/utils/useDialog";
 import { t } from "i18next";
 import { LoadingButton } from "@mui/lab";
+import { VITE_LOCAL_BASE_URL } from "@/utils/env";
 
 interface Props {
   imageUrl: string;
@@ -51,17 +52,28 @@ const KitPart = ({
     });
   };
 
-  const createAssessment = (e: any, id: any, title?: any) => {
+  const createAssessment = (
+    e: any,
+    id: any,
+    title: any,
+    type: "create" | "more"
+  ) => {
     e.preventDefault();
     e.stopPropagation();
     handleKitClick(id, title);
-    setLoading(title ? "create" : "more");
+    setLoading(type);
 
     setTimeout(() => {
-      window.location.href =
-        "https://app.flickit.org/assessment-kits/" + id + title ??
-        `#createAssessment?id=${id}&title=${title}`;
-    }, 600);
+      if (type === "create") {
+        window.location.href =
+          VITE_LOCAL_BASE_URL +
+          "assessment-kits/" +
+          id +
+          `#createAssessment?id=${id}`;
+      } else {
+        window.location.href = VITE_LOCAL_BASE_URL + "assessment-kits/" + id;
+      }
+    }, 1000);
   };
 
   return (
@@ -204,7 +216,7 @@ const KitPart = ({
               variant="outlined"
               fullWidth
               loading={loading === "more"}
-              onClick={(e) => createAssessment(e, id)}
+              onClick={(e) => createAssessment(e, id, t(titleKey), "more")}
             >
               <Trans i18nKey="main.moreAboutThisKit" />
             </Button>
@@ -212,7 +224,7 @@ const KitPart = ({
               variant="contained"
               fullWidth
               loading={loading === "create"}
-              onClick={(e) => createAssessment(e, id, t(titleKey))}
+              onClick={(e) => createAssessment(e, id, t(titleKey), "create")}
             >
               <Trans i18nKey="main.createAssessment" />
             </LoadingButton>

@@ -6,6 +6,7 @@ import { theme } from "@/config/theme";
 import { Button } from "@mui/material";
 import Link from "next/link";
 import AnimatedTextBanner from "./AnimatedTextBanner";
+import { VITE_LOCAL_BASE_URL } from "@/utils/env";
 
 const HeroSection = () => {
   return (
@@ -72,7 +73,7 @@ const HeroSection = () => {
 
           <Button
             component={Link}
-            href={"https://app.flickit.org/assessment-kits"}
+            href={VITE_LOCAL_BASE_URL + "assessment-kits"}
             target="_blank"
             variant={"contained"}
             sx={{

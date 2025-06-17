@@ -1,7 +1,7 @@
 "use client"
 
 import {useEffect, useMemo, useState} from "react";
-import "@/config/i18n";
+// import "@/config/i18n";
 import Box from "@mui/material/Box";
 import * as data from "@/config/db-Article";
 import i18n from "i18next";

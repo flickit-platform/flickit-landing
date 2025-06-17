@@ -7,8 +7,10 @@ import { Button } from "@mui/material";
 import Link from "next/link";
 import AnimatedTextBanner from "./AnimatedTextBanner";
 import { VITE_LOCAL_BASE_URL } from "@/utils/env";
+import {useTranslations} from 'next-intl';
 
 const HeroSection = () => {
+    const t = useTranslations();
   return (
     <Box
       sx={{
@@ -56,7 +58,8 @@ const HeroSection = () => {
               },
             }}
           >
-            <Trans i18nKey={"hero.topBannerTitle"} />
+              {t('hero.topBannerTitle')}
+            {/*<Trans i18nKey={"hero.topBannerTitle"} />*/}
           </Typography>
 
           <Typography

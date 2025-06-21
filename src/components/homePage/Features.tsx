@@ -80,7 +80,7 @@ const FeaturesSection = () => {
       sx={{ mb: { xs: 0, md: 14 } }}
     >
       {t.rich('main.whatMakesDifferent', {
-        app: t('main.flickit'),
+        app: (chunks) => <span>{t(`${chunks}`)}</span>,
         style: (chunks) => <span style={{ color: '#2466A8' }}>{chunks}</span>
       })}
     </Typography>

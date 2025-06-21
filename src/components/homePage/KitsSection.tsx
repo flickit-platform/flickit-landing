@@ -6,6 +6,7 @@ import { theme } from "@/config/theme";
 import Link from "next/link";
 import { VITE_LOCAL_BASE_URL } from "@/utils/env";
 import { useTranslations } from 'next-intl';
+import React from "react";
 
 const cardsData = [
   {
@@ -76,9 +77,12 @@ const Kits = () => {
     <Box sx={{ ...styles.centerCVH }} px={{ xs: 2, md: 6, xxl: 30 }}>
       <Typography variant="headlineLarge" textAlign="center" mb={15}>
           {t.rich('main.whatCanYouAssessWith', {
-              app: t('main.flickit'),
+              app: (chunks)=> <span>{t(`${chunks}`)}</span>,
               style: (chunks) => <span style={{ color: '#2466A8' }}>{chunks}</span>
           })}
+          {/*{t.rich('main.howItWorks', {*/}
+          {/*    style: (chunks) => <span style={{ color: '#2466A8' }}>{chunks}</span>*/}
+          {/*})}*/}
       </Typography>
       <Grid
         container

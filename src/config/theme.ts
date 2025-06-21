@@ -2,7 +2,6 @@
 
 import { createTheme } from "@mui/material/styles";
 import { farsiFontFamily, primaryFontFamily } from "@/utils/fonts";
-import i18next from "i18next";
 import { BreakpointOverrides } from "@mui/system";
 declare module "@mui/material/styles/createPalette" {
   interface TypeBackground {

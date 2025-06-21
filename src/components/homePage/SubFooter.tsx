@@ -1,6 +1,5 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { Trans, useTranslation } from "react-i18next";
 import Button from "@mui/material/Button";
 import useScreenResize from "@/utils/useScreenResize";
 import React from "react";

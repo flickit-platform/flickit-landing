@@ -4,9 +4,9 @@ import Typography from "@mui/material/Typography";
 import { motion, AnimatePresence } from "framer-motion";
 import { styles } from "@/config/styles";
 import { useTranslations } from 'next-intl';
-import i18next from "i18next";
 import { farsiFontFamily, primaryFontFamily } from "@/utils/fonts";
 import useScreenResize from "@/utils/useScreenResize";
+import {useParams} from "next/navigation";
 
 const messages = [
   "hero.quotes.systemGotHacked",
@@ -29,14 +29,13 @@ const AnimatedTextBanner = () => {
   const [index, setIndex] = useState(0);
   const t  = useTranslations();
   const isMobile = useScreenResize("sm");
-
+  const {locale} = useParams()
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % messages.length);
     }, 5000);
     return () => clearInterval(timer);
   }, []);
-
   return (
     <Box
       sx={{
@@ -72,7 +71,7 @@ const AnimatedTextBanner = () => {
           >
             <Typography
               sx={{
-                fontStyle: i18next.language === "fa" ? "none" : "italic",
+                fontStyle: locale === "fa" ? "none" : "italic",
                 fontWeight: 400,
                 color: "#fff",
                 fontSize: {
@@ -80,7 +79,7 @@ const AnimatedTextBanner = () => {
                   md: "48px",
                 },
                 fontFamily:
-                  i18next.language === "fa"
+                    locale === "fa"
                     ? farsiFontFamily
                     : primaryFontFamily,
                 display: "inline-block",

@@ -1,7 +1,6 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { Trans } from "react-i18next";
 import { theme } from "@/config/theme";
 import { Button } from "@mui/material";
 import Link from "next/link";

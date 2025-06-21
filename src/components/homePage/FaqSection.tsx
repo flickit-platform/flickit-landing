@@ -2,7 +2,6 @@ import React from "react";
 import { Box, Typography, Link } from "@mui/material";
 import { styles } from "@/config/styles";
 import useScreenResize from "@/utils/useScreenResize";
-import { Trans } from "react-i18next";
 import { motion } from "framer-motion";
 import { useTranslations } from 'next-intl';
 

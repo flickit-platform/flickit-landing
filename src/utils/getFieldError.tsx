@@ -1,5 +1,4 @@
 import { FieldErrorsImpl } from "react-hook-form";
-import { Trans } from "react-i18next";
 import {useTranslations} from "next-intl";
 
 type TErrorTypes =

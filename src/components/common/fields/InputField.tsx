@@ -7,7 +7,6 @@ import { useFormContext } from "react-hook-form";
 import getFieldError from "@/utils/getFieldError";
 import { theme } from "@/config/theme";
 import languageDetector from "@/utils/languageDetector";
-import { t } from "i18next";
 import {primaryFontFamily} from "@/utils/fonts";
 
 const InputField = () => {

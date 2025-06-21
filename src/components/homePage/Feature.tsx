@@ -1,6 +1,5 @@
 import { Box, Typography } from "@mui/material";
 import { styles } from "@/config/styles";
-import { Trans } from "react-i18next";
 import { useTranslations } from 'next-intl';
 
 interface Props {

@@ -1,7 +1,6 @@
 "use client";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { Trans } from "react-i18next";
 import { Button } from "@mui/material";
 import { is_farsi, theme } from "@/config/theme";
 import Link from "next/link";

@@ -12,10 +12,13 @@ import { styles } from "@/config/styles";
 import { farsiFontFamily, primaryFontFamily } from "@/utils/fonts";
 import useScreenResize from "@/utils/useScreenResize";
 import { VITE_LOCAL_BASE_URL } from "@/utils/env";
+import { useTranslations } from 'next-intl';
 
 export default function Navbar() {
   const dialogProps = useDialog();
   const isMobile = useScreenResize("sm");
+  const t  = useTranslations();
+
   return (
     <nav
       style={{
@@ -61,7 +64,7 @@ export default function Navbar() {
                 textDecoration: "none",
               }}
             >
-              <Trans i18nKey={"nav.signUpFree"} />
+                {t("nav.signUpFree")}
             </Typography>
           </Button>
         </Box>

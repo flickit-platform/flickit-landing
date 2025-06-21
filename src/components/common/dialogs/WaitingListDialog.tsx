@@ -1,9 +1,8 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import Typography from "@mui/material/Typography";
-import { Trans } from "react-i18next";
 import { InputFieldUC } from "@/components/common/fields/InputField";
-import { t } from "i18next";
+
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import {
   CEDialog,
@@ -12,6 +11,7 @@ import {
 import { useForm as useFormSpree } from "@formspree/react";
 import { theme } from "@/config/theme";
 import { Box } from "@mui/material";
+import { useTranslations } from 'next-intl';
 
 const WaitingListDialog = (props: any) => {
   const methods = useForm();
@@ -19,6 +19,7 @@ const WaitingListDialog = (props: any) => {
   const { kitTitle, onClose, ...rest } = props;
   const abortController = useMemo(() => new AbortController(), [rest.open]);
   const [dialogKey, setDialogKey] = useState(0);
+  const t  = useTranslations();
 
   useEffect(() => {
     methods.setValue("message", `User added to '${kitTitle}' kit wait list`);
@@ -46,14 +47,14 @@ const WaitingListDialog = (props: any) => {
       icon={<NotificationsActiveIcon />}
       title={
         <Typography sx={theme.typography.semiBoldXLarge}>
-          <Trans i18nKey="common.joinTheWaitlist" />
+          {t("common.joinTheWaitlist")}
         </Typography>
       }
       style={{ padding: "32px 32px 16px" }}
     >
       <FormProvider {...methods}>
         <Typography variant="body1" sx={{ mb: 6 }}>
-          <Trans i18nKey="common.waitlistDec" />
+          {t("common.waitlistDec")}
         </Typography>
         <Box sx={{ width: { xs: "100%", sm: "45%" } }}>
           <form

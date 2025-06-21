@@ -2,9 +2,8 @@ import React from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import FeatureCard from "./Feature";
 import { styles } from "@/config/styles";
-import { Trans } from "react-i18next";
 import { motion } from "framer-motion";
-import { t } from "i18next";
+import {useTranslations} from "next-intl";
 
 const features = [
   {
@@ -62,7 +61,9 @@ const cardVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
-const FeaturesSection = () => (
+const FeaturesSection = () => {
+  const t = useTranslations();
+    return (
   <Box
     gap={4}
     sx={{
@@ -78,13 +79,11 @@ const FeaturesSection = () => (
       textAlign="center"
       sx={{ mb: { xs: 0, md: 14 } }}
     >
-      <Trans
-        i18nKey="main.whatMakesDifferent"
-        values={{ app: t("main.flickit") }}
-        components={{ style: <span style={{ color: "#2466A8" }} /> }}
-      />
+      {t.rich('main.whatMakesDifferent', {
+        app: t('main.flickit'),
+        style: (chunks) => <span style={{ color: '#2466A8' }}>{chunks}</span>
+      })}
     </Typography>
-
     <motion.div
       variants={containerVariants}
       initial="hidden"
@@ -123,6 +122,7 @@ const FeaturesSection = () => (
       </Grid>
     </motion.div>
   </Box>
-);
+)
+};
 
 export default FeaturesSection;

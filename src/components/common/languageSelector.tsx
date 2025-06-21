@@ -1,19 +1,30 @@
+"use client"
+
 import { useTranslation } from "react-i18next";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { theme } from "@/config/theme";
+import {useRouter, usePathname} from 'next/navigation';
+import {useLocale} from 'next-intl';
 
 const LanguageSelector = () => {
-  const { i18n } = useTranslation();
-
+  const router = useRouter();
+  const pathname = usePathname();
+  const currentLocale = useLocale();
   const handleLanguageChange = (language: any) => {
-    i18n.changeLanguage(language);
-    window.location.reload();
+    const newLocale = language;
+
+    // Replace the current locale in the pathname
+    const segments = pathname.split('/');
+    segments[1] = newLocale;
+    const newPath = segments.join('/');
+
+    router.push(newPath);
   };
 
   return (
     <Box display="flex" justifyContent="center">
-      {i18n.language === "fa" ? (
+      {currentLocale === "fa" ? (
         <Typography
           variant="semiBoldLarge"
           onClick={() => handleLanguageChange("en")}

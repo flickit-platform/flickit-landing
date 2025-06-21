@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { styles } from "@/config/styles";
 import { Trans } from "react-i18next";
+import { useTranslations } from 'next-intl';
 
 interface Props {
   icon: string;
@@ -8,7 +9,9 @@ interface Props {
   descKey: string;
 }
 
-const FeatureCard = ({ icon, titleKey, descKey }: Props) => (
+const FeatureCard = ({ icon, titleKey, descKey }: Props) => {
+    const t  = useTranslations();
+    return(
   <Box
     sx={{
       ...styles.centerCH,
@@ -24,12 +27,12 @@ const FeatureCard = ({ icon, titleKey, descKey }: Props) => (
   >
     <Box component="img" src={icon} alt={titleKey} sx={{ maxWidth: 45 }} />
     <Typography variant="semiBoldXLarge" textAlign="center">
-      <Trans i18nKey={titleKey} />
+        {t(titleKey)}
     </Typography>
     <Typography variant="bodyLarge" textAlign="center" color="#2B333B">
-      <Trans i18nKey={descKey} />
+        {t(descKey)}
     </Typography>
   </Box>
-);
+)};
 
 export default FeatureCard;

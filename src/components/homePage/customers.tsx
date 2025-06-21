@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import { theme } from "@/config/theme";
-import { Trans } from "react-i18next";
 import { styles } from "@/config/styles";
 import Typography from "@mui/material/Typography";
 import useScreenResize from "@/utils/useScreenResize";
+import {useTranslations} from "next-intl";
 
 let customers = Array.from({ length: 5 }, (_, i) => "/customer-" + (i + 1));
 
 const Customers = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const isMobile = useScreenResize("sm");
+  const t = useTranslations();
   return (
     <Box
       sx={{
@@ -44,7 +45,7 @@ const Customers = () => {
           }
           textAlign="center"
         >
-          <Trans i18nKey={"common.trustedCustomers"} />
+            {t("common.trustedCustomers")}
         </Typography>
         <Box sx={{ ...styles.centerVH, gap: { xs: "15px", sm: "24px" } }}>
           {customers.map((img, index) => {

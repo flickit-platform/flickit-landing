@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { Box, Typography, Chip, Button, Tooltip } from "@mui/material";
-import { Trans } from "react-i18next";
 import { theme } from "@/config/theme";
 import Link from "next/link";
 import { styles } from "@/config/styles";
 import WaitingListDialog from "../common/dialogs/WaitingListDialog";
 import useDialog from "@/utils/useDialog";
-import { t } from "i18next";
+import { useTranslations } from 'next-intl';
 import { LoadingButton } from "@mui/lab";
 import { VITE_LOCAL_BASE_URL } from "@/utils/env";
 
@@ -39,6 +38,7 @@ const KitPart = ({
 }: Props) => {
   const dialogProps = useDialog();
   const [loading, setLoading] = useState<null | "more" | "create">(null);
+  const t  = useTranslations();
 
   const handleKitClick = (id: any, title: any) => {
     (window as any).dataLayer.push({
@@ -115,7 +115,7 @@ const KitPart = ({
               position: "absolute",
             }}
           >
-            <Trans i18nKey={"common.free"} />
+              {t("common.free")}
           </Typography>
         </Box>
       )}
@@ -175,13 +175,13 @@ const KitPart = ({
               mx: "auto",
               borderRadius: "8px",
             }}
-            label={<Trans i18nKey={chipLabelKey} />}
+            label={t(chipLabelKey)}
             variant="outlined"
             color="primary"
             size="small"
           />
           <Typography variant="titleLarge" textAlign="center" sx={{ mb: 1 }}>
-            <Trans i18nKey={titleKey} />
+              {t(titleKey)}
           </Typography>
           <Typography
             variant="bodyLarge"
@@ -199,7 +199,7 @@ const KitPart = ({
               WebkitBoxOrient: "vertical",
             }}
           >
-            <Trans i18nKey={descKey} />
+              {t(descKey)}
           </Typography>
         </Box>
         {!waitList ? (
@@ -218,7 +218,7 @@ const KitPart = ({
               loading={loading === "more"}
               onClick={(e) => createAssessment(e, id, t(titleKey), "more")}
             >
-              <Trans i18nKey="main.moreAboutThisKit" />
+                {t("main.moreAboutThisKit")}
             </Button>
             <LoadingButton
               variant="contained"
@@ -226,7 +226,7 @@ const KitPart = ({
               loading={loading === "create"}
               onClick={(e) => createAssessment(e, id, t(titleKey), "create")}
             >
-              <Trans i18nKey="main.createAssessment" />
+                {t("main.createAssessment")}
             </LoadingButton>
           </Box>
         ) : (
@@ -244,7 +244,7 @@ const KitPart = ({
               fullWidth
               onClick={() => dialogProps.openDialog({ open: true })}
             >
-              <Trans i18nKey="main.joinTheWaitlist" />
+                {t("main.joinTheWaitlist")}
             </Button>
           </Box>
         )}
@@ -297,7 +297,7 @@ const KitPart = ({
         )}
 
         <Typography variant="labelSmall" color="#97A6B8" mb={0.5}>
-          <Trans i18nKey="main.globalCaseStudy" />
+            {t("main.globalCaseStudy")}
         </Typography>
         <Box
           sx={{
@@ -319,7 +319,7 @@ const KitPart = ({
               WebkitBoxOrient: "vertical",
             }}
           >
-            <Trans i18nKey={caseStudyDescKey} />
+              {t(caseStudyDescKey)}
           </Typography>
         </Box>
         <Button
@@ -329,7 +329,7 @@ const KitPart = ({
           variant="outlined"
           size="small"
         >
-          <Trans i18nKey="main.learnMore" />
+            {t("main.learnMore")}
         </Button>
       </Box>
       <WaitingListDialog

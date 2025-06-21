@@ -8,11 +8,10 @@ import DialogActions, { DialogActionsProps } from "@mui/material/DialogActions";
 import Grid from "@mui/material/Grid";
 import LoadingButton from "@mui/lab/LoadingButton";
 import Button from "@mui/material/Button";
-import { Trans } from "react-i18next";
-import { t } from "i18next";
 import Typography from "@mui/material/Typography";
 import { theme } from "@/config/theme";
 import Box from "@mui/material/Box";
+import { useTranslations } from 'next-intl';
 
 interface ICEDialogProps extends Omit<DialogProps, "title"> {
   closeDialog?: () => void;
@@ -94,6 +93,7 @@ interface ICEDialogActionsProps extends PropsWithChildren<DialogActionsProps> {
 }
 
 export const CEDialogActions = (props: ICEDialogActionsProps) => {
+  const t  = useTranslations();
   const {
     type,
     loading,
@@ -144,7 +144,7 @@ export const CEDialogActions = (props: ICEDialogActionsProps) => {
               whiteSpace: "nowrap",
             }}
           >
-            <Trans i18nKey={"common.moreWaysToReachUs"} />
+            {t("common.moreWaysToReachUs")}
           </Typography>
           <Box sx={{ display: "flex", gap: 1 }}>
             {contactSection.map((chat) => {
@@ -172,14 +172,14 @@ export const CEDialogActions = (props: ICEDialogActionsProps) => {
         {!hideCancelButton && (
           <Grid>
             <Button onClick={onClose} data-cy="cancel" data-testid="cancel">
-              <Trans i18nKey={cancelLabel ?? ""} />
+              {t(cancelLabel ?? "")}
             </Button>
           </Grid>
         )}
         {hasBackBtn && (
           <Grid>
             <Button data-cy="back" variant={backType} onClick={onBack}>
-              <Trans i18nKey="back" />
+              {t("back")}
             </Button>
           </Grid>
         )}
@@ -197,7 +197,7 @@ export const CEDialogActions = (props: ICEDialogActionsProps) => {
               }}
               disabled={disablePrimaryButton}
             >
-              <Trans i18nKey={submitButtonLabel as string} />
+              {t(submitButtonLabel as string)}
             </LoadingButton>
           </Grid>
         )}
@@ -216,7 +216,7 @@ export const CEDialogActions = (props: ICEDialogActionsProps) => {
               }}
             >
               {submitAndViewButtonLabel ?? (
-                <Trans i18nKey={`${submitButtonLabel} ${t("andView")}`} />
+                  t(`${submitButtonLabel} ${t("andView")}`)
               )}
             </LoadingButton>
           </Grid>

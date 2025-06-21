@@ -1,6 +1,5 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { Trans } from "react-i18next";
 import { Button } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { theme } from "@/config/theme";
@@ -8,11 +7,13 @@ import ContactUsDialog from "@/components/common/ContactUs/ContactUs";
 import useDialog from "@/utils/useDialog";
 import { styles } from "@/config/styles";
 import useScreenResize from "@/utils/useScreenResize";
+import {useTranslations} from "next-intl";
 
 export default function Footer() {
   const dialogProps = useDialog();
 
   const isMobile = useScreenResize("sm");
+  const t = useTranslations();
   return (
     <Box
       component={"footer"}
@@ -56,7 +57,7 @@ export default function Footer() {
               textAlign: { xs: "center", md: "justify" },
             }}
           >
-            <Trans i18nKey={"footer.flickitFooterText"} />
+              {t("footer.flickitFooterText")}
           </Typography>
         </Grid>
         <Grid
@@ -90,13 +91,13 @@ export default function Footer() {
                   color: "#F0F2F4",
                 }}
               >
-                <Trans i18nKey={"footer.feelFreeToReachUs"} />
+                  {t("footer.feelFreeToReachUs")}
               </Typography>
               <Button
                 onClick={() => dialogProps.openDialog({ open: true })}
                 variant={"contained"}
               >
-                <Trans i18nKey="common.contactUs" />
+                  {t("common.contactUs")}
               </Button>
             </Box>
           </Box>

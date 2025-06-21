@@ -20,7 +20,7 @@ type TErrorTypes =
   | "shouldUnregister"
   | "deps";
 
-type TErrorMessagesBaseOnErrorTypes = Partial<Record<TErrorTypes, JSX.Element>>;
+type TErrorMessagesBaseOnErrorTypes = Partial<Record<TErrorTypes, JSX.Element | string>>;
 
 /**
  * Finds field error in form errors

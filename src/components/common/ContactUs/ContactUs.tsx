@@ -3,8 +3,6 @@
 import { useMemo, useState } from "react";
 import { CEDialog, CEDialogActions } from "@/components/common/dialogs/CEDialog";
 import { theme } from "@/config/theme";
-import { Trans } from "react-i18next";
-import { t } from "i18next";
 import Typography from "@mui/material/Typography";
 import { Box } from "@mui/material";
 import CheckCircleOutlineRoundedIcon from "@mui/icons-material/CheckCircleOutlineRounded";
@@ -12,6 +10,7 @@ import { DialogProps } from "@mui/material/Dialog";
 import { useForm as useFormSpree } from "@formspree/react";
 import { FormProvider, useForm } from "react-hook-form";
 import { InputFieldUC } from "@/components/common/fields/InputField";
+import {useTranslations} from "next-intl";
 
 interface IContactUsDialogProps extends DialogProps {
     onClose: () => void;
@@ -26,7 +25,7 @@ const ContactUsDialog = (props: IContactUsDialogProps) => {
     const [emailError, setEmailError] = useState<any>("");
 
     const [dialogKey, setDialogKey] = useState(0);
-
+    const t  = useTranslations();
     const close = () => {
         handleSubmitSpree({});
         abortController.abort();
@@ -70,7 +69,7 @@ const ContactUsDialog = (props: IContactUsDialogProps) => {
                     sx={theme.typography.semiBoldXLarge}
                     textTransform={"uppercase"}
                 >
-                    <Trans i18nKey="common.contactUs" />
+                    {t("common.contactUs")}
                 </Typography>
             }
         >
@@ -95,10 +94,10 @@ const ContactUsDialog = (props: IContactUsDialogProps) => {
                             sx={{ fontSize: 64, color: "success.main", mb: 1 }}
                         />
                         <Typography variant="h5" sx={{ fontWeight: "bold", mb: 1 }}>
-                            <Trans i18nKey="common.thankYouForYourMessage" />
+                            {t("common.thankYouForYourMessage")}
                         </Typography>
                         <Typography variant="body2" sx={{ color: "text.secondary" }}>
-                            <Trans i18nKey="common.weWillGetBackToYouSoon" />
+                            {t("common.weWillGetBackToYouSoon")}
                         </Typography>
                     </Box>
 
@@ -116,7 +115,7 @@ const ContactUsDialog = (props: IContactUsDialogProps) => {
                         style={{ padding: 24 }}
                     >
                         <Typography variant="body1" sx={{ mb: 2 }}>
-                            <Trans i18nKey="common.contactUsIntroText" />
+                            {t("common.contactUsIntroText")}
                         </Typography>
 
                         <InputFieldUC name="email" label={t("common.yourEmail")} required />

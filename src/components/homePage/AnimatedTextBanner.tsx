@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { motion, AnimatePresence } from "framer-motion";
 import { styles } from "@/config/styles";
-import { useTranslation } from "react-i18next";
+import { useTranslations } from 'next-intl';
 import i18next from "i18next";
 import { farsiFontFamily, primaryFontFamily } from "@/utils/fonts";
 import useScreenResize from "@/utils/useScreenResize";
@@ -27,7 +27,7 @@ const messages = [
 
 const AnimatedTextBanner = () => {
   const [index, setIndex] = useState(0);
-  const { t } = useTranslation();
+  const t  = useTranslations();
   const isMobile = useScreenResize("sm");
 
   useEffect(() => {

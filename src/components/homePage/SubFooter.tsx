@@ -6,10 +6,11 @@ import useScreenResize from "@/utils/useScreenResize";
 import React from "react";
 import { theme } from "@/config/theme";
 import { VITE_LOCAL_BASE_URL } from "@/utils/env";
+import {useTranslations} from "next-intl";
 
 export default function FooterGradientCTA() {
   const isMobile = useScreenResize("md");
-  const { t } = useTranslation();
+  const t  = useTranslations();
   const message = t("footer.ctaMessage");
 
   return (
@@ -105,7 +106,7 @@ export default function FooterGradientCTA() {
         }}
       >
         <Typography variant="titleMedium">
-          <Trans i18nKey="hero.startSelfAssessment" />
+            {t("hero.startSelfAssessment")}
         </Typography>
       </Button>
     </Box>

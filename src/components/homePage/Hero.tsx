@@ -59,7 +59,6 @@ const HeroSection = () => {
             }}
           >
               {t('hero.topBannerTitle')}
-            {/*<Trans i18nKey={"hero.topBannerTitle"} />*/}
           </Typography>
 
           <Typography
@@ -71,7 +70,7 @@ const HeroSection = () => {
               mt: 2,
             }}
           >
-            <Trans i18nKey={"hero.topBannerDesc"} />
+              {t("hero.topBannerDesc")}
           </Typography>
 
           <Button
@@ -91,7 +90,7 @@ const HeroSection = () => {
             }}
             size="large"
           >
-            <Trans i18nKey={"hero.startSelfAssessment"} />
+              {t("hero.startSelfAssessment")}
           </Button>
         </Box>
       </Box>

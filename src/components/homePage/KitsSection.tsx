@@ -1,12 +1,11 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 import { styles } from "@/config/styles";
-import { Trans } from "react-i18next";
 import { motion } from "framer-motion";
 import KitPart from "./KitPart";
 import { theme } from "@/config/theme";
-import { t } from "i18next";
 import Link from "next/link";
 import { VITE_LOCAL_BASE_URL } from "@/utils/env";
+import { useTranslations } from 'next-intl';
 
 const cardsData = [
   {
@@ -72,18 +71,15 @@ const cardVariants = {
 };
 
 const Kits = () => {
+  const t  = useTranslations();
   return (
     <Box sx={{ ...styles.centerCVH }} px={{ xs: 2, md: 6, xxl: 30 }}>
       <Typography variant="headlineLarge" textAlign="center" mb={15}>
-        <Trans
-          i18nKey="main.whatCanYouAssessWith"
-          values={{ app: t("main.flickit") }}
-          components={{
-            style: <span style={{ color: "#2466A8" }} />,
-          }}
-        />
+          {t.rich('main.whatCanYouAssessWith', {
+              app: t('main.flickit'),
+              style: (chunks) => <span style={{ color: '#2466A8' }}>{chunks}</span>
+          })}
       </Typography>
-
       <Grid
         container
         spacing={{ md: 3 }}
@@ -129,7 +125,7 @@ const Kits = () => {
           },
         }}
       >
-        <Trans i18nKey="main.viewAllAssessmentKits" />
+          {t("main.viewAllAssessmentKits")}
       </Button>
     </Box>
   );

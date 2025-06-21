@@ -93,6 +93,7 @@ interface ICEDialogActionsProps extends PropsWithChildren<DialogActionsProps> {
 }
 
 export const CEDialogActions = (props: ICEDialogActionsProps) => {
+  const t  = useTranslations();
   const {
     type,
     loading,
@@ -113,7 +114,6 @@ export const CEDialogActions = (props: ICEDialogActionsProps) => {
     children,
   } = props;
   const fullScreen = useScreenResize("sm");
-  const t  = useTranslations();
   if (!onClose) {
     throw new Error("onClose or closeDialog not provided for CEDialogActions");
   }

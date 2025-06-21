@@ -23,10 +23,10 @@ const LanguageSelector = () => {
 
   return (
     <Box display="flex" justifyContent="center">
-      {currentLocale === "fa" ? (
+      {currentLocale === "en" ? (
         <Typography
           variant="semiBoldLarge"
-          onClick={() => handleLanguageChange("en")}
+          onClick={() => handleLanguageChange("fa")}
           sx={{
             cursor: "pointer",
           }}
@@ -37,7 +37,7 @@ const LanguageSelector = () => {
       ) : (
         <Typography
           variant="semiBoldLarge"
-          onClick={() => handleLanguageChange("fa")}
+          onClick={() => handleLanguageChange("en")}
           sx={{
             cursor: "pointer",
           }}

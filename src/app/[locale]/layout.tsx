@@ -2,30 +2,42 @@ import Navbar from "@/components/common/nav/Navbar";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "@/config/theme";
 import "@/assets/font/fonts.css";
-import { cookies } from "next/headers";
 import Script from "next/script";
 import React from "react";
+import {NextIntlClientProvider, hasLocale} from 'next-intl';
+import {notFound} from 'next/navigation';
+import {routing} from '@/i18n/routing';
 
 export const metadata = {
   title: "Flickit",
   description: "Assessment platform",
 };
 
-export default function RootLayout({
+export function generateStaticParams() {
+    return routing.locales.map((locale) => ({locale}));
+}
+
+export default async function RootLayout({
   children,
+  params
 }: {
   children: React.ReactNode;
+  params: Promise<{locale: string}>;
 }) {
-  const lang = cookies().get("lang")?.value || "en";
-  const dir = lang === "fa" ? "rtl" : "ltr";
-
+    const {locale} = await params;
+    if (!hasLocale(routing.locales, locale)) {
+        notFound();
+    }
+    const isRTL = ['fa'].includes(locale);
   return (
-    <html lang={lang} dir={dir}>
+    <html lang={locale}  dir={isRTL ? 'rtl' : 'ltr'}>
       <body style={{ margin: 0, background: "#F9FAFB" }}>
+      <NextIntlClientProvider locale={locale}>
         <ThemeProvider theme={theme}>
           <Navbar />
           {children}
         </ThemeProvider>
+      </NextIntlClientProvider>
       </body>
       <Script id="clarity-script" strategy="afterInteractive">
         {`

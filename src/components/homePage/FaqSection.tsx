@@ -2,8 +2,8 @@ import React from "react";
 import { Box, Typography, Link } from "@mui/material";
 import { styles } from "@/config/styles";
 import useScreenResize from "@/utils/useScreenResize";
-import { Trans } from "react-i18next";
 import { motion } from "framer-motion";
+import { useTranslations } from 'next-intl';
 
 const faqs = [
   {
@@ -25,7 +25,7 @@ const faqs = [
 
 const FaqSection = () => {
   const isMobile = useScreenResize("sm");
-
+  const t  = useTranslations();
   return (
     <Box
       sx={{
@@ -42,7 +42,7 @@ const FaqSection = () => {
         textAlign="center"
         sx={{ mb: 4 }}
       >
-        <Trans i18nKey="main.faq" />
+        {t("main.faq")}
       </Typography>
 
       {faqs.map((item, idx) => (
@@ -83,10 +83,10 @@ const FaqSection = () => {
               <Typography
                 variant={isMobile ? "semiBoldLarge" : "semiBoldXLarge"}
               >
-                <Trans i18nKey={item.questionKey} />
+                {t(item.questionKey)}
               </Typography>
               <Typography variant={isMobile ? "bodyMedium" : "bodyLarge"}>
-                <Trans i18nKey={item.answerKey} />
+                {t(item.answerKey)}
               </Typography>
             </Box>
           </Box>

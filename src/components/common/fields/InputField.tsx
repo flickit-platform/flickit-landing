@@ -7,8 +7,8 @@ import { useFormContext } from "react-hook-form";
 import getFieldError from "@/utils/getFieldError";
 import { theme } from "@/config/theme";
 import languageDetector from "@/utils/languageDetector";
-import { t } from "i18next";
 import {primaryFontFamily} from "@/utils/fonts";
+import {useTranslations} from "next-intl";
 
 const InputField = () => {
     return <TextField />;
@@ -59,7 +59,7 @@ const InputFieldUC = (props: IInputFieldUCProps) => {
     } = props;
 
     const inputRef = useRef<HTMLInputElement | null>(null);
-
+    const t = useTranslations()
     const {
         register,
         formState: { errors },

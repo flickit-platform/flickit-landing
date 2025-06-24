@@ -1,9 +1,11 @@
+"use client"
+
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import { Trans } from "react-i18next";
 import { styles } from "@/config/styles";
 import useScreenResize from "@/utils/useScreenResize";
-import { motion } from "framer-motion"; // فقط این اضافه شد
+import { motion } from "framer-motion";
+import {useTranslations} from "next-intl"; // فقط این اضافه شد
 
 type Pin = {
   id: number;
@@ -122,24 +124,27 @@ const PinLabel = ({
 }: {
   pin: Pin;
   variant?: "headlineMedium" | "headlineSmall";
-}) => (
-  <Box
-    sx={{
-      my: 4,
-      textAlign: "center",
-      ...styles.centerCH,
-      gap: 1,
-      px: { xs: 8, md: 0 },
-    }}
-  >
-    <Typography variant={variant} color={pin.color}>
-      <Trans i18nKey={pin.titleKey} />
-    </Typography>
-    <Typography variant="semiBoldXLarge" sx={{ color: "#2B333B" }}>
-      <Trans i18nKey={pin.descKey} />
-    </Typography>
-  </Box>
-);
+}) => {
+  const t  = useTranslations();
+  return (
+      <Box
+          sx={{
+            my: 4,
+            textAlign: "center",
+            ...styles.centerCH,
+            gap: 1,
+            px: { xs: 8, md: 0 },
+          }}
+      >
+        <Typography variant={variant} color={pin.color}>
+          {t(pin.titleKey)}
+        </Typography>
+        <Typography variant="semiBoldXLarge" sx={{ color: "#2B333B" }}>
+          {t(pin.descKey)}
+        </Typography>
+      </Box>
+  );
+}
 
 type RoadmapImageWithPinsProps = {
   pins: Pin[];
@@ -151,7 +156,9 @@ const RoadmapImageWithPins = ({
   pins,
   isMobile,
   streetImg,
-}: RoadmapImageWithPinsProps) => (
+}: RoadmapImageWithPinsProps) => {
+  const t  = useTranslations();
+  return (
   <Box
     sx={{
       position: "relative",
@@ -230,32 +237,31 @@ const RoadmapImageWithPins = ({
             }}
           >
             <Typography variant="headlineMedium" color={pin.color}>
-              <Trans i18nKey={pin.titleKey} />
+              {t(pin.titleKey)}
             </Typography>
             <Typography variant="semiBoldXLarge" sx={{ color: "#2B333B" }}>
-              <Trans i18nKey={pin.descKey} />
+              {t(pin.descKey)}
             </Typography>
           </Box>
         )}
       </motion.div>
     ))}
   </Box>
-);
+)};
 
 const ProcessRoadmap: React.FC = () => {
   const isMobile = useScreenResize("md");
   const streetImg = isMobile ? "/mobile-street.svg" : "/street.svg";
-
+  const t  = useTranslations();
   return (
     <Box sx={{ ...styles.centerCVH }} mt={{ xs: 11, md: 20 }}>
       <Typography
         variant={isMobile ? "headlineMedium" : "headlineLarge"}
         textAlign="center"
       >
-        <Trans
-          i18nKey="main.howItWorks"
-          components={{ style: <span style={{ color: "#2466A8" }} /> }}
-        />
+        {t.rich('main.howItWorks', {
+          style: (chunks) => <span style={{ color: '#2466A8' }}>{chunks}</span>
+        })}
       </Typography>
 
       {isMobile ? (

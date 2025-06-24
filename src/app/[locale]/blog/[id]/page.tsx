@@ -1,19 +1,17 @@
 "use client"
 
 import {useEffect, useMemo, useState} from "react";
-import "@/config/i18n";
 import Box from "@mui/material/Box";
 import * as data from "@/config/db-Article";
-import i18n from "i18next";
 import {BlogMaker} from "@/utils/blogMaker";
 import {useParams} from "next/navigation";
 
 const Article = () => {
-    const {id} = useParams()
+    const {id, locale} = useParams()
     const [article, setArticle] = useState<any>({})
     const currentLang = useMemo(()=>{
-        return i18n.language;
-    },[i18n.language])
+        return locale ;
+    },[locale])
 
         useEffect(()=>{
             if(id){

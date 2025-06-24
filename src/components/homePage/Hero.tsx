@@ -1,14 +1,15 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { Trans } from "react-i18next";
 import { theme } from "@/config/theme";
 import { Button } from "@mui/material";
 import Link from "next/link";
 import AnimatedTextBanner from "./AnimatedTextBanner";
 import { VITE_LOCAL_BASE_URL } from "@/utils/env";
+import {useTranslations} from 'next-intl';
 
 const HeroSection = () => {
+    const t = useTranslations();
   return (
     <Box
       sx={{
@@ -56,7 +57,7 @@ const HeroSection = () => {
               },
             }}
           >
-            <Trans i18nKey={"hero.topBannerTitle"} />
+              {t('hero.topBannerTitle')}
           </Typography>
 
           <Typography
@@ -68,7 +69,7 @@ const HeroSection = () => {
               mt: 2,
             }}
           >
-            <Trans i18nKey={"hero.topBannerDesc"} />
+              {t("hero.topBannerDesc")}
           </Typography>
 
           <Button
@@ -88,7 +89,7 @@ const HeroSection = () => {
             }}
             size="large"
           >
-            <Trans i18nKey={"hero.startSelfAssessment"} />
+              {t("hero.startSelfAssessment")}
           </Button>
         </Box>
       </Box>

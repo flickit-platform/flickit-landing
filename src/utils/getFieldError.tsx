@@ -1,5 +1,5 @@
 import { FieldErrorsImpl } from "react-hook-form";
-import { Trans } from "react-i18next";
+import {useTranslations} from "next-intl";
 
 type TErrorTypes =
   | "disabled"
@@ -19,7 +19,7 @@ type TErrorTypes =
   | "shouldUnregister"
   | "deps";
 
-type TErrorMessagesBaseOnErrorTypes = Partial<Record<TErrorTypes, JSX.Element>>;
+type TErrorMessagesBaseOnErrorTypes = Partial<Record<TErrorTypes, JSX.Element | string>>;
 
 /**
  * Finds field error in form errors
@@ -37,20 +37,15 @@ const getFieldError = (
 ) => {
   const error = errors?.[name];
   const hasError = !!error?.type;
+  const t  = useTranslations();
   const errorMessagesBaseOnErrorTypes: TErrorMessagesBaseOnErrorTypes = {
-    required: <Trans i18nKey="common.requiredFieldError" />,
+    required: t("common.requiredFieldError"),
 
     minLength: (
-      <Trans
-        i18nKey="minLengthFieldError"
-        values={{ length: minLength ?? "8" }}
-      />
+        t('minLengthFieldError', {length: minLength ?? '8'})
     ),
     maxLength: (
-      <Trans
-        i18nKey="maxLengthFieldError"
-        values={{ length: maxLength ?? "8" }}
-      />
+        t('maxLengthFieldError', {length: maxLength ?? '8'})
     ),
   };
   const errorMessage =

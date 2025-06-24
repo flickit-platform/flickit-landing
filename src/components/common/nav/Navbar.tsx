@@ -1,7 +1,6 @@
 "use client";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { Trans } from "react-i18next";
 import { Button } from "@mui/material";
 import { is_farsi, theme } from "@/config/theme";
 import Link from "next/link";
@@ -12,10 +11,13 @@ import { styles } from "@/config/styles";
 import { farsiFontFamily, primaryFontFamily } from "@/utils/fonts";
 import useScreenResize from "@/utils/useScreenResize";
 import { VITE_LOCAL_BASE_URL } from "@/utils/env";
+import { useTranslations } from 'next-intl';
 
 export default function Navbar() {
   const dialogProps = useDialog();
   const isMobile = useScreenResize("sm");
+  const t  = useTranslations();
+
   return (
     <nav
       style={{
@@ -61,7 +63,7 @@ export default function Navbar() {
                 textDecoration: "none",
               }}
             >
-              <Trans i18nKey={"nav.signUpFree"} />
+                {t("nav.signUpFree")}
             </Typography>
           </Button>
         </Box>

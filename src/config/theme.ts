@@ -142,8 +142,7 @@ const palette = {
   warning: { main: "#CC7400", contrastText: "#fff", light: "#F4E7D7" },
 };
 
-export const is_farsi =
-  typeof window !== "undefined" && localStorage.lang === "fa";
+export const is_farsi = () => typeof window !== "undefined" && window.location.pathname.split('/')[1] === "fa";
 
 const fontWeight = {
   extraBold: 800,

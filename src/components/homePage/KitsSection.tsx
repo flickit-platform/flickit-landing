@@ -80,9 +80,6 @@ const Kits = () => {
               app: (chunks)=> <span>{t(`${chunks}`)}</span>,
               style: (chunks) => <span style={{ color: '#2466A8' }}>{chunks}</span>
           })}
-          {/*{t.rich('main.howItWorks', {*/}
-          {/*    style: (chunks) => <span style={{ color: '#2466A8' }}>{chunks}</span>*/}
-          {/*})}*/}
       </Typography>
       <Grid
         container

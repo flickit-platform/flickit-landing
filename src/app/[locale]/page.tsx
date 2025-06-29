@@ -2,7 +2,6 @@
 
 import Footer from "@/components/homePage/FooterSection";
 import SubFooter from "@/components/homePage/SubFooter";
-// import "@/config/i18n";
 import HeroSection from "@/components/homePage/Hero";
 import KitsSection from "@/components/homePage/KitsSection";
 import ProcessRoadmap from "@/components/homePage/ProcessRoadmap";

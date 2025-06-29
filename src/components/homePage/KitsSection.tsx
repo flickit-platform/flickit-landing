@@ -10,7 +10,7 @@ import React from "react";
 
 const cardsData = [
   {
-    id: "384",
+    id: "398",
     imageUrl: "/EnsureProductScale-world.svg",
     chipLabelKey: "main.kit.softwarePerformance.chipLabel",
     titleKey: "main.kit.softwarePerformance.title",

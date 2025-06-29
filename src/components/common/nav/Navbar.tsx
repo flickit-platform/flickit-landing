@@ -36,14 +36,16 @@ export default function Navbar() {
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "center",
+                    height: "100%"
                 }}
             >
                 <Box sx={{height: "100%", width: "auto"}}>
-                    <img src={"/logo.svg"} style={{height: "44px"}} alt={"logo-icon"}/>
+                    <img src={"/logo.svg"} style={{height: "40px"}} alt={"logo-icon"}/>
                 </Box>
                 <Box
                     sx={{
                         ...styles.centerVH,
+                        alignItems: "end",
                         gap: {xs: 0.8, sm: 2},
                     }}
                 >
@@ -55,7 +57,7 @@ export default function Navbar() {
                         size={isMobile ? "small" : "large"}
                         sx={{
                             ...theme.typography.semiBoldLarge,
-                            height: "32px",
+                            height: "31px",
                             color: "#fff",
                             textTransform: "capitalize",
                             borderColor: "#fff",
@@ -73,7 +75,7 @@ export default function Navbar() {
                         href={VITE_LOCAL_BASE_URL ?? ""}
                         sx={{
                             ...theme.typography.semiBoldLarge,
-                            height: "32px",
+                            height: "31px",
                             color: theme.palette.primary.main,
                             textTransform: "capitalize",
                             background: "#F3F5F6",

@@ -67,6 +67,7 @@ const typeRenderMap: Record<string, (value: any) => JSX.Element> = {
         ...theme.typography.semiBoldMedium,
         color: "#3D4D5C80",
         mt: 2,
+        textAlign: "justify"
       }}
     >
       {value}

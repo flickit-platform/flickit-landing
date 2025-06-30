@@ -84,7 +84,7 @@ const FaqSection = () => {
               >
                 {t(item.questionKey)}
               </Typography>
-              <Typography variant={isMobile ? "bodyMedium" : "bodyLarge"}>
+              <Typography variant={isMobile ? "bodyMedium" : "bodyLarge"} textAlign="justify">
                 {t(item.answerKey)}
               </Typography>
             </Box>

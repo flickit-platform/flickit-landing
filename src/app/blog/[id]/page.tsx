@@ -30,7 +30,7 @@ const Article = () => {
                 const listOfItems = {topTitle, mainTitle, subTitle, infoBox, image}
                 return BlogMaker(listOfItems)
             })}
-            <Box sx={{ px: {xs: 1, sm : 3, md: 13}, mb: "40px",fontWeight: "regular"}}>
+            <Box sx={{ px: {sm : 3, md: 13}, mb: "40px",fontWeight: "regular"}}>
                 {article?.content?.map((item: any) => {
                  const {title, p, ul, table, pBold, ulBold} = item
                  const listOfItems = {title, p, ul, table, pBold, ulBold}

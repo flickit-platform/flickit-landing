@@ -84,7 +84,10 @@ const FaqSection = () => {
               >
                 <Trans i18nKey={item.questionKey} />
               </Typography>
-              <Typography variant={isMobile ? "bodyMedium" : "bodyLarge"}>
+              <Typography
+                variant={isMobile ? "bodyMedium" : "bodyLarge"}
+                textAlign="justify"
+              >
                 <Trans i18nKey={item.answerKey} />
               </Typography>
             </Box>

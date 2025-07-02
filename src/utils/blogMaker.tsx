@@ -67,6 +67,7 @@ const typeRenderMap: Record<string, (value: any) => JSX.Element> = {
         ...theme.typography.semiBoldMedium,
         color: "#3D4D5C80",
         mt: 2,
+        textAlign: "justify"
       }}
     >
       {value}
@@ -92,7 +93,7 @@ const typeRenderMap: Record<string, (value: any) => JSX.Element> = {
                 textAlign: "justify",
               },
             }}
-            sx={{textAlign: "justify"}}
+            sx={{textAlign: "justify", mb: 0.5}}
           >
             {itemText.li}
           </ListItemText>
@@ -137,7 +138,7 @@ const typeRenderMap: Record<string, (value: any) => JSX.Element> = {
                   textAlign: "justify",
                 },
               }}
-              sx={{textAlign: "justify"}}
+              sx={{textAlign: "justify", mb: 0.5}}
             >
               <Box component="span" fontWeight="bold">
                 {boldText}

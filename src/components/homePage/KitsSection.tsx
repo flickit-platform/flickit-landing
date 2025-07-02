@@ -10,7 +10,7 @@ import React from "react";
 
 const cardsData = [
   {
-    id: "384",
+    id: "398",
     imageUrl: "/EnsureProductScale-world.svg",
     chipLabelKey: "main.kit.softwarePerformance.chipLabel",
     titleKey: "main.kit.softwarePerformance.title",
@@ -80,9 +80,6 @@ const Kits = () => {
               app: (chunks)=> <span>{t(`${chunks}`)}</span>,
               style: (chunks) => <span style={{ color: '#2466A8' }}>{chunks}</span>
           })}
-          {/*{t.rich('main.howItWorks', {*/}
-          {/*    style: (chunks) => <span style={{ color: '#2466A8' }}>{chunks}</span>*/}
-          {/*})}*/}
       </Typography>
       <Grid
         container

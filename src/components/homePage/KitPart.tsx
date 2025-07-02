@@ -304,6 +304,7 @@ const KitPart = ({
             textOverflow: "ellipsis",
             width: "100%",
             minHeight: "70px",
+            height: "80px",
             maxHeight: "80px",
             overflow: "hidden",
           }}

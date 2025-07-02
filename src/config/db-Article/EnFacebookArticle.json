@@ -3,7 +3,7 @@
     "lang": "en",
     "content": [
       {"topTitle":  "Global case study"},
-      {"mainTitle":  "How Facebook Messenger Cut 80 % of Code and Halved Launch Time"},
+      {"mainTitle":  "Facebook Messenger: How Technical Debt Was Eliminated for Faster Performance"},
       {"subTitle": "Project LightSpeed: an inside look at the bold rewrite that turned a lumbering mobile giant into a lean, ultra-fast experience"},
       {"infoBox": [
         {"title": "Published on", "subTitle": "Mar 4, 2020"},

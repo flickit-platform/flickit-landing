@@ -1,3 +1,4 @@
 {
-  "signUpFree": "Login / Register"
+  "login": "Login",
+  "createAccount": "Create account"
 }

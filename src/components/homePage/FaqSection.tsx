@@ -30,7 +30,8 @@ const FaqSection = () => {
     <Box
       sx={{
         bgcolor: "#EAF2FB",
-        py: 4,
+        pt: 4,
+        pb: {xs:6, sm: 4},
         borderRadius: 4,
         ...styles.centerCV,
       }}
@@ -71,7 +72,7 @@ const FaqSection = () => {
               sx={{
                 width: { xs: 140, sm: 200, md: "unset" },
                 maxWidth: { xs: 140, sm: 200, md: 250 },
-                mb: { xs: 2, md: 0 },
+                mb:{xs: 2,md : 0 }
               }}
               color="#2B333B"
             />
@@ -85,7 +86,7 @@ const FaqSection = () => {
               >
                 {t(item.questionKey)}
               </Typography>
-              <Typography variant={isMobile ? "bodyMedium" : "bodyLarge"}>
+              <Typography variant={isMobile ? "bodyMedium" : "bodyLarge"} textAlign="justify">
                 {t(item.answerKey)}
               </Typography>
             </Box>

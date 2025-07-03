@@ -5,9 +5,10 @@ import Link from "next/link";
 import { styles } from "@/config/styles";
 import WaitingListDialog from "../common/dialogs/WaitingListDialog";
 import useDialog from "@/utils/useDialog";
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
 import { LoadingButton } from "@mui/lab";
 import { VITE_LOCAL_BASE_URL } from "@/utils/env";
+import { useParams } from "next/navigation";
 
 interface Props {
   imageUrl: string;
@@ -38,7 +39,7 @@ const KitPart = ({
 }: Props) => {
   const dialogProps = useDialog();
   const [loading, setLoading] = useState<null | "more" | "create">(null);
-  const t  = useTranslations();
+  const t = useTranslations();
 
   const handleKitClick = (id: any, title: any) => {
     (window as any).dataLayer.push({
@@ -76,6 +77,8 @@ const KitPart = ({
     }, 1000);
   };
 
+  const { locale } = useParams();
+
   return (
     <Box
       sx={{
@@ -91,7 +94,7 @@ const KitPart = ({
           sx={{
             position: "absolute",
             top: "-30px",
-            [theme.direction == "rtl" ? "left" : "right"]: "-15px",
+            [locale === "fa" ? "left" : "right"]: "-15px",
             width: "65px",
             height: "auto",
             zIndex: 2,
@@ -109,13 +112,13 @@ const KitPart = ({
             }}
           />
           <Typography
+            variant="labelLarge"
             sx={{
-              ...theme.typography.labelLarge,
               color: theme.palette.secondary.main,
               position: "absolute",
             }}
           >
-              {t("common.free")}
+            {t("common.free")}
           </Typography>
         </Box>
       )}
@@ -181,7 +184,7 @@ const KitPart = ({
             size="small"
           />
           <Typography variant="titleLarge" textAlign="center" sx={{ mb: 1 }}>
-              {t(titleKey)}
+            {t(titleKey)}
           </Typography>
           <Typography
             variant="bodyLarge"
@@ -199,7 +202,7 @@ const KitPart = ({
               WebkitBoxOrient: "vertical",
             }}
           >
-              {t(descKey)}
+            {t(descKey)}
           </Typography>
         </Box>
         {!waitList ? (
@@ -218,7 +221,7 @@ const KitPart = ({
               loading={loading === "more"}
               onClick={(e) => createAssessment(e, id, t(titleKey), "more")}
             >
-                {t("main.moreAboutThisKit")}
+              {t("main.moreAboutThisKit")}
             </Button>
             <LoadingButton
               variant="contained"
@@ -226,7 +229,7 @@ const KitPart = ({
               loading={loading === "create"}
               onClick={(e) => createAssessment(e, id, t(titleKey), "create")}
             >
-                {t("main.createAssessment")}
+              {t("main.createAssessment")}
             </LoadingButton>
           </Box>
         ) : (
@@ -244,7 +247,7 @@ const KitPart = ({
               fullWidth
               onClick={() => dialogProps.openDialog({ open: true })}
             >
-                {t("main.joinTheWaitlist")}
+              {t("main.joinTheWaitlist")}
             </Button>
           </Box>
         )}
@@ -297,7 +300,7 @@ const KitPart = ({
         )}
 
         <Typography variant="labelSmall" color="#97A6B8" mb={0.5}>
-            {t("main.globalCaseStudy")}
+          {t("main.globalCaseStudy")}
         </Typography>
         <Box
           sx={{
@@ -320,7 +323,7 @@ const KitPart = ({
               WebkitBoxOrient: "vertical",
             }}
           >
-              {t(caseStudyDescKey)}
+            {t(caseStudyDescKey)}
           </Typography>
         </Box>
         <Button
@@ -330,7 +333,7 @@ const KitPart = ({
           variant="outlined"
           size="small"
         >
-            {t("main.learnMore")}
+          {t("main.learnMore")}
         </Button>
       </Box>
       <WaitingListDialog

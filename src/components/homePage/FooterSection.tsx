@@ -2,12 +2,11 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { Button } from "@mui/material";
 import Grid from "@mui/material/Grid";
-import { theme } from "@/config/theme";
 import ContactUsDialog from "@/components/common/ContactUs/ContactUs";
 import useDialog from "@/utils/useDialog";
 import { styles } from "@/config/styles";
 import useScreenResize from "@/utils/useScreenResize";
-import {useTranslations} from "next-intl";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
   const dialogProps = useDialog();
@@ -20,7 +19,7 @@ export default function Footer() {
       sx={{
         background: "#2a333b",
         backgroundImage: { md: "url(/Footer.svg)" },
-        backgroundPosition:"center",
+        backgroundPosition: "center",
         py: "38px",
         px: { xs: 1, sm: "48px" },
       }}
@@ -49,15 +48,15 @@ export default function Footer() {
             style={{ margin: isMobile ? "0 auto" : "0", maxWidth: 170 }}
           />
           <Typography
+            variant="bodyMedium"
             sx={{
-              ...theme.typography.bodyMedium,
               color: "#F0F2F4",
               maxWidth: { sm: 390 },
               mt: 2,
               textAlign: { xs: "center", md: "justify" },
             }}
           >
-              {t("footer.flickitFooterText")}
+            {t("footer.flickitFooterText")}
           </Typography>
         </Grid>
         <Grid
@@ -86,18 +85,18 @@ export default function Footer() {
               }}
             >
               <Typography
+                variant="titleLarge"
                 sx={{
-                  ...theme.typography.titleLarge,
                   color: "#F0F2F4",
                 }}
               >
-                  {t("footer.feelFreeToReachUs")}
+                {t("footer.feelFreeToReachUs")}
               </Typography>
               <Button
                 onClick={() => dialogProps.openDialog({ open: true })}
                 variant={"contained"}
               >
-                  {t("common.contactUs")}
+                {t("common.contactUs")}
               </Button>
             </Box>
           </Box>

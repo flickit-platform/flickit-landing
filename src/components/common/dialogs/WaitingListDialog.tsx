@@ -9,7 +9,6 @@ import {
   CEDialogActions,
 } from "@/components/common/dialogs/CEDialog";
 import { useForm as useFormSpree } from "@formspree/react";
-import { theme } from "@/config/theme";
 import { Box } from "@mui/material";
 import { useTranslations } from "next-intl";
 
@@ -22,18 +21,12 @@ const WaitingListDialog = (props: any) => {
   const t = useTranslations();
 
   useEffect(() => {
-    methods.setValue(
-      "type",
-      `Waiting List - "${kitTitle}".`
-    );
+    methods.setValue("type", `Waiting List - "${kitTitle}".`);
   }, []);
   const onSubmit = (data: any) => {
     handleSubmitSpree(data);
     methods.reset();
-    methods.setValue(
-      "type",
-      `Waiting List - "${kitTitle}".`
-    );
+    methods.setValue("type", `Waiting List - "${kitTitle}".`);
     onClose();
   };
 
@@ -41,10 +34,7 @@ const WaitingListDialog = (props: any) => {
     abortController.abort();
     methods.reset();
     setDialogKey((prev) => prev + 1);
-    methods.setValue(
-      "type",
-      `Waiting List - "${kitTitle}".`
-    );
+    methods.setValue("type", `Waiting List - "${kitTitle}".`);
     onClose();
   };
 
@@ -55,7 +45,7 @@ const WaitingListDialog = (props: any) => {
       closeDialog={close}
       icon={<NotificationsActiveIcon />}
       title={
-        <Typography sx={theme.typography.semiBoldXLarge}>
+        <Typography variant="semiBoldXLarge">
           {t("common.joinTheWaitlist")}
         </Typography>
       }

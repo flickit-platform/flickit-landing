@@ -19,16 +19,14 @@ import Box from "@mui/material/Box";
 
 const typeRenderMap: Record<string, (value: any) => JSX.Element> = {
   title: (value) => (
-    <Typography
-      sx={{ ...theme.typography.semiBoldXLarge, color: "#000", mb: 1 }}
-    >
+    <Typography variant="semiBoldXLarge" sx={{ color: "#000", mb: 1 }}>
       {value}
     </Typography>
   ),
   p: (value) => (
     <Typography
+      variant="semiBoldMedium"
       sx={{
-        ...theme.typography.semiBoldMedium,
         color: "#2B333B",
         mb: 2,
         fontWeight: "regular",
@@ -39,19 +37,14 @@ const typeRenderMap: Record<string, (value: any) => JSX.Element> = {
     </Typography>
   ),
   topTitle: (value) => (
-    <Typography
-      sx={{
-        ...theme.typography.semiBoldXLarge,
-        color: theme.palette.primary.main,
-      }}
-    >
+    <Typography variant="semiBoldXLarge" color="primary.main">
       {value}
     </Typography>
   ),
   mainTitle: (value) => (
     <Typography
+      variant="headlineSmall"
       sx={{
-        ...theme.typography.headlineSmall,
         mt: 2,
         fontSize: { xs: "1.6rem", sm: "3rem" },
         fontWeight: "bold",
@@ -63,11 +56,11 @@ const typeRenderMap: Record<string, (value: any) => JSX.Element> = {
   ),
   subTitle: (value) => (
     <Typography
+      variant="semiBoldMedium"
       sx={{
-        ...theme.typography.semiBoldMedium,
         color: "#3D4D5C80",
         mt: 2,
-        textAlign: "justify"
+        textAlign: "justify",
       }}
     >
       {value}
@@ -93,7 +86,7 @@ const typeRenderMap: Record<string, (value: any) => JSX.Element> = {
                 textAlign: "justify",
               },
             }}
-            sx={{textAlign: "justify", mb: 0.5}}
+            sx={{ textAlign: "justify", mb: 0.5 }}
           >
             {itemText.li}
           </ListItemText>
@@ -138,7 +131,7 @@ const typeRenderMap: Record<string, (value: any) => JSX.Element> = {
                   textAlign: "justify",
                 },
               }}
-              sx={{textAlign: "justify", mb: 0.5}}
+              sx={{ textAlign: "justify", mb: 0.5 }}
             >
               <Box component="span" fontWeight="bold">
                 {boldText}
@@ -188,8 +181,8 @@ const typeRenderMap: Record<string, (value: any) => JSX.Element> = {
   },
   pBold: (value) => (
     <Typography
+      variant="semiBoldMedium"
       sx={{
-        ...theme.typography.semiBoldMedium,
         color: "#2B333B",
         mb: 2,
         fontWeight: "bold",
@@ -211,13 +204,11 @@ const typeRenderMap: Record<string, (value: any) => JSX.Element> = {
             />
           )}
           <Box sx={{ px: "24px" }}>
-            <Typography
-              sx={{ ...theme.typography.bodyMedium, color: "#3D4D5C80" }}
-            >
+            <Typography variant="bodyMedium" sx={{ color: "#3D4D5C80" }}>
               {item.title}
             </Typography>
-            <Typography
-              sx={{ ...theme.typography.semiBoldMedium, color: "#6C8093" }}
+            <Typography variant="semiBoldMedium"
+              sx={{  color: "#6C8093" }}
             >
               {item.subTitle}
             </Typography>

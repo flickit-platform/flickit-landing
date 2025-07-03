@@ -1,10 +1,11 @@
-import { theme } from "@/config/theme";
+import { useParams } from "next/navigation";
 
 const languageDetector = (text?: string | null) => {
   const farsiChars = new Set("ابپتثجچحخدذرزژسشصضطظعغفقکگلمنوهی");
 
+  const { locale } = useParams();
   if (!text || text === undefined) {
-    if (theme.direction === "rtl") {
+    if (locale === "fa") {
       return true;
     } else {
       return false;

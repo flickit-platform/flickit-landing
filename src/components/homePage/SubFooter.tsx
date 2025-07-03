@@ -3,14 +3,15 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import useScreenResize from "@/utils/useScreenResize";
 import React from "react";
-import { theme } from "@/config/theme";
 import { VITE_LOCAL_BASE_URL } from "@/utils/env";
-import {useTranslations} from "next-intl";
+import { useTranslations } from "next-intl";
+import { useParams } from "next/navigation";
 
 export default function FooterGradientCTA() {
   const isMobile = useScreenResize("md");
-  const t  = useTranslations();
+  const t = useTranslations();
   const message = t("footer.ctaMessage");
+  const { locale } = useParams();
 
   return (
     <Box
@@ -44,11 +45,11 @@ export default function FooterGradientCTA() {
             xs: "url(/sub-footer-xs.svg)",
             sm: "url(/sub-footer-sm.svg)",
             md:
-              theme.direction == "rtl"
+              locale === "fa"
                 ? "url(/fa-sub-footer-md.svg)"
                 : "url(/en-sub-footer-md.svg)",
             xl:
-              theme.direction == "rtl"
+              locale === "fa"
                 ? "url(/fa-sub-footer-xl.svg)"
                 : "url(/en-sub-footer-xl.svg)",
           },
@@ -60,8 +61,8 @@ export default function FooterGradientCTA() {
         }}
       />
       <Typography
+        variant="titleLarge"
         sx={{
-          ...theme.typography.titleLarge,
           textAlign: "center",
           color: "#fff",
           zIndex: 2,
@@ -89,7 +90,7 @@ export default function FooterGradientCTA() {
           bgcolor: "#fff",
           color: "#2466A8",
           position: { md: "absolute" },
-          [theme.direction == "rtl" ? "left" : "right"]: {
+          [locale === "fa" ? "left" : "right"]: {
             md: "4%",
             xl: "8%",
             xxl: "15%",
@@ -105,7 +106,7 @@ export default function FooterGradientCTA() {
         }}
       >
         <Typography variant="titleMedium">
-            {t("hero.startSelfAssessment")}
+          {t("hero.startSelfAssessment")}
         </Typography>
       </Button>
     </Box>

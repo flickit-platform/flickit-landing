@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import {useRouter, usePathname} from 'next/navigation';
-import {useLocale} from 'next-intl';
+import { useRouter, usePathname, useParams } from "next/navigation";
+import { useLocale } from "next-intl";
 import { farsiFontFamily } from "@/utils/fonts";
 
 const LanguageSelector = () => {
@@ -12,13 +12,13 @@ const LanguageSelector = () => {
   const currentLocale = useLocale();
   const handleLanguageChange = (language: any) => {
     const newLocale = language;
-    const segments = pathname.split('/');
+    const segments = pathname.split("/");
     segments[1] = newLocale;
-    const newPath = segments.join('/');
+    const newPath = segments.join("/");
 
     router.push(newPath);
 
-    window.location.reload()
+    window.location.reload();
   };
 
   return (
@@ -29,7 +29,7 @@ const LanguageSelector = () => {
           onClick={() => handleLanguageChange("fa")}
           sx={{
             cursor: "pointer",
-            fontFamily:farsiFontFamily
+            fontFamily: farsiFontFamily,
           }}
           color="white"
         >

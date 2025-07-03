@@ -11,7 +11,7 @@ import {
 import { useForm as useFormSpree } from "@formspree/react";
 import { theme } from "@/config/theme";
 import { Box } from "@mui/material";
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
 
 const WaitingListDialog = (props: any) => {
   const methods = useForm();
@@ -19,15 +19,21 @@ const WaitingListDialog = (props: any) => {
   const { kitTitle, onClose, ...rest } = props;
   const abortController = useMemo(() => new AbortController(), [rest.open]);
   const [dialogKey, setDialogKey] = useState(0);
-  const t  = useTranslations();
+  const t = useTranslations();
 
   useEffect(() => {
-    methods.setValue("message", `User added to '${kitTitle}' kit wait list`);
+    methods.setValue(
+      "type",
+      `Waiting List - "${kitTitle}".`
+    );
   }, []);
   const onSubmit = (data: any) => {
     handleSubmitSpree(data);
     methods.reset();
-    methods.setValue("message", `User added to '${kitTitle}' kit wait list`);
+    methods.setValue(
+      "type",
+      `Waiting List - "${kitTitle}".`
+    );
     onClose();
   };
 
@@ -35,7 +41,10 @@ const WaitingListDialog = (props: any) => {
     abortController.abort();
     methods.reset();
     setDialogKey((prev) => prev + 1);
-    methods.setValue("message", `User added to '${kitTitle}' kit wait list`);
+    methods.setValue(
+      "type",
+      `Waiting List - "${kitTitle}".`
+    );
     onClose();
   };
 

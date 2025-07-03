@@ -3,10 +3,10 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { motion, AnimatePresence } from "framer-motion";
 import { styles } from "@/config/styles";
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
 import { farsiFontFamily, primaryFontFamily } from "@/utils/fonts";
 import useScreenResize from "@/utils/useScreenResize";
-import {useParams} from "next/navigation";
+import { useParams } from "next/navigation";
 
 const messages = [
   "hero.quotes.systemGotHacked",
@@ -27,9 +27,9 @@ const messages = [
 
 const AnimatedTextBanner = () => {
   const [index, setIndex] = useState(0);
-  const t  = useTranslations();
+  const t = useTranslations();
   const isMobile = useScreenResize("sm");
-  const {locale} = useParams()
+  const { locale } = useParams();
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % messages.length);
@@ -79,9 +79,7 @@ const AnimatedTextBanner = () => {
                   md: "48px",
                 },
                 fontFamily:
-                    locale === "fa"
-                    ? farsiFontFamily
-                    : primaryFontFamily,
+                  locale === "fa" ? farsiFontFamily : primaryFontFamily,
                 display: "inline-block",
               }}
             >

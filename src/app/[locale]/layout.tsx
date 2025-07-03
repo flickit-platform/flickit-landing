@@ -4,9 +4,9 @@ import { theme } from "@/config/theme";
 import "@/assets/font/fonts.css";
 import Script from "next/script";
 import React from "react";
-import {NextIntlClientProvider, hasLocale} from 'next-intl';
-import {notFound} from 'next/navigation';
-import {routing} from '@/i18n/routing';
+import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
 
 export const metadata = {
   title: "Flickit",
@@ -14,30 +14,29 @@ export const metadata = {
 };
 
 export function generateStaticParams() {
-    return routing.locales.map((locale) => ({locale}));
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 export default async function RootLayout({
   children,
-  params
+  params,
 }: {
   children: React.ReactNode;
-  params: Promise<{locale: string}>;
+  params: Promise<{ locale: string }>;
 }) {
-    const {locale} = await params;
-    if (!hasLocale(routing.locales, locale)) {
-        notFound();
-    }
-    const isRTL = ['fa'].includes(locale);
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
   return (
-    <html lang={locale}  dir={isRTL ? 'rtl' : 'ltr'}>
+    <html lang={locale} dir={locale === "fa" ? "rtl" : "ltr"}>
       <body style={{ margin: 0, background: "#F9FAFB" }}>
-      <NextIntlClientProvider locale={locale}>
-        <ThemeProvider theme={theme}>
-          <Navbar />
-          {children}
-        </ThemeProvider>
-      </NextIntlClientProvider>
+        <NextIntlClientProvider locale={locale}>
+          <ThemeProvider theme={theme}>
+            <Navbar />
+            {children}
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
       <Script id="clarity-script" strategy="afterInteractive">
         {`

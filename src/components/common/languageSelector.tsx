@@ -2,9 +2,9 @@
 
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { theme } from "@/config/theme";
 import {useRouter, usePathname} from 'next/navigation';
 import {useLocale} from 'next-intl';
+import { farsiFontFamily } from "@/utils/fonts";
 
 const LanguageSelector = () => {
   const router = useRouter();
@@ -12,13 +12,13 @@ const LanguageSelector = () => {
   const currentLocale = useLocale();
   const handleLanguageChange = (language: any) => {
     const newLocale = language;
-
-    // Replace the current locale in the pathname
     const segments = pathname.split('/');
     segments[1] = newLocale;
     const newPath = segments.join('/');
 
     router.push(newPath);
+
+    window.location.reload()
   };
 
   return (
@@ -29,6 +29,7 @@ const LanguageSelector = () => {
           onClick={() => handleLanguageChange("fa")}
           sx={{
             cursor: "pointer",
+            fontFamily:farsiFontFamily
           }}
           color="white"
         >

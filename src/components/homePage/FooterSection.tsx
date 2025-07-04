@@ -19,7 +19,7 @@ export default function Footer() {
       sx={{
         background: "#2a333b",
         backgroundImage: { md: "url(/Footer.svg)" },
-        backgroundPosition:"center",
+        backgroundPosition: "center",
         py: "38px",
         px: { xs: 1, sm: "48px" },
       }}
@@ -48,8 +48,8 @@ export default function Footer() {
             style={{ margin: isMobile ? "0 auto" : "0", maxWidth: 170 }}
           />
           <Typography
+            variant="bodyMedium"
             sx={{
-              ...theme.typography.bodyMedium,
               color: "#F0F2F4",
               maxWidth: { sm: 390 },
               mt: 2,

@@ -63,7 +63,7 @@ export default function Navbar() {
               },
             }}
           >
-            {t("login")}
+            {t("nav.login")}
           </Button>
           <Button
             variant={"contained"}
@@ -82,7 +82,7 @@ export default function Navbar() {
               },
             }}
           >
-            {t("createAccount")}
+            {t("nav.createAccount")}
           </Button>
         </Box>
       </Box>

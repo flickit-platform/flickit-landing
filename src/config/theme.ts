@@ -414,7 +414,7 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           "& > :not(:first-of-type)": {
-            marginLeft: is_farsi ? "-24px" : "8px",
+            marginLeft: "8px",
           },
         },
       },

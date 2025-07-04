@@ -55,8 +55,8 @@ export const CEDialog = (props: PropsWithChildren<ICEDialogProps>) => {
             color: "#fff",
           }}
         >
-         {icon && icon}
-         {title}
+          {icon && icon}
+          {title}
         </DialogTitle>
       )}
       <DialogContent
@@ -136,15 +136,23 @@ export const CEDialogActions = (props: ICEDialogActionsProps) => {
       }}
     >
       {contactSection?.length && (
-        <Box sx={{ display: "flex", alignItems: "center", marginInlineEnd: "auto", gap: 2 }}>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            marginInlineEnd: "auto",
+            marginInlineStart: "12px",
+            gap: 2,
+          }}
+        >
           <Typography
+            variant="semiBoldLarge"
             sx={{
-              ...theme.typography.semiBoldLarge,
               color: "#000",
               whiteSpace: "nowrap",
             }}
           >
-            <Trans i18nKey={"common.moreWaysToReachUs"} />
+            <Trans i18nKey="common.moreWaysToReachUs" />
           </Typography>
           <Box sx={{ display: "flex", gap: 1 }}>
             {contactSection.map((chat) => {

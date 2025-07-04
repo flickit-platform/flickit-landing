@@ -71,7 +71,6 @@ const FaqSection = () => {
               sx={{
                 width: { xs: 140, sm: 200, md: "unset" },
                 maxWidth: { xs: 140, sm: 200, md: 250 },
-                mb: { xs: 2, md: 0 },
               }}
               color="#2B333B"
             />

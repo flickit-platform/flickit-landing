@@ -21,12 +21,12 @@ const WaitingListDialog = (props: any) => {
   const [dialogKey, setDialogKey] = useState(0);
 
   useEffect(() => {
-    methods.setValue("message", `User added to '${kitTitle}' kit wait list`);
+    methods.setValue("type", `Waiting List - "${kitTitle}".`);
   }, []);
   const onSubmit = (data: any) => {
     handleSubmitSpree(data);
     methods.reset();
-    methods.setValue("message", `User added to '${kitTitle}' kit wait list`);
+    methods.setValue("type", `Waiting List - "${kitTitle}".`);
     onClose();
   };
 
@@ -34,7 +34,7 @@ const WaitingListDialog = (props: any) => {
     abortController.abort();
     methods.reset();
     setDialogKey((prev) => prev + 1);
-    methods.setValue("message", `User added to '${kitTitle}' kit wait list`);
+    methods.setValue("type", `Waiting List - "${kitTitle}".`);
     onClose();
   };
 
@@ -45,7 +45,8 @@ const WaitingListDialog = (props: any) => {
       closeDialog={close}
       icon={<NotificationsActiveIcon />}
       title={
-        <Typography sx={theme.typography.semiBoldXLarge}>
+        <Typography variant="semiBoldXLarge">
+          {" "}
           <Trans i18nKey="common.joinTheWaitlist" />
         </Typography>
       }

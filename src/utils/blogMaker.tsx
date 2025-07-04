@@ -67,7 +67,7 @@ const typeRenderMap: Record<string, (value: any) => JSX.Element> = {
         ...theme.typography.semiBoldMedium,
         color: "#3D4D5C80",
         mt: 2,
-        textAlign: "justify"
+        textAlign: "justify",
       }}
     >
       {value}
@@ -211,9 +211,7 @@ const typeRenderMap: Record<string, (value: any) => JSX.Element> = {
             />
           )}
           <Box sx={{ px: "24px" }}>
-            <Typography
-              sx={{ ...theme.typography.bodyMedium, color: "#3D4D5C80" }}
-            >
+            <Typography variant="bodyMedium" sx={{ color: "#3D4D5C80" }}>
               {item.title}
             </Typography>
             <Typography

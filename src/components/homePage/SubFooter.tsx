@@ -17,8 +17,8 @@ export default function FooterGradientCTA() {
       sx={{
         width: "100%",
         height: {
-          xs: "155px",
-          sm: "150px",
+          xs: "128px",
+          sm: "135px",
           md: "70px",
           xl: "85px",
         },

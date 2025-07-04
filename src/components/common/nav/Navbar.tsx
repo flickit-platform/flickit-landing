@@ -1,21 +1,20 @@
 "use client";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import { Trans } from "react-i18next";
 import { Button } from "@mui/material";
-import { is_farsi, theme } from "@/config/theme";
+import { theme } from "@/config/theme";
 import Link from "next/link";
 import useDialog from "@/utils/useDialog";
 import ContactUsDialog from "@/components/common/ContactUs/ContactUs";
 import LanguageSelector from "@/components/common/languageSelector";
 import { styles } from "@/config/styles";
-import { farsiFontFamily, primaryFontFamily } from "@/utils/fonts";
 import useScreenResize from "@/utils/useScreenResize";
 import { VITE_LOCAL_BASE_URL } from "@/utils/env";
+import { t } from "i18next";
 
 export default function Navbar() {
   const dialogProps = useDialog();
   const isMobile = useScreenResize("sm");
+
   return (
     <nav
       style={{
@@ -41,28 +40,49 @@ export default function Navbar() {
         <Box sx={{ height: "100%", width: "auto" }}>
           <img src={"/logo.svg"} style={{ height: "44px" }} alt={"logo-icon"} />
         </Box>
-        <Box sx={{ ...styles.centerVH, gap: "32px" }}>
+        <Box
+          sx={{
+            ...styles.centerVH,
+            gap: { xs: 0.8, sm: 2 },
+          }}
+        >
           <LanguageSelector />
           <Button
-            variant={"contained"}
+            component={Link}
+            href={VITE_LOCAL_BASE_URL ?? ""}
+            variant={"outlined"}
             size={isMobile ? "small" : "large"}
             sx={{
               ...theme.typography.semiBoldLarge,
-              background: "#F3F5F6",
               height: "32px",
+              color: "#fff",
+              textTransform: "capitalize",
+              borderColor: "#fff",
+              "&:hover": {
+                borderColor: "#fff",
+              },
             }}
           >
-            <Typography
-              component={Link}
-              href={VITE_LOCAL_BASE_URL ?? ""}
-              variant="semiBoldMedium"
-              sx={{
-                color: "#2466A8",
-                textDecoration: "none",
-              }}
-            >
-              <Trans i18nKey={"nav.signUpFree"} />
-            </Typography>
+            {t("login")}
+          </Button>
+          <Button
+            variant={"contained"}
+            size={isMobile ? "small" : "large"}
+            component={Link}
+            href={VITE_LOCAL_BASE_URL ?? ""}
+            sx={{
+              ...theme.typography.semiBoldLarge,
+              height: "32px",
+              color: theme.palette.primary.main,
+              textTransform: "capitalize",
+              background: "#F3F5F6",
+              boxShadow: "0 1px 5px rgba(0,0,0,0.12)",
+              "&:hover": {
+                background: "#F3F5F6",
+              },
+            }}
+          >
+            {t("createAccount")}
           </Button>
         </Box>
       </Box>

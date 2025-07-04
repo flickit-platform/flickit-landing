@@ -8,7 +8,7 @@
   "howItWorks": "How <style>it</style> works?",
   "faq": "People usually ask about",
   "pin1Title": "1. Kit selection",
-  "pin1Desc": "Pick the assessment kit that matches your goals.",
+  "pin1Desc": "Pick an assessment kit that matches your goals.",
   "pin2Title": "2. Answering question",
   "pin2Desc": "Complete the entire questionnaire accurately.",
   "pin3Title": "3. Viewing report",
@@ -64,26 +64,26 @@
   "kit": {
     "softwarePerformance": {
       "chipLabel": "Software performance evaluation kit",
-      "title": "Ensure your product's readiness for scaling with this assessment kit",
-      "desc": "Make sure your product is ready to scale with Software Performance Evaluation. Assess its ability to handle growth and avoid technical or business setbacks before scaling.",
+      "title": "Ensure your product can scale",
+      "desc": "This kit’s chief value is spotting and eliminating performance bottlenecks before your user base surges. It empowers teams to apply targeted optimizations that safeguard long-term scalability and efficiency.",
       "caseStudyDesc": "Amazon: How Latency Optimization Boosted Revenue"
     },
     "toolMaturity": {
       "chipLabel": "Tool maturity",
-      "title": "How Tool Maturity enhances both speed and quality",
-      "desc": "Users don't wait. This kit checks the health of your software performance (Latency, Throughput, Resource Use) and fixes bottlenecks before they become a problem during high-demand periods.",
+      "title": "Evaluate your development toolchain’s effectiveness",
+      "desc": "This kit checks if your tools really suit each stage of the development lifecycle. It spots weaknesses in tool choice or usage and arms you with data for smarter decisions.",
       "caseStudyDesc": "How Etsy Accelerated Deployment up to 50 deploy per day with DevOps Automation?"
     },
     "internalAudit": {
       "chipLabel": "Internal Audit Kit",
-      "title": "Ensuring long-term viability and sustainability of software",
-      "desc": "Features alone aren’t enough — this kit helps you assess the technical and economic health of your product to ensure long-term sustainability.",
+      "title": "An improvement roadmap for software teams",
+      "desc": "Designed for CTOs and tech leaders, this kit analyzes your team, software, and operations to give a clear snapshot of today’s state—providing hard data for smarter choices on architecture, staffing, and product direction.",
       "caseStudyDesc": "Facebook Messenger: How Technical Debt Was Eliminated for Faster Performance"
     },
     "vendorEvaluation": {
       "chipLabel": "Vendor Evaluation Kit",
-      "title": "Assessing AI integration for product development",
-      "desc": "Evaluate how effectively AI is being used across your product development lifecycle. This kit helps you identify gaps, reduce risks, and unlock opportunities for smarter, faster innovation.",
+      "title": "Measuring AI tool adoption and impact",
+      "desc": "This assessment gauges how mature your software team is in putting artificial-intelligence technologies to proper use throughout the development lifecycle. Its ultimate aim is to analyze the real effect these tools have on productivity and code quality.",
       "caseStudyDesc": ""
     }
   },

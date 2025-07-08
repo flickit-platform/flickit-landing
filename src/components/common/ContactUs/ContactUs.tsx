@@ -57,6 +57,7 @@ const ContactUsDialog = (props: IContactUsDialogProps) => {
   const phoneNumber = "+989966529108";
   const WhatsappLink = `whatsapp://send?phone=${phoneNumber}`;
   const WhatsappWebLink = `https://web.whatsapp.com/send?phone=${phoneNumber}`;
+  const BaleWebLink= `https://web.bale.ai/chat?uid=1294957316`;
 
   const socialIcon = [
     {
@@ -64,6 +65,12 @@ const ContactUsDialog = (props: IContactUsDialogProps) => {
       icon: "/whats-app.svg",
       bg: "#3D8F3D14",
       link: { WhatsappLink, WhatsappWebLink },
+    },
+    {
+      id: 2,
+      icon: "/baleIcon.svg",
+      bg: "#3D8F3D14",
+      link: { BaleWebLink },
     },
   ];
 

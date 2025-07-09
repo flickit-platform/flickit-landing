@@ -69,10 +69,13 @@ const KitPart = ({
           VITE_LOCAL_BASE_URL +
           "assessment-kits/" +
           id +
-          `#createAssessment?id=${id}`;
+          "/" +
+          `#createAssessment?id=${id}/`;
       } else {
-        window.location.href = VITE_LOCAL_BASE_URL + "assessment-kits/" + id;
+        window.location.href =
+          VITE_LOCAL_BASE_URL + "assessment-kits/" + id + "/";
       }
+      setLoading(null)
     }, 1000);
   };
 

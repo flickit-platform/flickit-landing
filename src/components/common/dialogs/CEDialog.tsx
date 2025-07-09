@@ -85,12 +85,6 @@ interface ICEDialogActionsProps extends PropsWithChildren<DialogActionsProps> {
   backType?: any;
   cancelLabel?: string | null;
   disablePrimaryButton?: boolean;
-  contactSection?: {
-    id: number;
-    icon: string;
-    bg: string;
-    link: {[key: string]: string | undefined };
-  }[];
 }
 
 export const CEDialogActions = (props: ICEDialogActionsProps) => {
@@ -110,23 +104,12 @@ export const CEDialogActions = (props: ICEDialogActionsProps) => {
     submitAndViewButtonLabel,
     backType = "contained",
     disablePrimaryButton = false,
-    contactSection,
     children,
   } = props;
   const fullScreen = useScreenResize("sm");
   if (!onClose) {
     throw new Error("onClose or closeDialog not provided for CEDialogActions");
   }
-  const isMobile = useScreenResize("sm");
-
-  const openChat = (link: any) => {
-    const { BaleLink, WhatsappLink, WhatsappWebLink} = link
-    if (isMobile) {
-      window.location.href = WhatsappLink;
-    } else {
-      window.open((WhatsappWebLink || BaleLink), "_blank");
-    }
-  };
 
   return (
     <DialogActions
@@ -136,47 +119,7 @@ export const CEDialogActions = (props: ICEDialogActionsProps) => {
         marginTop: fullScreen ? "auto" : 4,
       }}
     >
-      {contactSection?.length && (
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            marginInlineEnd: "auto",
-            marginInlineStart: "12px",
-            gap: 2,
-          }}
-        >
-          <Typography
-            variant="semiBoldLarge"
-            sx={{
-              color: "#000",
-              whiteSpace: "nowrap",
-            }}
-          >
-            <Trans i18nKey="common.moreWaysToReachUs" />
-          </Typography>
-          <Box sx={{ display: "flex", gap: 2 }}>
-            {contactSection.map((chat) => {
-              return (
-                <Box key={chat.id} onClick={() => openChat(chat.link)}>
-                  <Box
-                    sx={{
-                      ...styles.centerVH,
-                      borderRadius: 1,
-                      cursor: "pointer",
-                      width: "36px",
-                      height: "36px",
-                      background: chat.bg,
-                    }}
-                  >
-                    <img style={{width:"100%", height: "100%"}} src={chat.icon} alt={`chat icon`} />
-                  </Box>
-                </Box>
-              );
-            })}
-          </Box>
-        </Box>
-      )}
+
       <Grid container spacing={2} justifyContent="flex-end">
         {!hideCancelButton && (
           <Grid>

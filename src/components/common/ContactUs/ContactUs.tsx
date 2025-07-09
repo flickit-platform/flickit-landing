@@ -15,6 +15,8 @@ import { DialogProps } from "@mui/material/Dialog";
 import { useForm as useFormSpree } from "@formspree/react";
 import { FormProvider, useForm } from "react-hook-form";
 import { InputFieldUC } from "@/components/common/fields/InputField";
+import {styles} from "@/config/styles";
+import useScreenResize from "@/utils/useScreenResize";
 
 interface IContactUsDialogProps extends DialogProps {
   onClose: () => void;
@@ -29,6 +31,7 @@ const ContactUsDialog = (props: IContactUsDialogProps) => {
   const [emailError, setEmailError] = useState<any>("");
 
   const [dialogKey, setDialogKey] = useState(0);
+  const isMobile = useScreenResize("sm");
 
   const close = () => {
     handleSubmitSpree({});
@@ -57,22 +60,31 @@ const ContactUsDialog = (props: IContactUsDialogProps) => {
   const phoneNumber = "+989966529108";
   const WhatsappLink = `whatsapp://send?phone=${phoneNumber}`;
   const WhatsappWebLink = `https://web.whatsapp.com/send?phone=${phoneNumber}`;
-  const BaleWebLink= `https://web.bale.ai/chat?uid=1294957316`;
+  const EitaaWebLink= `https://web.eitaa.com/#28069813`;
 
   const socialIcon = [
     {
       id: 1,
       icon: "/whats-app.svg",
       bg: "#3D8F3D14",
-      link: { WhatsappLink, WhatsappWebLink },
+      link: { mobile: WhatsappLink, web: WhatsappWebLink },
     },
     {
       id: 2,
-      icon: "/baleIcon.svg",
+      icon: "/eitaa_logo.svg",
       bg: "#3D8F3D14",
-      link: { BaleWebLink },
+      link: { mobile: EitaaWebLink, web: EitaaWebLink },
     },
   ];
+
+  const openChat = (link: any) => {
+    const { web, mobile } = link
+    if (isMobile) {
+      window.location.href = mobile;
+    } else {
+      window.open(web, "_blank");
+    }
+  };
 
   return (
     <CEDialog
@@ -145,10 +157,48 @@ const ContactUsDialog = (props: IContactUsDialogProps) => {
               />
             </Box>
           </form>
-
+          <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                flexDirection: { xs: "column", md: "row" },
+                justifyContent: "space-between",
+                gap: 2,
+              }}
+          >
+            <Box sx={{ ...styles.centerVH, gap: 2, mt: 3 }}>
+                <Typography
+                    variant="semiBoldLarge"
+                    sx={{
+                      color: "#000",
+                      whiteSpace: "nowrap",
+                    }}
+                >
+                  <Trans i18nKey="common.moreWaysToReachUs" />
+                </Typography>
+                <Box sx={{ display: "flex", gap: 2 }}>
+                  {socialIcon.map((chat) => {
+                    return (
+                        <Box key={chat.id} onClick={() => openChat(chat.link)}>
+                          <Box
+                              sx={{
+                                ...styles.centerVH,
+                                borderRadius: 1,
+                                cursor: "pointer",
+                                width: "36px",
+                                height: "36px",
+                                background: chat.bg,
+                              }}
+                          >
+                            <img style={{width:"100%", height: "100%"}} src={chat.icon} alt={`chat icon`} />
+                          </Box>
+                        </Box>
+                    );
+                  })}
+                </Box>
+              </Box>
           <CEDialogActions
             cancelLabel={t("common.cancel")}
-            contactSection={socialIcon}
             submitButtonLabel={t("common.confirm")}
             onClose={close}
             loading={state.submitting}
@@ -159,6 +209,7 @@ const ContactUsDialog = (props: IContactUsDialogProps) => {
               mt: 2,
             }}
           />
+          </Box>
         </FormProvider>
       )}
     </CEDialog>

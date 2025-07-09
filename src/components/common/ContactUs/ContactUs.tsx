@@ -57,33 +57,26 @@ const ContactUsDialog = (props: IContactUsDialogProps) => {
     handleSubmitSpree(data);
   };
 
-  const phoneNumber = "+989966529108";
-  const WhatsappLink = `whatsapp://send?phone=${phoneNumber}`;
-  const WhatsappWebLink = `https://web.whatsapp.com/send?phone=${phoneNumber}`;
-  const EitaaWebLink= `https://web.eitaa.com/#28069813`;
+  const EitaaWebLink= `https://web.eitaa.com/#67786801`;
+  const TelegramWebLink= `https://web.telegram.org/a/#8179187991`;
 
   const socialIcon = [
     {
       id: 1,
-      icon: "/whats-app.svg",
-      bg: "#3D8F3D14",
-      link: { mobile: WhatsappLink, web: WhatsappWebLink },
+      icon: "/telegram.svg",
+      bg: "#2466A814",
+      link: TelegramWebLink,
     },
     {
       id: 2,
       icon: "/eitaa_logo.svg",
-      bg: "#3D8F3D14",
-      link: { mobile: EitaaWebLink, web: EitaaWebLink },
+      bg: "#f7632314",
+      link: EitaaWebLink,
     },
   ];
 
   const openChat = (link: any) => {
-    const { web, mobile } = link
-    if (isMobile) {
-      window.location.href = mobile;
-    } else {
-      window.open(web, "_blank");
-    }
+      window.open(link, "_blank");
   };
 
   return (

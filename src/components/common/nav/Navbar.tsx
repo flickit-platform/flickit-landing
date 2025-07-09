@@ -69,7 +69,11 @@ export default function Navbar() {
             variant={"contained"}
             size={isMobile ? "small" : "large"}
             component={Link}
-            href={VITE_LOCAL_BASE_URL ?? ""}
+            href={
+              VITE_LOCAL_BASE_URL +
+                "accounts/realms/flickit/login-actions/registration?client_id=flickit-frontend&tab_id=wSFub4AaT8A" ??
+              ""
+            }
             sx={{
               ...theme.typography.semiBoldLarge,
               height: "32px",

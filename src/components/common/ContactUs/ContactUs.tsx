@@ -15,7 +15,7 @@ import { DialogProps } from "@mui/material/Dialog";
 import { useForm as useFormSpree } from "@formspree/react";
 import { FormProvider, useForm } from "react-hook-form";
 import { InputFieldUC } from "@/components/common/fields/InputField";
-import {styles} from "@/config/styles";
+import { styles } from "@/config/styles";
 import useScreenResize from "@/utils/useScreenResize";
 
 interface IContactUsDialogProps extends DialogProps {
@@ -57,8 +57,8 @@ const ContactUsDialog = (props: IContactUsDialogProps) => {
     handleSubmitSpree(data);
   };
 
-  const EitaaWebLink = 'https://web.eitaa.com/#@flickit';
-  const TelegramWebLink= `https://web.telegram.org/a/#8179187991`;
+  const EitaaWebLink = "https://web.eitaa.com/#@flickit";
+  const TelegramWebLink = `https://web.telegram.org/a/#8179187991`;
 
   const socialIcon = [
     {
@@ -76,7 +76,7 @@ const ContactUsDialog = (props: IContactUsDialogProps) => {
   ];
 
   const openChat = (link: any) => {
-      window.open(link, "_blank");
+    window.open(link, "_blank");
   };
 
   return (
@@ -151,57 +151,59 @@ const ContactUsDialog = (props: IContactUsDialogProps) => {
             </Box>
           </form>
           <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                flexDirection: { xs: "column", md: "row" },
-                justifyContent: "space-between",
-                gap: 2,
-              }}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              flexDirection: { xs: "column", md: "row" },
+              justifyContent: "space-between",
+              gap: 2,
+              paddingInline: 3,
+              marginInlineEnd:-1
+            }}
           >
             <Box sx={{ ...styles.centerVH, gap: 2, mt: 3 }}>
-                <Typography
-                    variant="semiBoldLarge"
-                    sx={{
-                      color: "#000",
-                      whiteSpace: "nowrap",
-                    }}
-                >
-                  <Trans i18nKey="common.moreWaysToReachUs" />
-                </Typography>
-                <Box sx={{ display: "flex", gap: 2 }}>
-                  {socialIcon.map((chat) => {
-                    return (
-                        <Box key={chat.id} onClick={() => openChat(chat.link)}>
-                          <Box
-                              sx={{
-                                ...styles.centerVH,
-                                borderRadius: 1,
-                                cursor: "pointer",
-                                width: "36px",
-                                height: "36px",
-                                background: chat.bg,
-                              }}
-                          >
-                            <img style={{width:"100%", height: "100%"}} src={chat.icon} alt={`chat icon`} />
-                          </Box>
-                        </Box>
-                    );
-                  })}
-                </Box>
+              <Typography
+                variant="semiBoldLarge"
+                sx={{
+                  color: "#000",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                <Trans i18nKey="common.moreWaysToReachUs" />
+              </Typography>
+              <Box sx={{ display: "flex", gap: 2 }}>
+                {socialIcon.map((chat) => {
+                  return (
+                    <Box
+                      key={chat.id}
+                      onClick={() => openChat(chat.link)}
+                      sx={{ cursor: "pointer" }}
+                    >
+                      <img
+                        style={{
+                          height: 24,
+                          width: 24,
+                        }}
+                        src={chat.icon}
+                        alt={`chat icon`}
+                      />
+                    </Box>
+                  );
+                })}
               </Box>
-          <CEDialogActions
-            cancelLabel={t("common.cancel")}
-            submitButtonLabel={t("common.confirm")}
-            onClose={close}
-            loading={state.submitting}
-            onSubmit={() => methods.handleSubmit(onSubmit)}
-            sx={{
-              flexDirection: { xs: "column-reverse", sm: "row" },
-              gap: 2,
-              mt: 2,
-            }}
-          />
+            </Box>
+            <CEDialogActions
+              cancelLabel={t("common.cancel")}
+              submitButtonLabel={t("common.confirm")}
+              onClose={close}
+              loading={state.submitting}
+              onSubmit={() => methods.handleSubmit(onSubmit)}
+              sx={{
+                flexDirection: { xs: "column-reverse", sm: "row" },
+                gap: 2,
+                mt: 2,
+              }}
+            />
           </Box>
         </FormProvider>
       )}

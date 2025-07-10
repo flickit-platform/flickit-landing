@@ -119,7 +119,7 @@ export const CEDialogActions = (props: ICEDialogActionsProps) => {
         marginTop: fullScreen ? "auto" : 4,
       }}
     >
-      <Grid container spacing={2} justifyContent="flex-end">
+      <Grid container spacing={2} justifyContent="flex-end" width="100%">
         {!hideCancelButton && (
           <Grid>
             <Button onClick={onClose} data-cy="cancel" data-testid="cancel">

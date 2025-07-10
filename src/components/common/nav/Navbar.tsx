@@ -66,8 +66,8 @@ export default function Navbar() {
             {t("nav.login")}
           </Button>
           <Button
-            variant={"contained"}
-            size={isMobile ? "small" : "large"}
+            variant="contained"
+            size="large"
             component={Link}
             href={
               VITE_LOCAL_BASE_URL +
@@ -84,6 +84,7 @@ export default function Navbar() {
               "&:hover": {
                 background: "#F3F5F6",
               },
+              display: { xs: "none", sm: "block" },
             }}
           >
             {t("nav.createAccount")}

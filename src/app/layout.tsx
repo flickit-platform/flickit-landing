@@ -5,6 +5,9 @@ import "@/assets/font/fonts.css";
 import { cookies } from "next/headers";
 import Script from "next/script";
 import React from "react";
+import {ToastContainer} from "react-toastify";
+import {toastDefaultConfig} from "@/config/toastConfigs";
+import {farsiFontFamily, primaryFontFamily} from "@/utils/fonts";
 
 export const metadata = {
   title: "Flickit",
@@ -25,6 +28,18 @@ export default function RootLayout({
         <ThemeProvider theme={theme}>
           <Navbar />
           {children}
+          <ToastContainer
+              {...toastDefaultConfig}
+              toastStyle={{
+              fontFamily:
+                  lang === "fa"
+              ? farsiFontFamily
+              : primaryFontFamily,
+              direction: dir,
+              textAlign:
+                  lang === "fa" ? "right" : "left",
+          }}
+          />
         </ThemeProvider>
       </body>
       <Script id="clarity-script" strategy="afterInteractive">

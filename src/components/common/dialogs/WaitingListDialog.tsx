@@ -10,8 +10,8 @@ import {
   CEDialogActions,
 } from "@/components/common/dialogs/CEDialog";
 import { useForm as useFormSpree } from "@formspree/react";
-import { theme } from "@/config/theme";
 import { Box } from "@mui/material";
+import {toast} from "react-toastify";
 
 const WaitingListDialog = (props: any) => {
   const methods = useForm();
@@ -23,8 +23,15 @@ const WaitingListDialog = (props: any) => {
   useEffect(() => {
     methods.setValue("type", `Waiting List - "${kitTitle}".`);
   }, []);
+  const handleSucceeded = () => {
+    handleSubmitSpree({});
+    close();
+  };
+
   const onSubmit = (data: any) => {
-    handleSubmitSpree(data);
+    handleSubmitSpree(data).then(() =>{
+      toast(t("common.YourRequestSubmitted"),{type: "success"})
+    });
     methods.reset();
     methods.setValue("type", `Waiting List - "${kitTitle}".`);
     onClose();

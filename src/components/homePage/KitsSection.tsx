@@ -10,7 +10,7 @@ import { VITE_LOCAL_BASE_URL } from "@/utils/env";
 
 const cardsData = [
   {
-    id: "398",
+    id: "384",
     imageUrl: "/EnsureProductScale-world.svg",
     chipLabelKey: "main.kit.softwarePerformance.chipLabel",
     titleKey: "main.kit.softwarePerformance.title",

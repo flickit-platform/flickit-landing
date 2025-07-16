@@ -9,7 +9,7 @@ import Link from "next/link";
 
 const cardsData = [
   {
-    id: "398",
+    id: "384",
     imageUrl: "/EnsureProductScale-world.svg",
     chipLabelKey: "main.kit.softwarePerformance.chipLabel",
     titleKey: "main.kit.softwarePerformance.title",

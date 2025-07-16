@@ -66,10 +66,10 @@ export default function Navbar() {
           <Button
             variant="contained"
             size="large"
-            component={Link}
+            component="a"
             href={
               process.env.NEXT_PUBLIC_LOCAL_BASE_URL +
-              "accounts/realms/flickit/login-actions/registration?client_id=flickit-frontend&tab_id=wSFub4AaT8A"
+              "accounts/realms/flickit/login-actions/registration?client_id=flickit-frontend&tab_id=lb5MBPBbwgs"
             }
             sx={{
               ...theme.typography.semiBoldLarge,

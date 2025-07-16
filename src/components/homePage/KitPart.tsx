@@ -72,7 +72,10 @@ const KitPart = ({
           `#createAssessment?id=${id}/`;
       } else {
         window.location.href =
-          process.env.NEXT_PUBLIC_LOCAL_BASE_URL + "assessment-kits/" + id + "/";
+          process.env.NEXT_PUBLIC_LOCAL_BASE_URL +
+          "assessment-kits/" +
+          id +
+          "/";
       }
       setLoading(null);
     }, 1000);
@@ -219,6 +222,7 @@ const KitPart = ({
               fullWidth
               loading={loading === "more"}
               onClick={(e) => createAssessment(e, id, t(titleKey), "more")}
+              component="a"
             >
               <Trans i18nKey="main.moreAboutThisKit" />
             </Button>
@@ -227,6 +231,7 @@ const KitPart = ({
               fullWidth
               loading={loading === "create"}
               onClick={(e) => createAssessment(e, id, t(titleKey), "create")}
+              component="a"
             >
               <Trans i18nKey="main.createAssessment" />
             </LoadingButton>

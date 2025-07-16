@@ -71,7 +71,7 @@ const HeroSection = () => {
           </Typography>
 
           <Button
-            component={Link}
+            component="a"
             href={process.env.NEXT_PUBLIC_LOCAL_BASE_URL + "assessment-kits"}
             target="_blank"
             variant={"contained"}

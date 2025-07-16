@@ -37,9 +37,8 @@ const KitPart = ({
   free,
 }: Props) => {
   const dialogProps = useDialog();
-  const [loading, setLoading] = useState<null | "more" | "create">(null);
 
-  const handleKitClick = (id: any, title: any) => {
+  const handleKitClick = (e: any, id: any, title: any) => {
     (window as any).dataLayer.push({
       event: "ppms.cm:trackEvent",
       parameters: {
@@ -49,36 +48,6 @@ const KitPart = ({
         value: id,
       },
     });
-  };
-
-  const createAssessment = (
-    e: any,
-    id: any,
-    title: any,
-    type: "create" | "more"
-  ) => {
-    e.preventDefault();
-    e.stopPropagation();
-    handleKitClick(id, title);
-    setLoading(type);
-
-    setTimeout(() => {
-      if (type === "create") {
-        window.location.href =
-          process.env.NEXT_PUBLIC_LOCAL_BASE_URL +
-          "assessment-kits/" +
-          id +
-          "/" +
-          `#createAssessment?id=${id}/`;
-      } else {
-        window.location.href =
-          process.env.NEXT_PUBLIC_LOCAL_BASE_URL +
-          "assessment-kits/" +
-          id +
-          "/";
-      }
-      setLoading(null);
-    }, 1000);
   };
 
   return (
@@ -220,18 +189,29 @@ const KitPart = ({
             <Button
               variant="outlined"
               fullWidth
-              loading={loading === "more"}
-              onClick={(e) => createAssessment(e, id, t(titleKey), "more")}
+              onClick={(e) => handleKitClick(e, id, t(titleKey))}
               component="a"
+              href={
+                process.env.NEXT_PUBLIC_LOCAL_BASE_URL +
+                "assessment-kits/" +
+                id +
+                "/"
+              }
             >
               <Trans i18nKey="main.moreAboutThisKit" />
             </Button>
             <LoadingButton
               variant="contained"
               fullWidth
-              loading={loading === "create"}
-              onClick={(e) => createAssessment(e, id, t(titleKey), "create")}
+              onClick={(e) => handleKitClick(e, id, t(titleKey))}
               component="a"
+              href={
+                process.env.NEXT_PUBLIC_LOCAL_BASE_URL +
+                "assessment-kits/" +
+                id +
+                "/" +
+                `#createAssessment?id=${id}/`
+              }
             >
               <Trans i18nKey="main.createAssessment" />
             </LoadingButton>

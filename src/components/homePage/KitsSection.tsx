@@ -115,7 +115,7 @@ const Kits = () => {
       <Button
         variant="contained"
         size="large"
-        component={Link}
+        component="a"
         href={process.env.NEXT_PUBLIC_LOCAL_BASE_URL + "assessment-kits"}
         sx={{
           borderRadius: "24px",

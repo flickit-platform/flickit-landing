@@ -16,7 +16,7 @@ import {toast} from "react-toastify";
 const WaitingListDialog = (props: any) => {
   const methods = useForm();
   const [state, handleSubmitSpree] = useFormSpree(
-    process.env.NEXT_PUBLIC_FORM_SPREE ?? ""
+    process.env.NEXT_PUBLIC_FORM_SPREE ?? "myzeoqrg"
   );
   const { kitTitle, onClose, ...rest } = props;
   const abortController = useMemo(() => new AbortController(), [rest.open]);

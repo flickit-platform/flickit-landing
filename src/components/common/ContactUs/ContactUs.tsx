@@ -27,7 +27,7 @@ const ContactUsDialog = (props: IContactUsDialogProps) => {
   const abortController = useMemo(() => new AbortController(), [rest.open]);
 
   const [state, handleSubmitSpree] = useFormSpree(
-    process.env.NEXT_PUBLIC_FORM_SPREE ?? ""
+    process.env.NEXT_PUBLIC_FORM_SPREE ?? "myzeoqrg"
   );
   const methods = useForm();
   const [emailError, setEmailError] = useState<any>("");

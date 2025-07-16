@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import Typography from "@mui/material/Typography";
 import { Trans } from "react-i18next";
@@ -15,7 +15,9 @@ import {toast} from "react-toastify";
 
 const WaitingListDialog = (props: any) => {
   const methods = useForm();
-  const [state, handleSubmitSpree] = useFormSpree("myzeoqrg");
+  const [state, handleSubmitSpree] = useFormSpree(
+    process.env.NEXT_PUBLIC_FORM_SPREE ?? ""
+  );
   const { kitTitle, onClose, ...rest } = props;
   const abortController = useMemo(() => new AbortController(), [rest.open]);
   const [dialogKey, setDialogKey] = useState(0);

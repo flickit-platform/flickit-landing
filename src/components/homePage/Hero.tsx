@@ -6,7 +6,6 @@ import { theme } from "@/config/theme";
 import { Button } from "@mui/material";
 import Link from "next/link";
 import AnimatedTextBanner from "./AnimatedTextBanner";
-import { VITE_LOCAL_BASE_URL } from "@/utils/env";
 
 const HeroSection = () => {
   return (
@@ -73,7 +72,7 @@ const HeroSection = () => {
 
           <Button
             component={Link}
-            href={VITE_LOCAL_BASE_URL + "assessment-kits"}
+            href={process.env.NEXT_PUBLIC_LOCAL_BASE_URL + "assessment-kits"}
             target="_blank"
             variant={"contained"}
             sx={{

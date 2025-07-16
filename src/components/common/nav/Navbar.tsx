@@ -8,13 +8,11 @@ import ContactUsDialog from "@/components/common/ContactUs/ContactUs";
 import LanguageSelector from "@/components/common/languageSelector";
 import { styles } from "@/config/styles";
 import useScreenResize from "@/utils/useScreenResize";
-import { VITE_LOCAL_BASE_URL } from "@/utils/env";
 import { t } from "i18next";
 
 export default function Navbar() {
   const dialogProps = useDialog();
   const isMobile = useScreenResize("sm");
-
   return (
     <nav
       style={{
@@ -48,8 +46,8 @@ export default function Navbar() {
         >
           <LanguageSelector />
           <Button
-            component={Link}
-            href={VITE_LOCAL_BASE_URL ?? ""}
+            component="a"
+            href={process.env.NEXT_PUBLIC_LOCAL_BASE_URL}
             variant={"outlined"}
             size={isMobile ? "small" : "large"}
             sx={{
@@ -70,9 +68,8 @@ export default function Navbar() {
             size="large"
             component={Link}
             href={
-              VITE_LOCAL_BASE_URL +
-                "accounts/realms/flickit/login-actions/registration?client_id=flickit-frontend&tab_id=wSFub4AaT8A" ??
-              ""
+              process.env.NEXT_PUBLIC_LOCAL_BASE_URL +
+              "accounts/realms/flickit/login-actions/registration?client_id=flickit-frontend&tab_id=wSFub4AaT8A"
             }
             sx={{
               ...theme.typography.semiBoldLarge,
@@ -84,7 +81,7 @@ export default function Navbar() {
               "&:hover": {
                 background: "#F3F5F6",
               },
-              display: { xs: "none", sm: "block" },
+              display: { xs: "none", sm: "flex" },
             }}
           >
             {t("nav.createAccount")}

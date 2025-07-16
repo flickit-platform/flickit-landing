@@ -6,7 +6,6 @@ import KitPart from "./KitPart";
 import { theme } from "@/config/theme";
 import { t } from "i18next";
 import Link from "next/link";
-import { VITE_LOCAL_BASE_URL } from "@/utils/env";
 
 const cardsData = [
   {
@@ -117,7 +116,7 @@ const Kits = () => {
         variant="contained"
         size="large"
         component={Link}
-        href={VITE_LOCAL_BASE_URL + "assessment-kits"}
+        href={process.env.NEXT_PUBLIC_LOCAL_BASE_URL + "assessment-kits"}
         sx={{
           borderRadius: "24px",
           marginBlock: 7,

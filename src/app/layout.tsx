@@ -57,7 +57,7 @@ export default function RootLayout({
                 firstScriptElement,
               );
               window.clarity("consent");
-            })(window, document, "clarity", "script", "${process.env.VITE_CLARITY_KEY}");
+            })(window, document, "clarity", "script", "${process.env.NEXT_PUBLIC_CLARITY_KEY}");
           `}
       </Script>
 
@@ -95,7 +95,7 @@ export default function RootLayout({
                       });
                   })(i[c]);
               })(window, "ppms", ["tm", "cm"]);
-            })(window, document, "dataLayer", "${process.env.VITE_PIWIK_KEY}");
+            })(window, document, "dataLayer", "${process.env.NEXT_PUBLIC_PIWIK_KEY}");
           `}
       </Script>
     </html>

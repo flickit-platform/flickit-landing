@@ -8,7 +8,6 @@ import WaitingListDialog from "../common/dialogs/WaitingListDialog";
 import useDialog from "@/utils/useDialog";
 import { t } from "i18next";
 import { LoadingButton } from "@mui/lab";
-import { VITE_LOCAL_BASE_URL } from "@/utils/env";
 
 interface Props {
   imageUrl: string;
@@ -66,16 +65,16 @@ const KitPart = ({
     setTimeout(() => {
       if (type === "create") {
         window.location.href =
-          VITE_LOCAL_BASE_URL +
+          process.env.NEXT_PUBLIC_LOCAL_BASE_URL +
           "assessment-kits/" +
           id +
           "/" +
           `#createAssessment?id=${id}/`;
       } else {
         window.location.href =
-          VITE_LOCAL_BASE_URL + "assessment-kits/" + id + "/";
+          process.env.NEXT_PUBLIC_LOCAL_BASE_URL + "assessment-kits/" + id + "/";
       }
-      setLoading(null)
+      setLoading(null);
     }, 1000);
   };
 

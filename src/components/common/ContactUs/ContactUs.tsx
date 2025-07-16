@@ -26,7 +26,9 @@ const ContactUsDialog = (props: IContactUsDialogProps) => {
   const { onClose, ...rest } = props;
   const abortController = useMemo(() => new AbortController(), [rest.open]);
 
-  const [state, handleSubmitSpree] = useFormSpree("myzeoqrg");
+  const [state, handleSubmitSpree] = useFormSpree(
+    process.env.NEXT_PUBLIC_FORM_SPREE ?? ""
+  );
   const methods = useForm();
   const [emailError, setEmailError] = useState<any>("");
 
@@ -158,7 +160,7 @@ const ContactUsDialog = (props: IContactUsDialogProps) => {
               justifyContent: "space-between",
               gap: 2,
               paddingInline: 3,
-              marginInlineEnd:-1
+              marginInlineEnd: -1,
             }}
           >
             <Box sx={{ ...styles.centerVH, gap: 2, mt: 3 }}>

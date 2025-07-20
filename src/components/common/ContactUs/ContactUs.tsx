@@ -59,7 +59,7 @@ const ContactUsDialog = (props: IContactUsDialogProps) => {
     handleSubmitSpree(data);
   };
 
-  const EitaaWebLink = "https://web.eitaa.com/#@flickit";
+  const SplusWebLink = 'https://web.splus.ir/#45047257';
   const TelegramWebLink = `https://web.telegram.org/a/#8179187991`;
 
   const socialIcon = [
@@ -71,9 +71,9 @@ const ContactUsDialog = (props: IContactUsDialogProps) => {
     },
     {
       id: 2,
-      icon: "/eitaa_logo.svg",
-      bg: "#f7632314",
-      link: EitaaWebLink,
+      icon: "/splusLogo.svg",
+      bg: "#196ff014",
+      link: SplusWebLink,
     },
   ];
 

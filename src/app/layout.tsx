@@ -5,9 +5,10 @@ import "@/assets/font/fonts.css";
 import { cookies } from "next/headers";
 import Script from "next/script";
 import React from "react";
-import {ToastContainer} from "react-toastify";
-import {toastDefaultConfig} from "@/config/toastConfigs";
-import {farsiFontFamily, primaryFontFamily} from "@/utils/fonts";
+import { ToastContainer } from "react-toastify";
+import { toastDefaultConfig } from "@/config/toastConfigs";
+import { farsiFontFamily, primaryFontFamily } from "@/utils/fonts";
+import I18nProvider from "@/i18n/I18nProvider";
 
 export const metadata = {
   title: "Flickit",
@@ -25,22 +26,20 @@ export default function RootLayout({
   return (
     <html lang={lang} dir={dir}>
       <body style={{ margin: 0, background: "#F9FAFB" }}>
-        <ThemeProvider theme={theme}>
-          <Navbar />
-          {children}
-          <ToastContainer
+        <I18nProvider>
+          <ThemeProvider theme={theme}>
+            <Navbar />
+            {children}
+            <ToastContainer
               {...toastDefaultConfig}
               toastStyle={{
-              fontFamily:
-                  lang === "fa"
-              ? farsiFontFamily
-              : primaryFontFamily,
-              direction: dir,
-              textAlign:
-                  lang === "fa" ? "right" : "left",
-          }}
-          />
-        </ThemeProvider>
+                fontFamily: lang === "fa" ? farsiFontFamily : primaryFontFamily,
+                direction: dir,
+                textAlign: lang === "fa" ? "right" : "left",
+              }}
+            />
+          </ThemeProvider>
+        </I18nProvider>
       </body>
       <Script id="clarity-script" strategy="afterInteractive">
         {`

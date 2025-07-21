@@ -8,7 +8,6 @@ export const resources = {
   fa: { translation: fa },
 };
 
-console.log(document.cookie)
 i18n
   .use(initReactI18next)
   .init({

@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Box, Typography, Chip, Button, Tooltip } from "@mui/material";
+import { Box, Typography, Chip, Button } from "@mui/material";
 import { Trans } from "react-i18next";
 import { theme } from "@/config/theme";
 import Link from "next/link";
@@ -8,6 +7,7 @@ import WaitingListDialog from "../common/dialogs/WaitingListDialog";
 import useDialog from "@/utils/useDialog";
 import { t } from "i18next";
 import { LoadingButton } from "@mui/lab";
+import { BASE_URL } from "@/config/config";
 
 interface Props {
   imageUrl: string;
@@ -191,12 +191,7 @@ const KitPart = ({
               fullWidth
               onClick={(e) => handleKitClick(e, id, t(titleKey))}
               component="a"
-              href={
-                process.env.NEXT_PUBLIC_LOCAL_BASE_URL +
-                "assessment-kits/" +
-                id +
-                "/"
-              }
+              href={BASE_URL + "assessment-kits/" + id + "/"}
             >
               <Trans i18nKey="main.moreAboutThisKit" />
             </Button>
@@ -206,7 +201,7 @@ const KitPart = ({
               onClick={(e) => handleKitClick(e, id, t(titleKey))}
               component="a"
               href={
-                process.env.NEXT_PUBLIC_LOCAL_BASE_URL +
+                BASE_URL +
                 "assessment-kits/" +
                 id +
                 "/" +

@@ -17,6 +17,7 @@ import { FormProvider, useForm } from "react-hook-form";
 import { InputFieldUC } from "@/components/common/fields/InputField";
 import { styles } from "@/config/styles";
 import useScreenResize from "@/utils/useScreenResize";
+import { FORM_SPREE } from "@/config/config";
 
 interface IContactUsDialogProps extends DialogProps {
   onClose: () => void;
@@ -26,9 +27,7 @@ const ContactUsDialog = (props: IContactUsDialogProps) => {
   const { onClose, ...rest } = props;
   const abortController = useMemo(() => new AbortController(), [rest.open]);
 
-  const [state, handleSubmitSpree] = useFormSpree(
-    process.env.NEXT_PUBLIC_FORM_SPREE ?? "myzeoqrg"
-  );
+  const [state, handleSubmitSpree] = useFormSpree(FORM_SPREE ?? "myzeoqrg");
   const methods = useForm();
   const [emailError, setEmailError] = useState<any>("");
 
@@ -59,7 +58,7 @@ const ContactUsDialog = (props: IContactUsDialogProps) => {
     handleSubmitSpree(data);
   };
 
-  const SplusWebLink = 'https://web.splus.ir/#45047257';
+  const SplusWebLink = "https://web.splus.ir/#45047257";
   const TelegramWebLink = `https://web.telegram.org/a/#8179187991`;
 
   const socialIcon = [

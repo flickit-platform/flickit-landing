@@ -1,8 +1,7 @@
-"use client";
+"use client";;
 import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
 import { theme } from "@/config/theme";
-import Link from "next/link";
 import useDialog from "@/utils/useDialog";
 import ContactUsDialog from "@/components/common/ContactUs/ContactUs";
 import LanguageSelector from "@/components/common/languageSelector";

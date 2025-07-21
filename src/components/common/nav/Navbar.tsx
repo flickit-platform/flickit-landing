@@ -1,6 +1,6 @@
-"use client";;
+"use client";
 import Box from "@mui/material/Box";
-import { Button } from "@mui/material";
+import Button from "@mui/material/Button";
 import { theme } from "@/config/theme";
 import useDialog from "@/utils/useDialog";
 import ContactUsDialog from "@/components/common/ContactUs/ContactUs";
@@ -8,7 +8,6 @@ import LanguageSelector from "@/components/common/languageSelector";
 import { styles } from "@/config/styles";
 import useScreenResize from "@/utils/useScreenResize";
 import { t } from "i18next";
-import { BASE_URL } from "@/config/config";
 
 export default function Navbar() {
   const dialogProps = useDialog();
@@ -47,7 +46,7 @@ export default function Navbar() {
           <LanguageSelector />
           <Button
             component="a"
-            href={BASE_URL}
+            href={process.env.NEXT_PUBLIC_LOCAL_BASE_URL}
             variant={"outlined"}
             size={isMobile ? "small" : "large"}
             sx={{
@@ -68,7 +67,7 @@ export default function Navbar() {
             size="large"
             component="a"
             href={
-              BASE_URL +
+              process.env.NEXT_PUBLIC_LOCAL_BASE_URL +
               "accounts/realms/flickit/login-actions/registration?client_id=flickit-frontend&tab_id=lb5MBPBbwgs"
             }
             sx={{

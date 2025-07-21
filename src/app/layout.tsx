@@ -9,7 +9,6 @@ import { ToastContainer } from "react-toastify";
 import { toastDefaultConfig } from "@/config/toastConfigs";
 import { farsiFontFamily, primaryFontFamily } from "@/utils/fonts";
 import I18nProvider from "@/i18n/I18nProvider";
-import { CLARITY_KEY, PIWIK_KEY } from "@/config/config";
 
 export const metadata = {
   title: "Flickit",
@@ -57,7 +56,7 @@ export default function RootLayout({
                 firstScriptElement,
               );
               window.clarity("consent");
-            })(window, document, "clarity", "script", "${CLARITY_KEY}");
+            })(window, document, "clarity", "script", "${process.env.NEXT_PUBLIC_CLARITY_KEY}");
           `}
       </Script>
 
@@ -95,7 +94,7 @@ export default function RootLayout({
                       });
                   })(i[c]);
               })(window, "ppms", ["tm", "cm"]);
-            })(window, document, "dataLayer", "${PIWIK_KEY}");
+            })(window, document, "dataLayer", "${process.env.NEXT_PUBLIC_PIWIK_KEY}");
           `}
       </Script>
     </html>

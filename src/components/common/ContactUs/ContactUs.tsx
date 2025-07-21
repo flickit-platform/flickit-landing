@@ -9,7 +9,7 @@ import { theme } from "@/config/theme";
 import { Trans } from "react-i18next";
 import { t } from "i18next";
 import Typography from "@mui/material/Typography";
-import { Box } from "@mui/material";
+import Box from "@mui/material/Box";
 import CheckCircleOutlineRoundedIcon from "@mui/icons-material/CheckCircleOutlineRounded";
 import { DialogProps } from "@mui/material/Dialog";
 import { useForm as useFormSpree } from "@formspree/react";
@@ -17,7 +17,6 @@ import { FormProvider, useForm } from "react-hook-form";
 import { InputFieldUC } from "@/components/common/fields/InputField";
 import { styles } from "@/config/styles";
 import useScreenResize from "@/utils/useScreenResize";
-import { FORM_SPREE } from "@/config/config";
 
 interface IContactUsDialogProps extends DialogProps {
   onClose: () => void;
@@ -27,7 +26,9 @@ const ContactUsDialog = (props: IContactUsDialogProps) => {
   const { onClose, ...rest } = props;
   const abortController = useMemo(() => new AbortController(), [rest.open]);
 
-  const [state, handleSubmitSpree] = useFormSpree(FORM_SPREE ?? "myzeoqrg");
+  const [state, handleSubmitSpree] = useFormSpree(
+    process.env.NEXT_PUBLIC_FORM_SPREE ?? "myzeoqrg"
+  );
   const methods = useForm();
   const [emailError, setEmailError] = useState<any>("");
 

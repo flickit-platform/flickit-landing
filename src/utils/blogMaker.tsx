@@ -2,14 +2,12 @@ import React from "react";
 import Typography from "@mui/material/Typography";
 import { theme } from "@/config/theme";
 import { styles } from "@/config/styles";
-import {
-  Divider,
-  List,
-  ListItem,
-  ListItemText,
-  Paper,
-  TableContainer,
-} from "@mui/material";
+import Divider from "@mui/material/Divider";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
+import Paper from "@mui/material/Paper";
+import TableContainer from "@mui/material/TableContainer";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";

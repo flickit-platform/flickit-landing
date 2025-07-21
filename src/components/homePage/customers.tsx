@@ -50,6 +50,7 @@ const Customers = () => {
           {customers.map((img, index) => {
             return (
               <Box
+                key={index}
                 sx={{
                   cursor: "pointer",
                   transition: "transform 0.3s ease-in-out",

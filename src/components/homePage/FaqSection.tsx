@@ -1,5 +1,5 @@
-import React from "react";
-import { Box, Typography, Link } from "@mui/material";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 import { styles } from "@/config/styles";
 import useScreenResize from "@/utils/useScreenResize";
 import { Trans } from "react-i18next";
@@ -31,7 +31,7 @@ const FaqSection = () => {
       sx={{
         bgcolor: "#EAF2FB",
         pt: 4,
-        pb: {xs:6, sm: 4},
+        pb: { xs: 6, sm: 4 },
         borderRadius: 4,
         ...styles.centerCV,
       }}
@@ -72,7 +72,7 @@ const FaqSection = () => {
               sx={{
                 width: { xs: 140, sm: 200, md: "unset" },
                 maxWidth: { xs: 140, sm: 200, md: 250 },
-                mb:{xs: 2,md : 0 }
+                mb: { xs: 2, md: 0 },
               }}
               color="#2B333B"
             />

@@ -18,7 +18,7 @@ export default function I18nProvider({
 
     i18n.on("languageChanged", (lng: any) => {
       localStorage.setItem("lang", lng);
-      document.cookie = `lang=${lng}; max-age=31536000; path=/`;
+      document.cookie = `NEXT_LOCALE=${lng}; max-age=31536000; path=/`;
       document.documentElement.dir = lng === "fa" ? "rtl" : "ltr";
     });
 

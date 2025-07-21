@@ -13,7 +13,7 @@ i18n
   .init({
     resources,
     fallbackLng: "fa",
-    lng: "fa", // مقدار اولیه، بعداً کلاینت override می‌کنه
+    lng: "fa",
     interpolation: { escapeValue: false },
     react: { useSuspense: false },
   });

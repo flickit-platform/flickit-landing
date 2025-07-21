@@ -5,8 +5,3 @@ export const getEnv = (key: keyof ImportMetaEnv, fallback = ""): string => {
   return fallback;
 };
 
-// Specific exports for each variable
-export const NEXT_PUBLIC_LOCAL_BASE_URL = getEnv(
-  "NEXT_PUBLIC_LOCAL_BASE_URL",
-  "https://app.flickit.org/"
-);

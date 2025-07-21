@@ -6,8 +6,9 @@ import { theme } from "@/config/theme";
 const LanguageSelector = () => {
   const { i18n } = useTranslation();
 
-  const handleLanguageChange = (language: any) => {
-    i18n.changeLanguage(language);
+  const toggleLang = () => {
+    const newLang = i18n.language === "fa" ? "en" : "fa";
+    i18n.changeLanguage(newLang);
     window.location.reload();
   };
 
@@ -16,7 +17,7 @@ const LanguageSelector = () => {
       {i18n.language === "fa" ? (
         <Typography
           variant="semiBoldLarge"
-          onClick={() => handleLanguageChange("en")}
+          onClick={() => toggleLang()}
           sx={{
             cursor: "pointer",
           }}
@@ -27,7 +28,7 @@ const LanguageSelector = () => {
       ) : (
         <Typography
           variant="semiBoldLarge"
-          onClick={() => handleLanguageChange("fa")}
+          onClick={() => toggleLang()}
           sx={{
             cursor: "pointer",
           }}

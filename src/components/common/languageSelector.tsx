@@ -9,6 +9,8 @@ const LanguageSelector = () => {
   const toggleLang = () => {
     const newLang = i18n.language === "fa" ? "en" : "fa";
     i18n.changeLanguage(newLang);
+    document.cookie = `NEXT_LOCALE=${newLang}; max-age=31536000; path=/`;
+
     window.location.reload();
   };
 

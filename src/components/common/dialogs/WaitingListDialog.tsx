@@ -10,13 +10,14 @@ import {
   CEDialogActions,
 } from "@/components/common/dialogs/CEDialog";
 import { useForm as useFormSpree } from "@formspree/react";
-import { Box } from "@mui/material";
+import Box from "@mui/material/Box";
 import { toast } from "react-toastify";
-import { FORM_SPREE } from "@/config/config";
 
 const WaitingListDialog = (props: any) => {
   const methods = useForm();
-  const [state, handleSubmitSpree] = useFormSpree(FORM_SPREE ?? "myzeoqrg");
+  const [state, handleSubmitSpree] = useFormSpree(
+    process.env.NEXT_PUBLIC_FORM_SPREE ?? "myzeoqrg"
+  );
   const { kitTitle, onClose, ...rest } = props;
   const abortController = useMemo(() => new AbortController(), [rest.open]);
   const [dialogKey, setDialogKey] = useState(0);

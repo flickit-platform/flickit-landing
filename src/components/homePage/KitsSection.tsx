@@ -1,11 +1,13 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
+import Button from "@mui/material/Button";
 import { styles } from "@/config/styles";
 import { Trans } from "react-i18next";
 import { motion } from "framer-motion";
 import KitPart from "./KitPart";
 import { theme } from "@/config/theme";
 import { t } from "i18next";
-import { BASE_URL } from "@/config/config";
 
 const cardsData = [
   {
@@ -116,7 +118,7 @@ const Kits = () => {
         variant="contained"
         size="large"
         component="a"
-        href={BASE_URL + "assessment-kits"}
+        href={process.env.NEXT_PUBLIC_LOCAL_BASE_URL + "assessment-kits"}
         sx={{
           borderRadius: "24px",
           marginBlock: 7,

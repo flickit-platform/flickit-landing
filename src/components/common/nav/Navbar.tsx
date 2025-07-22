@@ -8,6 +8,7 @@ import LanguageSelector from "@/components/common/languageSelector";
 import { styles } from "@/config/styles";
 import useScreenResize from "@/utils/useScreenResize";
 import { t } from "i18next";
+import { NEXT_PUBLIC_LOCAL_BASE_URL } from "@/utils/env";
 
 export default function Navbar() {
   const dialogProps = useDialog();
@@ -46,7 +47,7 @@ export default function Navbar() {
           <LanguageSelector />
           <Button
             component="a"
-            href={process.env.NEXT_PUBLIC_LOCAL_BASE_URL}
+            href={NEXT_PUBLIC_LOCAL_BASE_URL}
             variant={"outlined"}
             size={isMobile ? "small" : "large"}
             sx={{
@@ -67,7 +68,7 @@ export default function Navbar() {
             size="large"
             component="a"
             href={
-              process.env.NEXT_PUBLIC_LOCAL_BASE_URL +
+              NEXT_PUBLIC_LOCAL_BASE_URL +
               "accounts/realms/flickit/login-actions/registration?client_id=flickit-frontend&tab_id=lb5MBPBbwgs"
             }
             sx={{

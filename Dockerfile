@@ -1,13 +1,9 @@
 FROM node:18-alpine
 WORKDIR /app
-
-COPY package*.json ./
-RUN npm ci
-
 COPY . .
-COPY env.sh /env.sh
-RUN chmod +x /env.sh
-RUN . /env.sh && npm run build
-
+RUN npm ci
+RUN npm run build
+CMD npm start
+COPY env.sh /docker-entrypoint.d/env.sh
+RUN chmod +x /docker-entrypoint.d/env.sh
 EXPOSE 3000
-CMD ["npm", "start"]

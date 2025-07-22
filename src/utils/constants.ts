@@ -5,12 +5,12 @@ export const getRedirectUrl = (): string => {
 
     // Check if the base URL contains "test."
     if (baseUrl.includes("test.")||baseUrl.includes("localhost")) {
-      return "https://stage.flickit.org";
+      return "https://stage.flickit.org/";
     } else {
-      return "https://app.flickit.org";
+      return "https://app.flickit.org/";
     }
   } else {
     // Fallback value for server-side rendering
-    return "https://app.flickit.org";
+    return "https://app.flickit.org/";
   }
 };

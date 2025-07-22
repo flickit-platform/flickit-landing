@@ -11,6 +11,7 @@ import WaitingListDialog from "../common/dialogs/WaitingListDialog";
 import useDialog from "@/utils/useDialog";
 import { t } from "i18next";
 import { LoadingButton } from "@mui/lab";
+import { NEXT_PUBLIC_LOCAL_BASE_URL } from "@/utils/env";
 
 interface Props {
   imageUrl: string;
@@ -194,12 +195,7 @@ const KitPart = ({
               fullWidth
               onClick={(e) => handleKitClick(e, id, t(titleKey))}
               component="a"
-              href={
-                process.env.NEXT_PUBLIC_LOCAL_BASE_URL +
-                "assessment-kits/" +
-                id +
-                "/"
-              }
+              href={NEXT_PUBLIC_LOCAL_BASE_URL + "assessment-kits/" + id + "/"}
             >
               <Trans i18nKey="main.moreAboutThisKit" />
             </Button>
@@ -209,7 +205,7 @@ const KitPart = ({
               onClick={(e) => handleKitClick(e, id, t(titleKey))}
               component="a"
               href={
-                process.env.NEXT_PUBLIC_LOCAL_BASE_URL +
+                NEXT_PUBLIC_LOCAL_BASE_URL +
                 "assessment-kits/" +
                 id +
                 "/" +

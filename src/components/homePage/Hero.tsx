@@ -5,6 +5,7 @@ import { Trans } from "react-i18next";
 import { theme } from "@/config/theme";
 import Button from "@mui/material/Button";
 import AnimatedTextBanner from "./AnimatedTextBanner";
+import { NEXT_PUBLIC_LOCAL_BASE_URL } from "@/utils/env";
 
 const HeroSection = () => {
   return (
@@ -71,7 +72,7 @@ const HeroSection = () => {
 
           <Button
             component="a"
-            href={process.env.NEXT_PUBLIC_LOCAL_BASE_URL + "assessment-kits"}
+            href={NEXT_PUBLIC_LOCAL_BASE_URL + "assessment-kits"}
             target="_blank"
             variant={"contained"}
             sx={{

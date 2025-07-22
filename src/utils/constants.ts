@@ -4,8 +4,8 @@ export const getRedirectUrl = (): string => {
     const baseUrl = window.location.hostname;
 
     // Check if the base URL contains "test."
-    if (baseUrl.includes("test.")||baseUrl.includes("localhost")) {
-      return "https://app.test.flickit.org";
+    if (baseUrl.includes("stage.")||baseUrl.includes("localhost")) {
+      return "https://stage.flickit.org";
     } else {
       return "https://app.flickit.org";
     }

@@ -8,6 +8,17 @@ import AnimatedTextBanner from "./AnimatedTextBanner";
 import { NEXT_PUBLIC_LOCAL_BASE_URL } from "@/utils/env";
 
 const HeroSection = () => {
+  const handleButtonClick = (e: any, name: string) => {
+    (window as any).dataLayer.push({
+      event: "ppms.cm:trackEvent",
+      parameters: {
+        category: "Button",
+        action: "Click",
+        name: name,
+      },
+    });
+  };
+
   return (
     <Box
       sx={{
@@ -86,6 +97,9 @@ const HeroSection = () => {
               fontWeight: 600,
             }}
             size="large"
+            onClick={(e) => {
+              handleButtonClick(e, "Start your free self-assessment hero");
+            }}
           >
             <Trans i18nKey={"hero.startSelfAssessment"} />
           </Button>

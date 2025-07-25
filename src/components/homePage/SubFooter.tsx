@@ -11,6 +11,16 @@ export default function FooterGradientCTA() {
   const isMobile = useScreenResize("md");
   const { t } = useTranslation();
   const message = t("footer.ctaMessage");
+  const handleButtonClick = (e: any, name: string) => {
+    (window as any).dataLayer.push({
+      event: "ppms.cm:trackEvent",
+      parameters: {
+        category: "Button",
+        action: "Click",
+        name: name,
+      },
+    });
+  };
 
   return (
     <Box
@@ -102,6 +112,9 @@ export default function FooterGradientCTA() {
           borderRadius: "4px",
           textTransform: "none",
           whiteSpace: "nowrap",
+        }}
+        onClick={(e) => {
+          handleButtonClick(e, "Start your free self-assessment footer");
         }}
       >
         <Typography variant="titleMedium">

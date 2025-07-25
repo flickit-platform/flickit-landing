@@ -13,6 +13,18 @@ import { NEXT_PUBLIC_LOCAL_BASE_URL } from "@/utils/env";
 export default function Navbar() {
   const dialogProps = useDialog();
   const isMobile = useScreenResize("sm");
+
+  const handleButtonClick = (e: any, name: string) => {
+    (window as any).dataLayer.push({
+      event: "ppms.cm:trackEvent",
+      parameters: {
+        category: "Button",
+        action: "Click",
+        name: name,
+      },
+    });
+  };
+
   return (
     <nav
       style={{
@@ -50,6 +62,7 @@ export default function Navbar() {
             href={NEXT_PUBLIC_LOCAL_BASE_URL}
             variant={"outlined"}
             size={isMobile ? "small" : "large"}
+            onClick={(e) => handleButtonClick(e, "Login")}
             sx={{
               ...theme.typography.semiBoldLarge,
               height: "32px",
@@ -71,6 +84,7 @@ export default function Navbar() {
               NEXT_PUBLIC_LOCAL_BASE_URL +
               "accounts/realms/flickit/login-actions/registration?client_id=flickit-frontend&tab_id=lb5MBPBbwgs"
             }
+            onClick={(e) => handleButtonClick(e, "Create account")}
             sx={{
               ...theme.typography.semiBoldLarge,
               height: "32px",

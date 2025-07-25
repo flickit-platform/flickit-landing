@@ -48,7 +48,7 @@ const KitPart = ({
       parameters: {
         category: type,
         action: "Click",
-        name: title,
+        name: t(title, { lng: "en" }),
         value: id,
       },
     });
@@ -193,14 +193,7 @@ const KitPart = ({
             <Button
               variant="outlined"
               fullWidth
-              onClick={(e) =>
-                handleKitClick(
-                  e,
-                  id,
-                  t(chipLabelKey, { lng: "en" }),
-                  "Kit Page"
-                )
-              }
+              onClick={(e) => handleKitClick(e, id, chipLabelKey, "Kit Page")}
               component="a"
               href={NEXT_PUBLIC_LOCAL_BASE_URL + "assessment-kits/" + id + "/"}
             >
@@ -209,14 +202,7 @@ const KitPart = ({
             <LoadingButton
               variant="contained"
               fullWidth
-              onClick={(e) =>
-                handleKitClick(
-                  e,
-                  id,
-                  t(chipLabelKey, { lng: "en" }),
-                  "Kit List"
-                )
-              }
+              onClick={(e) => handleKitClick(e, id, chipLabelKey, "Kit List")}
               component="a"
               href={
                 NEXT_PUBLIC_LOCAL_BASE_URL +
@@ -243,12 +229,7 @@ const KitPart = ({
               variant="contained"
               fullWidth
               onClick={(e) => {
-                handleKitClick(
-                  e,
-                  id,
-                  t(chipLabelKey, { lng: "en" }),
-                  "Kit Waitlist"
-                );
+                handleKitClick(e, id, chipLabelKey, "Kit Waitlist");
                 dialogProps.openDialog({ open: true });
               }}
             >
@@ -337,6 +318,7 @@ const KitPart = ({
           href={`/blog/${id}`}
           variant="outlined"
           size="small"
+          onClick={(e) => handleKitClick(e, id, chipLabelKey, "Kit Case Study")}
         >
           <Trans i18nKey="main.learnMore" />
         </Button>

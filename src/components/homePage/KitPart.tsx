@@ -193,7 +193,14 @@ const KitPart = ({
             <Button
               variant="outlined"
               fullWidth
-              onClick={(e) => handleKitClick(e, id, t(titleKey), "moreInfo")}
+              onClick={(e) =>
+                handleKitClick(
+                  e,
+                  id,
+                  t(chipLabelKey, { lng: "en" }),
+                  "moreInfo"
+                )
+              }
               component="a"
               href={NEXT_PUBLIC_LOCAL_BASE_URL + "assessment-kits/" + id + "/"}
             >
@@ -203,7 +210,7 @@ const KitPart = ({
               variant="contained"
               fullWidth
               onClick={(e) =>
-                handleKitClick(e, id, t(titleKey), "createAssessment")
+                handleKitClick(e, id, t(chipLabelKey, { lng: "en" }), "createAssessment")
               }
               component="a"
               href={

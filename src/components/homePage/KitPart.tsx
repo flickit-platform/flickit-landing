@@ -42,11 +42,11 @@ const KitPart = ({
 }: Props) => {
   const dialogProps = useDialog();
 
-  const handleKitClick = (e: any, id: any, title: any) => {
+  const handleKitClick = (e: any, id: any, title: any, type: string) => {
     (window as any).dataLayer.push({
       event: "ppms.cm:trackEvent",
       parameters: {
-        category: "Kit List",
+        category: type === "moreInfo" ? "Kit Page" : "Kit List",
         action: "Click",
         name: title,
         value: id,
@@ -193,7 +193,7 @@ const KitPart = ({
             <Button
               variant="outlined"
               fullWidth
-              onClick={(e) => handleKitClick(e, id, t(titleKey))}
+              onClick={(e) => handleKitClick(e, id, t(titleKey), "moreInfo")}
               component="a"
               href={NEXT_PUBLIC_LOCAL_BASE_URL + "assessment-kits/" + id + "/"}
             >
@@ -202,7 +202,9 @@ const KitPart = ({
             <LoadingButton
               variant="contained"
               fullWidth
-              onClick={(e) => handleKitClick(e, id, t(titleKey))}
+              onClick={(e) =>
+                handleKitClick(e, id, t(titleKey), "createAssessment")
+              }
               component="a"
               href={
                 NEXT_PUBLIC_LOCAL_BASE_URL +

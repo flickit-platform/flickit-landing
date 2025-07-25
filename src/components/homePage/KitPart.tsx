@@ -46,7 +46,7 @@ const KitPart = ({
     (window as any).dataLayer.push({
       event: "ppms.cm:trackEvent",
       parameters: {
-        category: type === "moreInfo" ? "Kit Page" : "Kit List",
+        category: type,
         action: "Click",
         name: title,
         value: id,
@@ -198,7 +198,7 @@ const KitPart = ({
                   e,
                   id,
                   t(chipLabelKey, { lng: "en" }),
-                  "moreInfo"
+                  "Kit Page"
                 )
               }
               component="a"
@@ -210,7 +210,12 @@ const KitPart = ({
               variant="contained"
               fullWidth
               onClick={(e) =>
-                handleKitClick(e, id, t(chipLabelKey, { lng: "en" }), "createAssessment")
+                handleKitClick(
+                  e,
+                  id,
+                  t(chipLabelKey, { lng: "en" }),
+                  "Kit List"
+                )
               }
               component="a"
               href={
@@ -237,7 +242,15 @@ const KitPart = ({
             <Button
               variant="contained"
               fullWidth
-              onClick={() => dialogProps.openDialog({ open: true })}
+              onClick={(e) => {
+                handleKitClick(
+                  e,
+                  id,
+                  t(chipLabelKey, { lng: "en" }),
+                  "Kit Waitlist"
+                );
+                dialogProps.openDialog({ open: true });
+              }}
             >
               <Trans i18nKey="main.joinTheWaitlist" />
             </Button>

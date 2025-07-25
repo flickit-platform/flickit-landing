@@ -13,6 +13,18 @@ export default function Footer() {
   const dialogProps = useDialog();
 
   const isMobile = useScreenResize("sm");
+
+  const handleButtonClick = (e: any, name: string) => {
+    (window as any).dataLayer.push({
+      event: "ppms.cm:trackEvent",
+      parameters: {
+        category: "Button",
+        action: "Click",
+        name: name,
+      },
+    });
+  };
+
   return (
     <Box
       component={"footer"}
@@ -93,7 +105,10 @@ export default function Footer() {
                 <Trans i18nKey={"footer.feelFreeToReachUs"} />
               </Typography>
               <Button
-                onClick={() => dialogProps.openDialog({ open: true })}
+                onClick={(e) => {
+                  handleButtonClick(e, "Contact us");
+                  dialogProps.openDialog({ open: true });
+                }}
                 variant={"contained"}
               >
                 <Trans i18nKey="common.contactUs" />

@@ -54,15 +54,6 @@ const cardsData = [
   },
 ];
 
-// framer-motion variants
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.2 },
-  },
-};
-
 const cardVariants = {
   hidden: { opacity: 0, y: 30, scale: 0.95 },
   visible: {
@@ -74,6 +65,17 @@ const cardVariants = {
 };
 
 const Kits = () => {
+  const handleButtonClick = (e: any, name: string) => {
+    (window as any).dataLayer.push({
+      event: "ppms.cm:trackEvent",
+      parameters: {
+        category: "Button",
+        action: "Click",
+        name: name,
+      },
+    });
+  };
+
   return (
     <Box sx={{ ...styles.centerCVH }} px={{ xs: 2, md: 6, xxl: 30 }}>
       <Typography variant="headlineLarge" textAlign="center" mb={15}>
@@ -120,6 +122,9 @@ const Kits = () => {
         size="large"
         component="a"
         href={NEXT_PUBLIC_LOCAL_BASE_URL + "assessment-kits"}
+        onClick={(e) => {
+          handleButtonClick(e, "View all assessment kits");
+        }}
         sx={{
           borderRadius: "24px",
           marginBlock: 7,

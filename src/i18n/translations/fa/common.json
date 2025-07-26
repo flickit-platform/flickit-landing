@@ -16,5 +16,6 @@
   "requiredFieldError": "این فیلد الزامی است.",
   "invalidEmail": "لطفا ایمیل معتبر وارد کنید.",
   "free": "رایگان",
-  "YourRequestSubmitted": "درخواست شما با موققیت ثبت شد."
+  "YourRequestSubmitted": "درخواست شما با موققیت ثبت شد.",
+  "loginOrSignup": "ورود / عضویت"
 }

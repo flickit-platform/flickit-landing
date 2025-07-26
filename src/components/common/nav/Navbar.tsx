@@ -58,33 +58,11 @@ export default function Navbar() {
         >
           <LanguageSelector />
           <Button
-            component="a"
-            href={NEXT_PUBLIC_LOCAL_BASE_URL}
-            variant={"outlined"}
-            size={isMobile ? "small" : "large"}
-            onClick={(e) => handleButtonClick(e, "Login")}
-            sx={{
-              ...theme.typography.semiBoldLarge,
-              height: "32px",
-              color: "#fff",
-              textTransform: "capitalize",
-              borderColor: "#fff",
-              "&:hover": {
-                borderColor: "#fff",
-              },
-            }}
-          >
-            {t("nav.login")}
-          </Button>
-          <Button
             variant="contained"
             size="large"
             component="a"
-            href={
-              NEXT_PUBLIC_LOCAL_BASE_URL +
-              "accounts/realms/flickit/login-actions/registration?client_id=flickit-frontend&tab_id=lb5MBPBbwgs"
-            }
-            onClick={(e) => handleButtonClick(e, "Create account")}
+            href={NEXT_PUBLIC_LOCAL_BASE_URL}
+            onClick={(e) => handleButtonClick(e, "Login")}
             sx={{
               ...theme.typography.semiBoldLarge,
               height: "32px",
@@ -98,7 +76,7 @@ export default function Navbar() {
               display: { xs: "none", sm: "flex" },
             }}
           >
-            {t("nav.createAccount")}
+            {t("common.loginOrSignup")}
           </Button>
         </Box>
       </Box>

@@ -45,12 +45,10 @@ const KitPart = ({
   const handleKitClick = (e: any, id: any, title: any, type: string) => {
     (window as any).dataLayer.push({
       event: "ppms.cm:trackEvent",
-      parameters: {
-        category: type,
-        action: "Click",
-        name: t(title, { lng: "en" }),
-        value: id,
-      },
+      category: type,
+      action: "Click",
+      name: t(title, { lng: "en" }),
+      value: id,
     });
   };
 
@@ -193,7 +191,7 @@ const KitPart = ({
             <Button
               variant="outlined"
               fullWidth
-              onClick={(e) => handleKitClick(e, id, chipLabelKey, "Kit Page")}
+              onClick={(e) => handleKitClick(e, id, chipLabelKey, "Kit Info")}
               component="a"
               href={NEXT_PUBLIC_LOCAL_BASE_URL + "assessment-kits/" + id + "/"}
             >

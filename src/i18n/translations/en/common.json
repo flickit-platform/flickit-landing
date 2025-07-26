@@ -16,5 +16,6 @@
   "requiredFieldError": "This field is required.",
   "invalidEmail": "Please enter a valid email address.",
   "free": "Free",
-  "YourRequestSubmitted": "Your request has been successfully submitted."
+  "YourRequestSubmitted": "Your request has been successfully submitted.",
+  "loginOrSignup": "Login / Signup"
 }

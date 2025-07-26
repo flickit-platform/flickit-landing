@@ -63,27 +63,27 @@
   },
   "kit": {
     "softwarePerformance": {
-      "chipLabel": "Software performance evaluation kit",
-      "title": "Ensure your product can scale",
-      "desc": "This kit’s chief value is spotting and eliminating performance bottlenecks before your user base surges. It empowers teams to apply targeted optimizations that safeguard long-term scalability and efficiency.",
+      "chipLabel": "Software Performance Kit",
+      "title": "Ensure Your Product Can Scale",
+      "desc": "Identify performance bottlenecks before traffic surges and apply targeted optimizations to ensure lasting scalability and efficiency.",
       "caseStudyDesc": "Amazon: How Latency Optimization Boosted Revenue"
     },
     "toolMaturity": {
-      "chipLabel": "Tool maturity",
-      "title": "Evaluate your development toolchain’s effectiveness",
-      "desc": "This kit checks if your tools really suit each stage of the development lifecycle. It spots weaknesses in tool choice or usage and arms you with data for smarter decisions.",
+      "chipLabel": "Tool Maturity Kit",
+      "title": "Assess Your Development Toolchain's Effectiveness",
+      "desc": "Evaluate the suitability and performance of your development tools at each stage. By analyzing tool selection and usage patterns, it pinpoints weaknesses and supports informed technical decisions.",
       "caseStudyDesc": "How Etsy Accelerated Deployment up to 50 deploy per day with DevOps Automation?"
     },
     "internalAudit": {
-      "chipLabel": "Internal Audit Kit",
-      "title": "An improvement roadmap for software teams",
-      "desc": "Designed for CTOs and tech leaders, this kit analyzes your team, software, and operations to give a clear snapshot of today’s state—providing hard data for smarter choices on architecture, staffing, and product direction.",
+      "chipLabel": "In-house Software Development Audit Kit",
+      "title": "Assess Your In-House Team's Technical Maturity",
+      "desc": "Designed for technical leaders and architects, this kit examines team, software, and operations to deliver a comprehensive view of your current state—providing a solid foundation for targeted improvements.",
       "caseStudyDesc": "Facebook Messenger: How Technical Debt Was Eliminated for Faster Performance"
     },
     "vendorEvaluation": {
-      "chipLabel": "Vendor Evaluation Kit",
-      "title": "Measuring AI tool adoption and impact",
-      "desc": "This assessment gauges how mature your software team is in putting artificial-intelligence technologies to proper use throughout the development lifecycle. Its ultimate aim is to analyze the real effect these tools have on productivity and code quality.",
+      "chipLabel": "AI-assisted development adoption kit",
+      "title": "Assess How Effectively You're Using AI in Software Development",
+      "desc": "Measure your team’s maturity in adopting AI technologies throughout development. It analyzes the real impact of AI tools on code quality and velocity, offering clear guidance for optimization.",
       "caseStudyDesc": ""
     }
   },

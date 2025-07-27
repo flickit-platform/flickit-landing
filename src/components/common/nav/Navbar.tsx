@@ -45,6 +45,7 @@ export default function Navbar() {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
+          height: "100%"
         }}
       >
         <Box sx={{ height: "100%", width: "auto" }}>

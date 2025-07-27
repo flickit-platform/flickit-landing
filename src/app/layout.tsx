@@ -12,7 +12,7 @@ import I18nProvider from "@/i18n/I18nProvider";
 
 export const metadata = {
   title: "Flickit",
-  description: "Assessment platform",
+  description: "Identify and resolve your software systems’ issues and drive their growth with assessment kits crafted by seasoned experts.",
 };
 
 export default function RootLayout({

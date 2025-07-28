@@ -19,15 +19,15 @@
   "flickit": "Flickit",
   "faq1": {
     "question": "Is it complicated to set up?",
-    "answer": "No — You can launch your first assessment in minutes. No coding, no heavy onboarding."
+    "answer": "No, You can launch your first assessment in minutes. No coding, no heavy onboarding."
   },
   "faq2": {
     "question": "Will it really give me actionable insights?",
-    "answer": "Yes — Flickit doesn’t just show you data; it maps out exactly where you stand and what to do next."
+    "answer": "Yes, Flickit doesn’t just show you data; it maps out exactly where you stand and what to do next."
   },
   "faq3": {
     "question": "We’re unique — will it work for us?",
-    "answer": "Absolutely — Flickit’s flexible kits adapt to your team’s workflows and your business needs."
+    "answer": "Absolutely, Flickit’s flexible kits adapt to your team’s workflows and your business needs."
   },
   "readyMade": {
     "title": "Ready-made kits.",
@@ -66,19 +66,19 @@
       "chipLabel": "Software Performance Kit",
       "title": "Ensure Your Product Can Scale",
       "desc": "Identify performance bottlenecks before traffic surges and apply targeted optimizations to ensure lasting scalability and efficiency.",
-      "caseStudyDesc": "Amazon: How Latency Optimization Boosted Revenue"
+      "caseStudyDesc": "Amazon: How latency optimization boosted revenue"
     },
     "toolMaturity": {
       "chipLabel": "Tool Maturity Kit",
       "title": "Assess Your Development Toolchain's Effectiveness",
       "desc": "Evaluate the suitability and performance of your development tools at each stage. By analyzing tool selection and usage patterns, it pinpoints weaknesses and supports informed technical decisions.",
-      "caseStudyDesc": "How Etsy Accelerated Deployment up to 50 deploy per day with DevOps Automation?"
+      "caseStudyDesc": "How etsy accelerated deployment up to 50 deploy per day with DevOps automation?"
     },
     "internalAudit": {
       "chipLabel": "In-house Software Development Audit Kit",
       "title": "Assess Your In-House Team's Technical Maturity",
       "desc": "Designed for technical leaders and architects, this kit examines team, software, and operations to deliver a comprehensive view of your current state—providing a solid foundation for targeted improvements.",
-      "caseStudyDesc": "Facebook Messenger: How Technical Debt Was Eliminated for Faster Performance"
+      "caseStudyDesc": "Facebook Messenger: How technical debt was eliminated for faster performance"
     },
     "vendorEvaluation": {
       "chipLabel": "AI-assisted Development Adoption Kit",

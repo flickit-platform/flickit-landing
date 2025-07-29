@@ -45,6 +45,7 @@ export default function Navbar() {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
+          height: "100%"
         }}
       >
         <Box sx={{ height: "100%", width: "auto" }}>
@@ -59,12 +60,11 @@ export default function Navbar() {
           <LanguageSelector />
           <Button
             variant="contained"
-            size="large"
+            size="medium"
             component="a"
             href={NEXT_PUBLIC_LOCAL_BASE_URL}
             onClick={(e) => handleButtonClick(e, "Login")}
             sx={{
-              ...theme.typography.semiBoldLarge,
               height: "32px",
               color: theme.palette.primary.main,
               textTransform: "capitalize",

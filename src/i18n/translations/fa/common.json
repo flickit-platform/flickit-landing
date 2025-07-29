@@ -17,5 +17,8 @@
   "invalidEmail": "لطفا ایمیل معتبر وارد کنید.",
   "free": "رایگان",
   "YourRequestSubmitted": "درخواست شما با موققیت ثبت شد.",
-  "loginOrSignup": "ورود / عضویت"
+  "loginOrSignup": "ورود / عضویت",
+  "pleaseEnterYourPhoneNumber": "در صورت تمایل شماره موبایل خود را وارد کنید تا بتوانیم سریع‌تر و راحت‌تر با شما در ارتباط باشیم.",
+  "yourPhoneNumber": "شماره موبایل خود را بنویسید.",
+  "yourEmailAddress": "نشانی ایمیل خود را بنویسید."
 }

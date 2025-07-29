@@ -51,6 +51,20 @@ const KitPart = ({
       value: id,
     });
   };
+  const actionPath = () =>{
+      return free ?
+          NEXT_PUBLIC_LOCAL_BASE_URL +
+          "assessment-kits/" +
+          id +
+          "/" +
+          `#createAssessment?id=${id}/`
+          :
+          NEXT_PUBLIC_LOCAL_BASE_URL +
+          "assessment-kits/" +
+          id +
+          "/" +
+          `#purchaseAssessment?id=${id}/`
+  }
 
   return (
     <Box
@@ -203,14 +217,10 @@ const KitPart = ({
               onClick={(e) => handleKitClick(e, id, chipLabelKey, "Kit List")}
               component="a"
               href={
-                NEXT_PUBLIC_LOCAL_BASE_URL +
-                "assessment-kits/" +
-                id +
-                "/" +
-                `#createAssessment?id=${id}/`
+               actionPath()
               }
             >
-              <Trans i18nKey="main.createAssessment" />
+                <Trans i18nKey={free ?  "main.createAssessment" : "main.purchase" } />
             </LoadingButton>
           </Box>
         ) : (

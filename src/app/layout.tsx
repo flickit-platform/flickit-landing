@@ -97,6 +97,27 @@ export default function RootLayout({
             })(window, document, "dataLayer", "${process.env.NEXT_PUBLIC_PIWIK_KEY}");
           `}
       </Script>
+
+      <Script id="set-visitor-id" strategy="afterInteractive">
+        {`
+        (function () {
+          function getOrCreateVisitorId() {
+            const key = "visitor_id";
+            let id = localStorage.getItem(key);
+            if (!id) {
+              id = [...Array(16)].map(() => Math.floor(Math.random() * 16).toString(16)).join("");
+              localStorage.setItem(key, id);
+            }
+            return id;
+          }
+
+          const visitorId = getOrCreateVisitorId();
+
+          window._paq = window._paq || [];
+          window._paq.push(["setVisitorId", visitorId]);
+        })();
+      `}
+      </Script>
     </html>
   );
 }

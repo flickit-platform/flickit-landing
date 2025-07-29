@@ -60,12 +60,11 @@ export default function Navbar() {
           <LanguageSelector />
           <Button
             variant="contained"
-            size="large"
+            size="medium"
             component="a"
             href={NEXT_PUBLIC_LOCAL_BASE_URL}
             onClick={(e) => handleButtonClick(e, "Login")}
             sx={{
-              ...theme.typography.semiBoldLarge,
               height: "32px",
               color: theme.palette.primary.main,
               textTransform: "capitalize",

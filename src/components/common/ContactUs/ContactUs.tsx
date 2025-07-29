@@ -49,6 +49,7 @@ const ContactUsDialog = (props: IContactUsDialogProps) => {
     }, []);
 
     const onSubmit = (data: any) => {
+      methods.setValue("type" as any, "Contact Us - Landing");
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (!emailRegex.test(data.email)) {
             setEmailError(t("common.invalidEmail"));

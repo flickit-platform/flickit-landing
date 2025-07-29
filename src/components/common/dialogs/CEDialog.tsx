@@ -13,6 +13,8 @@ import { t } from "i18next";
 import Typography from "@mui/material/Typography";
 import { theme } from "@/config/theme";
 import Box from "@mui/material/Box";
+import { IconButton } from "@mui/material";
+import { Close } from "@mui/icons-material";
 
 interface ICEDialogProps extends Omit<DialogProps, "title"> {
   closeDialog?: () => void;
@@ -48,15 +50,23 @@ export const CEDialog = (props: PropsWithChildren<ICEDialogProps>) => {
       {title && (
         <DialogTitle
           sx={{
-            ...styles.centerV,
-            gap: "6px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
             ...titleStyle,
-            bgcolor: theme.palette.primary.main,
-            color: "#fff",
           }}
         >
-          {icon && icon}
-          {title}
+          <Box sx={{ ...styles.centerVH }}>{title}</Box>
+          <IconButton
+            aria-label="close"
+            onClick={closeDialog}
+            edge="end"
+            size="small"
+            sx={{ ml: 2, color: "#fff" }}
+            data-testid="close-btn"
+          >
+            <Close />
+          </IconButton>
         </DialogTitle>
       )}
       <DialogContent

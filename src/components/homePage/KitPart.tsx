@@ -52,18 +52,8 @@ const KitPart = ({
     });
   };
   const actionPath = () =>{
-      return free ?
-          NEXT_PUBLIC_LOCAL_BASE_URL +
-          "assessment-kits/" +
-          id +
-          "/" +
-          `#createAssessment?id=${id}/`
-          :
-          NEXT_PUBLIC_LOCAL_BASE_URL +
-          "assessment-kits/" +
-          id +
-          "/" +
-          `#purchaseAssessment?id=${id}/`
+      const action = free ? "createAssessment" : "purchaseAssessment";
+      return `${NEXT_PUBLIC_LOCAL_BASE_URL}assessment-kits/${id}/#${action}?id=${id}/`;
   }
 
   return (

@@ -6,6 +6,7 @@ import { theme } from "@/config/theme";
 import Button from "@mui/material/Button";
 import AnimatedTextBanner from "./AnimatedTextBanner";
 import { NEXT_PUBLIC_LOCAL_BASE_URL } from "@/utils/env";
+import i18next from "i18next";
 
 const HeroSection = () => {
   const handleButtonClick = (e: any, name: string) => {
@@ -83,7 +84,11 @@ const HeroSection = () => {
 
           <Button
             component="a"
-            href={NEXT_PUBLIC_LOCAL_BASE_URL + "assessment-kits"}
+            href={
+              NEXT_PUBLIC_LOCAL_BASE_URL +
+              "assessment-kits" +
+              `?lang=${i18next.language}`
+            }
             target="_blank"
             variant={"contained"}
             sx={{

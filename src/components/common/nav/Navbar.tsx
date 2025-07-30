@@ -7,7 +7,7 @@ import ContactUsDialog from "@/components/common/ContactUs/ContactUs";
 import LanguageSelector from "@/components/common/languageSelector";
 import { styles } from "@/config/styles";
 import useScreenResize from "@/utils/useScreenResize";
-import { t } from "i18next";
+import i18next, { t } from "i18next";
 import { NEXT_PUBLIC_LOCAL_BASE_URL } from "@/utils/env";
 
 export default function Navbar() {
@@ -62,7 +62,7 @@ export default function Navbar() {
             variant="contained"
             size="medium"
             component="a"
-            href={NEXT_PUBLIC_LOCAL_BASE_URL}
+            href={NEXT_PUBLIC_LOCAL_BASE_URL+  `?lang=${i18next.language}`}
             onClick={(e) => handleButtonClick(e, "Login")}
             sx={{
               height: "32px",

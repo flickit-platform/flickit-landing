@@ -6,6 +6,7 @@ import useScreenResize from "@/utils/useScreenResize";
 import React from "react";
 import { theme } from "@/config/theme";
 import { NEXT_PUBLIC_LOCAL_BASE_URL } from "@/utils/env";
+import i18next from "i18next";
 
 export default function FooterGradientCTA() {
   const isMobile = useScreenResize("md");
@@ -90,7 +91,11 @@ export default function FooterGradientCTA() {
       </Typography>
 
       <Button
-        href={NEXT_PUBLIC_LOCAL_BASE_URL + "assessment-kits"}
+        href={
+          NEXT_PUBLIC_LOCAL_BASE_URL +
+          "assessment-kits" +
+          `?lang=${i18next.language}`
+        }
         target="_blank"
         variant="contained"
         size="large"

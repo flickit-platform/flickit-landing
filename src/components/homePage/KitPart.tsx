@@ -9,7 +9,7 @@ import Link from "next/link";
 import { styles } from "@/config/styles";
 import WaitingListDialog from "../common/dialogs/WaitingListDialog";
 import useDialog from "@/utils/useDialog";
-import { t } from "i18next";
+import i18next, { t } from "i18next";
 import { LoadingButton } from "@mui/lab";
 import { NEXT_PUBLIC_LOCAL_BASE_URL } from "@/utils/env";
 
@@ -51,10 +51,13 @@ const KitPart = ({
       value: id,
     });
   };
-  const actionPath = () =>{
-      const action = free ? "createAssessment" : "purchaseAssessment";
-      return `${NEXT_PUBLIC_LOCAL_BASE_URL}assessment-kits/${id}/#${action}?id=${id}/`;
-  }
+  const actionPath = () => {
+    const action = free ? "createAssessment" : "purchaseAssessment";
+    return (
+      `${NEXT_PUBLIC_LOCAL_BASE_URL}assessment-kits/${id}/#${action}?id=${id}` +
+      `&lang=${i18next.language}`
+    );
+  };
 
   return (
     <Box
@@ -197,7 +200,13 @@ const KitPart = ({
               fullWidth
               onClick={(e) => handleKitClick(e, id, chipLabelKey, "Kit Info")}
               component="a"
-              href={NEXT_PUBLIC_LOCAL_BASE_URL + "assessment-kits/" + id + "/"}
+              href={
+                NEXT_PUBLIC_LOCAL_BASE_URL +
+                "assessment-kits/" +
+                id +
+                "/" +
+                `?lang=${i18next.language}`
+              }
             >
               <Trans i18nKey="main.moreAboutThisKit" />
             </Button>
@@ -206,11 +215,11 @@ const KitPart = ({
               fullWidth
               onClick={(e) => handleKitClick(e, id, chipLabelKey, "Kit List")}
               component="a"
-              href={
-               actionPath()
-              }
+              href={actionPath()}
             >
-                <Trans i18nKey={free ?  "main.createAssessment" : "main.purchase" } />
+              <Trans
+                i18nKey={free ? "main.createAssessment" : "main.purchase"}
+              />
             </LoadingButton>
           </Box>
         ) : (

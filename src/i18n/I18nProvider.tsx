@@ -12,7 +12,7 @@ export default function I18nProvider({
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    const lang = localStorage.getItem("lang") || "fa";
+    const lang = localStorage.getItem("lang") || "en";
     i18n.changeLanguage(lang);
     document.documentElement.dir = lang === "fa" ? "rtl" : "ltr";
 

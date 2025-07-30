@@ -1,21 +1,16 @@
 export const getRedirectUrl = (): string => {
-  if (typeof window === "undefined") {
-    return "https://app.flickit.org/";
-  }
+  // Check if window is defined (to avoid error during server-side rendering)
+  if (typeof window !== "undefined") {
+    const baseUrl = window.location.hostname;
 
-  const baseUrl = window.location.hostname;
-
-  const lang =
-    document.cookie
-      .split("; ")
-      .find((row) => row.startsWith("NEXT_LOCALE="))
-      ?.split("=")[1] ?? null;
-
-  const query = lang ? `?lang=${encodeURIComponent(lang)}` : "";
-
-  if (baseUrl.includes("test.") || baseUrl.includes("localhost")) {
-    return `https://stage.flickit.org/${query}`;
+    // Check if the base URL contains "test."
+    if (baseUrl.includes("test.")||baseUrl.includes("localhost")) {
+      return "https://stage.flickit.org/";
+    } else {
+      return "https://app.flickit.org/";
+    }
   } else {
-    return `https://app.flickit.org/${query}`;
+    // Fallback value for server-side rendering
+    return "https://app.flickit.org/";
   }
 };

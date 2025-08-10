@@ -54,7 +54,7 @@ export default function Navbar() {
         <Box
           sx={{
             ...styles.centerVH,
-            gap: { xs: 0.8, sm: 2 },
+            gap: { xs: 1.4, sm: 2 },
           }}
         >
           <LanguageSelector />
@@ -73,7 +73,7 @@ export default function Navbar() {
               "&:hover": {
                 background: "#F3F5F6",
               },
-              display: { xs: "none", sm: "flex" },
+              display: "flex"
             }}
           >
             {t("common.loginOrSignup")}

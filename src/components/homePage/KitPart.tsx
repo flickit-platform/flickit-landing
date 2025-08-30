@@ -309,6 +309,7 @@ const KitPart = ({
             variant="semiBoldMedium"
             color="#2466A8"
             textAlign="center"
+            fontWeight={500}
             sx={{
               mb: 2,
               whiteSpace: "pre-wrap",

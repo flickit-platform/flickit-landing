@@ -50,7 +50,7 @@ const cardsData = [
     caseStudyDescKey: "main.kit.vendorEvaluation.caseStudyDesc",
     caseStudyLogo: "fujistu.jpeg",
     waitList: true,
-    free: true,
+    free: false,
   },
 ];
 

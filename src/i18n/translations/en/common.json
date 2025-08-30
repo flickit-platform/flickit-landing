@@ -20,5 +20,7 @@
   "invalidEmail": "Please enter a valid email address.",
   "free": "Free",
   "YourRequestSubmitted": "Your request has been successfully submitted.",
-  "loginOrSignup": "Login / Signup"
+  "loginOrSignup": "Login / Signup",
+  "kitLibrary": "Kit library",
+  "myAssessments": "My assessments"
 }

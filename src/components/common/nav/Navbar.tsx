@@ -1,4 +1,5 @@
 "use client";
+import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import { theme } from "@/config/theme";
@@ -6,22 +7,16 @@ import useDialog from "@/utils/useDialog";
 import ContactUsDialog from "@/components/common/ContactUs/ContactUs";
 import LanguageSelector from "@/components/common/languageSelector";
 import { styles } from "@/config/styles";
-import useScreenResize from "@/utils/useScreenResize";
 import i18next, { t } from "i18next";
 import { NEXT_PUBLIC_LOCAL_BASE_URL } from "@/utils/env";
 
 export default function Navbar() {
   const dialogProps = useDialog();
-  const isMobile = useScreenResize("sm");
 
-  const handleButtonClick = (e: any, name: string) => {
-    (window as any).dataLayer.push({
+  const handleButtonClick = (e: React.MouseEvent, name: string) => {
+    (window as any).dataLayer?.push?.({
       event: "ppms.cm:trackEvent",
-      parameters: {
-        category: "Button",
-        action: "Click",
-        name: name,
-      },
+      parameters: { category: "Button", action: "Click", name },
     });
   };
 
@@ -41,28 +36,71 @@ export default function Navbar() {
         sx={{
           mx: "auto",
           maxWidth: "1440px",
-          px: { xs: "8px", sm: "48px" },
+          px: { xs: "8px", sm: "100px" },
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          height: "100%"
+          height: "100%",
+          position: "relative"
         }}
       >
         <Box sx={{ height: "100%", width: "auto" }}>
           <img src={"/logo.svg"} style={{ height: "44px" }} alt={"logo-icon"} />
         </Box>
+
         <Box
           sx={{
-            ...styles.centerVH,
-            gap: { xs: 1.4, sm: 2 },
+            position: "absolute",
+            left: "50%",
+            transform: "translateX(-50%)",
+            display: { xs: "none", sm: "flex" },
+            alignItems: "center",
+            gap: 1.5,
           }}
         >
+          <Button
+            variant="text"
+            size="medium"
+            component="a"
+            href="/spaces"
+            onClick={(e) => handleButtonClick(e, "MyAssessments")}
+            sx={{
+              height: "32px",
+              color: "#fff",
+              textTransform: "uppercase",
+              px: 1.5,
+              "&:hover": { background: "rgba(255,255,255,0.12)" },
+            }}
+          >
+            {t("common.myAssessments")}
+          </Button>
+
+          <Button
+            variant="text"
+            size="medium"
+            component="a"
+            href="/assessment-kits"
+            onClick={(e) => handleButtonClick(e, "KitLibrary")}
+            sx={{
+              height: "32px",
+              color: "#fff",
+              textTransform: "uppercase",
+              px: 1.5,
+              "&:hover": { background: "rgba(255,255,255,0.12)" },
+            }}
+          >
+            {t("common.kitLibrary")}
+          </Button>
+        </Box>
+
+        <Box sx={{ ...styles.centerVH, gap: { xs: 1.2, sm: 2 } }}>
           <LanguageSelector />
+
           <Button
             variant="contained"
             size="medium"
             component="a"
-            href={NEXT_PUBLIC_LOCAL_BASE_URL+  `?lang=${i18next.language}`}
+            href={NEXT_PUBLIC_LOCAL_BASE_URL + `?lang=${i18next.language}`}
             onClick={(e) => handleButtonClick(e, "Login")}
             sx={{
               height: "32px",
@@ -70,16 +108,15 @@ export default function Navbar() {
               textTransform: "capitalize",
               background: "#F3F5F6",
               boxShadow: "0 1px 5px rgba(0,0,0,0.12)",
-              "&:hover": {
-                background: "#F3F5F6",
-              },
-              display: "flex"
+              "&:hover": { background: "#F3F5F6" },
+              display: "flex",
             }}
           >
             {t("common.loginOrSignup")}
           </Button>
         </Box>
       </Box>
+
       <ContactUsDialog {...dialogProps} />
     </nav>
   );

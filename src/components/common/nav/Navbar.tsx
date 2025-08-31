@@ -1,4 +1,5 @@
 "use client";
+
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -9,9 +10,11 @@ import LanguageSelector from "@/components/common/languageSelector";
 import { styles } from "@/config/styles";
 import i18next, { t } from "i18next";
 import { NEXT_PUBLIC_LOCAL_BASE_URL } from "@/utils/env";
+import { useKcAuth } from "@/hooks/useKcAuth"; // ⬅️ اضافه شد
 
 export default function Navbar() {
   const dialogProps = useDialog();
+  const { authed, username, kc } = useKcAuth(); // ⬅️ وضعیت ورود
 
   const handleButtonClick = (e: React.MouseEvent, name: string) => {
     (window as any).dataLayer?.push?.({
@@ -48,6 +51,7 @@ export default function Navbar() {
           <img src={"/logo.svg"} style={{ height: "44px" }} alt={"logo-icon"} />
         </Box>
 
+        {/* لینک‌های وسط */}
         <Box
           sx={{
             position: "absolute",
@@ -93,27 +97,54 @@ export default function Navbar() {
           </Button>
         </Box>
 
+        {/* سمت راست: زبان + ورود/خروج */}
         <Box sx={{ ...styles.centerVH, gap: { xs: 1.2, sm: 2 } }}>
           <LanguageSelector />
 
-          <Button
-            variant="contained"
-            size="medium"
-            component="a"
-            href={NEXT_PUBLIC_LOCAL_BASE_URL + `?lang=${i18next.language}`}
-            onClick={(e) => handleButtonClick(e, "Login")}
-            sx={{
-              height: "32px",
-              color: theme.palette.primary.main,
-              textTransform: "capitalize",
-              background: "#F3F5F6",
-              boxShadow: "0 1px 5px rgba(0,0,0,0.12)",
-              "&:hover": { background: "#F3F5F6" },
-              display: "flex",
-            }}
-          >
-            {t("common.loginOrSignup")}
-          </Button>
+          {/* اگر لاگین نیست → دکمه ورود/ثبت‌نام را نشان بده */}
+          {!authed ? (
+            <Button
+              variant="contained"
+              size="medium"
+              component="a"
+              href={NEXT_PUBLIC_LOCAL_BASE_URL + `?lang=${i18next.language}`}
+              onClick={(e) => handleButtonClick(e, "Login")}
+              sx={{
+                height: "32px",
+                color: theme.palette.primary.main,
+                textTransform: "capitalize",
+                background: "#F3F5F6",
+                boxShadow: "0 1px 5px rgba(0,0,0,0.12)",
+                "&:hover": { background: "#F3F5F6" },
+                display: "flex",
+              }}
+            >
+              {t("common.loginOrSignup")}
+            </Button>
+          ) : (
+            // اگر لاگین است → نام کاربر و دکمه خروج
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+              <span style={{ color: "#fff", fontSize: 13 }}>
+                {username ?? t("common.user")}
+              </span>
+              <Button
+                variant="outlined"
+                size="small"
+                onClick={() =>
+                  kc.logout({ redirectUri: window.location.origin })
+                }
+                sx={{
+                  height: "28px",
+                  color: "#fff",
+                  borderColor: "#fff",
+                  textTransform: "capitalize",
+                  "&:hover": { borderColor: "#fff", background: "rgba(255,255,255,0.12)" },
+                }}
+              >
+                {t("common.logout")}
+              </Button>
+            </Box>
+          )}
         </Box>
       </Box>
 

@@ -62,7 +62,7 @@ export default function Navbar() {
             variant="text"
             size="medium"
             component="a"
-            href={NEXT_PUBLIC_LOCAL_BASE_URL + "/spaces"}
+            href={NEXT_PUBLIC_LOCAL_BASE_URL + "spaces"}
             onClick={(e) => handleButtonClick(e, "MyAssessments")}
             sx={{
               height: "32px",
@@ -79,7 +79,7 @@ export default function Navbar() {
             variant="text"
             size="medium"
             component="a"
-            href={NEXT_PUBLIC_LOCAL_BASE_URL + "/assessment-kits"}
+            href={NEXT_PUBLIC_LOCAL_BASE_URL + "assessment-kits"}
             onClick={(e) => handleButtonClick(e, "KitLibrary")}
             sx={{
               height: "32px",

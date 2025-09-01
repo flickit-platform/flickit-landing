@@ -101,8 +101,11 @@ const FeaturesSection = () => (
       >
         {features.map((item, index) => (
           <Grid
+            item
             key={index}
-            size={{ xs: 12, sm: 6, lg: 3 }}
+            xs={12}
+            sm={6}
+            lg={3}
             sx={{
               display: "flex",
               flexDirection: "column",

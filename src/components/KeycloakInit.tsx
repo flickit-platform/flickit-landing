@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Keycloak, { KeycloakConfig, KeycloakInitOptions } from "keycloak-js";
+import Keycloak from "keycloak-js";
 
 // ---------- singleton + idempotent init ----------
 declare global {
@@ -33,10 +33,8 @@ export default function KeycloakInit({
   onLoad?: "check-sso" | "login-required";
   children: React.ReactNode;
 }) {
-  // اگر login-required باشد قبل از نمایش UI صبر می‌کنیم
-  const [ready, setReady] = useState(onLoad === "check-sso");
+  const [ready, setReady] = useState(false);
 
-  // جلوگیری از اجرای دوباره‌ی افکت در StrictMode
   const ranOnce = useRef(false);
 
   useEffect(() => {
@@ -50,7 +48,7 @@ export default function KeycloakInit({
       silentCheckSsoRedirectUri: `${window.location.origin}/silent-check-sso.html`,
       messageReceiveTimeout: 15000,
     })
-      .catch(() => {}) // حتی اگر silent SSO fail شد
+      .catch(() => {})
       .finally(() => setReady(true));
 
     const t = setInterval(
@@ -63,6 +61,6 @@ export default function KeycloakInit({
     return () => clearInterval(t);
   }, [onLoad]);
 
-  if (!ready && onLoad === "login-required") return null;
+  if (!ready) return null;
   return <>{children}</>;
 }

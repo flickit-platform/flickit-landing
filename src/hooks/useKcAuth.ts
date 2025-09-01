@@ -14,7 +14,6 @@ export function useKcAuth() {
       setAuthed(Boolean(kc.authenticated));
       setUsername(kc.tokenParsed?.preferred_username as string | undefined);
     };
-    // رویدادها:
     kc.onAuthSuccess = update;
     kc.onAuthLogout = update;
     kc.onAuthRefreshSuccess = update;
@@ -22,7 +21,6 @@ export function useKcAuth() {
       try { await kc.updateToken(30); } finally { update(); }
     };
 
-    // یکبار هم همین حالا سینک کن
     update();
 
     return () => {

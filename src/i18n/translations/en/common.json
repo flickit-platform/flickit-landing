@@ -1,4 +1,5 @@
 {
+  "account": "Account",
   "contactUs": "Contact us",
   "weWillGetBackToYouSoon": "We’ll get back to you as soon as possible.",
   "okGotIt": "OK, got it",
@@ -22,5 +23,6 @@
   "YourRequestSubmitted": "Your request has been successfully submitted.",
   "loginOrSignup": "Login / Signup",
   "kitLibrary": "Kit library",
-  "myAssessments": "My assessments"
+  "myAssessments": "My assessments",
+  "signout": "Sign out "
 }

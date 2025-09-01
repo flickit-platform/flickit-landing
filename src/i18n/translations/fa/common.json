@@ -1,4 +1,5 @@
 {
+  "account": "حساب کاربری",
   "contactUs": "تماس با ما",
   "weWillGetBackToYouSoon": "به‌زودی با شما تماس می‌گیریم.",
   "okGotIt": "متوجه شدم",
@@ -22,5 +23,6 @@
   "yourPhoneNumber": "شماره موبایل خود را بنویسید.",
   "yourEmailAddress": "نشانی ایمیل خود را بنویسید.",
   "kitLibrary": "کیت‌های ارزیابی",
-  "myAssessments": "ارزیابی‌های من"
+  "myAssessments": "ارزیابی‌های من",
+  "signout": "خروج"
 }

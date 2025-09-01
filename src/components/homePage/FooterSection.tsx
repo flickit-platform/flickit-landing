@@ -46,8 +46,9 @@ export default function Footer() {
         }}
       >
         <Grid
-          order={{ xs: 3, sm: 1 }}
-          size={{ xs: 12, sm: 5.35 }}
+          item
+          xs={12}
+          sm={5.35}
           sx={{
             ...styles.centerCV,
             justifyContent: { xs: "flex-start", md: "cente" },
@@ -72,11 +73,12 @@ export default function Footer() {
           </Typography>
         </Grid>
         <Grid
-          order={2}
-          size={{ xs: 12, sm: 4 }}
+          item
+          xs={12}
+          sm={4}
           sx={{ display: { xs: "none", sm: "grid" } }}
         ></Grid>
-        <Grid order={{ xs: 1, sm: 3 }} size={{ xs: 12, sm: 2.65 }}>
+        <Grid item xs={12} sm={2.65}>
           <Box
             sx={{
               display: "flex",

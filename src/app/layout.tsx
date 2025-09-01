@@ -9,10 +9,12 @@ import { ToastContainer } from "react-toastify";
 import { toastDefaultConfig } from "@/config/toastConfigs";
 import { farsiFontFamily, primaryFontFamily } from "@/utils/fonts";
 import I18nProvider from "@/i18n/I18nProvider";
+import KeycloakInit from "@/components/KeycloakInit";
 
 export const metadata = {
   title: "Flickit",
-  description: "Identify and resolve your software systems’ issues and drive their growth with assessment kits crafted by seasoned experts.",
+  description:
+    "Identify and resolve your software systems’ issues and drive their growth with assessment kits crafted by seasoned experts.",
 };
 
 export default function RootLayout({
@@ -28,8 +30,10 @@ export default function RootLayout({
       <body style={{ margin: 0, background: "#F9FAFB" }}>
         <I18nProvider>
           <ThemeProvider theme={theme}>
-            <Navbar />
-            {children}
+            <KeycloakInit onLoad="check-sso">
+              <Navbar />
+              {children}
+            </KeycloakInit>
             <ToastContainer
               {...toastDefaultConfig}
               toastStyle={{

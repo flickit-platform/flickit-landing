@@ -102,14 +102,6 @@ const cards = {
   }),
 };
 
-const auth = {
-  authLayout: style({
-    background: (theme) =>
-      `radial-gradient(${theme.palette.background.secondary},${theme.palette.background.secondaryDark})`,
-    minHeight: "100vh",
-    ...commonStyles.centerCH,
-  }),
-};
 
 const buttons = {
   compareButton: style({
@@ -246,7 +238,6 @@ const carouselStyle = {
 
 export const styles = {
   ...commonStyles,
-  ...auth,
   ...buttons,
   ...compare,
   ...sharedChipStyles,

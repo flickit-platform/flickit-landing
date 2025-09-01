@@ -96,8 +96,11 @@ const Kits = () => {
       >
         {cardsData.map((item, index) => (
           <Grid
+            item
             key={item.id}
-            size={{ xs: 2, sm: 4, md: 3 }}
+            xs={2}
+            sm={4}
+            md={3}
             sx={{ display: "flex" }}
           >
             <motion.div
@@ -121,7 +124,11 @@ const Kits = () => {
         variant="contained"
         size="large"
         component="a"
-        href={NEXT_PUBLIC_LOCAL_BASE_URL + "assessment-kits"+`?lang=${i18next.language}`}
+        href={
+          NEXT_PUBLIC_LOCAL_BASE_URL +
+          "assessment-kits" +
+          `?lang=${i18next.language}`
+        }
         onClick={(e) => {
           handleButtonClick(e, "View all assessment kits");
         }}

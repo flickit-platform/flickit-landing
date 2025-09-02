@@ -98,7 +98,7 @@ const Kits = () => {
           <Grid
             item
             key={item.id}
-            xs={2}
+            xs={12}
             sm={4}
             md={3}
             sx={{ display: "flex" }}

@@ -28,7 +28,6 @@ export default function AccountDropDownButton({ userInfo }: Props) {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const { kc } = useKcAuth();
 
-  console.log(userInfo);
   const open = Boolean(anchorEl);
 
   const handleOpen = (e: React.MouseEvent<HTMLElement>) =>
@@ -50,7 +49,6 @@ export default function AccountDropDownButton({ userInfo }: Props) {
         endIcon={<ArrowDropDownRounded sx={{ color: "#fff" }} />}
       >
         <Avatar
-          src={userInfo.pictureLink ?? undefined}
           sx={{
             width: 24,
             height: 24,
@@ -66,10 +64,10 @@ export default function AccountDropDownButton({ userInfo }: Props) {
             whiteSpace: "nowrap",
             overflow: "hidden",
             textOverflow: "ellipsis",
-            ...styles.rtlStyle(languageDetector(userInfo.displayName)),
+            ...styles.rtlStyle(languageDetector(userInfo.name)),
           }}
         >
-          {userInfo.displayName}
+          {userInfo.name}
         </Box>
       </Button>
 

@@ -13,41 +13,10 @@ import { NEXT_PUBLIC_LOCAL_BASE_URL } from "@/utils/env";
 import { useKcAuth } from "@/hooks/useKcAuth";
 import AccountDropDownButton from "@/components/common/nav/AccountDropDownButton";
 
-const API_BASE = NEXT_PUBLIC_LOCAL_BASE_URL;
-
 export default function Navbar() {
   const dialogProps = useDialog();
   const { authed, kc } = useKcAuth();
-  const [userInfo, setUserInfo] = React.useState(null);
 
-  React.useEffect(() => {
-    let cancelled = false;
-    const run = async () => {
-      if (!authed || !kc) return;
-      try {
-        await kc.updateToken(30).catch(() => kc.login());
-        const res = await fetch(`${API_BASE}api/v1/users/me/`, {
-          method: "GET",
-          headers: {
-            Authorization: `Bearer ${kc.token}`,
-            Accept: "application/json",
-          },
-          credentials: "include",
-          cache: "no-store",
-        });
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const json = await res.json();
-        console.log(json);
-        if (!cancelled) setUserInfo(json);
-      } catch (err) {
-        console.error("GET /users/me failed:", err);
-      }
-    };
-    run();
-    return () => {
-      cancelled = true;
-    };
-  }, [authed, kc]);
 
   const handleButtonClick = (e: React.MouseEvent, name: string) => {
     (window as any).dataLayer?.push?.({
@@ -151,8 +120,8 @@ export default function Navbar() {
             >
               {t("common.loginOrSignup")}
             </Button>
-          ) : userInfo ? (
-            <AccountDropDownButton userInfo={userInfo} />
+          ) : kc.tokenParsed ? (
+            <AccountDropDownButton userInfo={kc.tokenParsed} />
           ) : null}
         </Box>
       </Box>

@@ -69,19 +69,6 @@ export default function Navbar() {
             <ListItemText primary={t("common.kitLibrary")} />
           </ListItemButton>
         </ListItem>
-
-        {!authed && (
-          <ListItem disablePadding>
-            <ListItemButton
-              component="a"
-              href={`${NEXT_PUBLIC_LOCAL_BASE_URL}?lang=${i18next.language}`}
-              sx={{ textAlign: "left", borderRadius: 1.5, mx: 1 }}
-              onClick={(e) => handleButtonClick(e, "Login")}
-            >
-              <ListItemText primary={t("common.loginOrSignup")} />
-            </ListItemButton>
-          </ListItem>
-        )}
       </List>
     </Box>
   );

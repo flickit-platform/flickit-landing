@@ -1,8 +1,9 @@
+import { NEXT_PUBLIC_SSO_URL } from "@/utils/env";
 import "client-only";
 import Keycloak, { KeycloakConfig, KeycloakInitOptions } from "keycloak-js";
 
 const config: any = {
-  url: process.env.NEXT_PUBLIC_SSO_URL!,
+  url: NEXT_PUBLIC_SSO_URL,
   realm: process.env.NEXT_PUBLIC_SSO_REALM!,
   clientId: process.env.NEXT_PUBLIC_SSO_CLIENT_ID!,
 };

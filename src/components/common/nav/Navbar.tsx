@@ -13,7 +13,7 @@ import { NEXT_PUBLIC_LOCAL_BASE_URL } from "@/utils/env";
 import { useKcAuth } from "@/hooks/useKcAuth";
 import AccountDropDownButton from "@/components/common/nav/AccountDropDownButton";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_BASE;
+const API_BASE = NEXT_PUBLIC_LOCAL_BASE_URL;
 
 export default function Navbar() {
   const dialogProps = useDialog();
@@ -26,7 +26,7 @@ export default function Navbar() {
       if (!authed || !kc) return;
       try {
         await kc.updateToken(30).catch(() => kc.login());
-        const res = await fetch(`${API_BASE}/api/v1/users/me/`, {
+        const res = await fetch(`${API_BASE}api/v1/users/me/`, {
           method: "GET",
           headers: {
             Authorization: `Bearer ${kc.token}`,

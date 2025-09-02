@@ -17,16 +17,16 @@ export const metadata = {
     "Identify and resolve your software systems’ issues and drive their growth with assessment kits crafted by seasoned experts.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   const lang = cookies().get("lang")?.value || "en";
   const dir = lang === "fa" ? "rtl" : "ltr";
 
   return (
     <html lang={lang} dir={dir}>
+      <head>
+        <Script src="/env.js" strategy="beforeInteractive" />
+      </head>
+
       <body style={{ margin: 0, background: "#F9FAFB" }}>
         <I18nProvider>
           <ThemeProvider theme={theme}>
@@ -34,6 +34,7 @@ export default function RootLayout({
               <Navbar />
               {children}
             </KeycloakInit>
+
             <ToastContainer
               {...toastDefaultConfig}
               toastStyle={{
@@ -44,84 +45,49 @@ export default function RootLayout({
             />
           </ThemeProvider>
         </I18nProvider>
-      </body>
-      <Script id="clarity-script" strategy="afterInteractive">
-        {`
+
+        {/* ✅ afterInteractive را داخل body بگذار، معمولاً در انتها */}
+        <Script id="clarity-script" strategy="afterInteractive">
+          {`
             (function (c, l, a, r, i, t, y) {
-              c[a] = c[a] || function () {
-                (c[a].q = c[a].q ?? []).push(arguments);
-              };
-              const scriptElement = l.createElement(r);
-              scriptElement.async = 1;
-              scriptElement.src = "https://www.clarity.ms/tag/" + i;
-              const firstScriptElement = l.getElementsByTagName(r)[0];
-              firstScriptElement.parentNode.insertBefore(
-                scriptElement,
-                firstScriptElement,
-              );
+              c[a] = c[a] || function () { (c[a].q = c[a].q ?? []).push(arguments); };
+              const s = l.createElement(r);
+              s.async = 1;
+              s.src = "https://www.clarity.ms/tag/" + i;
+              const f = l.getElementsByTagName(r)[0];
+              f.parentNode.insertBefore(s, f);
               window.clarity("consent");
             })(window, document, "clarity", "script", "${process.env.NEXT_PUBLIC_CLARITY_KEY}");
           `}
-      </Script>
+        </Script>
 
-      <Script id="piwik-script" strategy="afterInteractive">
-        {`
+        <Script id="piwik-script" strategy="afterInteractive">
+          {`
             (function (window, document, dataLayerName, id) {
               window[dataLayerName] = window[dataLayerName] || [];
-              window[dataLayerName].push({
-                start: new Date().getTime(),
-                event: "stg.start",
-              });
-              var scripts = document.getElementsByTagName("script")[0],
-                tags = document.createElement("script");
+              window[dataLayerName].push({ start: new Date().getTime(), event: "stg.start" });
+              var scripts = document.getElementsByTagName("script")[0], tags = document.createElement("script");
               var qP = [];
-              dataLayerName !== "dataLayer" &&
-                qP.push("data_layer_name=" + dataLayerName);
+              dataLayerName !== "dataLayer" && qP.push("data_layer_name=" + dataLayerName);
               var qPString = qP.length > 0 ? "?" + qP.join("&") : "";
               tags.async = true;
-              tags.src =
-                "https://flickit.containers.piwik.pro/" + id + ".js" + qPString;
+              tags.src = "https://flickit.containers.piwik.pro/" + id + ".js" + qPString;
               scripts.parentNode.insertBefore(tags, scripts);
               !(function (a, n, i) {
                 a[n] = a[n] || {};
                 for (var c = 0; c < i.length; c++)
                   !(function (i) {
-                    (a[n][i] = a[n][i] || {})(a[n][i].api =
-                      a[n][i].api ||
-                      function () {
-                        var a = [].slice.call(arguments, 0);
-                        "string" == typeof a[0] &&
-                          window[dataLayerName].push({
-                            event: n + "." + i + ":" + a[0],
-                            parameters: [].slice.call(arguments, 1),
-                          });
-                      });
+                    (a[n][i] = a[n][i] || {})(a[n][i].api = a[n][i].api || function () {
+                      var a = [].slice.call(arguments, 0);
+                      "string" == typeof a[0] &&
+                        window[dataLayerName].push({ event: n + "." + i + ":" + a[0], parameters: [].slice.call(arguments, 1) });
+                    });
                   })(i[c]);
               })(window, "ppms", ["tm", "cm"]);
             })(window, document, "dataLayer", "${process.env.NEXT_PUBLIC_PIWIK_KEY}");
           `}
-      </Script>
-
-      <Script id="set-visitor-id" strategy="afterInteractive">
-        {`
-        (function () {
-          function getOrCreateVisitorId() {
-            const key = "visitor_id";
-            let id = localStorage.getItem(key);
-            if (!id) {
-              id = [...Array(16)].map(() => Math.floor(Math.random() * 16).toString(16)).join("");
-              localStorage.setItem(key, id);
-            }
-            return id;
-          }
-
-          const visitorId = getOrCreateVisitorId();
-
-          window._paq = window._paq || [];
-          window._paq.push(["setVisitorId", visitorId]);
-        })();
-      `}
-      </Script>
+        </Script>
+      </body>
     </html>
   );
 }

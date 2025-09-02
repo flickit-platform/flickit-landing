@@ -1,9 +1,20 @@
-FROM node:18-alpine
+FROM node:18-alpine AS builder
 WORKDIR /app
-COPY . .
+COPY package*.json ./
 RUN npm ci
-RUN npm run build
-CMD npm start
-COPY env.sh /docker-entrypoint.d/env.sh
-RUN chmod +x /docker-entrypoint.d/env.sh
-EXPOSE 3000
+COPY . .
+ENV NEXT_TELEMETRY_DISABLED=1
+RUN npm run build && npm run export   # خروجی استاتیک: /app/out
+
+FROM nginx:alpine
+WORKDIR /usr/share/nginx/html
+
+RUN apk add --no-cache findutils
+
+COPY --from=builder /app/out ./
+
+COPY env.sh /docker-entrypoint.d/50-env.sh
+RUN chmod +x /docker-entrypoint.d/50-env.sh
+
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

@@ -13,6 +13,7 @@ import {
 } from "@mui/material";
 import ArrowDropDownRounded from "@mui/icons-material/ArrowDropDownRounded";
 import Link from "next/link";
+import { NEXT_PUBLIC_LOCAL_BASE_URL } from "@/utils/env";
 import { useKcAuth } from "@/hooks/useKcAuth";
 import { styles } from "@/config/styles";
 import languageDetector from "@/utils/languageDetector";
@@ -81,7 +82,7 @@ export default function AccountDropDownButton({ userInfo }: Props) {
         <MenuItem
           dense
           component={Link}
-          href={process.env.NEXT_PUBLIC_LOCAL_BASE_URL + "user/account"}
+          href={NEXT_PUBLIC_LOCAL_BASE_URL + "user/account"}
           onClick={handleClose}
         >
           <ListItemIcon>

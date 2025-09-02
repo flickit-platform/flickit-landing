@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import KitPart from "./KitPart";
 import { theme } from "@/config/theme";
 import i18next, { t } from "i18next";
+import { NEXT_PUBLIC_LOCAL_BASE_URL } from "@/utils/env";
 
 const cardsData = [
   {
@@ -124,7 +125,7 @@ const Kits = () => {
         size="large"
         component="a"
         href={
-          process.env.NEXT_PUBLIC_LOCAL_BASE_URL +
+          NEXT_PUBLIC_LOCAL_BASE_URL +
           "assessment-kits" +
           `?lang=${i18next.language}`
         }

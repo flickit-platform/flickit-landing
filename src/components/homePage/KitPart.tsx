@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Chip from "@mui/material/Chip";
@@ -10,6 +11,7 @@ import WaitingListDialog from "../common/dialogs/WaitingListDialog";
 import useDialog from "@/utils/useDialog";
 import i18next, { t } from "i18next";
 import { LoadingButton } from "@mui/lab";
+import { NEXT_PUBLIC_LOCAL_BASE_URL } from "@/utils/env";
 
 interface Props {
   imageUrl: string;
@@ -52,7 +54,7 @@ const KitPart = ({
   const actionPath = () => {
     const action = free ? "createAssessment" : "purchaseAssessment";
     return (
-      `${process.env.NEXT_PUBLIC_LOCAL_BASE_URL}assessment-kits/${id}/#${action}?id=${id}` +
+      `${NEXT_PUBLIC_LOCAL_BASE_URL}assessment-kits/${id}/#${action}?id=${id}` +
       `&lang=${i18next.language}`
     );
   };
@@ -199,7 +201,7 @@ const KitPart = ({
               onClick={(e) => handleKitClick(e, id, chipLabelKey, "Kit Info")}
               component="a"
               href={
-                process.env.NEXT_PUBLIC_LOCAL_BASE_URL +
+                NEXT_PUBLIC_LOCAL_BASE_URL +
                 "assessment-kits/" +
                 id +
                 "/" +

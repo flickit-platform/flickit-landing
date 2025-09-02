@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import Keycloak from "keycloak-js";
-import { NEXT_PUBLIC_LOCAL_BASE_URL } from "@/utils/env";
 
 // ---------- singleton + idempotent init ----------
 declare global {
@@ -13,7 +12,7 @@ declare global {
 }
 
 const kcConfig = {
-  url: NEXT_PUBLIC_LOCAL_BASE_URL + "accounts",
+  url: process.env.NEXT_PUBLIC_SSO_URL!,
   realm: process.env.NEXT_PUBLIC_SSO_REALM!,
   clientId: process.env.NEXT_PUBLIC_SSO_CLIENT_ID!,
 };

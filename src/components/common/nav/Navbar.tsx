@@ -52,7 +52,7 @@ export default function Navbar() {
           <ListItemButton
             component="a"
             href={`${NEXT_PUBLIC_LOCAL_BASE_URL}spaces?lang=${i18next.language}`}
-            sx={{ textAlign: "left", borderRadius: 1.5, mx: 1 }}
+            sx={{ textAlign: "left", borderRadius: 1.5 }}
             onClick={(e) => handleButtonClick(e, "MyAssessments")}
           >
             <ListItemText primary={t("common.myAssessments")} />
@@ -63,7 +63,7 @@ export default function Navbar() {
           <ListItemButton
             component="a"
             href={`${NEXT_PUBLIC_LOCAL_BASE_URL}assessment-kits?lang=${i18next.language}`}
-            sx={{ textAlign: "left", borderRadius: 1.5, mx: 1 }}
+            sx={{ textAlign: "left", borderRadius: 1.5 }}
             onClick={(e) => handleButtonClick(e, "KitLibrary")}
           >
             <ListItemText primary={t("common.kitLibrary")} />

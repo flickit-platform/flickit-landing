@@ -1,4 +1,4 @@
-"use client";;
+"use client";
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -9,6 +9,7 @@ import { styles } from "@/config/styles";
 import LanguageSelector from "@/components/common/languageSelector";
 import ContactUsDialog from "@/components/common/ContactUs/ContactUs";
 import useDialog from "@/utils/useDialog";
+import { NEXT_PUBLIC_LOCAL_BASE_URL } from "@/utils/env";
 import { useKcAuth } from "@/hooks/useKcAuth";
 import AccountDropDownButton from "@/components/common/nav/AccountDropDownButton";
 
@@ -97,7 +98,7 @@ export default function Navbar() {
             variant="text"
             size="medium"
             component="a"
-            href={process.env.NEXT_PUBLIC_LOCAL_BASE_URL + "spaces"}
+            href={NEXT_PUBLIC_LOCAL_BASE_URL + "spaces"}
             onClick={(e) => handleButtonClick(e, "MyAssessments")}
             sx={{
               height: "32px",
@@ -114,7 +115,7 @@ export default function Navbar() {
             variant="text"
             size="medium"
             component="a"
-            href={process.env.NEXT_PUBLIC_LOCAL_BASE_URL + "assessment-kits"}
+            href={NEXT_PUBLIC_LOCAL_BASE_URL + "assessment-kits"}
             onClick={(e) => handleButtonClick(e, "KitLibrary")}
             sx={{
               height: "32px",
@@ -136,7 +137,7 @@ export default function Navbar() {
               variant="contained"
               size="medium"
               component="a"
-              href={process.env.NEXT_PUBLIC_LOCAL_BASE_URL + `?lang=${i18next.language}`}
+              href={NEXT_PUBLIC_LOCAL_BASE_URL + `?lang=${i18next.language}`}
               onClick={(e) => handleButtonClick(e, "Login")}
               sx={{
                 height: "32px",

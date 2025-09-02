@@ -1,4 +1,4 @@
-"use client";;
+"use client";
 import * as React from "react";
 import { useState } from "react";
 import {
@@ -19,6 +19,7 @@ import { styles } from "@/config/styles";
 import languageDetector from "@/utils/languageDetector";
 import { Trans } from "react-i18next";
 import { AccountBoxRounded, LogoutRounded } from "@mui/icons-material";
+import i18next from "i18next";
 
 type Props = {
   userInfo: any;
@@ -80,7 +81,11 @@ export default function AccountDropDownButton({ userInfo }: Props) {
         <MenuItem
           dense
           component={Link}
-          href={NEXT_PUBLIC_LOCAL_BASE_URL + "user/account"}
+          href={
+            NEXT_PUBLIC_LOCAL_BASE_URL +
+            "user/account" +
+            `?lang=${i18next.language}`
+          }
           onClick={handleClose}
         >
           <ListItemIcon>

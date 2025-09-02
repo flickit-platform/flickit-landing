@@ -27,6 +27,26 @@ export default function RootLayout({
 
   return (
     <html lang={lang} dir={dir}>
+      <head>
+        <Script id="clarity-script" strategy="afterInteractive">
+          {`
+            (function (c, l, a, r, i, t, y) {
+              c[a] = c[a] || function () {
+                (c[a].q = c[a].q ?? []).push(arguments);
+              };
+              const scriptElement = l.createElement(r);
+              scriptElement.async = 1;
+              scriptElement.src = "https://www.clarity.ms/tag/" + i;
+              const firstScriptElement = l.getElementsByTagName(r)[0];
+              firstScriptElement.parentNode.insertBefore(
+                scriptElement,
+                firstScriptElement,
+              );
+              window.clarity("consent");
+            })(window, document, "clarity", "script", "${process.env.NEXT_PUBLIC_CLARITY_KEY}");
+          `}
+        </Script>
+      </head>
       <body style={{ margin: 0, background: "#F9FAFB" }}>
         <I18nProvider>
           <ThemeProvider theme={theme}>
@@ -44,28 +64,8 @@ export default function RootLayout({
             />
           </ThemeProvider>
         </I18nProvider>
-      </body>
-      <Script id="clarity-script" strategy="afterInteractive">
-        {`
-            (function (c, l, a, r, i, t, y) {
-              c[a] = c[a] || function () {
-                (c[a].q = c[a].q ?? []).push(arguments);
-              };
-              const scriptElement = l.createElement(r);
-              scriptElement.async = 1;
-              scriptElement.src = "https://www.clarity.ms/tag/" + i;
-              const firstScriptElement = l.getElementsByTagName(r)[0];
-              firstScriptElement.parentNode.insertBefore(
-                scriptElement,
-                firstScriptElement,
-              );
-              window.clarity("consent");
-            })(window, document, "clarity", "script", "${process.env.NEXT_PUBLIC_CLARITY_KEY}");
-          `}
-      </Script>
-
-      <Script id="piwik-script" strategy="afterInteractive">
-        {`
+        <Script id="piwik-script" strategy="afterInteractive">
+          {`
             (function (window, document, dataLayerName, id) {
               window[dataLayerName] = window[dataLayerName] || [];
               window[dataLayerName].push({
@@ -100,28 +100,8 @@ export default function RootLayout({
               })(window, "ppms", ["tm", "cm"]);
             })(window, document, "dataLayer", "${process.env.NEXT_PUBLIC_PIWIK_KEY}");
           `}
-      </Script>
-
-      <Script id="set-visitor-id" strategy="afterInteractive">
-        {`
-        (function () {
-          function getOrCreateVisitorId() {
-            const key = "visitor_id";
-            let id = localStorage.getItem(key);
-            if (!id) {
-              id = [...Array(16)].map(() => Math.floor(Math.random() * 16).toString(16)).join("");
-              localStorage.setItem(key, id);
-            }
-            return id;
-          }
-
-          const visitorId = getOrCreateVisitorId();
-
-          window._paq = window._paq || [];
-          window._paq.push(["setVisitorId", visitorId]);
-        })();
-      `}
-      </Script>
+        </Script>
+      </body>
     </html>
   );
 }

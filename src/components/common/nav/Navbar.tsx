@@ -110,11 +110,17 @@ export default function Navbar() {
           position: "relative",
         }}
       >
+        <Box
+          display={{ xs: "none", md: "flex" }}
+          sx={{ height: "100%", width: "auto" }}
+        >
+          <img src={"/logo.svg"} style={{ height: "44px" }} alt={"logo-icon"} />
+        </Box>
         <IconButton
           aria-label="open menu"
           onClick={toggleDrawer}
           sx={{
-            display: { xs: "inline-flex", sm: "none" },
+            display: { xs: "inline-flex", md: "none" },
             color: "#fff",
             mr: 0.5,
           }}
@@ -170,7 +176,13 @@ export default function Navbar() {
           </Button>
         </Box>
 
-        <Box sx={{ ...styles.centerVH, gap: { xs: 1.2, sm: 2 } }}>
+        <Box
+          sx={{
+            ...styles.centerVH,
+            gap: { xs: 1.2, sm: 2 },
+            marginInlineEnd: 1,
+          }}
+        >
           <LanguageSelector />
 
           {!authed && (

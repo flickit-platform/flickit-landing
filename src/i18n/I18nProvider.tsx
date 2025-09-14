@@ -15,11 +15,13 @@ export default function I18nProvider({
     const lang = localStorage.getItem("lang") || "en";
     i18n.changeLanguage(lang);
     document.documentElement.dir = lang === "fa" ? "rtl" : "ltr";
+    document.documentElement.lang = lang;
 
     i18n.on("languageChanged", (lng: any) => {
       localStorage.setItem("lang", lng);
       document.cookie = `NEXT_LOCALE=${lng}; max-age=31536000; path=/`;
       document.documentElement.dir = lng === "fa" ? "rtl" : "ltr";
+      document.documentElement.lang = lng;
     });
 
     setReady(true);

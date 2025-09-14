@@ -1,6 +1,6 @@
 import Navbar from "@/components/common/nav/Navbar";
 import { ThemeProvider } from "@mui/material/styles";
-import { is_farsi, theme } from "@/config/theme";
+import { theme } from "@/config/theme";
 import "@/assets/font/fonts.css";
 import { cookies } from "next/headers";
 import Script from "next/script";
@@ -12,6 +12,8 @@ import I18nProvider from "@/i18n/I18nProvider";
 import KeycloakInit from "@/components/KeycloakInit";
 
 export async function generateMetadata() {
+  const lang = cookies().get("lang")?.value || "en";
+  const isFa = lang === "fa";
   const siteUrl =
     process.env.NEXT_PUBLIC_LOCAL_BASE_URL?.replace(/\/+$/, "") ||
     "http://flickit.org";
@@ -23,18 +25,19 @@ export async function generateMetadata() {
   const descFa =
     "کیفیت نرم‌افزار را شفاف ببینید و با کیت‌های ارزیابیِ کارشناسانه، مسیر بهبود را ساده و قابل اقدام کنید.";
 
-  const title = is_farsi ? titleFa : titleEn;
-  const description = is_farsi ? descFa : descEn;
+  const title = isFa ? titleFa : titleEn;
+  const description = isFa ? descFa : descEn;
+  const url = isFa ? `${siteUrl}/fa/` : `${siteUrl}/`;
 
   return {
     metadataBase: new URL(siteUrl),
     applicationName: "Flickit",
     title: {
       default: title,
-      template: is_farsi ? "%s | فلیکیت" : "%s | Flickit",
+      template: isFa ? "%s | فلیکیت" : "%s | Flickit",
     },
     description,
-    keywords: is_farsi
+    keywords: isFa
       ? [
           "فلیکیت",
           "ارزیابی کیفیت نرم‌افزار",
@@ -56,7 +59,7 @@ export async function generateMetadata() {
           "software maturity",
         ],
     alternates: {
-      canonical: is_farsi ? "/fa/" : "/",
+      canonical: isFa ? "/fa/" : "/",
       languages: {
         "en-US": "/",
         "fa-IR": "/fa/",
@@ -64,11 +67,11 @@ export async function generateMetadata() {
     },
     openGraph: {
       type: "website",
-      url: siteUrl,
+      url,
       siteName: "Flickit",
       title,
       description,
-      locale: is_farsi ? "fa_IR" : "en_US",
+      locale: isFa ? "fa_IR" : "en_US",
       images: [`${siteUrl}/og-cover.jpg`],
     },
     twitter: {

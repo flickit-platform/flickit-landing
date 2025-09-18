@@ -6,9 +6,8 @@ import localFont from "next/font/local";
 export const open_sans = Open_Sans({
   weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
+  display: "swap",
   variable: "--font-open-sans",
-  display: "optional",
-  preload: true,
 });
 
 export const sahel = localFont({
@@ -46,7 +45,7 @@ export const sahel = localFont({
   ],
   variable: "--font-sahel",
   display: "optional",
-  preload: true,
+  preload: false,
   fallback: ["system-ui", "Segoe UI", "Tahoma", "Arial", "sans-serif"],
 });
 

@@ -88,7 +88,7 @@ const FeaturesSection = () => (
     </Typography>
 
     <motion.div
-      variants={containerVariants}
+      variants={containerVariants as any}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
@@ -120,7 +120,7 @@ const FeaturesSection = () => (
               },
             }}
           >
-            <motion.div variants={cardVariants}>
+            <motion.div variants={cardVariants as any}>
               <FeatureCard {...item} />
             </motion.div>
           </Grid>

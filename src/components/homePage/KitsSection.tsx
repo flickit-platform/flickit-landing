@@ -104,7 +104,7 @@ const Kits = () => {
             sx={{ display: "flex" }}
           >
             <motion.div
-              variants={cardVariants}
+              variants={cardVariants as any}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}

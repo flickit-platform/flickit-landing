@@ -4,6 +4,8 @@ import Image from "next/image";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
 import { Trans } from "react-i18next";
 import { theme } from "@/config/theme";
 import { NEXT_PUBLIC_LOCAL_BASE_URL } from "@/utils/env";
@@ -26,8 +28,9 @@ const containerSx = {
 const bgWrapSx = {
   position: "relative",
   width: "100%",
-  height: "auto",
-  minHeight: { xs: "700px", sm: "none" },
+  // نکته‌ی مهم: نسبت تصویر ریسپانسیو برای توازن پس‌زمینه
+  aspectRatio: { xs: "3 / 4", sm: "16 / 10", md: "16 / 9" } as any,
+  minHeight: { xs: 700, md: 560 }, // اگر خواستی فقط از aspectRatio استفاده کن
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -35,7 +38,7 @@ const bgWrapSx = {
 } as const;
 
 const innerBoxSx = {
-  position: "relative", 
+  position: "relative",
   zIndex: 1,
   mx: { xs: "40px", sm: "auto" },
   maxWidth: { xs: "400px", sm: "600px", lg: "736px" },
@@ -70,9 +73,26 @@ const ctaBtnSx = {
 } as const;
 
 const HeroSection = () => {
+  const muiTheme = useTheme();
+  // فقط یکی از تصاویر واقعاً رندر شود
+  const isXs = useMediaQuery(muiTheme.breakpoints.down("sm"), { noSsr: true });
+  const isSm = useMediaQuery(
+    muiTheme.breakpoints.between("sm", "md"),
+    { noSsr: true }
+  );
+  const isMdUp = useMediaQuery(muiTheme.breakpoints.up("md"), { noSsr: true });
+  const isXlUp = useMediaQuery(muiTheme.breakpoints.up("xl"), { noSsr: true });
+
+  const bgSrc = useMemo(() => {
+    if (isXs) return "/hero-xs.svg";
+    if (isSm) return "/hero-sm.svg";
+    // بین md تا xl:
+    if (isMdUp && !isXlUp) return "/hero-md.svg";
+    return "/hero-xl.svg";
+  }, [isXs, isSm, isMdUp, isXlUp]);
+
   const href = useMemo(
-    () =>
-      `${NEXT_PUBLIC_LOCAL_BASE_URL}assessment-kits?lang=${i18next.language}`,
+    () => `${NEXT_PUBLIC_LOCAL_BASE_URL}assessment-kits?lang=${i18next.language}`,
     []
   );
 
@@ -89,28 +109,20 @@ const HeroSection = () => {
   return (
     <Box sx={containerSx}>
       <Box sx={bgWrapSx}>
-        <picture>
-          <source media="(max-width: 599px)" srcSet="/hero-xs.svg" />
-          <source
-            media="(min-width: 600px) and (max-width: 899px)"
-            srcSet="/hero-sm.svg"
-          />
-          <source
-            media="(min-width: 900px) and (max-width: 1535px)"
-            srcSet="/hero-md.svg"
-          />
-          <Image
-            src="/hero-xl.svg"
-            alt=""
-            fill
-            priority
-            sizes="(max-width: 600px) 100vw,
-                   (max-width: 900px) 100vw,
-                   (max-width: 1536px) 100vw,
-                   100vw"
-            style={{ objectFit: "cover", objectPosition: "center" }}
-          />
-        </picture>
+        {/* پس‌زمینه‌ی واحد، با سورس انتخاب‌شده و نسبت پایدار */}
+        <Image
+          src={bgSrc}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          style={{
+            objectFit: "cover",
+            objectPosition: "center",
+            // جلوگیری از کلیک‌گیری تصادفی
+            pointerEvents: "none",
+          }}
+        />
 
         <Box sx={innerBoxSx}>
           <AnimatedTextBanner />

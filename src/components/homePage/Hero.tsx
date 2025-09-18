@@ -86,7 +86,6 @@ const HeroSection = () => {
   const bgSrc = useMemo(() => {
     if (isXs) return "/hero-xs.svg";
     if (isSm) return "/hero-sm.svg";
-    // بین md تا xl:
     if (isMdUp && !isXlUp) return "/hero-md.svg";
     return "/hero-xl.svg";
   }, [isXs, isSm, isMdUp, isXlUp]);
@@ -109,7 +108,6 @@ const HeroSection = () => {
   return (
     <Box sx={containerSx}>
       <Box sx={bgWrapSx}>
-        {/* پس‌زمینه‌ی واحد، با سورس انتخاب‌شده و نسبت پایدار */}
         <Image
           src={bgSrc}
           alt=""
@@ -119,7 +117,6 @@ const HeroSection = () => {
           style={{
             objectFit: "cover",
             objectPosition: "center",
-            // جلوگیری از کلیک‌گیری تصادفی
             pointerEvents: "none",
           }}
         />

@@ -25,17 +25,6 @@ const containerSx = {
   pt: { xs: "0px", md: "44px" },
 } as const;
 
-const bgWrapSx = {
-  position: "relative",
-  width: "100%",
-  aspectRatio: { xs: "3 / 4", sm: "16 / 10", md: "16 / 9" } as any,
-  minHeight: { xs: 700, md: 560 },
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  overflow: "hidden",
-} as const;
-
 const innerBoxSx = {
   position: "relative",
   zIndex: 1,
@@ -73,20 +62,7 @@ const ctaBtnSx = {
 
 const HeroSection = () => {
   const muiTheme = useTheme();
-  const isXs = useMediaQuery(muiTheme.breakpoints.down("sm"), { noSsr: true });
-  const isSm = useMediaQuery(
-    muiTheme.breakpoints.between("sm", "md"),
-    { noSsr: true }
-  );
   const isMdUp = useMediaQuery(muiTheme.breakpoints.up("md"), { noSsr: true });
-  const isXlUp = useMediaQuery(muiTheme.breakpoints.up("xl"), { noSsr: true });
-
-  const bgSrc = useMemo(() => {
-    if (isXs) return "/hero-xs.svg";
-    if (isSm) return "/hero-sm.svg";
-    if (isMdUp && !isXlUp) return "/hero-md.svg";
-    return "/hero-xl.svg";
-  }, [isXs, isSm, isMdUp, isXlUp]);
 
   const href = useMemo(
     () => `${NEXT_PUBLIC_LOCAL_BASE_URL}assessment-kits?lang=${i18next.language}`,
@@ -105,48 +81,105 @@ const HeroSection = () => {
 
   return (
     <Box sx={containerSx}>
-      <Box sx={bgWrapSx}>
-        <Image
-          src={bgSrc}
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          style={{
-            objectFit: "cover",
-            objectPosition: "center",
-            pointerEvents: "none",
+      {isMdUp ? (
+        <Box
+          sx={{
+            position: "relative",
+            width: "100%",
+            height: "auto",
+            minHeight: { xs: "700px", sm: "none" },
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            overflow: "hidden",
           }}
-        />
+        >
+          <picture>
+            <source media="(max-width: 599px)" srcSet="/hero-xs.svg" />
+            <source media="(min-width: 600px) and (max-width: 899px)" srcSet="/hero-sm.svg" />
+            <source media="(min-width: 900px) and (max-width: 1535px)" srcSet="/hero-md.svg" />
+            <Image
+              src="/hero-xl.svg"
+              alt=""
+              fill
+              priority
+              sizes="(max-width: 600px) 100vw,
+                     (max-width: 900px) 100vw,
+                     (max-width: 1536px) 100vw,
+                     100vw"
+              style={{ objectFit: "cover", objectPosition: "center" }}
+            />
+          </picture>
 
-        <Box sx={innerBoxSx}>
-          <AnimatedTextBanner />
-
-          <Typography sx={titleSx}>
-            <Trans i18nKey={"hero.topBannerTitle"} />
-          </Typography>
-
-          <Typography sx={descSx}>
-            <Trans i18nKey={"hero.topBannerDesc"} />
-          </Typography>
-
-          <Button
-            component="a"
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            variant="contained"
-            sx={ctaBtnSx}
-            size="large"
-            onClick={(e) =>
-              handleButtonClick(e, "Start your free self-assessment hero")
-            }
-            aria-label="Start your free self-assessment"
-          >
-            <Trans i18nKey={"hero.startSelfAssessment"} />
-          </Button>
+          <Box sx={innerBoxSx}>
+            <AnimatedTextBanner />
+            <Typography sx={titleSx}>
+              <Trans i18nKey={"hero.topBannerTitle"} />
+            </Typography>
+            <Typography sx={descSx}>
+              <Trans i18nKey={"hero.topBannerDesc"} />
+            </Typography>
+            <Button
+              component="a"
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="contained"
+              sx={ctaBtnSx}
+              size="large"
+              onClick={(e) => handleButtonClick(e, "Start your free self-assessment hero")}
+              aria-label="Start your free self-assessment"
+            >
+              <Trans i18nKey={"hero.startSelfAssessment"} />
+            </Button>
+          </Box>
         </Box>
-      </Box>
+      ) : (
+        <Box
+          sx={{
+            position: "relative",
+            width: "100%",
+            aspectRatio: { xs: "3 / 4", sm: "16 / 10" } as any,
+            minHeight: { xs: 700, sm: 520 },
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            overflow: "hidden",
+          }}
+        >
+          <Image
+            src="/hero-xs.svg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            style={{ objectFit: "cover", objectPosition: "center", pointerEvents: "none" }}
+          />
+
+          <Box sx={innerBoxSx}>
+            <AnimatedTextBanner />
+            <Typography sx={titleSx}>
+              <Trans i18nKey={"hero.topBannerTitle"} />
+            </Typography>
+            <Typography sx={descSx}>
+              <Trans i18nKey={"hero.topBannerDesc"} />
+            </Typography>
+            <Button
+              component="a"
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="contained"
+              sx={ctaBtnSx}
+              size="large"
+              onClick={(e) => handleButtonClick(e, "Start your free self-assessment hero")}
+              aria-label="Start your free self-assessment"
+            >
+              <Trans i18nKey={"hero.startSelfAssessment"} />
+            </Button>
+          </Box>
+        </Box>
+      )}
     </Box>
   );
 };

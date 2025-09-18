@@ -5,8 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { styles } from "@/config/styles";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
-import { farsiFontFamily, primaryFontFamily } from "@/utils/fonts";
 import useScreenResize from "@/utils/useScreenResize";
+import { open_sans, sahel } from "@/config/theme";
 
 const messages = [
   "hero.quotes.systemGotHacked",
@@ -81,8 +81,8 @@ const AnimatedTextBanner = () => {
                 },
                 fontFamily:
                   i18next.language === "fa"
-                    ? farsiFontFamily
-                    : primaryFontFamily,
+                    ? sahel.style.fontFamily
+                    : open_sans.style.fontFamily,
                 display: "inline-block",
               }}
             >

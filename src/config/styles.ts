@@ -1,6 +1,5 @@
-import { farsiFontFamily, primaryFontFamily } from "@/utils/fonts";
 import { keyframes, SxProps, Theme } from "@mui/material/styles";
-
+import { open_sans, sahel } from "./theme";
 
 const style = (style: SxProps<Theme>): SxProps<Theme> => style;
 
@@ -87,7 +86,7 @@ const sharedChipStyles = {
   },
   rtlStyle: (isRTL = true) => ({
     direction: isRTL ? "rtl" : "ltr",
-    fontFamily: isRTL ? farsiFontFamily : primaryFontFamily,
+    fontFamily: isRTL ?  sahel.style.fontFamily : open_sans.style.fontFamily,
   }),
 };
 
@@ -101,7 +100,6 @@ const cards = {
     maxWidth: "460px",
   }),
 };
-
 
 const buttons = {
   compareButton: style({
@@ -246,7 +244,6 @@ export const styles = {
   cards,
 };
 
-
 export const C1 = "#B71515";
 export const C2 = "#D74427";
 export const C3 = "#F55C3D";
@@ -298,7 +295,7 @@ export const maturityLevelBGColorMap: any = {
 export const confidenceColor = [C1, C3, C4, C8, C10];
 export const getMaturityLevelColors = (
   maturity_level_number: number,
-  bg?: boolean,
+  bg?: boolean
 ) => {
   let maturityInstance = maturityLevelColorMap;
   if (bg) {
@@ -333,7 +330,7 @@ export const generateColorFromString = (
   palette: Record<
     string,
     { backgroundColor: string; color: string }
-  > = chipColorPalette,
+  > = chipColorPalette
 ) => {
   let hash = 0;
   for (let i = 0; i < str?.length; i++) {

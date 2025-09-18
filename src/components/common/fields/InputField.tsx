@@ -5,10 +5,9 @@ import TextField, { OutlinedTextFieldProps } from "@mui/material/TextField";
 import { ReactNode, useState, useRef, useEffect, ChangeEvent } from "react";
 import { useFormContext } from "react-hook-form";
 import getFieldError from "@/utils/getFieldError";
-import { theme } from "@/config/theme";
+import { open_sans, sahel, theme } from "@/config/theme";
 import languageDetector from "@/utils/languageDetector";
 import { t } from "i18next";
-import { farsiFontFamily, primaryFontFamily } from "@/utils/fonts";
 
 const InputField = () => {
   return <TextField />;
@@ -87,8 +86,8 @@ const InputFieldUC = (props: IInputFieldUCProps) => {
       const inputValue = inputRef.current.value;
       const isFarsiText = languageDetector(inputValue);
       inputRef.current.style.fontFamily = isFarsiText
-        ? farsiFontFamily
-        : primaryFontFamily;
+        ? sahel.style.fontFamily
+        : open_sans.style.fontFamily;
     }
   }, [inputRef.current?.value, isFocused]);
 
@@ -112,8 +111,8 @@ const InputFieldUC = (props: IInputFieldUCProps) => {
 
       event.target.dir = direction;
       event.target.style.fontFamily = isFarsiText
-        ? farsiFontFamily
-        : primaryFontFamily;
+        ? sahel.style.fontFamily
+        : open_sans.style.fontFamily;
     }
 
     if (type === "password" && inputRef.current) {
@@ -156,7 +155,10 @@ const InputFieldUC = (props: IInputFieldUCProps) => {
         background: pallet?.background,
         borderRadius: borderRadius,
         "& .MuiOutlinedInput-root": {
-          "& ::placeholder": { ...theme.typography.bodyMedium, textAlign: languageDetector(placeholder) ? "right" : "left"},
+          "& ::placeholder": {
+            ...theme.typography.bodyMedium,
+            textAlign: languageDetector(placeholder) ? "right" : "left",
+          },
           "& fieldset": {
             borderColor: pallet?.borderColor,
             borderRadius: borderRadius,

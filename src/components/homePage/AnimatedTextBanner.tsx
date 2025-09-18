@@ -1,11 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { motion, AnimatePresence } from "framer-motion";
-import { styles } from "@/config/styles";
+import { useAnimationControls, useReducedMotion, motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import i18next from "i18next";
-import useScreenResize from "@/utils/useScreenResize";
 import { open_sans, sahel } from "@/config/theme";
 
 const messages = [
@@ -23,73 +20,84 @@ const messages = [
   "hero.quotes.notUserFriendly",
   "hero.quotes.missingCertifications",
   "hero.quotes.technicalIssueBlockingDev",
-];
+] as const;
+
+const wrapperSx = {
+  mt: { xs: 6, sm: 0, md: 10 },
+  mb: 2,
+  position: "relative",
+  display: "flex",
+  justifyContent: "center",
+} as const;
+
+const bubbleSx = {
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  background:
+    "radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(171,203,237,0.15) 100%)",
+  py: { xs: "8px", md: "24px" },
+  px: "32px",
+  borderRadius: "16px",
+} as const;
+
+const textBaseSx = {
+  fontWeight: 400,
+  color: "#fff",
+  fontSize: { xs: "24px", md: "48px" },
+  display: "inline-block",
+  whiteSpace: { xs: "normal", md: "nowrap" } as any,
+  textAlign: "center" as const,
+};
 
 const AnimatedTextBanner = () => {
+  const { t, i18n } = useTranslation();
+  const prefersReducedMotion = useReducedMotion();
   const [index, setIndex] = useState(0);
-  const { t } = useTranslation();
-  const isMobile = useScreenResize("sm");
+  const controls = useAnimationControls();
+
+  const texts = useMemo(() => messages.map((k) => t(k)), [i18n.language, t]);
+  const isFa = i18n.language === "fa";
+  const fontFamily = isFa ? sahel.style.fontFamily : open_sans.style.fontFamily;
+  const fontStyle = isFa ? "normal" : "italic";
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % messages.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
+    let alive = true;
+
+    controls.set({ opacity: 1 });
+
+    const tick = async () => {
+      if (!alive) return;
+      if (!prefersReducedMotion) {
+        await controls.start({ opacity: 0, transition: { duration: 0.25 } });
+      }
+      setIndex((prev) => (prev + 1) % texts.length);
+      if (!prefersReducedMotion) {
+        await controls.start({ opacity: 1, transition: { duration: 0.25 } });
+      }
+    };
+
+    const id = setInterval(tick, 5000);
+    return () => {
+      alive = false;
+      clearInterval(id);
+    };
+  }, [controls, prefersReducedMotion, texts.length]);
 
   return (
-    <Box
-      sx={{
-        mt: { xs: 6, sm: 0, md: 10 },
-        mb: 2,
-        position: "relative",
-        ...styles.centerH,
-      }}
-    >
-      <Box
-        sx={{
-          ...styles.centerVH,
-          background:
-            "radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(171,203,237,0.15) 100%)",
-          py: { xs: "8px", md: "24px" },
-          px: "32px",
-          borderRadius: "16px",
-          display: "inline-flex",
-        }}
-      >
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={index}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            style={{
-              whiteSpace: isMobile ? "wrap" : "nowrap",
-              overflow: "hidden",
-              textAlign: "center",
-            }}
+    <Box sx={wrapperSx}>
+      <Box sx={bubbleSx}>
+        <motion.div
+          animate={controls}
+          style={{ willChange: "opacity" }}
+        >
+          <Typography
+            sx={textBaseSx}
+            style={{ fontFamily, fontStyle }}
           >
-            <Typography
-              sx={{
-                fontStyle: i18next.language === "fa" ? "none" : "italic",
-                fontWeight: 400,
-                color: "#fff",
-                fontSize: {
-                  xs: "24px",
-                  md: "48px",
-                },
-                fontFamily:
-                  i18next.language === "fa"
-                    ? sahel.style.fontFamily
-                    : open_sans.style.fontFamily,
-                display: "inline-block",
-              }}
-            >
-              {t(messages[index])}
-            </Typography>
-          </motion.div>
-        </AnimatePresence>
+            {texts[index]}
+          </Typography>
+        </motion.div>
       </Box>
     </Box>
   );

@@ -9,7 +9,6 @@ import { theme } from "@/config/theme";
 import { NEXT_PUBLIC_LOCAL_BASE_URL } from "@/utils/env";
 import i18next from "i18next";
 
-// اگر AnimatedTextBanner سنگین است، بهتره lazy شود:
 const AnimatedTextBanner = dynamic(() => import("./AnimatedTextBanner"), {
   ssr: false,
   loading: () => null,
@@ -36,7 +35,7 @@ const bgWrapSx = {
 } as const;
 
 const innerBoxSx = {
-  position: "relative", // بالای بک‌گراند
+  position: "relative", 
   zIndex: 1,
   mx: { xs: "40px", sm: "auto" },
   maxWidth: { xs: "400px", sm: "600px", lg: "736px" },
@@ -72,7 +71,8 @@ const ctaBtnSx = {
 
 const HeroSection = () => {
   const href = useMemo(
-    () => `${NEXT_PUBLIC_LOCAL_BASE_URL}assessment-kits?lang=${i18next.language}`,
+    () =>
+      `${NEXT_PUBLIC_LOCAL_BASE_URL}assessment-kits?lang=${i18next.language}`,
     []
   );
 
@@ -89,26 +89,26 @@ const HeroSection = () => {
   return (
     <Box sx={containerSx}>
       <Box sx={bgWrapSx}>
-        {/* پس‌زمینه: با art-direction برای breakpointها */}
         <picture>
-          {/* موبایل کوچک */}
           <source media="(max-width: 599px)" srcSet="/hero-xs.svg" />
-          {/* تبلت */}
-          <source media="(min-width: 600px) and (max-width: 899px)" srcSet="/hero-sm.svg" />
-          {/* دسکتاپ متوسط */}
-          <source media="(min-width: 900px) and (max-width: 1535px)" srcSet="/hero-md.svg" />
-          {/* دسکتاپ بزرگ */}
+          <source
+            media="(min-width: 600px) and (max-width: 899px)"
+            srcSet="/hero-sm.svg"
+          />
+          <source
+            media="(min-width: 900px) and (max-width: 1535px)"
+            srcSet="/hero-md.svg"
+          />
           <Image
-            src="/hero-xl.svg"        // اگر SVG داری، می‌تونی همان SVG را بگذاری؛ اما WebP/AVIF بهتر فشرده می‌شود
+            src="/hero-xl.svg"
             alt=""
             fill
-            priority                   // این تصویر LCP احتمالاً
+            priority
             sizes="(max-width: 600px) 100vw,
                    (max-width: 900px) 100vw,
                    (max-width: 1536px) 100vw,
                    100vw"
             style={{ objectFit: "cover", objectPosition: "center" }}
-            // اگر از فایل‌های static import استفاده کنی، می‌تونی placeholder="blur" هم بگیری
           />
         </picture>
 
@@ -131,7 +131,9 @@ const HeroSection = () => {
             variant="contained"
             sx={ctaBtnSx}
             size="large"
-            onClick={(e) => handleButtonClick(e, "Start your free self-assessment hero")}
+            onClick={(e) =>
+              handleButtonClick(e, "Start your free self-assessment hero")
+            }
             aria-label="Start your free self-assessment"
           >
             <Trans i18nKey={"hero.startSelfAssessment"} />

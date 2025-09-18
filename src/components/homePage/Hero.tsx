@@ -28,9 +28,8 @@ const containerSx = {
 const bgWrapSx = {
   position: "relative",
   width: "100%",
-  // نکته‌ی مهم: نسبت تصویر ریسپانسیو برای توازن پس‌زمینه
   aspectRatio: { xs: "3 / 4", sm: "16 / 10", md: "16 / 9" } as any,
-  minHeight: { xs: 700, md: 560 }, // اگر خواستی فقط از aspectRatio استفاده کن
+  minHeight: { xs: 700, md: 560 },
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -74,7 +73,6 @@ const ctaBtnSx = {
 
 const HeroSection = () => {
   const muiTheme = useTheme();
-  // فقط یکی از تصاویر واقعاً رندر شود
   const isXs = useMediaQuery(muiTheme.breakpoints.down("sm"), { noSsr: true });
   const isSm = useMediaQuery(
     muiTheme.breakpoints.between("sm", "md"),

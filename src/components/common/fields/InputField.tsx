@@ -204,7 +204,7 @@ const InputFieldUC = (props: IInputFieldUCProps) => {
   );
 };
 
-const usePasswordFieldAdornment: () => [boolean, () => void] = () => {
+export const usePasswordFieldAdornment: () => [boolean, () => void] = () => {
   const [showPassword, setShowPassword] = useState(false);
   const toggleShowPassword = () => {
     setShowPassword((state) => !state);

@@ -1,9 +1,54 @@
 "use client";
-
 import { createTheme } from "@mui/material/styles";
-import { farsiFontFamily, primaryFontFamily } from "@/utils/fonts";
-import i18next from "i18next";
-import { BreakpointOverrides } from "@mui/system";
+import { Open_Sans } from "next/font/google";
+import localFont from "next/font/local";
+
+export const open_sans = Open_Sans({
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-open-sans",
+});
+
+export const sahel = localFont({
+  src: [
+    {
+      path: "../assets/fonts/Sahel/Sahel-Light-FD.woff2",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/Sahel/Sahel-Light-FD.woff2",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/Sahel/Sahel-FD.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/Sahel/Sahel-FD.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/Sahel/Sahel-SemiBold-FD.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/Sahel/Sahel-Bold-FD.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-sahel",
+  display: "optional",
+  preload: false,
+  fallback: ["system-ui", "Segoe UI", "Tahoma", "Arial", "sans-serif"],
+});
+
 declare module "@mui/material/styles/createPalette" {
   interface TypeBackground {
     secondary: string;
@@ -147,7 +192,6 @@ export const is_farsi =
   typeof window !== "undefined" && localStorage.lang === "fa";
 
 const fontWeight = {
-  extraBold: 800,
   bold: 700,
   semiBold: 600,
   medium: 400,
@@ -168,9 +212,11 @@ export const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+    fontFamily: is_farsi ? sahel.style.fontFamily : open_sans.style.fontFamily,
     subSmall: {
-      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+      fontFamily: is_farsi
+        ? sahel.style.fontFamily
+        : open_sans.style.fontFamily,
       fontWeight: 500,
       lineHeight: 1.57,
       letterSpacing: is_farsi ? "0px" : "0.09em",
@@ -178,183 +224,239 @@ export const theme = createTheme({
       color: "GrayText",
     },
     subMedium: {
-      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+      fontFamily: is_farsi
+        ? sahel.style.fontFamily
+        : open_sans.style.fontFamily,
       fontWeight: 500,
       lineHeight: 1.57,
       letterSpacing: is_farsi ? "0px" : "0.09em",
       color: "GrayText",
     },
     subLarge: {
-      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+      fontFamily: is_farsi
+        ? sahel.style.fontFamily
+        : open_sans.style.fontFamily,
       fontWeight: 500,
       lineHeight: 1.57,
       letterSpacing: is_farsi ? "0px" : "0.09em",
       color: "GrayText",
     },
     headlineSmall: {
-      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+      fontFamily: is_farsi
+        ? sahel.style.fontFamily
+        : open_sans.style.fontFamily,
       fontWeight: fontWeight.bold,
       fontSize: "1.5rem",
       lineHeight: "2rem",
       letterSpacing: is_farsi ? "0px" : "-3%",
     },
     headlineMedium: {
-      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+      fontFamily: is_farsi
+        ? sahel.style.fontFamily
+        : open_sans.style.fontFamily,
       fontWeight: fontWeight.bold,
       fontSize: "2rem",
       lineHeight: is_farsi ? "auto" : "2.25rem",
       letterSpacing: "0px",
     },
     headlineLarge: {
-      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+      fontFamily: is_farsi
+        ? sahel.style.fontFamily
+        : open_sans.style.fontFamily,
       fontWeight: fontWeight.bold,
       fontSize: "3rem",
       lineHeight: "auto",
       letterSpacing: "0px",
     },
     headlineXLarge: {
-      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+      fontFamily: is_farsi
+        ? sahel.style.fontFamily
+        : open_sans.style.fontFamily,
       fontWeight: fontWeight.bold,
       fontSize: "4rem",
       lineHeight: "auto",
       letterSpacing: "0px",
     },
     displaySmall: {
-      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+      fontFamily: is_farsi
+        ? sahel.style.fontFamily
+        : open_sans.style.fontFamily,
       fontSize: "1.5rem",
       fontWeight: fontWeight.regular,
       letterSpacing: is_farsi ? "0px" : "0",
       lineHeight: "2rem",
     },
     displayMedium: {
-      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+      fontFamily: is_farsi
+        ? sahel.style.fontFamily
+        : open_sans.style.fontFamily,
       fontSize: "1.75rem",
       fontWeight: fontWeight.bold,
       lineHeight: "2.25rem",
       letterSpacing: is_farsi ? "0px" : "0",
     },
     displayLarge: {
-      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+      fontFamily: is_farsi
+        ? sahel.style.fontFamily
+        : open_sans.style.fontFamily,
       fontSize: "4.5rem",
       fontWeight: fontWeight.bold,
       lineHeight: "5.75rem",
       letterSpacing: is_farsi ? "0px" : "0",
     },
     titleSmall: {
-      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+      fontFamily: is_farsi
+        ? sahel.style.fontFamily
+        : open_sans.style.fontFamily,
       fontWeight: fontWeight.bold,
       fontSize: "0.875rem",
       lineHeight: is_farsi ? "auto" : "1.25rem",
       letterSpacing: is_farsi ? "0px" : ".1px",
     },
     titleMedium: {
-      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+      fontFamily: is_farsi
+        ? sahel.style.fontFamily
+        : open_sans.style.fontFamily,
       fontWeight: fontWeight.bold,
       fontSize: "1rem",
       letterSpacing: is_farsi ? "0px" : ".15px",
       lineHeight: is_farsi ? "auto" : "1.5rem",
     },
     titleLarge: {
-      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+      fontFamily: is_farsi
+        ? sahel.style.fontFamily
+        : open_sans.style.fontFamily,
       fontWeight: fontWeight.bold,
       fontSize: "1.375rem",
       lineHeight: is_farsi ? "auto" : "1.75rem",
       letterSpacing: is_farsi ? "0px" : "0",
     },
     bodySmall: {
-      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+      fontFamily: is_farsi
+        ? sahel.style.fontFamily
+        : open_sans.style.fontFamily,
       fontWeight: fontWeight.regular,
       fontSize: "0.75rem",
       lineHeight: is_farsi ? "auto" : "150%",
       letterSpacing: is_farsi ? "0px" : "0.4px",
     },
     bodyMedium: {
-      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+      fontFamily: is_farsi
+        ? sahel.style.fontFamily
+        : open_sans.style.fontFamily,
       fontWeight: fontWeight.regular,
       fontSize: "0.875rem",
       lineHeight: is_farsi ? "auto" : "150%",
       letterSpacing: is_farsi ? "0px" : "0.25px",
     },
     bodyLarge: {
-      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+      fontFamily: is_farsi
+        ? sahel.style.fontFamily
+        : open_sans.style.fontFamily,
       fontWeight: fontWeight.regular,
       fontSize: "1rem",
       lineHeight: is_farsi ? "auto" : "1.5rem",
       letterSpacing: is_farsi ? "0px" : "0.5px",
     },
     labelSmall: {
-      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+      fontFamily: is_farsi
+        ? sahel.style.fontFamily
+        : open_sans.style.fontFamily,
       fontWeight: is_farsi ? fontWeight.bold : fontWeight.regular,
       fontSize: is_farsi ? "0.625rem" : "0.68rem",
       lineHeight: is_farsi ? "auto" : "1rem",
       letterSpacing: "0px",
     },
     labelMedium: {
-      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+      fontFamily: is_farsi
+        ? sahel.style.fontFamily
+        : open_sans.style.fontFamily,
       fontWeight: is_farsi ? fontWeight.bold : fontWeight.semiBold,
       fontSize: "0.75rem",
       lineHeight: is_farsi ? "auto" : "1rem",
       letterSpacing: is_farsi ? "0px" : "0.5px",
     },
     labelLarge: {
-      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+      fontFamily: is_farsi
+        ? sahel.style.fontFamily
+        : open_sans.style.fontFamily,
       fontWeight: fontWeight.bold,
       fontSize: "0.875rem",
       lineHeight: is_farsi ? "auto" : "1.25rem",
       letterSpacing: is_farsi ? "0px" : "0.1px",
     },
     labelCondensed: {
-      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+      fontFamily: is_farsi
+        ? sahel.style.fontFamily
+        : open_sans.style.fontFamily,
       fontWeight: fontWeight.regular,
       fontSize: "0.75rem",
       lineHeight: "0.75rem",
       letterSpacing: is_farsi ? "0px" : "0.5px",
     },
     semiBoldSmall: {
-      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+      fontFamily: is_farsi
+        ? sahel.style.fontFamily
+        : open_sans.style.fontFamily,
       fontWeight: is_farsi ? fontWeight.medium : fontWeight.semiBold,
       fontSize: "0.75rem",
       lineHeight: is_farsi ? "auto" : "1rem",
       letterSpacing: is_farsi ? "0px" : "0.5px",
     },
     semiBoldMedium: {
-      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+      fontFamily: is_farsi
+        ? sahel.style.fontFamily
+        : open_sans.style.fontFamily,
       fontWeight: is_farsi ? fontWeight.medium : fontWeight.semiBold,
       fontSize: "0.875rem",
       lineHeight: is_farsi ? "auto" : "1.25rem",
       letterSpacing: is_farsi ? "0px" : "0.1px",
     },
     semiBoldLarge: {
-      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+      fontFamily: is_farsi
+        ? sahel.style.fontFamily
+        : open_sans.style.fontFamily,
       fontWeight: is_farsi ? fontWeight.medium : fontWeight.semiBold,
       fontSize: "1rem",
       lineHeight: is_farsi ? "auto" : "1.5rem",
       letterSpacing: is_farsi ? "0px" : "0.15px",
     },
     semiBoldXLarge: {
-      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+      fontFamily: is_farsi
+        ? sahel.style.fontFamily
+        : open_sans.style.fontFamily,
       fontWeight: is_farsi ? fontWeight.medium : fontWeight.semiBold,
       fontSize: is_farsi ? "1.25rem" : "1.375rem",
       lineHeight: is_farsi ? "auto" : "1.75rem",
       letterSpacing: "0px",
     },
     button: {
-      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+      fontFamily: is_farsi
+        ? sahel.style.fontFamily
+        : open_sans.style.fontFamily,
       letterSpacing: is_farsi ? "0px" : ".05em",
     },
     h3: {
-      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+      fontFamily: is_farsi
+        ? sahel.style.fontFamily
+        : open_sans.style.fontFamily,
     },
     h4: {
-      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+      fontFamily: is_farsi
+        ? sahel.style.fontFamily
+        : open_sans.style.fontFamily,
       opacity: 0.9,
     },
     h5: {
-      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+      fontFamily: is_farsi
+        ? sahel.style.fontFamily
+        : open_sans.style.fontFamily,
       opacity: 0.85,
     },
     h6: {
-      fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+      fontFamily: is_farsi
+        ? sahel.style.fontFamily
+        : open_sans.style.fontFamily,
       lineHeight: 1.6,
       opacity: 0.85,
     },
@@ -413,7 +515,9 @@ export const theme = createTheme({
       defaultProps: {
         bgcolor: palette.primary.main,
         color: palette.primary.contrastText,
-        fontFamily: is_farsi ? farsiFontFamily : primaryFontFamily,
+        fontFamily: is_farsi
+          ? sahel.style.fontFamily
+          : open_sans.style.fontFamily,
         marginBottom: "8px",
       },
       styleOverrides: {

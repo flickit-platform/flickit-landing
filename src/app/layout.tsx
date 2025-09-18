@@ -1,13 +1,11 @@
 import Navbar from "@/components/common/nav/Navbar";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "@/config/theme";
-import "@/assets/font/fonts.css";
 import { cookies } from "next/headers";
 import Script from "next/script";
 import React from "react";
 import { ToastContainer } from "react-toastify";
 import { toastDefaultConfig } from "@/config/toastConfigs";
-import { farsiFontFamily, primaryFontFamily } from "@/utils/fonts";
 import I18nProvider from "@/i18n/I18nProvider";
 import KeycloakInit from "@/components/KeycloakInit";
 
@@ -140,7 +138,8 @@ export default function RootLayout({
             <ToastContainer
               {...toastDefaultConfig}
               toastStyle={{
-                fontFamily: lang === "fa" ? farsiFontFamily : primaryFontFamily,
+                fontFamily:
+                  lang === "fa" ? "var(--font-sahel)" : "var(--font-open-sans)",
                 direction: dir,
                 textAlign: lang === "fa" ? "right" : "left",
               }}

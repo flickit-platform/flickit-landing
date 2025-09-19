@@ -10,16 +10,18 @@ import I18nProvider from "@/i18n/I18nProvider";
 import KeycloakInit from "@/components/KeycloakInit";
 import { headers } from "next/headers";
 
-export const dynamic = "force-dynamic"; // مهم
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata() {
   const h = headers();
-  const cookieHeader = h.get("cookie") ?? "";
-  const m = cookieHeader.match(/(?:^|;\s*)NEXT_LOCALE=(fa|en)\b/);
+  const hLocale = h.get("x-locale");
   const accept = (h.get("accept-language") || "").toLowerCase();
+  const lang = (hLocale === "fa" || hLocale === "en")
+    ? hLocale
+    : (accept.startsWith("fa") ? "fa" : "en");
 
-  const lang = m?.[1] ?? (accept.startsWith("fa") ? "fa" : "en");
   const isFa = lang === "fa";
+
 
   const siteUrl =
     process.env.NEXT_PUBLIC_LOCAL_BASE_URL?.replace(/\/+$/, "") ||

@@ -3,21 +3,15 @@ import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "@/config/theme";
 import { cookies } from "next/headers";
 import Script from "next/script";
-import React, { ReactNode } from "react";
+import React from "react";
 import { ToastContainer } from "react-toastify";
 import { toastDefaultConfig } from "@/config/toastConfigs";
 import I18nProvider from "@/i18n/I18nProvider";
 import KeycloakInit from "@/components/KeycloakInit";
-import { useRouter } from "next/router";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { locale: "fa" | "en" };
-}) {
-  const lang = params.locale === "fa" ? "fa" : "en";
+export async function generateMetadata() {
+  const lang = cookies().get("lang")?.value || "en";
   const isFa = lang === "fa";
-
   const siteUrl =
     process.env.NEXT_PUBLIC_LOCAL_BASE_URL?.replace(/\/+$/, "") ||
     "http://flickit.org";
@@ -95,12 +89,10 @@ export async function generateMetadata({
 
 export default function RootLayout({
   children,
-  params,
 }: {
-  children: ReactNode;
-  params: { locale: "fa" | "en" };
+  children: React.ReactNode;
 }) {
-  const lang = params.locale === "fa" ? "fa" : "en";
+  const lang = cookies().get("lang")?.value || "en";
   const dir = lang === "fa" ? "rtl" : "ltr";
 
   const siteUrl =

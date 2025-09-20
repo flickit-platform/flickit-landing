@@ -8,57 +8,35 @@ import { ToastContainer } from "react-toastify";
 import { toastDefaultConfig } from "@/config/toastConfigs";
 import I18nProvider from "@/i18n/I18nProvider";
 import KeycloakInit from "@/components/KeycloakInit";
+import { headers } from "next/headers";
+
+export const dynamic = "force-dynamic"; // مهم
 
 export async function generateMetadata() {
-  const lang = cookies().get("NEXT_LOCALE")?.value || "en";
+  const h = headers();
+  const cookieHeader = h.get("cookie") ?? "";
+  const m = cookieHeader.match(/(?:^|;\s*)NEXT_LOCALE=(fa|en)\b/);
+  const accept = (h.get("accept-language") || "").toLowerCase();
+
+  const lang = m?.[1] ?? (accept.startsWith("fa") ? "fa" : "en");
   const isFa = lang === "fa";
+
   const siteUrl =
     process.env.NEXT_PUBLIC_LOCAL_BASE_URL?.replace(/\/+$/, "") ||
-    "http://flickit.org";
+    "https://flickit.org";
 
-  const titleEn = "Flickit";
-  const descEn =
-    "Identify and resolve your software systems’ issues and drive their growth with assessment kits crafted by seasoned experts.";
-  const titleFa = "فلیکیت";
-  const descFa =
-    "کیفیت نرم‌افزار را شفاف ببینید و با کیت‌های ارزیابیِ کارشناسانه، مسیر بهبود را ساده و قابل اقدام کنید.";
-
-  const title = isFa ? titleFa : titleEn;
-  const description = isFa ? descFa : descEn;
-  const url = isFa ? `${siteUrl}/fa/` : `${siteUrl}/`;
+  const title = isFa ? "فلیکیت" : "Flickit";
+  const description = isFa
+    ? "کیفیت نرم‌افزار را شفاف ببینید و با کیت‌های ارزیابیِ کارشناسانه، مسیر بهبود را ساده و قابل اقدام کنید."
+    : "Identify and resolve your software systems’ issues and drive their growth with assessment kits crafted by seasoned experts.";
 
   return {
     metadataBase: new URL(siteUrl),
-    applicationName: "Flickit",
-    title: {
-      default: title,
-      template: isFa ? "%s | فلیکیت" : "%s | Flickit",
-    },
+    title: { default: title, template: isFa ? "%s | فلیکیت" : "%s | Flickit" },
     description,
-    keywords: isFa
-      ? [
-          "فلیکیت",
-          "ارزیابی کیفیت نرم‌افزار",
-          "کیت ارزیابی",
-          "کیفیت نرم‌افزار",
-          "شاخص‌های کیفیت",
-          "DevOps",
-          "QA",
-          "بلوغ نرم‌افزار",
-        ]
-      : [
-          "Flickit",
-          "software quality assessment",
-          "assessment kits",
-          "software quality",
-          "engineering teams",
-          "QA",
-          "DevOps",
-          "software maturity",
-        ],
     openGraph: {
       type: "website",
-      url,
+      url: siteUrl,
       siteName: "Flickit",
       title,
       description,
@@ -71,12 +49,6 @@ export async function generateMetadata() {
       description,
       images: [`${siteUrl}/og-cover.jpg`],
     },
-    icons: {
-      icon: "/favicon.ico",
-      apple: "/apple-touch-icon.png",
-    },
-    manifest: "/manifest.json",
-    themeColor: "#0b0f19",
   };
 }
 

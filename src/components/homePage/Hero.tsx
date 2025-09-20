@@ -58,6 +58,9 @@ const ctaBtnSx = {
   ...theme.typography.titleMedium,
   color: theme.palette.primary.main,
   fontWeight: 600,
+  "&:hover": {
+    bgcolor: "#F3F7FB",
+  },
 } as const;
 
 const HeroSection = () => {
@@ -65,7 +68,8 @@ const HeroSection = () => {
   const isMdUp = useMediaQuery(muiTheme.breakpoints.up("md"), { noSsr: true });
 
   const href = useMemo(
-    () => `${NEXT_PUBLIC_LOCAL_BASE_URL}assessment-kits?lang=${i18next.language}`,
+    () =>
+      `${NEXT_PUBLIC_LOCAL_BASE_URL}assessment-kits?lang=${i18next.language}`,
     []
   );
 
@@ -96,8 +100,14 @@ const HeroSection = () => {
         >
           <picture>
             <source media="(max-width: 599px)" srcSet="/hero-xs.svg" />
-            <source media="(min-width: 600px) and (max-width: 899px)" srcSet="/hero-sm.svg" />
-            <source media="(min-width: 900px) and (max-width: 1535px)" srcSet="/hero-md.svg" />
+            <source
+              media="(min-width: 600px) and (max-width: 899px)"
+              srcSet="/hero-sm.svg"
+            />
+            <source
+              media="(min-width: 900px) and (max-width: 1535px)"
+              srcSet="/hero-md.svg"
+            />
             <Image
               src="/hero-xl.svg"
               alt=""
@@ -127,7 +137,9 @@ const HeroSection = () => {
               variant="contained"
               sx={ctaBtnSx}
               size="large"
-              onClick={(e) => handleButtonClick(e, "Start your free self-assessment hero")}
+              onClick={(e) =>
+                handleButtonClick(e, "Start your free self-assessment hero")
+              }
               aria-label="Start your free self-assessment"
             >
               <Trans i18nKey={"hero.startSelfAssessment"} />
@@ -153,7 +165,11 @@ const HeroSection = () => {
             fill
             priority
             sizes="100vw"
-            style={{ objectFit: "cover", objectPosition: "center", pointerEvents: "none" }}
+            style={{
+              objectFit: "cover",
+              objectPosition: "center",
+              pointerEvents: "none",
+            }}
           />
 
           <Box sx={innerBoxSx}>
@@ -172,7 +188,9 @@ const HeroSection = () => {
               variant="contained"
               sx={ctaBtnSx}
               size="large"
-              onClick={(e) => handleButtonClick(e, "Start your free self-assessment hero")}
+              onClick={(e) =>
+                handleButtonClick(e, "Start your free self-assessment hero")
+              }
               aria-label="Start your free self-assessment"
             >
               <Trans i18nKey={"hero.startSelfAssessment"} />

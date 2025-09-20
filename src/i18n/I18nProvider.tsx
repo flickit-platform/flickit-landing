@@ -14,7 +14,6 @@ export default function I18nProvider({
   useEffect(() => {
     const lang = localStorage.getItem("lang") || "en";
     i18n.changeLanguage(lang);
-    document.cookie = `NEXT_LOCALE=${lang}; max-age=31536000; path=/`;
     document.documentElement.dir = lang === "fa" ? "rtl" : "ltr";
 
     i18n.on("languageChanged", (lng: any) => {

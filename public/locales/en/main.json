@@ -1,0 +1,92 @@
+{
+  "moreAboutThisKit": "More about this kit",
+  "createAssessment": "Create assessment",
+  "purchase": "Purchase",
+  "globalCaseStudy": "Global case study",
+  "learnMore": "Learn more",
+  "whatCanYouAssessWith": "What can you assess with <style>{{app}}</style>?",
+  "whatMakesDifferent": "What makes <style>{{app}}</style> different?",
+  "howItWorks": "How <style>it</style> works?",
+  "faq": "People usually ask about",
+  "pin1Title": "1. Kit selection",
+  "pin1Desc": "Pick an assessment kit that matches your goals.",
+  "pin2Title": "2. Answering question",
+  "pin2Desc": "Complete the entire questionnaire accurately.",
+  "pin3Title": "3. Viewing report",
+  "pin3Desc": "Explore your detailed insights and action points.",
+  "pin4Title": "4. Sharing report",
+  "pin4Desc": "Send results to teammates or stakeholders.",
+  "joinTheWaitlist": "Join the waitlist",
+  "flickit": "Flickit",
+  "faq1": {
+    "question": "Is it complicated to set up?",
+    "answer": "No, You can launch your first assessment in minutes. No coding, no heavy onboarding."
+  },
+  "faq2": {
+    "question": "Will it really give me actionable insights?",
+    "answer": "Yes, Flickit doesn’t just show you data; it maps out exactly where you stand and what to do next."
+  },
+  "faq3": {
+    "question": "We’re unique — will it work for us?",
+    "answer": "Absolutely, Flickit’s flexible kits adapt to your team’s workflows and your business needs."
+  },
+  "readyMade": {
+    "title": "Ready-made kits.",
+    "desc": "Choose from curated assessments designed for common roles, domains, and maturity objectives—no setup required."
+  },
+  "analytics": {
+    "title": "Actionable analytics",
+    "desc": "Instantly turn responses into maturity scores, strengths, gaps, and prioritized next steps you can act on right away."
+  },
+  "effortless": {
+    "title": "Effortless questionnaires",
+    "desc": "Skip logic makes answering fast, clear, and frustration-free."
+  },
+  "expertGuidance": {
+    "title": "Expert guidance on demand",
+    "desc": "Book sessions with certified assessors for deep-dive reviews, interpretation, or roadmap validation whenever you need."
+  },
+  "customAssessment": {
+    "title": "Custom assessments, made for you",
+    "desc": "Need something specific? We'll connect you with an expert who can design a tailored assessment kit that fits your team’s exact context and goals."
+  },
+  "aiPowered": {
+    "title": "AI-powered insights",
+    "desc": "Leverage advanced AI to uncover hidden patterns, benchmark against peers, and forecast ROI for improvement actions."
+  },
+  "teamCollab": {
+    "title": "Real-time team collaboration",
+    "desc": "Invite colleagues to co-fill questionnaires, see each other’s progress instantly, and lock answers when consensus is reached."
+  },
+  "sharing": {
+    "title": "3-Click report sharing",
+    "desc": "Share reports with stakeholders via a secure link in seconds."
+  },
+  "kit": {
+    "softwarePerformance": {
+      "chipLabel": "Software Performance Kit",
+      "title": "Ensure Your Product Can Scale",
+      "desc": "Identify performance bottlenecks before traffic surges and apply targeted optimizations to ensure lasting scalability and efficiency.",
+      "caseStudyDesc": "Amazon: How latency optimization boosted revenue"
+    },
+    "toolMaturity": {
+      "chipLabel": "Tool Maturity Kit",
+      "title": "Assess Your Development Toolchain's Effectiveness",
+      "desc": "Evaluate the suitability and performance of your development tools at each stage. By analyzing tool selection and usage patterns, it pinpoints weaknesses and supports informed technical decisions.",
+      "caseStudyDesc": "How etsy accelerated deployment up to 50 deploy per day with DevOps automation?"
+    },
+    "internalAudit": {
+      "chipLabel": "In-house Software Development Audit Kit",
+      "title": "Assess Your In-House Team's Technical Maturity",
+      "desc": "Designed for technical leaders and architects, this kit examines team, software, and operations to deliver a comprehensive view of your current state—providing a solid foundation for targeted improvements.",
+      "caseStudyDesc": "Facebook Messenger: How technical debt was eliminated for faster performance"
+    },
+    "vendorEvaluation": {
+      "chipLabel": "AI-assisted Development Adoption Kit",
+      "title": "Assess How Effectively You're Using AI in Software Development",
+      "desc": "Measure your team’s maturity in adopting AI technologies throughout development. It analyzes the real impact of AI tools on code quality and velocity, offering clear guidance for optimization.",
+      "caseStudyDesc": ""
+    }
+  },
+  "viewAllAssessmentKits": "View all assessment kits"
+}

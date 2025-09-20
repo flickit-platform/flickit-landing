@@ -10,7 +10,7 @@ import I18nProvider from "@/i18n/I18nProvider";
 import KeycloakInit from "@/components/KeycloakInit";
 
 export async function generateMetadata() {
-  const lang = cookies().get("NEXT_LOCALE")?.value || "en";
+  const lang = cookies().get("lang")?.value || "en";
   const isFa = lang === "fa";
   const siteUrl =
     process.env.NEXT_PUBLIC_LOCAL_BASE_URL?.replace(/\/+$/, "") ||
@@ -56,6 +56,13 @@ export async function generateMetadata() {
           "DevOps",
           "software maturity",
         ],
+    alternates: {
+      canonical: isFa ? "/fa/" : "/",
+      languages: {
+        "en-US": "/",
+        "fa-IR": "/fa/",
+      },
+    },
     openGraph: {
       type: "website",
       url,

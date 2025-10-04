@@ -13,32 +13,32 @@ export const open_sans = Open_Sans({
 export const sahel = localFont({
   src: [
     {
-      path: "../assets/fonts/Sahel/Sahel-Light-FD.woff2",
+      path: "../../public/assets/fonts/Sahel/Sahel-Light-FD.woff2",
       weight: "200",
       style: "normal",
     },
     {
-      path: "../assets/fonts/Sahel/Sahel-Light-FD.woff2",
+      path: "../../public/assets/fonts/Sahel/Sahel-Light-FD.woff2",
       weight: "300",
       style: "normal",
     },
     {
-      path: "../assets/fonts/Sahel/Sahel-FD.woff2",
+      path: "../../public/assets/fonts/Sahel/Sahel-FD.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../assets/fonts/Sahel/Sahel-FD.woff2",
+      path: "../../public/assets/fonts/Sahel/Sahel-FD.woff2",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../assets/fonts/Sahel/Sahel-SemiBold-FD.woff2",
+      path: "../../public/assets/fonts/Sahel/Sahel-SemiBold-FD.woff2",
       weight: "600",
       style: "normal",
     },
     {
-      path: "../assets/fonts/Sahel/Sahel-Bold-FD.woff2",
+      path: "../../public/assets/fonts/Sahel/Sahel-Bold-FD.woff2",
       weight: "700",
       style: "normal",
     },
